@@ -36,7 +36,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule4841indentation";
     }
 
-    @Test
     public void testCorrectClass() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -47,7 +46,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCorrectField() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -58,7 +56,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCorrectFor() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -69,7 +66,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCorrectIf() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -80,7 +76,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCorrectNewKeyword() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -91,7 +86,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -102,7 +96,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCorrectReturn() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -113,7 +106,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCorrectWhile() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -124,7 +116,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCorrectChained() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -135,7 +126,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testWarnChained() throws Exception {
         final String[] expected = {
             "18:5: " + getCheckMessage(IndentationCheck.class,
@@ -152,7 +142,6 @@ public class IndentationTest extends AbstractIndentationTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCorrectAnnotationArrayInit() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 

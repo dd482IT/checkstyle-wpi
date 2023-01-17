@@ -29,7 +29,7 @@ public class InputRedundantModifierFinalInTryWithResource {
         catch (RuntimeException e) {
         }
 
-        try (@NotNull BufferedReader br =
+        try (BufferedReader br =
                      new BufferedReader(streamm)) {
         }
         catch (IOException e) {

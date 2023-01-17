@@ -28,7 +28,6 @@ import nl.jqno.equalsverifier.EqualsVerifierReport;
 
 public class CsvFilterElementTest {
 
-    @Test
     public void testDecideSingle() {
         final IntFilterElement filter = new CsvFilterElement("0");
         assertWithMessage("less than")
@@ -42,7 +41,6 @@ public class CsvFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testDecidePair() {
         final IntFilterElement filter = new CsvFilterElement("0, 2");
         assertWithMessage("less than")
@@ -59,7 +57,6 @@ public class CsvFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testDecideRange() {
         final IntFilterElement filter = new CsvFilterElement("0-2");
         assertWithMessage("less than")
@@ -79,7 +76,6 @@ public class CsvFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testDecideEmptyRange() {
         final IntFilterElement filter = new CsvFilterElement("2-0");
         assertWithMessage("less than")
@@ -99,7 +95,6 @@ public class CsvFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testDecideRangePlusValue() {
         final IntFilterElement filter = new CsvFilterElement("0-2, 10");
         assertWithMessage("less than")
@@ -122,7 +117,6 @@ public class CsvFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testEmptyChain() {
         final CsvFilterElement filter = new CsvFilterElement("");
         assertWithMessage("0")
@@ -130,7 +124,6 @@ public class CsvFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testEqualsAndHashCode() {
         final EqualsVerifierReport ev = EqualsVerifier.forClass(CsvFilterElement.class)
                 .usingGetClass().report();

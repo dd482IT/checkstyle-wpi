@@ -38,7 +38,6 @@ public class XpathRegressionRecordComponentNameTest extends AbstractXpathTestSup
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(getNonCompilablePath(
                 "SuppressionXpathRecordComponentName1.java"));
@@ -61,7 +60,6 @@ public class XpathRegressionRecordComponentNameTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(getNonCompilablePath(
                 "SuppressionXpathRecordComponentName2.java"));

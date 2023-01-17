@@ -12,7 +12,6 @@ package com.puppycrawl.tools.checkstyle.checks.outertypefilename;
     int version();
 }
 
-@MyAnnotation1(name = "ABC", version = 1)
 public class InputOuterTypeFilename15Extensions
 {
 

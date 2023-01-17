@@ -41,7 +41,6 @@ public class JavadocPackageCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/javadocpackage";
     }
 
-    @Test
     public void testMissing() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_PACKAGE_INFO),
@@ -51,7 +50,6 @@ public class JavadocPackageCheckTest
             expected);
     }
 
-    @Test
     public void testMissingWithAllowLegacy() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_PACKAGE_INFO),
@@ -61,7 +59,6 @@ public class JavadocPackageCheckTest
             expected);
     }
 
-    @Test
     public void testWithMultipleFiles() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_PACKAGE_INFO),
@@ -70,7 +67,6 @@ public class JavadocPackageCheckTest
             getPath("InputJavadocPackageBadTag.java"), expected);
     }
 
-    @Test
     public void testBoth() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_LEGACY_PACKAGE_HTML),
@@ -80,7 +76,6 @@ public class JavadocPackageCheckTest
             expected);
     }
 
-    @Test
     public void testHtmlDisallowed() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_PACKAGE_INFO),
@@ -90,7 +85,6 @@ public class JavadocPackageCheckTest
             expected);
     }
 
-    @Test
     public void testHtmlAllowed() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -99,7 +93,6 @@ public class JavadocPackageCheckTest
             expected);
     }
 
-    @Test
     public void testAnnotation() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -111,7 +104,6 @@ public class JavadocPackageCheckTest
      * Using direct call to check here because there is no other way
      * to reproduce exception with invalid canonical path.
      */
-    @Test
     public void testCheckstyleExceptionIfFailedToGetCanonicalPathToFile() {
         final JavadocPackageCheck check = new JavadocPackageCheck();
         final File fileWithInvalidPath = new File("\u0000\u0000\u0000");
@@ -129,7 +121,6 @@ public class JavadocPackageCheckTest
         }
     }
 
-    @Test
     public void testNonJava() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -137,7 +128,6 @@ public class JavadocPackageCheckTest
             expected);
     }
 
-    @Test
     public void testWithFileWithoutParent() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(

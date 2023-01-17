@@ -20,11 +20,11 @@ public class InputRegressionJava8Class1 {
 
     public void m() {}
     public static void sm() {}
-    void m1() throws @Nullable Exception {}
-    public static <T> void m2(T @Nullable [] array) {}
-    public void m3() throws NullPointerException, @Nullable ArrayIndexOutOfBoundsException {}
+    void m1() throws Exception {}
+    public static <T> void m2(T[] array) {}
+    public void m3() throws NullPointerException, ArrayIndexOutOfBoundsException {}
     public void m4(InputRegressionJava8Class1 this) {}
-    public void m5(@Nullable InputRegressionJava8Class1 this) {}
+    public void m5(InputRegressionJava8Class1 this) {}
 
     {
         List<String> vlist = new ArrayList<String>();
@@ -41,9 +41,9 @@ public class InputRegressionJava8Class1 {
         Supplier<?> s;
 
         // annotations
-        Map.@Nullable Entry e;
-        String str = (@Nullable String) "";
-        (new Inner3()).<@Nullable String>m();
+        Map.Entry e;
+        String str = (String) "";
+        (new Inner3()).<String>m();
 
         // method reference
         IntBinaryOperator ibo = Math::max;
@@ -65,7 +65,7 @@ public class InputRegressionJava8Class1 {
     }
 }
 ;
-class InputRegressionJava8TypeParam <@Nullable T> {
+class InputRegressionJava8TypeParam <T> {
 }
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.TYPE_USE })

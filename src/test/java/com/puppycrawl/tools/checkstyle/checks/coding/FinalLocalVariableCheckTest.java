@@ -37,7 +37,6 @@ public class FinalLocalVariableCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/finallocalvariable";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -84,7 +83,6 @@ public class FinalLocalVariableCheckTest
                 getPath("InputFinalLocalVariable.java"), expected);
     }
 
-    @Test
     public void testRecordsInput() throws Exception {
         final String[] expected = {
             "20:17: " + getCheckMessage(MSG_KEY, "b"),
@@ -93,7 +91,6 @@ public class FinalLocalVariableCheckTest
                 getNonCompilablePath("InputFinalLocalVariableCheckRecords.java"), expected);
     }
 
-    @Test
     public void testParameter() throws Exception {
 
         final String[] expected = {
@@ -105,7 +102,6 @@ public class FinalLocalVariableCheckTest
                 getPath("InputFinalLocalVariable2.java"), expected);
     }
 
-    @Test
     public void testNativeMethods() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -113,7 +109,6 @@ public class FinalLocalVariableCheckTest
                 getPath("InputFinalLocalVariableNativeMethods.java"), expected);
     }
 
-    @Test
     public void testFalsePositive() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -121,7 +116,6 @@ public class FinalLocalVariableCheckTest
                 getPath("InputFinalLocalVariableFalsePositive.java"), expected);
     }
 
-    @Test
     public void testEnhancedForLoopVariableTrue() throws Exception {
         final String[] expected = {
             "16:20: " + getCheckMessage(MSG_KEY, "a"),
@@ -137,7 +131,6 @@ public class FinalLocalVariableCheckTest
             expected);
     }
 
-    @Test
     public void testEnhancedForLoopVariableFalse() throws Exception {
         final String[] expected = {
             "23:13: " + getCheckMessage(MSG_KEY, "x"),
@@ -150,7 +143,6 @@ public class FinalLocalVariableCheckTest
             expected);
     }
 
-    @Test
     public void testLambda()
             throws Exception {
         final String[] expected = {
@@ -161,7 +153,6 @@ public class FinalLocalVariableCheckTest
             expected);
     }
 
-    @Test
     public void testVariableNameShadowing()
             throws Exception {
 
@@ -173,7 +164,6 @@ public class FinalLocalVariableCheckTest
                 getPath("InputFinalLocalVariableNameShadowing.java"), expected);
     }
 
-    @Test
     public void testImproperToken() {
         final FinalLocalVariableCheck check = new FinalLocalVariableCheck();
 
@@ -189,7 +179,6 @@ public class FinalLocalVariableCheckTest
         }
     }
 
-    @Test
     public void testVariableWhichIsAssignedMultipleTimes() throws Exception {
 
         final String[] expected = {
@@ -204,7 +193,6 @@ public class FinalLocalVariableCheckTest
                 getPath("InputFinalLocalVariableAssignedMultipleTimes.java"), expected);
     }
 
-    @Test
     public void testVariableIsAssignedInsideAndOutsideSwitchBlock() throws Exception {
         final String[] expected = {
             "39:13: " + getCheckMessage(MSG_KEY, "b"),
@@ -214,7 +202,6 @@ public class FinalLocalVariableCheckTest
             expected);
     }
 
-    @Test
     public void testFinalLocalVariableFalsePositives() throws Exception {
         final String[] expected = {
             "352:16: " + getCheckMessage(MSG_KEY, "c2"),
@@ -224,7 +211,6 @@ public class FinalLocalVariableCheckTest
                 getPath("InputFinalLocalVariableFalsePositives.java"), expected);
     }
 
-    @Test
     public void testMultipleAndNestedConditions() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -232,7 +218,6 @@ public class FinalLocalVariableCheckTest
             expected);
     }
 
-    @Test
     public void testMultiTypeCatch() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -240,14 +225,12 @@ public class FinalLocalVariableCheckTest
                 expected);
     }
 
-    @Test
     public void testLeavingSlistToken() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputFinalLocalVariableLeavingSlistToken.java"), expected);
     }
 
-    @Test
     public void testBreakOrReturn() throws Exception {
         final String[] expected = {
             "15:19: " + getCheckMessage(MSG_KEY, "e"),
@@ -256,7 +239,6 @@ public class FinalLocalVariableCheckTest
                 getPath("InputFinalLocalVariableBreak.java"), expected);
     }
 
-    @Test
     public void testAnonymousClass() throws Exception {
         final String[] expected = {
             "13:16: " + getCheckMessage(MSG_KEY, "testSupport"),
@@ -265,14 +247,12 @@ public class FinalLocalVariableCheckTest
                 getPath("InputFinalLocalVariableAnonymousClass.java"), expected);
     }
 
-    @Test
     public void testReceiverParameter() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputFinalLocalVariableReceiverParameter.java"), expected);
     }
 
-    @Test
     public void testFinalLocalVariableSwitchExpressions() throws Exception {
         final String[] expected = {
             "15:19: " + getCheckMessage(MSG_KEY, "e"),
@@ -285,7 +265,6 @@ public class FinalLocalVariableCheckTest
             expected);
     }
 
-    @Test
     public void testFinalLocalVariableSwitchAssignment() throws Exception {
         final String[] expected = {
             "21:13: " + getCheckMessage(MSG_KEY, "a"),
@@ -299,7 +278,6 @@ public class FinalLocalVariableCheckTest
             expected);
     }
 
-    @Test
     public void testFinalLocalVariableSwitchStatement() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -307,7 +285,6 @@ public class FinalLocalVariableCheckTest
             expected);
     }
 
-    @Test
     public void testConstructor() throws Exception {
         final String[] expected = {
             "14:44: " + getCheckMessage(MSG_KEY, "a"),

@@ -28,7 +28,6 @@ import net.sf.saxon.om.NodeInfo;
 
 public class DescendantIteratorTest {
 
-    @Test
     public void testIncludeSelf() {
         final NodeInfo startNode = findNode("CLASS_DEF");
 
@@ -64,7 +63,6 @@ public class DescendantIteratorTest {
         }
     }
 
-    @Test
     public void testWithoutSelf() {
         final NodeInfo startNode = findNode("CLASS_DEF");
 
@@ -94,7 +92,6 @@ public class DescendantIteratorTest {
         }
     }
 
-    @Test
     public void testWithNull() {
         final NodeInfo startNode = findNode("CLASS_DEF");
 

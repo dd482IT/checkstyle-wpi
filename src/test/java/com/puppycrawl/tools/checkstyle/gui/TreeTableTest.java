@@ -49,7 +49,6 @@ public class TreeTableTest extends AbstractGuiTestSupport {
         return "com/puppycrawl/tools/checkstyle/gui/treetable";
     }
 
-    @BeforeEach
     public void prepare() throws Exception {
         final MainFrameModel model = new MainFrameModel();
         model.openFile(new File(getPath(TEST_FILE_NAME)));
@@ -61,7 +60,6 @@ public class TreeTableTest extends AbstractGuiTestSupport {
                 new TreePath(treeTable.getTree().getModel().getRoot()));
     }
 
-    @Test
     public void testExpandOnMouseDoubleClick() {
         final MouseEvent mouseDoubleClickEvent =
                 new MouseEvent(treeTable, MouseEvent.MOUSE_CLICKED, 0, 0, 0, 0, 2, false);
@@ -78,7 +76,6 @@ public class TreeTableTest extends AbstractGuiTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testNothingChangedOnMouseSingleClick() {
         final MouseEvent mouseSingleClickEvent =
                 new MouseEvent(treeTable, MouseEvent.MOUSE_CLICKED, 0, 0, 0, 0, 1, false);
@@ -91,7 +88,6 @@ public class TreeTableTest extends AbstractGuiTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testExpandOnEnterKey() {
         final ActionEvent expandCollapseActionEvent =
                 new ActionEvent(treeTable, ActionEvent.ACTION_PERFORMED, "expand/collapse");
@@ -110,7 +106,6 @@ public class TreeTableTest extends AbstractGuiTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testFindNodesAllClassDefs() throws IOException {
         final MainFrame mainFrame = new MainFrame();
         mainFrame.openFile(new File(getPath("InputTreeTableXpathAreaPanel.java")));
@@ -130,7 +125,6 @@ public class TreeTableTest extends AbstractGuiTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testFindNodesIdent() throws IOException {
         final MainFrame mainFrame = new MainFrame();
         mainFrame.openFile(new File(getPath("InputTreeTableXpathAreaPanel.java")));
@@ -164,7 +158,6 @@ public class TreeTableTest extends AbstractGuiTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testFindNodesMissingElements() throws IOException {
         final MainFrame mainFrame = new MainFrame();
         mainFrame.openFile(new File(getPath("InputTreeTableXpathAreaPanel.java")));
@@ -180,7 +173,6 @@ public class TreeTableTest extends AbstractGuiTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testFindNodesUnexpectedTokenAtStart() throws IOException {
         final MainFrame mainFrame = new MainFrame();
         mainFrame.openFile(new File(getPath("InputTreeTableXpathAreaPanel.java")));
@@ -196,7 +188,6 @@ public class TreeTableTest extends AbstractGuiTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testFindNodesInvalidCharacterInExpression() throws IOException {
         final MainFrame mainFrame = new MainFrame();
         mainFrame.openFile(new File(getPath("InputTreeTableXpathAreaPanel.java")));

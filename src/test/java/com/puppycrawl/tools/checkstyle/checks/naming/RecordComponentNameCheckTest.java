@@ -34,7 +34,6 @@ public class RecordComponentNameCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/naming/recordcomponentname";
     }
 
-    @Test
     public void testGetClassRequiredTokens() {
         final RecordComponentNameCheck checkObj =
                 new RecordComponentNameCheck();
@@ -44,7 +43,6 @@ public class RecordComponentNameCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testRecordDefault()
             throws Exception {
 
@@ -60,7 +58,6 @@ public class RecordComponentNameCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputRecordComponentNameDefault.java"), expected);
     }
 
-    @Test
     public void testClassFooName()
             throws Exception {
 
@@ -76,7 +73,6 @@ public class RecordComponentNameCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputRecordComponentNameLowercase.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final RecordComponentNameCheck typeParameterNameCheckObj =
                 new RecordComponentNameCheck();

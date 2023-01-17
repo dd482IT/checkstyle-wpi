@@ -43,14 +43,12 @@ import com.puppycrawl.tools.checkstyle.api.RootModule;
 
 public class ModuleReflectionUtilTest {
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(isUtilsClassHasPrivateConstructor(ModuleReflectionUtil.class))
                 .isTrue();
     }
 
-    @Test
     public void testIsCheckstyleModule() {
         assertWithMessage("Should return true when checkstyle module is passed")
                 .that(ModuleReflectionUtil.isCheckstyleModule(CheckClass.class))
@@ -75,7 +73,6 @@ public class ModuleReflectionUtilTest {
                 .isTrue();
     }
 
-    @Test
     public void testIsValidCheckstyleClass() {
         assertWithMessage("Should return true when valid checkstyle class is passed")
                 .that(ModuleReflectionUtil.isCheckstyleModule(ValidCheckstyleClass.class))
@@ -97,7 +94,6 @@ public class ModuleReflectionUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testIsCheckstyleCheck() {
         assertWithMessage("Should return true when valid checkstyle check is passed")
                 .that(ModuleReflectionUtil.isCheckstyleTreeWalkerCheck(CheckClass.class))
@@ -107,7 +103,6 @@ public class ModuleReflectionUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testIsFileSetModule() {
         assertWithMessage("Should return true when valid checkstyle file set module is passed")
                 .that(ModuleReflectionUtil.isFileSetModule(FileSetModuleClass.class))
@@ -117,7 +112,6 @@ public class ModuleReflectionUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testIsFilterModule() {
         assertWithMessage("Should return true when valid checkstyle filter module is passed")
                 .that(ModuleReflectionUtil.isFilterModule(FilterClass.class))
@@ -127,7 +121,6 @@ public class ModuleReflectionUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testIsFileFilterModule() {
         assertWithMessage("Should return true when valid checkstyle file filter module is passed")
                 .that(ModuleReflectionUtil.isFileFilterModule(FileFilterModuleClass.class))
@@ -137,7 +130,6 @@ public class ModuleReflectionUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testIsTreeWalkerFilterModule() {
         assertWithMessage(
                     "Should return true when valid checkstyle TreeWalker filter module is passed")
@@ -148,7 +140,6 @@ public class ModuleReflectionUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testIsAuditListener() {
         assertWithMessage("Should return true when valid checkstyle AuditListener module is passed")
                 .that(ModuleReflectionUtil.isAuditListener(DefaultLogger.class))
@@ -158,7 +149,6 @@ public class ModuleReflectionUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testIsRootModule() {
         assertWithMessage("Should return true when valid checkstyle root module is passed")
                 .that(ModuleReflectionUtil.isRootModule(RootModuleClass.class))
@@ -168,7 +158,6 @@ public class ModuleReflectionUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testKeepEclipseHappy() {
         final InvalidNonDefaultConstructorClass test = new InvalidNonDefaultConstructorClass(0);
         assertWithMessage("should use constructor")

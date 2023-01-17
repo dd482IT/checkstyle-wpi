@@ -15,19 +15,16 @@ import org.junit.Test;
 
 public class InputDesignForExtensionMultipleAnnotations { // ok
 
-    @Ignore
     @Deprecated
     public void foo1() {
         foo3();
     }
 
     @Deprecated
-    @Ignore
     public void foo2() {
         foo3();
     }
 
-    @Ignore
     // comment
     @Deprecated
     public void foo4() {
@@ -36,13 +33,11 @@ public class InputDesignForExtensionMultipleAnnotations { // ok
 
     @Deprecated
     // comment
-    @Ignore
     public void foo5() {
         foo3();
     }
 
 
-    @Ignore
     /**
      * comment
      */
@@ -55,12 +50,10 @@ public class InputDesignForExtensionMultipleAnnotations { // ok
     /**
      * comment
      */
-    @Ignore
     public void foo7() {
         foo3();
     }
 
-    @Ignore
     /* comment */
     @Deprecated
     public void foo8() {
@@ -69,13 +62,11 @@ public class InputDesignForExtensionMultipleAnnotations { // ok
 
     @Deprecated
     /* comment */
-    @Ignore
     public void foo9() {
         foo3();
     }
 
     /* comment */
-    @Ignore
     @Deprecated
     public void foo10() {
         foo3();
@@ -83,7 +74,6 @@ public class InputDesignForExtensionMultipleAnnotations { // ok
 
     /* comment */
     @Deprecated
-    @Ignore
     public void foo11() {
         foo3();
     }

@@ -92,7 +92,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  */
 public class CheckerTest extends AbstractModuleTestSupport {
 
-    @TempDir
     public File temporaryFolder;
 
     private static Method getFireAuditFinished() throws NoSuchMethodException {
@@ -114,7 +113,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checker";
     }
 
-    @Test
     public void testDestroy() throws Exception {
         final Checker checker = new Checker();
         final DebugAuditAdapter auditAdapter = new DebugAuditAdapter();
@@ -150,7 +148,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testAddListener() throws Exception {
         final Checker checker = new Checker();
         final DebugAuditAdapter auditAdapter = new DebugAuditAdapter();
@@ -205,7 +202,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testRemoveListener() throws Exception {
         final Checker checker = new Checker();
         final DebugAuditAdapter auditAdapter = new DebugAuditAdapter();
@@ -263,7 +259,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testAddBeforeExecutionFileFilter() throws Exception {
         final Checker checker = new Checker();
         final TestBeforeExecutionFileFilter filter = new TestBeforeExecutionFileFilter();
@@ -277,7 +272,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testRemoveBeforeExecutionFileFilter() throws Exception {
         final Checker checker = new Checker();
         final TestBeforeExecutionFileFilter filter = new TestBeforeExecutionFileFilter();
@@ -296,7 +290,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testAddFilter() {
         final Checker checker = new Checker();
         final DebugFilter filter = new DebugFilter();
@@ -313,7 +306,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testRemoveFilter() {
         final Checker checker = new Checker();
         final DebugFilter filter = new DebugFilter();
@@ -335,7 +327,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testFileExtensions() throws Exception {
         final DefaultConfiguration checkerConfig = new DefaultConfiguration("configuration");
         checkerConfig.addProperty("charset", StandardCharsets.UTF_8.name());
@@ -376,7 +367,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .isNull();
     }
 
-    @Test
     public void testIgnoredFileExtensions() throws Exception {
         final DefaultConfiguration checkerConfig = new DefaultConfiguration("configuration");
         checkerConfig.addProperty("charset", StandardCharsets.UTF_8.name());
@@ -411,7 +401,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .isEqualTo(numLegalFiles);
     }
 
-    @Test
     public void testSetters() {
         // all  that is set by reflection, so just make code coverage be happy
         final Checker checker = new Checker();
@@ -436,7 +425,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testNoClassLoaderNoModuleFactory() {
         final Checker checker = new Checker();
 
@@ -452,7 +440,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testNoModuleFactory() throws Exception {
         final Checker checker = new Checker();
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
@@ -466,7 +453,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testFinishLocalSetupFullyInitialized() throws Exception {
         final Checker checker = new Checker();
         final ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
@@ -499,7 +485,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .isEqualTo(Locale.ITALY);
     }
 
-    @Test
     public void testSetupChildExceptions() {
         final Checker checker = new Checker();
         final PackageObjectFactory factory = new PackageObjectFactory(
@@ -518,7 +503,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testSetupChildInvalidProperty() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HiddenFieldCheck.class);
         checkConfig.addProperty("$$No such property", null);
@@ -536,7 +520,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testSetupChildListener() throws Exception {
         final Checker checker = new Checker();
         final PackageObjectFactory factory = new PackageObjectFactory(
@@ -553,7 +536,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testDestroyCheckerWithWrongCacheFileNameLength() throws Exception {
         final Checker checker = new Checker();
         final PackageObjectFactory factory = new PackageObjectFactory(
@@ -578,7 +560,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
     /**
      * It is OK to have long test method name here as it describes the test purpose.
      */
-    @Test
     public void testCacheAndCheckWhichDoesNotImplementExternalResourceHolderInterface()
             throws Exception {
         assertWithMessage("ExternalResourceHolder has changed his parent")
@@ -616,7 +597,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .isEqualTo(cacheAfterFirstRun);
     }
 
-    @Test
     public void testWithCacheWithNoViolation() throws Exception {
         final Checker checker = new Checker();
         final PackageObjectFactory factory = new PackageObjectFactory(
@@ -657,7 +637,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testClearExistingCache() throws Exception {
         final DefaultConfiguration checkerConfig = createRootConfig(null);
         checkerConfig.addProperty("charset", StandardCharsets.UTF_8.name());
@@ -709,7 +688,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .hasSize(expectedNumberOfObjectsInCacheAfterSecondRun);
     }
 
-    @Test
     public void testClearCache() throws Exception {
         final DefaultConfiguration violationCheck =
                 createModuleConfig(DummyFileSetViolationCheck.class);
@@ -739,7 +717,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .hasSize(1);
     }
 
-    @Test
     public void setFileExtension() {
         final Checker checker = new Checker();
         checker.setFileExtensions(".test1", "test2");
@@ -749,7 +726,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .isEqualTo(new String[] {".test1", ".test2"});
     }
 
-    @Test
     public void testClearCacheWhenCacheFileIsNotSet() {
         // The idea of the test is to check that when cache file is not set,
         // the invocation of clearCache method does not throw an exception.
@@ -768,7 +744,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
      * @noinspectionreason SerializableInnerClassWithNonSerializableOuterClass - mocked file
      *      for test does not require serialization
      */
-    @Test
     public void testCatchErrorInProcessFilesMethod() throws Exception {
         // Assume that I/O error is happened when we try to invoke 'lastModified()' method.
         final String errorMessage = "Java Virtual Machine is broken"
@@ -822,7 +797,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
      * @noinspectionreason SerializableInnerClassWithNonSerializableOuterClass - mocked file
      *      for test does not require serialization
      */
-    @Test
     public void testCatchErrorWithNoFileName() throws Exception {
         // Assume that I/O error is happened when we try to invoke 'lastModified()' method.
         final String errorMessage = "Java Virtual Machine is broken"
@@ -880,7 +854,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
     /**
      * It is OK to have long test method name here as it describes the test purpose.
      */
-    @Test
     public void testCacheAndFilterWhichDoesNotImplementExternalResourceHolderInterface()
             throws Exception {
         assertWithMessage("ExternalResourceHolder has changed its parent")
@@ -930,7 +903,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
      * It is OK to have long test method name here as it describes the test purpose.
      */
     // -@cs[ExecutableStatementCount] This test needs to verify many things.
-    @Test
     public void testCacheAndCheckWhichAddsNewResourceLocationButKeepsSameCheckerInstance()
             throws Exception {
         // Use case (https://github.com/checkstyle/checkstyle/pull/3092#issuecomment-218162436):
@@ -1013,7 +985,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testClearLazyLoadCacheInDetailAST() throws Exception {
         final DefaultConfiguration checkConfig1 =
             createModuleConfig(CheckWhichDoesNotRequireCommentNodes.class);
@@ -1032,7 +1003,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         verify(checkerConfig, filePath, expected);
     }
 
-    @Test
     public void testCacheOnViolationSuppression() throws Exception {
         final File cacheFile = File.createTempFile("junit", null, temporaryFolder);
         final DefaultConfiguration violationCheck =
@@ -1061,7 +1031,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testHaltOnException() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(CheckWhichThrowsError.class);
@@ -1077,7 +1046,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testExceptionWithCache() throws Exception {
         final File cacheFile = File.createTempFile("junit", null, temporaryFolder);
 
@@ -1129,7 +1097,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
      * @noinspectionreason SerializableInnerClassWithNonSerializableOuterClass - mocked file
      *      for test does not require serialization
      */
-    @Test
     public void testCatchErrorWithCache() throws Exception {
         final File cacheFile = File.createTempFile("junit", null, temporaryFolder);
 
@@ -1207,7 +1174,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
      * @noinspectionreason SerializableInnerClassWithNonSerializableOuterClass - mocked file
      *      for test does not require serialization
      */
-    @Test
     public void testCatchErrorWithCacheWithNoFileName() throws Exception {
         final File cacheFile = File.createTempFile("junit", null, temporaryFolder);
 
@@ -1278,7 +1244,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
      * @noinspectionreason SerializableInnerClassWithNonSerializableOuterClass - mocked file
      *      for test does not require serialization
      */
-    @Test
     public void testExceptionWithNoFileName() {
         final String errorMessage = "Security Exception";
         final RuntimeException expectedError = new SecurityException(errorMessage);
@@ -1326,7 +1291,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
      * @noinspectionreason SerializableInnerClassWithNonSerializableOuterClass - mocked file
      *      for test does not require serialization
      */
-    @Test
     public void testExceptionWithCacheAndNoFileName() throws Exception {
         final File cacheFile = File.createTempFile("junit", null, temporaryFolder);
 
@@ -1387,7 +1351,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testHaltOnExceptionOff() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(CheckWhichThrowsError.class);
@@ -1408,7 +1371,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         verify(checkerConfig, filePath, expected);
     }
 
-    @Test
     public void testTabViolationDefault() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(VerifyPositionAfterTabFileSet.class);
@@ -1420,7 +1382,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testTabViolation() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(VerifyPositionAfterTabFileSet.class);
@@ -1434,7 +1395,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testCheckerProcessCallAllNeededMethodsOfFileSets() throws Exception {
         final DummyFileSet fileSet = new DummyFileSet();
         final Checker checker = new Checker();
@@ -1447,7 +1407,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testSetFileSetCheckSetsMessageDispatcher() {
         final DummyFileSet fileSet = new DummyFileSet();
         final Checker checker = new Checker();
@@ -1457,7 +1416,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
             .isEqualTo(checker);
     }
 
-    @Test
     public void testAddAuditListenerAsChild() throws Exception {
         final Checker checker = new Checker();
         final DebugAuditAdapter auditAdapter = new DebugAuditAdapter();
@@ -1481,7 +1439,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testAddBeforeExecutionFileFilterAsChild() throws Exception {
         final Checker checker = new Checker();
         final TestBeforeExecutionFileFilter fileFilter = new TestBeforeExecutionFileFilter();
@@ -1504,7 +1461,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testFileSetCheckInitWhenAddedAsChild() throws Exception {
         final Checker checker = new Checker();
         final DummyFileSet fileSet = new DummyFileSet();
@@ -1528,7 +1484,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
     }
 
     // -@cs[CheckstyleTestMakeup] must use raw class to directly initialize DefaultLogger
-    @Test
     public void testDefaultLoggerClosesItStreams() throws Exception {
         final Checker checker = new Checker();
         try (CloseAndFlushTestByteArrayOutputStream testInfoOutputStream =
@@ -1560,7 +1515,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
     }
 
     // -@cs[CheckstyleTestMakeup] must use raw class to directly initialize DefaultLogger
-    @Test
     public void testXmlLoggerClosesItStreams() throws Exception {
         final Checker checker = new Checker();
         try (CloseAndFlushTestByteArrayOutputStream testInfoOutputStream =
@@ -1582,7 +1536,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testDuplicatedModule() throws Exception {
         // we need to test a module with two instances, one with id and the other not
         final DefaultConfiguration moduleConfig1 =
@@ -1642,7 +1595,6 @@ public class CheckerTest extends AbstractModuleTestSupport {
         checker.destroy();
     }
 
-    @Test
     public void testCachedFile() throws Exception {
         final Checker checker = createChecker(createModuleConfig(TranslationCheck.class));
         final OutputStream infoStream = new ByteArrayOutputStream();

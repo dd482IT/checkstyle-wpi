@@ -106,13 +106,13 @@ class InputIndentationFromGuava<K, V> extends AbstractMap<K, V> //indent:0 exp:0
   enum EntryFactory { //indent:2 exp:2
     STRONG { //indent:4 exp:4
       <K, V> StrongEntry<K, V> newEntry( //indent:6 exp:6
-          Segment<K, V> s, K k, int h, @XmlElement ReferenceEntry<K, V> next) { //indent:10 exp:>=10
+          Segment<K, V> s, K k, int h, ReferenceEntry<K, V> next) { //indent:10 exp:>=10
         return new StrongEntry<K, V>(); //indent:8 exp:8
       } //indent:6 exp:6
     }, //indent:4 exp:4
     STRONG_ACCESS { //indent:4 exp:4
       <K, V> StrongAccessEntry<K, V> newEntry( //indent:6 exp:6
-          Segment<K, V> s, K k, int h, @XmlElement ReferenceEntry<K, V> next) { //indent:10 exp:>=10
+          Segment<K, V> s, K k, int h, ReferenceEntry<K, V> next) { //indent:10 exp:>=10
         return new StrongAccessEntry<K, V>(k, h, next); //indent:8 exp:8
       } //indent:6 exp:6
 
@@ -125,7 +125,7 @@ class InputIndentationFromGuava<K, V> extends AbstractMap<K, V> //indent:0 exp:0
      }, //indent:5 exp:5
     STRONG_WRITE { //indent:4 exp:4
       <K, V> StrongEntry<K, V> newEntry( //indent:6 exp:6
-          Segment<K, V> s, K k, int h, @XmlElement ReferenceEntry<K, V> next) { //indent:10 exp:>=10
+          Segment<K, V> s, K k, int h, ReferenceEntry<K, V> next) { //indent:10 exp:>=10
         return new StrongEntry<K, V>(); //indent:8 exp:8
       } //indent:6 exp:6
 
@@ -136,7 +136,7 @@ class InputIndentationFromGuava<K, V> extends AbstractMap<K, V> //indent:0 exp:0
     }, //indent:4 exp:4
     STRONG_ACCESS_WRITE { //indent:4 exp:4
       <K, V> StrongEntry<K, V> newEntry( //indent:6 exp:6
-          Segment<K, V> s, K k, int h, @XmlElement ReferenceEntry<K, V> next) { //indent:10 exp:>=10
+          Segment<K, V> s, K k, int h, ReferenceEntry<K, V> next) { //indent:10 exp:>=10
         return new StrongEntry<K, V>(); //indent:8 exp:8
       } //indent:6 exp:6
 
@@ -148,13 +148,13 @@ class InputIndentationFromGuava<K, V> extends AbstractMap<K, V> //indent:0 exp:0
 
     WEAK { //indent:4 exp:4
       <K, V> StrongEntry<K, V> newEntry( //indent:6 exp:6
-          Segment<K, V> s, K k, int h, @XmlElement ReferenceEntry<K, V> next) { //indent:10 exp:>=10
+          Segment<K, V> s, K k, int h, ReferenceEntry<K, V> next) { //indent:10 exp:>=10
         return new StrongEntry<K, V>(); //indent:8 exp:8
       } //indent:6 exp:6
     }, //indent:4 exp:4
     WEAK_ACCESS { //indent:4 exp:4
       <K, V> StrongEntry<K, V> newEntry( //indent:6 exp:6
-          Segment<K, V> s, K k, int h, @XmlElement ReferenceEntry<K, V> next) { //indent:10 exp:>=10
+          Segment<K, V> s, K k, int h, ReferenceEntry<K, V> next) { //indent:10 exp:>=10
         return new StrongEntry<K, V>(); //indent:8 exp:8
       } //indent:6 exp:6
 
@@ -165,7 +165,7 @@ class InputIndentationFromGuava<K, V> extends AbstractMap<K, V> //indent:0 exp:0
     }, //indent:4 exp:4
     WEAK_WRITE { //indent:4 exp:4
       <K, V> StrongEntry<K, V> newEntry( //indent:6 exp:6
-          Segment<K, V> s, K k, int h, @XmlElement ReferenceEntry<K, V> next) { //indent:10 exp:>=10
+          Segment<K, V> s, K k, int h, ReferenceEntry<K, V> next) { //indent:10 exp:>=10
         return new StrongEntry<K, V>(); //indent:8 exp:8
       } //indent:6 exp:6
 
@@ -176,7 +176,7 @@ class InputIndentationFromGuava<K, V> extends AbstractMap<K, V> //indent:0 exp:0
     }, //indent:4 exp:4
     WEAK_ACCESS_WRITE { //indent:4 exp:4
       <K, V> StrongEntry<K, V> newEntry( //indent:6 exp:6
-          Segment<K, V> s, K k, int h, @XmlElement ReferenceEntry<K, V> next) { //indent:10 exp:>=10
+          Segment<K, V> s, K k, int h, ReferenceEntry<K, V> next) { //indent:10 exp:>=10
         return new StrongEntry<K, V>(); //indent:8 exp:8
       } //indent:6 exp:6
 

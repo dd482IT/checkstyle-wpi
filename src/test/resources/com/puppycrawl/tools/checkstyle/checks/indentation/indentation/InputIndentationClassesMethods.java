@@ -39,7 +39,7 @@ class InputIndentationClassesMethods  //indent:0 exp:0
   public void run() {  //indent:2 exp:2
     SecondClassWithLongLongLongLongName anon =  //indent:4 exp:4
         new SecondClassWithLongLongLongLongName() {  //indent:8 exp:8
-          @MyAnnotation2 //indent:10 exp:10
+          //indent:10 exp:10
           String longLongLongLongLongMethodName() {  //indent:10 exp:10
             return "String";  //indent:12 exp:12
           }  //indent:10 exp:10
@@ -69,5 +69,5 @@ class SecondClassWithLongLongLongLongName  //indent:0 exp:0
 
 @interface MyAnnotation2 {} //indent:0 exp:0
 
-@MyAnnotation2 //indent:0 exp:0
+//indent:0 exp:0
 class Foo {} //indent:0 exp:0

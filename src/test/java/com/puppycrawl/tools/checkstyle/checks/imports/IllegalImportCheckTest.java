@@ -34,7 +34,6 @@ public class IllegalImportCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/imports/illegalimport";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final IllegalImportCheck checkObj = new IllegalImportCheck();
         final int[] expected = {TokenTypes.IMPORT, TokenTypes.STATIC_IMPORT};
@@ -43,7 +42,6 @@ public class IllegalImportCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testWithSupplied()
             throws Exception {
         final String[] expected = {
@@ -55,7 +53,6 @@ public class IllegalImportCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalImportDefault1.java"), expected);
     }
 
-    @Test
     public void testWithDefault()
             throws Exception {
         final String[] expected = {};
@@ -63,7 +60,6 @@ public class IllegalImportCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalImportDefault2.java"), expected);
     }
 
-    @Test
     public void testCustomSunPackageWithRegexp()
             throws Exception {
         final String[] expected = {
@@ -73,7 +69,6 @@ public class IllegalImportCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputIllegalImportDefault.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final IllegalImportCheck testCheckObject =
                 new IllegalImportCheck();
@@ -85,7 +80,6 @@ public class IllegalImportCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testIllegalClasses()
             throws Exception {
         final String[] expected = {
@@ -97,7 +91,6 @@ public class IllegalImportCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalImportDefault3.java"), expected);
     }
 
-    @Test
     public void testIllegalClassesStarImport()
             throws Exception {
         final String[] expected = {
@@ -109,7 +102,6 @@ public class IllegalImportCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalImportDefault4.java"), expected);
     }
 
-    @Test
     public void testIllegalPackagesRegularExpression()
             throws Exception {
         final String[] expected = {
@@ -125,7 +117,6 @@ public class IllegalImportCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalImportDefault5.java"), expected);
     }
 
-    @Test
     public void testIllegalClassesRegularExpression()
             throws Exception {
         final String[] expected = {
@@ -137,7 +128,6 @@ public class IllegalImportCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalImportDefault6.java"), expected);
     }
 
-    @Test
     public void testIllegalPackagesAndClassesRegularExpression()
             throws Exception {
         final String[] expected = {

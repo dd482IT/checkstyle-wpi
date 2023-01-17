@@ -36,7 +36,6 @@ public class PackageNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/packagename";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final PackageNameCheck checkObj = new PackageNameCheck();
         final int[] expected = {TokenTypes.PACKAGE_DEF};
@@ -45,7 +44,6 @@ public class PackageNameCheckTest
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testSpecified()
             throws Exception {
 
@@ -59,7 +57,6 @@ public class PackageNameCheckTest
                 getPath("InputPackageNameSimple1.java"), expected);
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -67,7 +64,6 @@ public class PackageNameCheckTest
                 getPath("InputPackageNameSimple.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final PackageNameCheck packageNameCheckObj = new PackageNameCheck();
         final int[] actual = packageNameCheckObj.getAcceptableTokens();

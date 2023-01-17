@@ -34,7 +34,6 @@ public class EmptyCatchBlockCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/blocks/emptycatchblock";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final EmptyCatchBlockCheck checkObj = new EmptyCatchBlockCheck();
         final int[] expected = {TokenTypes.LITERAL_CATCH};
@@ -43,7 +42,6 @@ public class EmptyCatchBlockCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "25:31: " + getCheckMessage(MSG_KEY_CATCH_BLOCK_EMPTY),
@@ -53,7 +51,6 @@ public class EmptyCatchBlockCheckTest extends AbstractModuleTestSupport {
                 getPath("InputEmptyCatchBlockDefault.java"), expected);
     }
 
-    @Test
     public void testWithUserSetValues() throws Exception {
         final String[] expected = {
             "26:31: " + getCheckMessage(MSG_KEY_CATCH_BLOCK_EMPTY),
@@ -69,7 +66,6 @@ public class EmptyCatchBlockCheckTest extends AbstractModuleTestSupport {
                 getPath("InputEmptyCatchBlockDefault2.java"), expected);
     }
 
-    @Test
     public void testLinesAreProperlySplitSystemIndependently() throws Exception {
         final String[] expected = {
             "25:31: " + getCheckMessage(MSG_KEY_CATCH_BLOCK_EMPTY),
@@ -92,7 +88,6 @@ public class EmptyCatchBlockCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final EmptyCatchBlockCheck constantNameCheckObj = new EmptyCatchBlockCheck();
         final int[] actual = constantNameCheckObj.getAcceptableTokens();

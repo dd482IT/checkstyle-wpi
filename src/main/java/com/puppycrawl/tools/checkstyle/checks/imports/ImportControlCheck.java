@@ -446,7 +446,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 4.0
  */
-@FileStatefulCheck
 public class ImportControlCheck extends AbstractCheck implements ExternalResourceHolder {
 
     /**

@@ -49,7 +49,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/metrics/npathcomplexity";
     }
 
-    @Test
     public void testCalculation() throws Exception {
         final String[] expected = {
             "12:5: " + getCheckMessage(MSG_KEY, 2, 0),
@@ -72,7 +71,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNPathComplexityDefault.java"), expected);
     }
 
-    @Test
     public void testCalculation2() throws Exception {
         final String[] expected = {
             "12:5: " + getCheckMessage(MSG_KEY, 5, 0),
@@ -95,7 +93,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNPathComplexity.java"), expected);
     }
 
-    @Test
     public void testCalculation3() throws Exception {
         final String[] expected = {
             "11:5: " + getCheckMessage(MSG_KEY, 64, 0),
@@ -105,7 +102,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputNPathComplexityDefault2.java"), expected);
     }
 
-    @Test
     public void testIntegerOverflow() throws Exception {
 
         final long largerThanMaxInt = 3_486_784_401L;
@@ -118,7 +114,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNPathComplexityOverflow.java"), expected);
     }
 
-    @Test
     @SuppressWarnings("unchecked")
     public void testStatefulFieldsClearedOnBeginTree1() {
         final DetailAstImpl ast = new DetailAstImpl();
@@ -144,7 +139,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     @SuppressWarnings("unchecked")
     public void testStatefulFieldsClearedOnBeginTree2() {
         final DetailAstImpl ast = new DetailAstImpl();
@@ -161,7 +155,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testStatefulFieldsClearedOnBeginTree3() throws Exception {
         final NPathComplexityCheck check = new NPathComplexityCheck();
         final Optional<DetailAST> question = TestUtil.findTokenInAstByPredicate(
@@ -184,14 +177,12 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testDefaultConfiguration() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputNPathComplexityDefault2.java"), expected);
     }
 
-    @Test
     public void testNpathComplexityRecords() throws Exception {
         final int max = 1;
 
@@ -206,7 +197,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputNPathComplexityRecords.java"), expected);
     }
 
-    @Test
     public void testNpathComplexitySwitchExpression() throws Exception {
 
         final int max = 1;
@@ -223,7 +213,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testBranchVisited() throws Exception {
 
         final String[] expected = {
@@ -235,7 +224,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testCount() throws Exception {
 
         final String[] expected = {
@@ -249,7 +237,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final NPathComplexityCheck npathComplexityCheckObj = new NPathComplexityCheck();
         final int[] actual = npathComplexityCheckObj.getAcceptableTokens();
@@ -281,7 +268,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final NPathComplexityCheck npathComplexityCheckObj = new NPathComplexityCheck();
         final int[] actual = npathComplexityCheckObj.getRequiredTokens();
@@ -313,7 +299,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefaultHooks() {
         final NPathComplexityCheck npathComplexityCheckObj = new NPathComplexityCheck();
         final DetailAstImpl ast = new DetailAstImpl();
@@ -346,7 +331,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
      *
      * @throws Exception if there is an error.
      */
-    @Test
     public void testTokenEndIsAfterSameLineColumn() throws Exception {
         final NPathComplexityCheck check = new NPathComplexityCheck();
         final Object tokenEnd = TestUtil.getInternalState(check, "processingTokenEnd");
@@ -359,7 +343,6 @@ public class NPathComplexityCheckTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testVisitTokenBeforeExpressionRange() {
         // Create first ast
         final DetailAstImpl astIf = mockAST(TokenTypes.LITERAL_IF, "if", 2, 2);

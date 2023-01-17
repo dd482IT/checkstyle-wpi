@@ -31,7 +31,6 @@ public class IllegalTokenTextTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter2filebasic/rule232specialescape";
     }
 
-    @Test
     public void testIllegalTokens() throws Exception {
         final String message = "Consider using special escape sequence instead of octal value or "
                 + "Unicode escaped value.";

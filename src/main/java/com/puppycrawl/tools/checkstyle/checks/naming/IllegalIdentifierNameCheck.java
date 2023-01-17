@@ -139,7 +139,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 8.36
  */
-@StatelessCheck
 public class IllegalIdentifierNameCheck extends AbstractNameCheck {
 
     /**

@@ -63,7 +63,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
                  "InputNoCodeInFile5.java"
         );
 
-    @TempDir
     public File temporaryFolder;
 
     @Override
@@ -79,7 +78,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
         return setParentMethod;
     }
 
-    @Test
     public void testInitialize() {
         final DetailAstImpl ast = new DetailAstImpl();
         ast.setText("test");
@@ -107,7 +105,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(3);
     }
 
-    @Test
     public void testInitializeToken() {
         final CommonToken token = new CommonToken(1);
         token.setText("test");
@@ -131,7 +128,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(3);
     }
 
-    @Test
     public void testGetChildCount() throws Exception {
         final DetailAstImpl root = new DetailAstImpl();
         final DetailAstImpl firstLevelA = new DetailAstImpl();
@@ -179,7 +175,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(firstLevelA);
     }
 
-    @Test
     public void testHasChildren() {
         final DetailAstImpl root = new DetailAstImpl();
         final DetailAstImpl child = new DetailAstImpl();
@@ -193,7 +188,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testGetChildCountType() throws Exception {
         final DetailAstImpl root = new DetailAstImpl();
         final DetailAstImpl firstLevelA = new DetailAstImpl();
@@ -232,7 +226,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(0);
     }
 
-    @Test
     public void testSetSiblingNull() throws Exception {
         final DetailAstImpl root = new DetailAstImpl();
         final DetailAstImpl firstLevelA = new DetailAstImpl();
@@ -252,7 +245,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(1);
     }
 
-    @Test
     public void testAddPreviousSibling() {
         final DetailAST previousSibling = new DetailAstImpl();
         final DetailAstImpl instance = new DetailAstImpl();
@@ -287,7 +279,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(previousSibling);
     }
 
-    @Test
     public void testAddPreviousSiblingNullParent() {
         final DetailAstImpl child = new DetailAstImpl();
         final DetailAST newSibling = new DetailAstImpl();
@@ -302,7 +293,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(newSibling);
     }
 
-    @Test
     public void testInsertSiblingBetween() throws Exception {
         final DetailAstImpl root = new DetailAstImpl();
         final DetailAstImpl firstLevelA = new DetailAstImpl();
@@ -336,7 +326,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(firstLevelC);
     }
 
-    @Test
     public void testBranchContains() {
         final DetailAstImpl root = createToken(null, TokenTypes.CLASS_DEF);
         final DetailAstImpl modifiers = createToken(root, TokenTypes.MODIFIERS);
@@ -359,7 +348,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
         return result;
     }
 
-    @Test
     public void testClearBranchTokenTypes() throws Exception {
         final DetailAstImpl parent = new DetailAstImpl();
         final DetailAstImpl child = new DetailAstImpl();
@@ -395,7 +383,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testCacheBranchTokenTypes() {
         final DetailAST root = new DetailAstImpl();
         final BitSet bitSet = new BitSet();
@@ -407,7 +394,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testClearChildCountCache() {
         final DetailAstImpl parent = new DetailAstImpl();
         final DetailAstImpl child = new DetailAstImpl();
@@ -444,7 +430,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(Integer.MIN_VALUE);
     }
 
-    @Test
     public void testCacheGetChildCount() {
         final DetailAST root = new DetailAstImpl();
 
@@ -454,7 +439,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(999);
     }
 
-    @Test
     public void testAddNextSibling() {
         final DetailAstImpl parent = new DetailAstImpl();
         final DetailAstImpl child = new DetailAstImpl();
@@ -475,7 +459,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(newSibling);
     }
 
-    @Test
     public void testAddNextSiblingNullParent() {
         final DetailAstImpl child = new DetailAstImpl();
         final DetailAstImpl newSibling = new DetailAstImpl();
@@ -494,7 +477,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isSameInstanceAs(newSibling);
     }
 
-    @Test
     public void testGetLineNo() {
         final DetailAstImpl root1 = new DetailAstImpl();
         root1.setLineNo(1);
@@ -528,7 +510,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(Integer.MIN_VALUE);
     }
 
-    @Test
     public void testGetColumnNo() {
         final DetailAstImpl root1 = new DetailAstImpl();
         root1.setColumnNo(1);
@@ -562,7 +543,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isEqualTo(Integer.MIN_VALUE);
     }
 
-    @Test
     public void testFindFirstToken() {
         final DetailAstImpl root = new DetailAstImpl();
         final DetailAstImpl firstChild = new DetailAstImpl();
@@ -592,7 +572,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
             .isNull();
     }
 
-    @Test
     public void testManyComments() throws Exception {
         final File file = new File(temporaryFolder, "InputDetailASTManyComments.java");
 
@@ -610,7 +589,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
         verify(checkConfig, file.getAbsolutePath(), expected);
     }
 
-    @Test
     public void testTreeStructure() throws Exception {
         final List<File> files = getAllFiles(
                 new File("src/test/resources/com/puppycrawl/tools/checkstyle"));
@@ -630,7 +608,6 @@ public class DetailAstImplTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testToString() {
         final DetailAstImpl ast = new DetailAstImpl();
         ast.setText("text");

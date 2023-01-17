@@ -35,7 +35,6 @@ public class NoCodeInFileCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/nocodeinfile";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final NoCodeInFileCheck checkObj = new NoCodeInFileCheck();
         assertWithMessage("Required tokens array is not empty")
@@ -43,7 +42,6 @@ public class NoCodeInFileCheckTest extends AbstractModuleTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final NoCodeInFileCheck checkObj = new NoCodeInFileCheck();
         assertWithMessage("Acceptable tokens array is not empty")
@@ -51,7 +49,6 @@ public class NoCodeInFileCheckTest extends AbstractModuleTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testBlank() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(NoCodeInFileCheck.class);
         final String[] expected = {
@@ -60,7 +57,6 @@ public class NoCodeInFileCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputNoCodeInFile1.java"), expected);
     }
 
-    @Test
     public void testSingleLineComment() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(NoCodeInFileCheck.class);
         final String[] expected = {
@@ -69,7 +65,6 @@ public class NoCodeInFileCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputNoCodeInFile2.java"), expected);
     }
 
-    @Test
     public void testMultiLineComment() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_KEY_NO_CODE),
@@ -78,14 +73,12 @@ public class NoCodeInFileCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNoCodeInFile3.java"), expected);
     }
 
-    @Test
     public void testFileContainingCode() throws Exception {
         verifyWithInlineConfigParser(
                 getPath("InputNoCodeInFile4.java"),
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testBothSingleLineAndMultiLineComment() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_KEY_NO_CODE),

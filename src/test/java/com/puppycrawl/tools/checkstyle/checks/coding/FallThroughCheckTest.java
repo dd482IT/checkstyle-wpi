@@ -35,7 +35,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/fallthrough";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "22:13: " + getCheckMessage(MSG_FALL_THROUGH),
@@ -67,7 +66,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testTryWithResources() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -75,7 +73,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testStringSwitch() throws Exception {
         final String[] expected = {
             "21:9: " + getCheckMessage(MSG_FALL_THROUGH),
@@ -83,7 +80,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath("InputFallThroughStringSwitch.java"), expected);
     }
 
-    @Test
     public void testCharacterSwitch() throws Exception {
         final String[] expected = {
             "19:13: " + getCheckMessage(MSG_FALL_THROUGH),
@@ -96,7 +92,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath("InputFallThroughCharacterSwitch.java"), expected);
     }
 
-    @Test
     public void testLastCaseGroup() throws Exception {
         final String[] expected = {
             "22:13: " + getCheckMessage(MSG_FALL_THROUGH),
@@ -125,7 +120,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testOwnPattern() throws Exception {
 
         final String[] expected = {
@@ -171,7 +165,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testOwnPatternTryWithResources() throws Exception {
 
         final String[] expected = {
@@ -186,7 +179,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testWithEmoji() throws Exception {
         final String[] expected = {
             "22:17: " + getCheckMessage(MSG_FALL_THROUGH),
@@ -198,7 +190,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
                 getPath("InputFallThroughWithEmoji.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final FallThroughCheck check = new FallThroughCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -212,7 +203,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testFallThroughNoElse() throws Exception {
         final String[] expected = {
             "28:13: " + getCheckMessage(MSG_FALL_THROUGH),
@@ -230,7 +220,6 @@ public class FallThroughCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testYield() throws Exception {
         final String[] expected = {
             "19:9: " + getCheckMessage(MSG_FALL_THROUGH),

@@ -35,7 +35,6 @@ public class LambdaBodyLengthCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/sizes/lambdabodylength";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final LambdaBodyLengthCheck checkObj = new LambdaBodyLengthCheck();
         final int[] expected = {TokenTypes.LAMBDA};
@@ -44,7 +43,6 @@ public class LambdaBodyLengthCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final LambdaBodyLengthCheck lambdaBodyLengthCheckObj =
                 new LambdaBodyLengthCheck();
@@ -56,7 +54,6 @@ public class LambdaBodyLengthCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "16:27: " + getCheckMessage(MSG_KEY, 12, 10),
@@ -70,14 +67,12 @@ public class LambdaBodyLengthCheckTest extends AbstractModuleTestSupport {
                 getPath("InputLambdaBodyLengthDefault.java"), expected);
     }
 
-    @Test
     public void testDefaultSwitchExpressions() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getNonCompilablePath("InputLambdaBodyLengthSwitchExps.java"), expected);
     }
 
-    @Test
     public void testMaxLimitIsDifferent() throws Exception {
         final String[] expected = {
             "16:27: " + getCheckMessage(MSG_KEY, 4, 3),

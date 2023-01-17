@@ -33,7 +33,7 @@ public class InputMissingDeprecatedBadJavadoc
         /**
          *
          */
-        @Bleh2(bleh=1) // violation
+        // violation
         @Deprecated
         Metallica
     }

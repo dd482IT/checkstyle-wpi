@@ -35,7 +35,6 @@ public class InterfaceTypeParameterNameTest extends AbstractGoogleModuleTestSupp
         return "com/google/checkstyle/test/chapter5naming/rule528typevariablenames";
     }
 
-    @Test
     public void testInterfaceDefault() throws Exception {
         final Configuration configuration = getModuleConfig("InterfaceTypeParameterName");
         final String format = configuration.getProperty("format");

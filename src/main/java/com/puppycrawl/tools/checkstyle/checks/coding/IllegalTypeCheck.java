@@ -336,7 +336,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  * @since 3.2
  *
  */
-@FileStatefulCheck
 public final class IllegalTypeCheck extends AbstractCheck {
 
     /**
@@ -382,7 +381,6 @@ public final class IllegalTypeCheck extends AbstractCheck {
      * Control whether to check only methods and fields with any of the specified modifiers.
      * This property does not affect method calls nor method references nor record components.
      */
-    @XdocsPropertyType(PropertyType.TOKEN_ARRAY)
     private BitSet memberModifiers = new BitSet();
 
     /** Specify RegExp for illegal abstract class names. */

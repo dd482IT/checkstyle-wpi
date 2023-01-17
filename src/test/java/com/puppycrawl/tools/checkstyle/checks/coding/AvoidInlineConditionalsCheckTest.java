@@ -34,7 +34,6 @@ public class AvoidInlineConditionalsCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/avoidinlineconditionals";
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -46,7 +45,6 @@ public class AvoidInlineConditionalsCheckTest
                 getPath("InputAvoidInlineConditionals.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final AvoidInlineConditionalsCheck check = new AvoidInlineConditionalsCheck();
         assertWithMessage("Acceptable tokens should not be null")

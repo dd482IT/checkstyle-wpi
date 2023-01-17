@@ -166,7 +166,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 5.8
  */
-@StatelessCheck
 public class NoLineWrapCheck extends AbstractCheck {
 
     /**

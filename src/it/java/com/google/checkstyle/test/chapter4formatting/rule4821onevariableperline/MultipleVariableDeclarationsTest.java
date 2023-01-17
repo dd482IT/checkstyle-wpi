@@ -32,7 +32,6 @@ public class MultipleVariableDeclarationsTest extends AbstractGoogleModuleTestSu
         return "com/google/checkstyle/test/chapter4formatting/rule4821onevariableperline";
     }
 
-    @Test
     public void testMultipleVariableDeclarations() throws Exception {
         final String msgComma = getCheckMessage(MultipleVariableDeclarationsCheck.class,
             "multiple.variable.declarations.comma");

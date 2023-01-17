@@ -103,7 +103,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 8.29
  */
-@StatelessCheck
 public class NoEnumTrailingCommaCheck extends AbstractCheck {
 
     /**

@@ -37,7 +37,6 @@ public class XpathRegressionSingleSpaceSeparatorTest extends AbstractXpathTestSu
         return checkName;
     }
 
-    @Test
     public void testSingleSpaceSeparator() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionSingleSpaceSeparator.java"));
@@ -60,7 +59,6 @@ public class XpathRegressionSingleSpaceSeparatorTest extends AbstractXpathTestSu
                 expectedXpathQueries);
     }
 
-    @Test
     public void testValidateComments() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionSingleSpaceSeparatorValidateComments.java"

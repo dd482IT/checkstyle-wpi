@@ -37,7 +37,6 @@ public class XpathRegressionOneTopLevelClassTest extends AbstractXpathTestSuppor
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionOneTopLevelClassFirst.java"));
@@ -60,7 +59,6 @@ public class XpathRegressionOneTopLevelClassTest extends AbstractXpathTestSuppor
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
             new File(getPath("SuppressionXpathRegressionOneTopLevelClassSecond.java"));

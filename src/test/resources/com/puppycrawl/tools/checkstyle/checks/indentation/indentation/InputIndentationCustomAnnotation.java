@@ -38,7 +38,7 @@ String author() default "author"; //indent:0 exp:4 warn
         AnnotationInnerLineWrap //indent:8 exp:4 warn
     { //indent:4 exp:4
         public String author() default "auth"; //indent:8 exp:8
-       @AnnotationWithTarget(book = "") public String title() default "title"; //indent:7 exp:8 warn
+       public String title() default "title"; //indent:7 exp:8 warn
     }//indent:4 exp:4
 } //indent:0 exp:0
 @interface RepeatableInner { //indent:0 exp:0
@@ -57,7 +57,7 @@ class InnerAnonClass { //indent:0 exp:0
 @interface //indent:0 exp:0
     AnnotationInnerLineWrap2 { //indent:4 exp:0 warn
    public String author() default "auth"; //indent:3 exp:4 warn
-       @AnnotationWithTarget(book = "") public String title() default "title"; //indent:7 exp:4 warn
+       public String title() default "title"; //indent:7 exp:4 warn
     }//indent:4 exp:0 warn
 
 @interface RepeatableInner2 { //indent:0 exp:0

@@ -54,7 +54,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/imports/customimportorder";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final CustomImportOrderCheck checkObj = new CustomImportOrderCheck();
         final int[] expected = {
@@ -67,7 +66,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testCustom() throws Exception {
         final String[] expected = {
             "16:1: " + getCheckMessage(MSG_LEX, "java.awt.Button.ABORT",
@@ -95,7 +93,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
      * Checks different group orderings and imports which are out of those
      * specified in the configuration.
      */
-    @Test
     public void testStaticStandardThird() throws Exception {
         final String[] expected = {
             "16:1: " + getCheckMessage(MSG_LEX, "java.awt.Button.ABORT",
@@ -119,7 +116,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
     /**
      * Checks different combinations for same_package group.
      */
-    @Test
     public void testNonSpecifiedImports() throws Exception {
         final String[] expected = {
             "16:1: " + getCheckMessage(MSG_LEX, "java.awt.Button.ABORT",
@@ -140,7 +136,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrderDefault4.java"), expected);
     }
 
-    @Test
     public void testOrderRuleEmpty() throws Exception {
         final String[] expected = {
             "17:1: " + getCheckMessage(MSG_SEPARATED_IN_GROUP, "java.util.List"),
@@ -150,7 +145,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrderEmptyRule.java"), expected);
     }
 
-    @Test
     public void testOrderRuleWithOneGroup() throws Exception {
         final String[] expected = {
             "16:1: " + getCheckMessage(MSG_LEX, "java.awt.Button.ABORT",
@@ -175,7 +169,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrderDefault2.java"), expected);
     }
 
-    @Test
     public void testStaticSamePackage() throws Exception {
         final String[] expected = {
             "17:1: " + getCheckMessage(MSG_LEX, "java.util.*", "java.util.StringTokenizer"),
@@ -197,7 +190,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testWithoutLineSeparator() throws Exception {
         final String[] expected = {
             "17:1: " + getCheckMessage(MSG_LEX, "java.util.*", "java.util.StringTokenizer"),
@@ -219,7 +211,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testWithoutLineSeparator2() throws Exception {
         final String[] expected = {
             "16:1: " + getCheckMessage(MSG_LEX, "java.io.File.createTempFile",
@@ -232,7 +223,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrder_NoSeparator.java"), expected);
     }
 
-    @Test
     public void testNoValid() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -240,7 +230,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrderNoValid.java"), expected);
     }
 
-    @Test
     public void testPossibleIndexOutOfBoundsException() throws Exception {
         final String[] expected = {
             "17:1: " + getCheckMessage(MSG_NONGROUP_EXPECTED, THIRD, "org.w3c.dom.Node"),
@@ -250,7 +239,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrderPossibleIndexOutOfBoundsException.java"), expected);
     }
 
-    @Test
     public void testDefaultPackage2() throws Exception {
 
         final String[] expected = {
@@ -275,7 +263,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testWithoutThirdPartyPackage() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -283,7 +270,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputCustomImportOrderThirdPartyPackage.java"), expected);
     }
 
-    @Test
     public void testThirdPartyAndSpecialImports() throws Exception {
         final String[] expected = {
             "23:1: " + getCheckMessage(MSG_ORDER, THIRD, SPECIAL,
@@ -294,7 +280,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputCustomImportOrderThirdPartyAndSpecial.java"), expected);
     }
 
-    @Test
     public void testCompareImports() throws Exception {
         final String[] expected = {
             "16:1: " + getCheckMessage(MSG_LEX, "java.util.Map",
@@ -305,7 +290,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrderCompareImports.java"), expected);
     }
 
-    @Test
     public void testFindBetterPatternMatch() throws Exception {
         final String[] expected = {
             "20:1: " + getCheckMessage(MSG_ORDER, THIRD, SPECIAL,
@@ -316,7 +300,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrderFindBetterPatternMatch.java"), expected);
     }
 
-    @Test
     public void testBeginTreeClear() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(CustomImportOrderCheck.class);
@@ -335,7 +318,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
         verify(checker, files, fileName1, expected);
     }
 
-    @Test
     public void testImportsContainingJava() throws Exception {
         final String[] expected = {
             "17:1: " + getCheckMessage(MSG_LINE_SEPARATOR,
@@ -346,7 +328,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrderImportsContainingJava.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final CustomImportOrderCheck testCheckObject =
                 new CustomImportOrderCheck();
@@ -362,7 +343,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     // UT uses Reflection to avoid removing null-validation from static method,
     // which is a candidate for utility method in the future
     public void testGetFullImportIdent() throws Exception {
@@ -378,7 +358,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testSamePackageDepth2() throws Exception {
         final String[] expected = {
             "20:1: " + getCheckMessage(MSG_NONGROUP_EXPECTED, SAME, "java.util.*"),
@@ -398,7 +377,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testSamePackageDepth3() throws Exception {
         final String[] expected = {
             "23:1: " + getCheckMessage(MSG_NONGROUP_EXPECTED, SAME, "java.util.concurrent.*"),
@@ -413,7 +391,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testSamePackageDepth4() throws Exception {
         final String[] expected = {
             "25:1: " + getCheckMessage(MSG_NONGROUP_EXPECTED, SAME,
@@ -425,7 +402,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testSamePackageDepthLongerThenActualPackage() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -434,7 +410,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testSamePackageDepthNegative() throws Exception {
 
         try {
@@ -460,7 +435,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testSamePackageDepthZero() throws Exception {
         try {
             final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -484,7 +458,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testUnsupportedRule() throws Exception {
         try {
             final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -507,7 +480,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testSamePackageDepthNotInt() throws Exception {
         try {
             final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -530,7 +502,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testNoImports() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -538,7 +509,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrder_NoImports.java"), expected);
     }
 
-    @Test
     public void testDefaultConfiguration() throws Exception {
         final String[] expected = {
             "20:1: " + getCheckMessage(MSG_SEPARATED_IN_GROUP, "java.awt.Button"),
@@ -549,7 +519,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrderDefault9.java"), expected);
     }
 
-    @Test
     public void testRulesWithOverlappingPatterns() throws Exception {
         final String[] expected = {
             "23:1: " + getCheckMessage(MSG_ORDER, THIRD, STD,
@@ -572,7 +541,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrder_OverlappingPatterns.java"), expected);
     }
 
-    @Test
     public void testMultiplePatternMatchesSecondPatternIsLonger() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -580,7 +548,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testMultiplePatternMatchesFirstPatternHasLaterPosition() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -588,7 +555,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testMultiplePatternMatchesFirstPatternHasEarlierPosition() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -596,7 +562,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testMultiplePatternMultipleImportFirstPatternHasLaterPosition() throws Exception {
         final String[] expected = {
             "16:1: " + getCheckMessage(MSG_NONGROUP_EXPECTED, STD, "org.junit.Test"),
@@ -606,7 +571,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testNoPackage() throws Exception {
         final String[] expected = {
             "17:1: " + getCheckMessage(MSG_SEPARATED_IN_GROUP, "java.util.*"),
@@ -619,7 +583,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testNoPackage2() throws Exception {
         final String[] expected = {
             "18:1: " + getCheckMessage(MSG_LINE_SEPARATOR,
@@ -633,7 +596,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testNoPackage3() throws Exception {
         final String[] expected = {
             "17:1: " + getCheckMessage(MSG_LINE_SEPARATOR,
@@ -648,7 +610,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testInputCustomImportOrderSingleLine() throws Exception {
         final String[] expected = {
             "14:112: " + getCheckMessage(MSG_LINE_SEPARATOR,
@@ -665,7 +626,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testInputCustomImportOrderSingleLine2() throws Exception {
         final String[] expected = {
             "14:118: " + getCheckMessage(MSG_LINE_SEPARATOR,
@@ -676,7 +636,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testInputCustomImportOrderThirdPartyAndSpecial2() throws Exception {
         final String[] expected = {
             "21:1: " + getCheckMessage(MSG_SEPARATED_IN_GROUP,
@@ -700,7 +659,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputCustomImportOrderThirdPartyAndSpecial2.java"), expected);
     }
 
-    @Test
     public void testInputCustomImportOrderMultipleViolationsSameLine() throws Exception {
         final String[] expected = {
             "17:1: " + getCheckMessage(MSG_NONGROUP_EXPECTED, STATIC,
@@ -717,7 +675,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testInputCustomImportOrderSpanMultipleLines() throws Exception {
         final String[] expected = {
             "30:1: " + getCheckMessage(MSG_SEPARATED_IN_GROUP, "java.util.BitSet"),
@@ -731,7 +688,6 @@ public class CustomImportOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCustomImportOrderSpanMultipleLines.java"), expected);
     }
 
-    @Test
     public void testInputCustomImportOrderEclipseDefaultPositive() throws Exception {
         final String[] expected = {
             "22:1: " + getCheckMessage(MSG_NONGROUP_EXPECTED, STD, "java.awt.Button"),

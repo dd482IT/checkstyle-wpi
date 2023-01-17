@@ -39,7 +39,6 @@ public class MethodParamPadCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/methodparampad";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final MethodParamPadCheck checkObj = new MethodParamPadCheck();
         assertWithMessage("MethodParamPadCheck#getRequiredTokens should return empty array "
@@ -48,7 +47,6 @@ public class MethodParamPadCheckTest
             .isEqualTo(CommonUtil.EMPTY_INT_ARRAY);
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "21:32: " + getCheckMessage(MSG_WS_PRECEDED, "("),
@@ -74,7 +72,6 @@ public class MethodParamPadCheckTest
                 getPath("InputMethodParamPad.java"), expected);
     }
 
-    @Test
     public void testAllowLineBreaks() throws Exception {
         final String[] expected = {
             "21:33: " + getCheckMessage(MSG_WS_PRECEDED, "("),
@@ -91,7 +88,6 @@ public class MethodParamPadCheckTest
                 getPath("InputMethodParamPad2.java"), expected);
     }
 
-    @Test
     public void testSpaceOption() throws Exception {
         final String[] expected = {
             "16:32: " + getCheckMessage(MSG_WS_NOT_PRECEDED, "("),
@@ -121,7 +117,6 @@ public class MethodParamPadCheckTest
                 getPath("InputMethodParamPad3.java"), expected);
     }
 
-    @Test
     public void testMethodParamPadRecords() throws Exception {
         final String[] expected = {
             "19:25: " + getCheckMessage(MSG_WS_PRECEDED, "("),
@@ -139,7 +134,6 @@ public class MethodParamPadCheckTest
                 getNonCompilablePath("InputMethodParamPadRecords.java"), expected);
     }
 
-    @Test
     public void test1322879() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -147,7 +141,6 @@ public class MethodParamPadCheckTest
                expected);
     }
 
-    @Test
     public void testMethodParamPadCheckWithEmoji() throws Exception {
         final String[] expected = {
             "19:31: " + getCheckMessage(MSG_WS_PRECEDED, "("),
@@ -164,7 +157,6 @@ public class MethodParamPadCheckTest
                 getPath("InputMethodParamPadCheckWithEmoji.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final MethodParamPadCheck methodParamPadCheckObj = new MethodParamPadCheck();
         final int[] actual = methodParamPadCheckObj.getAcceptableTokens();
@@ -182,7 +174,6 @@ public class MethodParamPadCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testInvalidOption() throws Exception {
         try {
             final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -200,7 +191,6 @@ public class MethodParamPadCheckTest
         }
     }
 
-    @Test
     public void testTrimOptionProperty() throws Exception {
         final String[] expected = {
             "15:24: " + getCheckMessage(MSG_WS_NOT_PRECEDED, "("),

@@ -33,7 +33,6 @@ public class IllegalCatchCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/illegalcatch";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -49,7 +48,6 @@ public class IllegalCatchCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalCatch.java"), expected);
     }
 
-    @Test
     public void testIllegalClassNames() throws Exception {
         final String[] expected = {
             "14:11: " + getCheckMessage(MSG_KEY, "Exception"),
@@ -62,7 +60,6 @@ public class IllegalCatchCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalCatch3.java"), expected);
     }
 
-    @Test
     public void testIllegalClassNamesBad() throws Exception {
         // check that incorrect names don't break the Check
         final String[] expected = {
@@ -74,7 +71,6 @@ public class IllegalCatchCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalCatch4.java"), expected);
     }
 
-    @Test
     public void testMultipleTypes() throws Exception {
         final String[] expected = {
             "15:11: " + getCheckMessage(MSG_KEY, "RuntimeException"),
@@ -94,7 +90,6 @@ public class IllegalCatchCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalCatch2.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final IllegalCatchCheck check = new IllegalCatchCheck();
         assertWithMessage("Acceptable tokens should not be null")

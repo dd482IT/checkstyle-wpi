@@ -47,8 +47,8 @@ public class InputParameterAssignmentWithUnchecked {
     SomeInterface obj3 = (w) -> w--; // violation
     AnotherInterface obj4 = (int q, int w) -> obj.equals(obj2);
     AnotherInterface obj5 = (q, w) -> w = 14; // violation
-    SomeInterface obj6 = (@Nullable int a) -> a += 12; // violation
-    AnotherInterface obj7 = (@Nullable int c, @Nullable int d) -> {
+    SomeInterface obj6 = (int a) -> a += 12; // violation
+    AnotherInterface obj7 = (int c, int d) -> {
         c += d; // violation
         d += c; // violation
     };

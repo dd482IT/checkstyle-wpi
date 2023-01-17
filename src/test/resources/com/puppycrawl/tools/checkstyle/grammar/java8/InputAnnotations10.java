@@ -20,7 +20,7 @@ public class InputAnnotations10 {
         try {
             return null;
 
-        } catch (@MyAnnotation1(name = "ABC", version = 1) Exception ex) {
+        } catch (Exception ex) {
             return "";
         }
     }

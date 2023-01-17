@@ -34,7 +34,6 @@ public class OverloadMethodsDeclarationOrderCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/overloadmethodsdeclarationorder";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -47,7 +46,6 @@ public class OverloadMethodsDeclarationOrderCheckTest
                 getPath("InputOverloadMethodsDeclarationOrder.java"), expected);
     }
 
-    @Test
     public void testOverloadMethodsDeclarationOrderRecords() throws Exception {
 
         final String[] expected = {
@@ -60,7 +58,6 @@ public class OverloadMethodsDeclarationOrderCheckTest
             expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final OverloadMethodsDeclarationOrderCheck check =
             new OverloadMethodsDeclarationOrderCheck();

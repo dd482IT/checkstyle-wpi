@@ -40,7 +40,6 @@ public class MultipleStringLiteralsCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/multiplestringliterals";
     }
 
-    @Test
     public void testIt() throws Exception {
 
         final String[] expected = {
@@ -54,7 +53,6 @@ public class MultipleStringLiteralsCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testItIgnoreEmpty() throws Exception {
 
         final String[] expected = {
@@ -67,7 +65,6 @@ public class MultipleStringLiteralsCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testMultipleInputs() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(MultipleStringLiteralsCheck.class);
@@ -89,7 +86,6 @@ public class MultipleStringLiteralsCheckTest extends AbstractModuleTestSupport {
                 secondInput, expectedSecondInput));
     }
 
-    @Test
     public void testItIgnoreEmptyAndComspace() throws Exception {
 
         final String[] expected = {
@@ -101,7 +97,6 @@ public class MultipleStringLiteralsCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testItWithoutIgnoringAnnotations() throws Exception {
 
         final String[] expected = {
@@ -113,7 +108,6 @@ public class MultipleStringLiteralsCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final MultipleStringLiteralsCheck check = new MultipleStringLiteralsCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -127,7 +121,6 @@ public class MultipleStringLiteralsCheckTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testDefaultConfiguration() throws Exception {
         final String[] expected = {
             "14:16: " + getCheckMessage(MSG_KEY, "\"StringContents\"", 3),
@@ -140,7 +133,6 @@ public class MultipleStringLiteralsCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testIgnores() throws Exception {
         final String[] expected = {
             "28:23: " + getCheckMessage(MSG_KEY, "\"unchecked\"", 4),
@@ -151,7 +143,6 @@ public class MultipleStringLiteralsCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testMultipleStringLiteralsTextBlocks() throws Exception {
 
         final String[] expected = {

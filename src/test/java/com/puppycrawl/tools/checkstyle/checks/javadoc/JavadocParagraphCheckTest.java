@@ -38,7 +38,6 @@ public class JavadocParagraphCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/javadocparagraph";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final JavadocParagraphCheck checkObj = new JavadocParagraphCheck();
         final int[] expected = {TokenTypes.BLOCK_COMMENT_BEGIN};
@@ -47,7 +46,6 @@ public class JavadocParagraphCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -55,7 +53,6 @@ public class JavadocParagraphCheckTest extends AbstractModuleTestSupport {
                 getPath("InputJavadocParagraphCorrect.java"), expected);
     }
 
-    @Test
     public void testIncorrect() throws Exception {
         final String[] expected = {
             "13: " + getCheckMessage(MSG_MISPLACED_TAG),
@@ -99,7 +96,6 @@ public class JavadocParagraphCheckTest extends AbstractModuleTestSupport {
                 getPath("InputJavadocParagraphIncorrect.java"), expected);
     }
 
-    @Test
     public void testAllowNewlineParagraph() throws Exception {
         final String[] expected = {
             "13: " + getCheckMessage(MSG_LINE_BEFORE),

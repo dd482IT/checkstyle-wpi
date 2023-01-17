@@ -44,7 +44,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
 
 public class HeaderCheckTest extends AbstractModuleTestSupport {
 
-    @TempDir
     public File temporaryFolder;
 
     @Override
@@ -52,7 +51,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/header/header";
     }
 
-    @Test
     public void testStaticHeader() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputHeaderjava.header"));
@@ -63,7 +61,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputHeader.java"), expected);
     }
 
-    @Test
     public void testNoHeader() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
 
@@ -72,7 +69,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputHeaderRegexp.java"), expected);
     }
 
-    @Test
     public void testWhitespaceHeader() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("header", "\n    \n");
@@ -82,7 +78,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputHeaderRegexp.java"), expected);
     }
 
-    @Test
     public void testNonExistentHeaderFile() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("nonExistent.file"));
@@ -104,7 +99,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
                         .startsWith("Unable to find: ");
     }
 
-    @Test
     public void testInvalidCharset() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputHeaderjava.header"));
@@ -127,7 +121,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
                         .startsWith("unsupported charset: 'XSO-8859-1'");
     }
 
-    @Test
     public void testEmptyFilename() {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", "");
@@ -150,7 +143,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
                                 + " com.puppycrawl.tools.checkstyle.checks.header.HeaderCheck");
     }
 
-    @Test
     public void testNullFilename() {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", null);
@@ -165,7 +157,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
                                 + " - Cannot set property 'headerFile' to 'null'");
     }
 
-    @Test
     public void testNotMatch() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputHeaderjava.header"));
@@ -178,7 +169,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputHeaderjava2.header"), expected);
     }
 
-    @Test
     public void testIgnore() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputHeaderjava.header"));
@@ -187,7 +177,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputHeaderjava2.header"), expected);
     }
 
-    @Test
     public void testSetHeaderTwice() {
         final HeaderCheck check = new HeaderCheck();
         check.setHeader("Header");
@@ -201,7 +190,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
                                 + "set either header or headerFile, not both");
     }
 
-    @Test
     public void testIoExceptionWhenLoadingHeaderFile() throws Exception {
         final HeaderCheck check = new HeaderCheck();
         check.setHeaderFile(new URI("test://bad"));
@@ -215,7 +203,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
                     .startsWith("unable to load header file ");
     }
 
-    @Test
     public void testCacheHeaderFile() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputHeaderjava.header"));
@@ -233,7 +220,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkerConfig, getPath("InputHeader.java"), expected);
     }
 
-    @Test
     public void testCacheHeaderWithoutFile() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("header", "Test");
@@ -249,7 +235,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkerConfig, getPath("InputHeader.java"), expected);
     }
 
-    @Test
     public void testIgnoreLinesSorted() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputHeaderjava.header"));
@@ -258,7 +243,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputHeaderjava3.header"), expected);
     }
 
-    @Test
     public void testLoadHeaderFileTwice() {
         final HeaderCheck check = new HeaderCheck();
         check.setHeader("Header");
@@ -272,21 +256,18 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
                                     + "set either header or headerFile, not both");
     }
 
-    @Test
     public void testHeaderIsValidWithBlankLines() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputHeaderjava.blank-lines.header"));
         verify(checkConfig, getPath("InputHeaderBlankLines.java"));
     }
 
-    @Test
     public void testHeaderIsValidWithBlankLinesBlockStyle() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(HeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputHeaderjava.blank-lines2.header"));
         verify(checkConfig, getPath("InputHeaderBlankLines2.java"));
     }
 
-    @Test
     public void testExternalResource() throws Exception {
         final HeaderCheck check = new HeaderCheck();
         final URI uri = CommonUtil.getUriByFilename(getPath("InputHeaderjava.header"));
@@ -300,7 +281,6 @@ public class HeaderCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(uri.toString());
     }
 
-    @Test
     public void testIoExceptionWhenLoadingHeader() {
         final HeaderCheck check = new HeaderCheck();
         try (MockedConstruction<LineNumberReader> mocked = mockConstruction(

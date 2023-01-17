@@ -161,7 +161,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 5.0
  */
-@StatelessCheck
 public class NoCloneCheck extends AbstractCheck {
 
     /**

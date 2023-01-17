@@ -22,13 +22,13 @@ class/**nope*/ InputAbstractJavadocLeaveToken/**nope*/{
     private/**nope*/ static/**nope*/ class/**nope*/ C/**nope*/{/**nope*/}
 
     /**Javadoc*/ // ok
-    @Component/**nope*/ class/**nope*/ D/**nope*/{/**nope*/}
+    /**nope*/ class/**nope*/ D/**nope*/{/**nope*/}
 
     /**Javadoc*/ // ok
-    @Component/**nope*/ private/**nope*/ class/**nope*/ E/**nope*/{/**nope*/}
+    /**nope*/ private/**nope*/ class/**nope*/ E/**nope*/{/**nope*/}
 
     /**Javadoc*/ // ok
-    private/**nope*/ @Component/**nope*/ class/**nope*/ F/**nope*/{/**nope*/}
+    private/**nope*/ /**nope*/ class/**nope*/ F/**nope*/{/**nope*/}
 }
 
 //////////////////
@@ -49,17 +49,17 @@ class/**nope*/ BB1/**nope*/{
 
 class/**nope*/ DD1/**nope*/{
     /**Javadoc*/ // ok
-    @Component/**nope*/ DD1/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
+    /**nope*/ DD1/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
 }
 
 class/**nope*/ EE1/**nope*/{
     /**Javadoc*/ // ok
-    @Component/**nope*/ private/**nope*/ EE1/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
+    /**nope*/ private/**nope*/ EE1/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
 }
 
 class/**nope*/ FF1/**nope*/{
     /**Javadoc*/ // ok
-    private/**nope*/ @Component/**nope*/ FF1/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
+    private/**nope*/ /**nope*/ FF1/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
 }
 
 /////////////
@@ -83,22 +83,22 @@ class CCC1 {
 
 class DDD1 {
     /**Javadoc*/ // ok
-    @Component/**nope*/ void/**nope*/ a/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
+    /**nope*/ void/**nope*/ a/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
 }
 
 class EEE1 {
     /**Javadoc*/ // ok
-    @Component/**nope*/ private/**nope*/ void/**nope*/ a/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
+    /**nope*/ private/**nope*/ void/**nope*/ a/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
 }
 
 class FFF1 {
     /**Javadoc*/ // ok
-    static/**nope*/ @Component/**nope*/ private/**nope*/ void/**nope*/ a/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
+    static/**nope*/ /**nope*/ private/**nope*/ void/**nope*/ a/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/
 }
 
 class GGG1 {
     /**Javadoc*/ // ok
-    void/**nope*/ a/**nope*/(@Component/**nope*/int/**nope*/ a/**nope*/)/**nope*/{/**nope*/}/**nope*/
+    void/**nope*/ a/**nope*/(/**nope*/int/**nope*/ a/**nope*/)/**nope*/{/**nope*/}/**nope*/
 }
 
 class HHH1 {
@@ -117,13 +117,13 @@ interface/**nope*/ AAAA1/**nope*/ {}
 abstract/**nope*/ interface/**nope*/ BBBB1/**nope*/ {/**nope*/}
 
 /**Javadoc*/ // ok
-@Component/**nope*/ interface/**nope*/ CCCC1/**nope*/ {/**nope*/}
+/**nope*/ interface/**nope*/ CCCC1/**nope*/ {/**nope*/}
 
 /**Javadoc*/ // ok
-@Component/**nope*/ abstract/**nope*/ interface/**nope*/ DDDD1/**nope*/ {/**nope*/}
+/**nope*/ abstract/**nope*/ interface/**nope*/ DDDD1/**nope*/ {/**nope*/}
 
 /**Javadoc*/ // ok
-abstract/**nope*/ @Component/**nope*/ interface/**nope*/ EEEE1/**nope*/ {/**nope*/}
+abstract/**nope*/ /**nope*/ interface/**nope*/ EEEE1/**nope*/ {/**nope*/}
 
 ///////////
 // ENUMS //
@@ -137,13 +137,13 @@ class ASD1 {
     private/**nope*/ enum/**nope*/ BBBBB1/**nope*/ {/**nope*/}
 
     /**Javadoc*/ // ok
-    @Component/**nope*/ enum/**nope*/ CCCCC1/**nope*/ {/**nope*/}
+    /**nope*/ enum/**nope*/ CCCCC1/**nope*/ {/**nope*/}
 
     /**Javadoc*/ // ok
-    @Component/**nope*/ private/**nope*/ enum/**nope*/ DDDDD1/**nope*/ {/**nope*/}
+    /**nope*/ private/**nope*/ enum/**nope*/ DDDDD1/**nope*/ {/**nope*/}
 
     /**Javadoc*/ // ok
-    private/**nope*/ @Component/**nope*/ enum/**nope*/ EEEEE1/**nope*/ {/**nope*/}
+    private/**nope*/ /**nope*/ enum/**nope*/ EEEEE1/**nope*/ {/**nope*/}
 }
 
 ////////////
@@ -186,22 +186,22 @@ class CCCCCC1 {
 
 class DDDDDD1 {
     /**Javadoc*/ // ok
-    @Component/**nope*/ Object/**nope*/ a/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
+    /**nope*/ Object/**nope*/ a/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
     /**Javadoc*/ // ok
-    @Component/**nope*/ private/**nope*/ Object/**nope*/ b/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
+    /**nope*/ private/**nope*/ Object/**nope*/ b/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
     /**Javadoc*/ // ok
-    @Component/**nope*/ private/**nope*/ final/**nope*/ Object/**nope*/ c/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
+    /**nope*/ private/**nope*/ final/**nope*/ Object/**nope*/ c/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
     /**Javadoc*/ // ok
-    @Component/**nope*/ private/**nope*/ static/**nope*/ final/**nope*/ Object/**nope*/ d/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
+    /**nope*/ private/**nope*/ static/**nope*/ final/**nope*/ Object/**nope*/ d/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
 }
 
 class EEEEEE1 {
     /**Javadoc*/ // ok
-    private/**nope*/ @Component/**nope*/ Object/**nope*/ b/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
+    private/**nope*/ /**nope*/ Object/**nope*/ b/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
     /**Javadoc*/ // ok
-    private/**nope*/ @Component/**nope*/ final/**nope*/ Object/**nope*/ c/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
+    private/**nope*/ /**nope*/ final/**nope*/ Object/**nope*/ c/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
     /**Javadoc*/ // ok
-    private/**nope*/ @Component/**nope*/ static/**nope*/ final/**nope*/ Object/**nope*/ d/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
+    private/**nope*/ /**nope*/ static/**nope*/ final/**nope*/ Object/**nope*/ d/**nope*/ =/**nope*/ new/**nope*/ Object/**nope*/(/**nope*/)/**nope*/{/**nope*/}/**nope*/;
 }
 
 /////////////////
@@ -225,9 +225,9 @@ enum BBBBBBB1 {
 
 enum CCCCCCC1 {
     /**Javadoc*/ // ok
-    @Component/**nope*/ ONE/**nope*/(/**nope*/1/**nope*/)/**nope*/,
+    /**nope*/ ONE/**nope*/(/**nope*/1/**nope*/)/**nope*/,
     /**Javadoc*/ // ok
-    @Component/**nope*/ TWO/**nope*/(/**nope*/2/**nope*/)/**nope*/;
+    /**nope*/ TWO/**nope*/(/**nope*/2/**nope*/)/**nope*/;
     CCCCCCC1(int i){}
 }
 
@@ -242,7 +242,7 @@ enum CCCCCCC1 {
 /**Javadoc*/ // ok
 @interface/**nope*/ MyAnnotation1/**nope*/ {
     /**Javadoc*/ // ok
-    @Component/**nope*/abstract/**nope*/String/**nope*/val1()/**nope*/default/**nope*/"";
+    /**nope*/abstract/**nope*/String/**nope*/val1()/**nope*/default/**nope*/"";
     /**Javadoc*/ // ok
     abstract/**nope*/String/**nope*/val2()/**nope*/;
     /**Javadoc*/ // ok
@@ -261,7 +261,6 @@ class MyTemp2 {
 /**nope*/
 /**Javadoc*/ // ok
 //noise
-@Component
 /*noise*/
 interface MultipleJavadoc1 {
     /**nope*/

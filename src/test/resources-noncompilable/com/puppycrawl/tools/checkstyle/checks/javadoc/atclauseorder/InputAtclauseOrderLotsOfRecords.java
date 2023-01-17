@@ -38,7 +38,7 @@ public class InputAtclauseOrderLotsOfRecords {
      * Javadoc
      *
      */
-    public record AnnotatedBinaryNode(@Native @NonNull1 Node left, @NonNull1 Node right) {
+    public record AnnotatedBinaryNode(@Native Node left, Node right) {
     }
 
     public interface Coords {
@@ -119,7 +119,6 @@ public class InputAtclauseOrderLotsOfRecords {
          * @param name1
          * @param name2
          */
-        @NonNull1
         public ThingAnnotatedConstructor {
             Objects.requireNonNull(name1);
             Objects.requireNonNull(name2);

@@ -46,7 +46,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  * Base class for coupling calculation.
  *
  */
-@FileStatefulCheck
 public abstract class AbstractClassCouplingCheck extends AbstractCheck {
 
     /** A package separator - "." */

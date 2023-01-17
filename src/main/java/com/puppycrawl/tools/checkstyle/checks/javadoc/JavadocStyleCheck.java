@@ -296,7 +296,6 @@ import com.puppycrawl.tools.checkstyle.utils.ScopeUtil;
  *
  * @since 3.2
  */
-@StatelessCheck
 public class JavadocStyleCheck
     extends AbstractCheck {
 

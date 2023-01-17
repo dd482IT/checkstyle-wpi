@@ -46,7 +46,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/api/abstractcheck";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final AbstractCheck check = new AbstractCheck() {
             @Override
@@ -70,7 +69,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testGetAcceptable() {
         final AbstractCheck check = new AbstractCheck() {
             @Override
@@ -94,7 +92,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testCommentNodes() {
         final AbstractCheck check = new AbstractCheck() {
             @Override
@@ -118,7 +115,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testTokenNames() {
         final AbstractCheck check = new AbstractCheck() {
             @Override
@@ -143,7 +139,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .containsExactly("IDENT, EXPR, ELIST");
     }
 
-    @Test
     public void testVisitToken() {
         final VisitCounterCheck check = new VisitCounterCheck();
         // Eventually it will become clear abstract method
@@ -154,7 +149,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(1);
     }
 
-    @Test
     public void testGetLine() throws Exception {
         final AbstractCheck check = new AbstractCheck() {
             @Override
@@ -181,7 +175,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(" * I'm a javadoc");
     }
 
-    @Test
     public void testGetLineCodePoints() throws Exception {
         final AbstractCheck check = new AbstractCheck() {
             @Override
@@ -210,7 +203,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expectedCodePoints);
     }
 
-    @Test
     public void testGetTabWidth() {
         final AbstractCheck check = new AbstractCheck() {
             @Override
@@ -236,7 +228,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(tabWidth);
     }
 
-    @Test
     public void testFileContents() {
         final AbstractCheck check = new AbstractCheck() {
             @Override
@@ -267,7 +258,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(lines);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final int[] defaultTokens = {TokenTypes.CLASS_DEF, TokenTypes.INTERFACE_DEF};
         final int[] acceptableTokens = {TokenTypes.CLASS_DEF, TokenTypes.INTERFACE_DEF};
@@ -300,7 +290,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(requiredTokens);
     }
 
-    @Test
     public void testClearViolations() {
         final AbstractCheck check = new DummyAbstractCheck();
 
@@ -314,7 +303,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testLineColumnLog() throws Exception {
         final ViolationCheck check = new ViolationCheck();
         check.configure(new DefaultConfiguration("check"));
@@ -350,7 +338,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(6);
     }
 
-    @Test
     public void testAstLog() throws Exception {
         final ViolationAstCheck check = new ViolationAstCheck();
         check.configure(new DefaultConfiguration("check"));
@@ -380,7 +367,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(5);
     }
 
-    @Test
     public void testCheck() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(ViolationAstCheck.class);
 
@@ -395,7 +381,6 @@ public class AbstractCheckTest extends AbstractModuleTestSupport {
      * Sonarqube rule is valid, a pure unit test is required as this condition can't be recreated in
      * a test with checks and input file as none of the checks try to modify the tokens.
      */
-    @Test
     public void testTokensAreUnmodifiable() {
         final DummyAbstractCheck check = new DummyAbstractCheck();
         final Set<String> tokenNameSet = check.getTokenNames();

@@ -164,7 +164,6 @@ import com.puppycrawl.tools.checkstyle.utils.CodePointUtil;
  *
  * @since 5.8
  */
-@FileStatefulCheck
 public class AvoidEscapedUnicodeCharactersCheck
     extends AbstractCheck {
 

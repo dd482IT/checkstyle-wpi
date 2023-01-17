@@ -39,7 +39,6 @@ public class TypecastParenPadCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/typecastparenpad";
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -50,7 +49,6 @@ public class TypecastParenPadCheckTest
                 getPath("InputTypecastParenPadWhitespace.java"), expected);
     }
 
-    @Test
     public void testSpace()
             throws Exception {
         final String[] expected = {
@@ -67,7 +65,6 @@ public class TypecastParenPadCheckTest
                 getPath("InputTypecastParenPadWhitespaceTestSpace.java"), expected);
     }
 
-    @Test
     public void test1322879() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -75,7 +72,6 @@ public class TypecastParenPadCheckTest
                expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final TypecastParenPadCheck typecastParenPadCheckObj = new TypecastParenPadCheck();
         final int[] actual = typecastParenPadCheckObj.getAcceptableTokens();

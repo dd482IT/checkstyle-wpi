@@ -37,7 +37,6 @@ public class ClassMemberImpliedModifierCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/modifier/classmemberimpliedmodifier";
     }
 
-    @Test
     public void testMethodsOnClass() throws Exception {
         final String[] expected = {
             "51:9: " + getCheckMessage(MSG_KEY, "static"),
@@ -52,7 +51,6 @@ public class ClassMemberImpliedModifierCheckTest
             expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final ClassMemberImpliedModifierCheck check = new ClassMemberImpliedModifierCheck();
         final int[] actual = check.getRequiredTokens();
@@ -66,7 +64,6 @@ public class ClassMemberImpliedModifierCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testMethodsOnClassNoImpliedStaticEnum() throws Exception {
         final String[] expected = {
             "59:9: " + getCheckMessage(MSG_KEY, "static"),
@@ -78,7 +75,6 @@ public class ClassMemberImpliedModifierCheckTest
             expected);
     }
 
-    @Test
     public void testMethodsOnClassNoImpliedStaticInterface() throws Exception {
         final String[] expected = {
             "52:9: " + getCheckMessage(MSG_KEY, "static"),
@@ -90,7 +86,6 @@ public class ClassMemberImpliedModifierCheckTest
             expected);
     }
 
-    @Test
     public void testMethodsOnClassNoViolationsChecked() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -98,7 +93,6 @@ public class ClassMemberImpliedModifierCheckTest
             expected);
     }
 
-    @Test
     public void testMethodsOnInterface() throws Exception {
         final String[] expected = {
             "60:13: " + getCheckMessage(MSG_KEY, "static"),
@@ -113,7 +107,6 @@ public class ClassMemberImpliedModifierCheckTest
             expected);
     }
 
-    @Test
     public void testClassMemberImpliedModifierRecords() throws Exception {
         final String[] expected = {
             "16:5: " + getCheckMessage(MSG_KEY, "static"),
@@ -128,7 +121,6 @@ public class ClassMemberImpliedModifierCheckTest
                 expected);
     }
 
-    @Test
     public void testClassMemberImpliedModifierNoViolationRecords() throws Exception {
         final String[] expected = {
             "16:5: " + getCheckMessage(MSG_KEY, "static"),
@@ -142,7 +134,6 @@ public class ClassMemberImpliedModifierCheckTest
                 expected);
     }
 
-    @Test
     public void testIllegalState() {
         final DetailAstImpl init = new DetailAstImpl();
         init.setType(TokenTypes.STATIC_INIT);

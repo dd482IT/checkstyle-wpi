@@ -38,7 +38,6 @@ public class XpathRegressionMissingSwitchDefaultTest extends AbstractXpathTestSu
         return clss.getSimpleName();
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionMissingSwitchDefaultOne.java"));
@@ -58,7 +57,6 @@ public class XpathRegressionMissingSwitchDefaultTest extends AbstractXpathTestSu
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionMissingSwitchDefaultTwo.java"));

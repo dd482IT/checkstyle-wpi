@@ -14,41 +14,28 @@ package com.puppycrawl.tools.checkstyle.checks.indentation.indentation; //indent
  *                                                                            //indent:1 exp:1
  *                                                                            //indent:1 exp:1
  */                                                                           //indent:1 exp:1
-@DifficultAnnotation({ //indent:0 exp:0
-    @MyType(value = Boolean.class, //indent:4 exp:4
-        name = "boolean"), //indent:8 exp:>=8
-    @MyType(value = String.class, name = "string") }) //indent:4 exp:4
-@SimpleAnnotation //indent:0 exp:0
+ //indent:4 exp:4
+//indent:0 exp:0
 public class InputIndentationDifficultAnnotations { //indent:0 exp:0
 
-    @DifficultAnnotation({ //indent:4 exp:4
-        @MyType(value = Boolean.class, name = "boolean"), //indent:8 exp:8
-        @MyType(value = String.class, name = "string") }) //indent:8 exp:8
-    @SimpleAnnotation //indent:4 exp:4
+ //indent:8 exp:8
+    //indent:4 exp:4
     String foo = "foo"; //indent:4 exp:4
 
-    @DifficultAnnotation({ //indent:4 exp:4
-        @MyType(value = Boolean.class, name = "boolean"), //indent:8 exp:8
-        @MyType(value = String.class, name = "string") }) //indent:8 exp:8
-    @SimpleAnnotation //indent:4 exp:4
+ //indent:8 exp:8
+    //indent:4 exp:4
     void foo() { //indent:4 exp:4
 
     } //indent:4 exp:4
 } //indent:0 exp:0
 
-@DifficultAnnotation({ //indent:0 exp:0
-@MyType(value = Boolean.class, name = "boolean"), //indent:0 exp:4,23,25 warn
-@MyType(value = String.class, name = "string") }) //indent:0 exp:4,23,25 warn
+ //indent:0 exp:4,23,25 warn
 class IncorrectClass { //indent:0 exp:0
 
-    @DifficultAnnotation({ //indent:4 exp:4
-        @MyType(value = Boolean.class, name = "boolean"), //indent:8 exp:8
-        @MyType(value = String.class, name = "string") }) //indent:8 exp:8
+ //indent:8 exp:8
     String foo = "foo"; //indent:4 exp:4
 
-    @DifficultAnnotation({ //indent:4 exp:4
-      @MyType(value = Boolean.class, name = "boolean"), //indent:6 exp:8,27,29 warn
-        @MyType(value = String.class, name = "string") }) //indent:8 exp:8
+ //indent:8 exp:8
     void foo() { //indent:4 exp:4
 
     } //indent:4 exp:4

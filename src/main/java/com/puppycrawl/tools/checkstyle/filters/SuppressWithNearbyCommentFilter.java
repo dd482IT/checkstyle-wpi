@@ -288,15 +288,12 @@ public class SuppressWithNearbyCommentFilter
     private Pattern commentFormat = Pattern.compile(DEFAULT_COMMENT_FORMAT);
 
     /** Specify check pattern to suppress. */
-    @XdocsPropertyType(PropertyType.PATTERN)
     private String checkFormat = DEFAULT_CHECK_FORMAT;
 
     /** Define message pattern to suppress. */
-    @XdocsPropertyType(PropertyType.PATTERN)
     private String messageFormat;
 
     /** Specify check ID pattern to suppress. */
-    @XdocsPropertyType(PropertyType.PATTERN)
     private String idFormat;
 
     /**

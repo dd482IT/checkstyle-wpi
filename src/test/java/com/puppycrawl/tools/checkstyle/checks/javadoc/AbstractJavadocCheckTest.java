@@ -49,10 +49,8 @@ import com.puppycrawl.tools.checkstyle.api.JavadocTokenTypes;
 import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
 import com.puppycrawl.tools.checkstyle.utils.JavadocUtil;
 
-@ExtendWith(SystemErrGuard.class)
 public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
 
-    @TempDir
     public File temporaryFolder;
 
     @Override
@@ -68,12 +66,10 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
      *
      * @param systemErr wrapper for {@code System.err}
      */
-    @BeforeEach
-    public void setUp(@SysErr Capturable systemErr) {
+    public void setUp(Capturable systemErr) {
         systemErr.captureMuted();
     }
 
-    @Test
     public void testJavadocTagsWithoutArgs() throws Exception {
         final DefaultConfiguration checkconfig = createModuleConfig(TempCheck.class);
         final String[] expected = {
@@ -102,7 +98,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
         verify(checkconfig, getPath("InputAbstractJavadocJavadocTagsWithoutArgs.java"), expected);
     }
 
-    @Test
     public void testNumberFormatException() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TempCheck.class);
         final String[] expected = {
@@ -112,15 +107,13 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputAbstractJavadocNumberFormatException.java"), expected);
     }
 
-    @Test
     public void testCustomTag() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TempCheck.class);
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verify(checkConfig, getPath("InputAbstractJavadocCustomTag.java"), expected);
     }
 
-    @Test
-    public void testParsingErrors(@SysErr Capturable systemErr) throws Exception {
+    public void testParsingErrors(Capturable systemErr) throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TempCheck.class);
         final String[] expected = {
             "8: " + getCheckMessage(MSG_JAVADOC_MISSED_HTML_CLOSE, 4, "unclosedTag"),
@@ -132,15 +125,13 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
             .isEqualTo("");
     }
 
-    @Test
     public void testWithMultipleChecks() throws Exception {
         verifyWithInlineConfigParser(
                 getPath("InputAbstractJavadocCorrectParagraph.java"),
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
-    public void testAntlrError(@SysErr Capturable systemErr) throws Exception {
+    public void testAntlrError(Capturable systemErr) throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TempCheck.class);
         final String[] expected = {
             "8: " + getCheckMessage(MSG_JAVADOC_PARSE_RULE_ERROR, 78,
@@ -152,9 +143,8 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
             .isEqualTo("");
     }
 
-    @Test
     public void testCheckReuseAfterParseErrorWithFollowingAntlrErrorInTwoFiles(
-            @SysErr Capturable systemErr) throws Exception {
+            Capturable systemErr) throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TempCheck.class);
         final Map<String, List<String>> expectedMessages = new LinkedHashMap<>(2);
         expectedMessages.put(getPath("InputAbstractJavadocParsingErrors2.java"), asList(
@@ -174,7 +164,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
             .isEqualTo("");
     }
 
-    @Test
     public void testCheckReuseAfterParseErrorWithFollowingAntlrErrorInSingleFile()
             throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TempCheck.class);
@@ -187,7 +176,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
             getPath("InputAbstractJavadocUnclosedTagAndInvalidAtSeeReference.java"), expected);
     }
 
-    @Test
     public void testPosition()
             throws Exception {
         JavadocCatchCheck.clearCounter();
@@ -199,7 +187,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(65);
     }
 
-    @Test
     public void testPositionWithSinglelineComments()
             throws Exception {
         JavadocCatchCheck.clearCounter();
@@ -212,7 +199,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(65);
     }
 
-    @Test
     public void testPositionOnlyComments()
             throws Exception {
         JavadocCatchCheck.clearCounter();
@@ -224,7 +210,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(0);
     }
 
-    @Test
     public void testTokens() {
         final int[] defaultJavadocTokens = {JavadocTokenTypes.JAVADOC};
         final AbstractJavadocCheck check = new AbstractJavadocCheck() {
@@ -259,7 +244,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
             .isNotEqualTo(defaultJavadocTokens);
     }
 
-    @Test
     public void testTokensFail() {
         final int[] defaultJavadocTokens = {JavadocTokenTypes.JAVADOC,
             JavadocTokenTypes.AREA_HTML_TAG_NAME,
@@ -282,7 +266,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
         assertDoesNotThrow(check::init);
     }
 
-    @Test
     public void testAcceptableTokensFail()
             throws Exception {
         final DefaultConfiguration checkConfig =
@@ -305,7 +288,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testAcceptableTokensPass()
             throws Exception {
         final DefaultConfiguration checkConfig =
@@ -316,7 +298,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputAbstractJavadocTokensPass.java"), expected);
     }
 
-    @Test
     public void testRequiredTokenIsNotInDefaultTokens() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(RequiredTokenIsNotInDefaultsJavadocCheck.class);
@@ -338,7 +319,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testVisitLeaveToken()
             throws Exception {
         JavadocVisitLeaveCheck.clearCounter();
@@ -353,7 +333,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(JavadocVisitLeaveCheck.visitCount);
     }
 
-    @Test
     public void testNoWsBeforeDescriptionInJavadocTags() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TempCheck.class);
         final String[] expected = {
@@ -384,7 +363,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testWrongSingletonTagInJavadoc() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TempCheck.class);
         final String[] expected = {
@@ -398,7 +376,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testNonTightHtmlTagIntolerantCheck() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(NonTightHtmlTagIntolerantCheck.class);
@@ -418,7 +395,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputAbstractJavadocNonTightHtmlTags.java"), expected);
     }
 
-    @Test
     public void testNonTightHtmlTagIntolerantCheckReportingNoViolation() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(NonTightHtmlTagIntolerantCheck.class);
@@ -427,7 +403,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testNonTightHtmlTagIntolerantCheckVisitCount()
             throws Exception {
         final DefaultConfiguration checkConfig =
@@ -455,7 +430,6 @@ public class AbstractJavadocCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testVisitCountForCheckAcceptingJavadocWithNonTightHtml()
             throws Exception {
         final DefaultConfiguration checkConfig =

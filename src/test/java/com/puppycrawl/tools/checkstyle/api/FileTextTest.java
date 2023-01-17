@@ -43,7 +43,6 @@ public class FileTextTest extends AbstractPathTestSupport {
         return "com/puppycrawl/tools/checkstyle/api/filetext";
     }
 
-    @Test
     public void testUnsupportedCharset() throws IOException {
         // just to make UT coverage 100%
         final String charsetName = "STRANGE_CHARSET";
@@ -61,7 +60,6 @@ public class FileTextTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testFileNotFound() throws IOException {
         final String charsetName = StandardCharsets.ISO_8859_1.name();
         final File file = new File("any name");
@@ -78,7 +76,6 @@ public class FileTextTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testSupportedCharset() throws IOException {
         final String charsetName = StandardCharsets.ISO_8859_1.name();
         final FileText fileText = new FileText(new File(getPath("InputFileTextImportControl.xml")),
@@ -88,7 +85,6 @@ public class FileTextTest extends AbstractPathTestSupport {
                 .isEqualTo(charsetName);
     }
 
-    @Test
     public void testLineColumnBeforeCopyConstructor() throws IOException {
         final String charsetName = StandardCharsets.ISO_8859_1.name();
         final FileText fileText = new FileText(new File(getPath("InputFileTextImportControl.xml")),
@@ -104,7 +100,6 @@ public class FileTextTest extends AbstractPathTestSupport {
                 .isEqualTo(lineColumn);
     }
 
-    @Test
     public void testLineColumnAfterCopyConstructor() throws IOException {
         final Charset charset = StandardCharsets.ISO_8859_1;
         final String filepath = getPath("InputFileTextImportControl.xml");
@@ -129,7 +124,6 @@ public class FileTextTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testLineColumnAtTheStartOfFile() throws IOException {
         final String charsetName = StandardCharsets.ISO_8859_1.name();
         final FileText fileText = new FileText(new File(getPath("InputFileTextImportControl.xml")),
@@ -144,7 +138,6 @@ public class FileTextTest extends AbstractPathTestSupport {
                 .isEqualTo(0);
     }
 
-    @Test
     public void testLines() throws IOException {
         final List<String> lines = Collections.singletonList("abc");
         final FileText fileText = new FileText(new File(getPath("InputFileTextImportControl.xml")),
@@ -154,7 +147,6 @@ public class FileTextTest extends AbstractPathTestSupport {
                 .isEqualTo(new String[] {"abc"});
     }
 
-    @Test
     public void testFindLineBreaks() throws Exception {
         final FileText fileText = new FileText(new File("fileName"), Arrays.asList("1", "2"));
 
@@ -177,7 +169,6 @@ public class FileTextTest extends AbstractPathTestSupport {
      *
      * @throws Exception if there is an error.
      */
-    @Test
     public void testFindLineBreaksCache() throws Exception {
         final FileText fileText = new FileText(new File("fileName"), Collections.emptyList());
         final int[] lineBreaks = {5};

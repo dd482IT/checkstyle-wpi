@@ -171,7 +171,6 @@ public class XpathRegressionTest extends AbstractModuleTestSupport {
             .collect(Collectors.toSet());
     }
 
-    @BeforeEach
     public void setUp() throws Exception {
         javaDir = Paths.get("src/it/java/" + getPackageLocation());
         inputDir = Paths.get(getPath(""));
@@ -187,7 +186,6 @@ public class XpathRegressionTest extends AbstractModuleTestSupport {
         return "it";
     }
 
-    @Test
     public void validateIncompatibleJavadocCheckNames() throws IOException {
         // subclasses of AbstractJavadocCheck
         final Set<Class<?>> abstractJavadocCheckNames = CheckUtil.getCheckstyleChecks()
@@ -205,7 +203,6 @@ public class XpathRegressionTest extends AbstractModuleTestSupport {
             .isEqualTo(INCOMPATIBLE_JAVADOC_CHECK_NAMES);
     }
 
-    @Test
     public void validateIntegrationTestClassNames() throws Exception {
         final Set<String> compatibleChecks = new HashSet<>();
         final Pattern pattern = Pattern.compile("^XpathRegression(.+)Test\\.java$");
@@ -261,7 +258,6 @@ public class XpathRegressionTest extends AbstractModuleTestSupport {
                         .isEmpty();
     }
 
-    @Test
     public void validateInputFiles() throws Exception {
         try (DirectoryStream<Path> dirs = Files.newDirectoryStream(inputDir)) {
             for (Path dir : dirs) {

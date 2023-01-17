@@ -26,7 +26,7 @@ package com.puppycrawl.tools.checkstyle.checks.metrics.classfanoutcomplexity;
     int version();
 }
 
-@MyAnnotation1(name = "ABC", version = 1) // violation
+// violation
 public class InputClassFanOutComplexity15Extensions
 {
 

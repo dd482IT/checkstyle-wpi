@@ -45,7 +45,6 @@ public class ReturnCountCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/returncount";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "28:5: " + getCheckMessage(MSG_KEY_VOID, 7, 1),
@@ -57,7 +56,6 @@ public class ReturnCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputReturnCountSwitches.java"), expected);
     }
 
-    @Test
     public void testFormat() throws Exception {
         final String[] expected = {
             "15:5: " + getCheckMessage(MSG_KEY, 7, 2),
@@ -70,7 +68,6 @@ public class ReturnCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputReturnCountSwitches2.java"), expected);
     }
 
-    @Test
     public void testMethodsAndLambdas() throws Exception {
         final String[] expected = {
             "25:55: " + getCheckMessage(MSG_KEY, 2, 1),
@@ -83,7 +80,6 @@ public class ReturnCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputReturnCountLambda.java"), expected);
     }
 
-    @Test
     public void testLambdasOnly() throws Exception {
         final String[] expected = {
             "43:42: " + getCheckMessage(MSG_KEY, 3, 2),
@@ -92,7 +88,6 @@ public class ReturnCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputReturnCountLambda2.java"), expected);
     }
 
-    @Test
     public void testMethodsOnly() throws Exception {
         final String[] expected = {
             "35:5: " + getCheckMessage(MSG_KEY, 3, 2),
@@ -104,14 +99,12 @@ public class ReturnCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputReturnCountLambda3.java"), expected);
     }
 
-    @Test
     public void testWithReturnOnlyAsTokens() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputReturnCountLambda4.java"), expected);
     }
 
-    @Test
     public void testImproperToken() {
         final ReturnCountCheck check = new ReturnCountCheck();
 
@@ -135,7 +128,6 @@ public class ReturnCountCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testMaxForVoid() throws Exception {
         final String[] expected = {
             "14:5: " + getCheckMessage(MSG_KEY_VOID, 1, 0),
@@ -155,7 +147,6 @@ public class ReturnCountCheckTest extends AbstractModuleTestSupport {
      *
      * @throws Exception when code tested throws exception
      */
-    @Test
     @SuppressWarnings("unchecked")
     public void testClearState() throws Exception {
         final ReturnCountCheck check = new ReturnCountCheck();

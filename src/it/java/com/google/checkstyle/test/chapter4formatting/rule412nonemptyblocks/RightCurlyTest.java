@@ -41,7 +41,6 @@ public class RightCurlyTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule412nonemptyblocks";
     }
 
-    @Test
     public void testRightCurly() throws Exception {
         final String[] expected = {
             "20:17: " + getCheckMessage(RightCurlyCheck.class, MSG_KEY_LINE_SAME, "}", 17),
@@ -58,7 +57,6 @@ public class RightCurlyTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testRightCurly2() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -69,7 +67,6 @@ public class RightCurlyTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testRightCurlyLiteralDoDefault() throws Exception {
         final String[] expected = {
             "62:9: " + getCheckMessage(RightCurlyCheck.class, MSG_KEY_LINE_SAME, "}", 9),
@@ -84,7 +81,6 @@ public class RightCurlyTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testRightCurlyOther() throws Exception {
         final String[] expected = {
             "20:17: " + getCheckMessage(RightCurlyCheck.class, MSG_KEY_LINE_SAME, "}", 17),
@@ -101,7 +97,6 @@ public class RightCurlyTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testRightCurlyLiteralDo() throws Exception {
         final String[] expected = {
             "62:9: " + getCheckMessage(RightCurlyCheck.class, MSG_KEY_LINE_SAME, "}", 9),

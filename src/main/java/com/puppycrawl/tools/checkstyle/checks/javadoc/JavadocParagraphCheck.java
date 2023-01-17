@@ -139,7 +139,6 @@ import com.puppycrawl.tools.checkstyle.utils.JavadocUtil;
  *
  * @since 6.0
  */
-@StatelessCheck
 public class JavadocParagraphCheck extends AbstractJavadocCheck {
 
     /**

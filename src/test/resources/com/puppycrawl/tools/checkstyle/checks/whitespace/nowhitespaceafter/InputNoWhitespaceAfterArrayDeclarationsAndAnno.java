@@ -24,29 +24,29 @@ import java.util.Map;
 }
 public class InputNoWhitespaceAfterArrayDeclarationsAndAnno {
 
-    @NonNull int @NonNull[] @NonNull[] field1; // ok
-    @NonNull int @NonNull [] @NonNull [] field2; // ok
+    int[][] field1; // ok
+    int[][] field2; // ok
     int[] array[] = new int[2][2]; // ok
     int array2[][][] = new int[3][3][3]; // ok
 
-    public void foo(final char @NonNull [] param) {} // ok
+    public void foo(final char[] param) {} // ok
 
-    public void m1(@NonNull String @NonNull ... vararg) {
+    public void m1(String ... vararg) {
     }
 
-    public String m2()@NonNull[]@NonNull[] {
+    public String m2()[][] {
         return null;
     }
 
     public void instructions() {
         // annotations
-        Map.@MyAnnotation Entry e;
-        String str = (@MyAnnotation String)"";
-        (new Inner3()).<@MyAnnotation String>m();
-        Object arr = new @MyAnnotation String@MyAnnotation[3];
-        for (String a@MyAnnotation[] : m2()) {
+        Map.Entry e;
+        String str = (String)"";
+        (new Inner3()).<String>m();
+        Object arr = new String[3];
+        for (String a[] : m2()) {
         }
-        Object arr2 = new @MyAnnotation int[3];
+        Object arr2 = new int[3];
     }
 
     static class Inner3<T> {

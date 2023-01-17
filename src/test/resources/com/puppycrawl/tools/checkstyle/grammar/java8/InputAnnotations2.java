@@ -14,7 +14,6 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
 
-@Schedule
 public class InputAnnotations2 {
 
 

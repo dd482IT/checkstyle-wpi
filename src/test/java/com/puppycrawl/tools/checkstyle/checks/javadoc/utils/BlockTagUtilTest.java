@@ -29,14 +29,12 @@ import com.puppycrawl.tools.checkstyle.internal.utils.TestUtil;
 
 public class BlockTagUtilTest {
 
-    @Test
     public void testHasPrivateConstructor() throws Exception {
         assertWithMessage("Constructor is not private")
                 .that(TestUtil.isUtilsClassHasPrivateConstructor(BlockTagUtil.class))
                 .isTrue();
     }
 
-    @Test
     public void testExtractBlockTags() {
         final String[] text = {
             "/** @foo abc ",
@@ -64,7 +62,6 @@ public class BlockTagUtilTest {
         assertTagEquals(tag4, "qux", "jkl", 4, 3);
     }
 
-    @Test
     public void testVersionStringFormat() {
         final String[] text = {
             "/** ",
@@ -83,7 +80,6 @@ public class BlockTagUtilTest {
             .isEqualTo("1.0");
     }
 
-    @Test
     public void testOddVersionString() {
         final String[] text = {
             "/**",

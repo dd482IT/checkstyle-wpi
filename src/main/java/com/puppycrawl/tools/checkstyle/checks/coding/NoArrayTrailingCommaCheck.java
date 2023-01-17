@@ -81,7 +81,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 8.28
  */
-@StatelessCheck
 public class NoArrayTrailingCommaCheck extends AbstractCheck {
 
     /**

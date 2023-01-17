@@ -214,7 +214,6 @@ import net.sf.saxon.trans.XPathException;
  *
  * @since 8.39
  */
-@StatelessCheck
 public class MatchXpathCheck extends AbstractCheck {
 
     /**

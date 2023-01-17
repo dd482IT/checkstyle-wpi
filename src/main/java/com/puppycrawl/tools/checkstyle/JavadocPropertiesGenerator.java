@@ -319,8 +319,6 @@ public final class JavadocPropertiesGenerator {
     /**
      * Helper class encapsulating the command line options and positional parameters.
      */
-    @Command(name = "java com.puppycrawl.tools.checkstyle.JavadocPropertiesGenerator",
-            mixinStandardHelpOptions = true)
     private static class CliOptions {
 
         /**
@@ -332,7 +330,6 @@ public final class JavadocPropertiesGenerator {
         /**
          * The command line positional parameter to specify the input file.
          */
-        @Parameters(index = "0", description = "The input file.")
         private File inputFile;
     }
 }

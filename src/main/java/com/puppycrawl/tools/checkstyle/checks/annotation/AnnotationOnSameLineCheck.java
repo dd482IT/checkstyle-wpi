@@ -143,7 +143,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 8.2
  */
-@StatelessCheck
 public class AnnotationOnSameLineCheck extends AbstractCheck {
 
     /** A key is pointing to the warning message text in "messages.properties" file. */

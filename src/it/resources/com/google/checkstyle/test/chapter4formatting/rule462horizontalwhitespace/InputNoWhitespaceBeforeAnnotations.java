@@ -10,10 +10,10 @@ import java.lang.annotation.Target;
 
 public class InputNoWhitespaceBeforeAnnotations {
 
-    public void foo(final char @NonNull [] param) {} // ok
+    public void foo(final char[] param) {} // ok
 
-    @NonNull int @NonNull[] @NonNull[] fiel1; // ok until #8205
-    @NonNull int @NonNull [] @NonNull [] field2; // ok
+    int[][] fiel1; // ok until #8205
+    int[][] field2; // ok
     //@NonNull int @NonNull ... field3; // non-compilable
     //@NonNull int @NonNull... field4; // non-compilable
 
@@ -24,10 +24,10 @@ public class InputNoWhitespaceBeforeAnnotations {
     public void foo2(final char [] param) { // ok
     }
 
-    public void foo3(final char @NonNull[] param) { // ok until #8205
+    public void foo3(final char[] param) { // ok until #8205
     }
 
-    public void foo4(final char @NonNull [] param) { // ok
+    public void foo4(final char[] param) { // ok
     }
 
     void test1(String... param) { // ok until #8205
@@ -36,9 +36,9 @@ public class InputNoWhitespaceBeforeAnnotations {
     void test2(String ... param) { // ok until #8205
     }
 
-    void test3(String @NonNull... param) { // ok until #8205
+    void test3(String ... param) { // ok until #8205
     }
 
-    void test4(String @NonNull ... param) { // ok
+    void test4(String ... param) { // ok
     }
 }

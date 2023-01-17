@@ -44,7 +44,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/unnecessaryparentheses";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -100,7 +99,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputUnnecessaryParenthesesOperatorsAndCasts.java"), expected);
     }
 
-    @Test
     public void test15Extensions() throws Exception {
         final String[] expected = {
             "28:23: " + getCheckMessage(MSG_EXPR),
@@ -111,7 +109,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputUnnecessaryParentheses15Extensions.java"), expected);
     }
 
-    @Test
     public void testLambdas() throws Exception {
         final String[] expected = {
             "17:35: " + getCheckMessage(MSG_LAMBDA),
@@ -127,7 +124,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputUnnecessaryParenthesesLambdas.java"), expected);
     }
 
-    @Test
     public void testReturn() throws Exception {
         final String[] expected = {
             "21:33: " + getCheckMessage(MSG_RETURN),
@@ -141,7 +137,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputUnnecessaryParenthesesReturnValue.java"), expected);
     }
 
-    @Test
     public void testUnnecessaryParenthesesSwitchExpression() throws Exception {
         final String[] expected = {
             "21:31: " + getCheckMessage(MSG_ASSIGN),
@@ -162,7 +157,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnnecessaryParenthesesTextBlocks() throws Exception {
         final String[] expected = {
             "19:23: " + getCheckMessage(MSG_STRING, "\"this\""),
@@ -183,7 +177,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testUnnecessaryParenthesesPatterns() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -192,7 +185,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final UnnecessaryParenthesesCheck check = new UnnecessaryParenthesesCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -206,7 +198,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testIfStatement() throws Exception {
 
         final String[] expected = {
@@ -241,7 +232,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputUnnecessaryParenthesesIfStatement.java"), expected);
     }
 
-    @Test
     public void testIfStatement2() throws Exception {
         final String[] expected = {
             "28:17: " + getCheckMessage(MSG_EXPR),
@@ -258,7 +248,6 @@ public class UnnecessaryParenthesesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputUnnecessaryParenthesesIfStatement2.java"), expected);
     }
 
-    @Test
     public void testIdentifier() throws Exception {
         final String[] expected = {
             "22:17: " + getCheckMessage(MSG_IDENT, "test"),

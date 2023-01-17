@@ -375,15 +375,12 @@ public class SuppressionCommentFilter
     private Pattern onCommentFormat = Pattern.compile(DEFAULT_ON_FORMAT);
 
     /** Specify check pattern to suppress. */
-    @XdocsPropertyType(PropertyType.PATTERN)
     private String checkFormat = DEFAULT_CHECK_FORMAT;
 
     /** Specify message pattern to suppress. */
-    @XdocsPropertyType(PropertyType.PATTERN)
     private String messageFormat;
 
     /** Specify check ID pattern to suppress. */
-    @XdocsPropertyType(PropertyType.PATTERN)
     private String idFormat;
 
     /**

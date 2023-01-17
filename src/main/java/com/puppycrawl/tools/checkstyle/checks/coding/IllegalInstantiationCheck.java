@@ -147,7 +147,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 3.0
  */
-@FileStatefulCheck
 public class IllegalInstantiationCheck
     extends AbstractCheck {
 

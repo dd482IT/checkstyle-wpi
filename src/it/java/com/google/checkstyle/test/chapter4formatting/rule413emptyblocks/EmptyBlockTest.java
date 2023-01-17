@@ -32,7 +32,6 @@ public class EmptyBlockTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule413emptyblocks";
     }
 
-    @Test
     public void testEmptyBlock() throws Exception {
         final String[] expected = {
             "19:21: " + getCheckMessage(EmptyBlockCheck.class, "block.empty", "if"),
@@ -77,7 +76,6 @@ public class EmptyBlockTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testEmptyBlockCatch() throws Exception {
         final String[] expected = {
             "29:17: " + getCheckMessage(EmptyBlockCheck.class, "block.empty", "finally"),

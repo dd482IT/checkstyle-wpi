@@ -28,7 +28,6 @@ import nl.jqno.equalsverifier.EqualsVerifierReport;
 
 public class IntRangeFilterElementTest {
 
-    @Test
     public void testDecide() {
         final IntFilterElement filter = new IntRangeFilterElement(0, 10);
         assertWithMessage("less than")
@@ -48,7 +47,6 @@ public class IntRangeFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testDecideSingle() {
         final IntFilterElement filter = new IntRangeFilterElement(0, 0);
         assertWithMessage("less than")
@@ -62,7 +60,6 @@ public class IntRangeFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testDecideEmpty() {
         final IntFilterElement filter = new IntRangeFilterElement(10, 0);
         assertWithMessage("out")
@@ -82,7 +79,6 @@ public class IntRangeFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testEqualsAndHashCode() {
         final EqualsVerifierReport ev = EqualsVerifier.forClass(IntRangeFilterElement.class)
                 .usingGetClass().report();

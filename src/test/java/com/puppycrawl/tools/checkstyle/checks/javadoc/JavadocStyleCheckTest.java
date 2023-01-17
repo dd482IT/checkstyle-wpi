@@ -42,7 +42,6 @@ public class JavadocStyleCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/javadocstyle";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final JavadocStyleCheck javadocStyleCheck = new JavadocStyleCheck();
 
@@ -67,7 +66,6 @@ public class JavadocStyleCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testJavadocStyleDefaultSettingsOne()
             throws Exception {
         final String[] expected = {
@@ -93,7 +91,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyleDefaultSettingsOne.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleDefaultSettingsTwo()
             throws Exception {
         final String[] expected = {
@@ -106,7 +103,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleDefaultSettingsTwo.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleDefaultSettingsThree()
             throws Exception {
         final String[] expected = {
@@ -117,7 +113,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleDefaultSettingsThree.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleDefaultSettingsFour()
             throws Exception {
         final String[] expected = {
@@ -136,7 +131,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleDefaultSettingsFour.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleFirstSentenceOne() throws Exception {
         final String[] expected = {
             "23: " + getCheckMessage(MSG_NO_PERIOD),
@@ -150,7 +144,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyleFirstSentenceOne.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleFirstSentenceTwo() throws Exception {
         final String[] expected = {
             "66: " + getCheckMessage(MSG_NO_PERIOD),
@@ -161,7 +154,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleFirstSentenceTwo.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleFirstSentenceThree() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -169,7 +161,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleFirstSentenceThree.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleFirstSentenceFour() throws Exception {
         final String[] expected = {
             "40: " + getCheckMessage(MSG_NO_PERIOD),
@@ -184,7 +175,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleFirstSentenceFour.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleFirstSentenceFormatOne() throws Exception {
         final String[] expected = {
             "23: " + getCheckMessage(MSG_NO_PERIOD),
@@ -200,7 +190,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyleFirstSentenceFormatOne.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleFirstSentenceFormatTwo() throws Exception {
         final String[] expected = {
             "66: " + getCheckMessage(MSG_NO_PERIOD),
@@ -211,7 +200,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleFirstSentenceFormatTwo.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleFirstSentenceFormatThree() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -219,7 +207,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleFirstSentenceFormatThree.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleFirstSentenceFormatFour() throws Exception {
         final String[] expected = {
             "40: " + getCheckMessage(MSG_NO_PERIOD),
@@ -234,7 +221,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleFirstSentenceFormatFour.java"), expected);
     }
 
-    @Test
     public void testHtml1() throws Exception {
         final String[] expected = {
             "55:11: " + getCheckMessage(MSG_UNCLOSED_HTML,
@@ -254,7 +240,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleHtml1.java"), expected);
     }
 
-    @Test
     public void testHtml2() throws Exception {
         final String[] expected = {
             "67:8: " + getCheckMessage(MSG_UNCLOSED_HTML, "<blockquote> // violation"),
@@ -264,7 +249,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleHtml2.java"), expected);
     }
 
-    @Test
     public void testHtml3() throws Exception {
         final String[] expected = {
             "102:21: " + getCheckMessage(MSG_EXTRA_HTML, "</string> // violation"),
@@ -274,7 +258,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleHtml3.java"), expected);
     }
 
-    @Test
     public void testHtml4() throws Exception {
         final String[] expected = {
             "28:33: " + getCheckMessage(MSG_UNCLOSED_HTML, "<code> // violation"),
@@ -286,7 +269,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleHtml4.java"), expected);
     }
 
-    @Test
     public void testHtmlComment() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -294,7 +276,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyleHtmlComment.java"), expected);
     }
 
-    @Test
     public void testOnInputWithNoJavadoc1() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -302,7 +283,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyleNoJavadoc1.java"), expected);
     }
 
-    @Test
     public void testOnInputWithNoJavadoc2() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -310,7 +290,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyleNoJavadoc2.java"), expected);
     }
 
-    @Test
     public void testScopePublic()
             throws Exception {
         final String[] expected = {
@@ -330,7 +309,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyle5.java"), expected);
     }
 
-    @Test
     public void testScopeProtected()
             throws Exception {
         final String[] expected = {
@@ -353,7 +331,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyle6.java"), expected);
     }
 
-    @Test
     public void testScopePackage()
             throws Exception {
         final String[] expected = {
@@ -381,7 +358,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyle7.java"), expected);
     }
 
-    @Test
     public void testEmptyJavadoc1() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -389,7 +365,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleEmptyJavadoc1.java"), expected);
     }
 
-    @Test
     public void testEmptyJavadoc2() throws Exception {
         final String[] expected = {
             "75: " + getCheckMessage(MSG_EMPTY),
@@ -403,7 +378,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleEmptyJavadoc2.java"), expected);
     }
 
-    @Test
     public void testEmptyJavadoc3() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -411,7 +385,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleEmptyJavadoc3.java"), expected);
     }
 
-    @Test
     public void testEmptyJavadoc4() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -419,7 +392,6 @@ public class JavadocStyleCheckTest
             getPath("InputJavadocStyleEmptyJavadoc4.java"), expected);
     }
 
-    @Test
     public void testExcludeScope()
             throws Exception {
         final String[] expected = {
@@ -448,7 +420,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyle9.java"), expected);
     }
 
-    @Test
     public void packageInfoInheritDoc() throws Exception {
         final String[] expected = {
             "16: " + getCheckMessage(MSG_NO_PERIOD),
@@ -460,7 +431,6 @@ public class JavadocStyleCheckTest
                expected);
     }
 
-    @Test
     public void packageInfoInvalid() throws Exception {
         final String[] expected = {
             "16: " + getCheckMessage(MSG_NO_PERIOD),
@@ -472,7 +442,6 @@ public class JavadocStyleCheckTest
                expected);
     }
 
-    @Test
     public void packageInfoAnnotation() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -482,7 +451,6 @@ public class JavadocStyleCheckTest
                expected);
     }
 
-    @Test
     public void packageInfoMissing() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -491,7 +459,6 @@ public class JavadocStyleCheckTest
                expected);
     }
 
-    @Test
     public void packageInfoMissingPeriod() throws Exception {
         final String[] expected = {
             "16: " + getCheckMessage(MSG_NO_PERIOD),
@@ -502,7 +469,6 @@ public class JavadocStyleCheckTest
                expected);
     }
 
-    @Test
     public void testNothing() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -511,7 +477,6 @@ public class JavadocStyleCheckTest
                expected);
     }
 
-    @Test
     public void packageInfoValid() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -521,7 +486,6 @@ public class JavadocStyleCheckTest
                expected);
     }
 
-    @Test
     public void testRestrictedTokenSet()
             throws Exception {
         final String[] expected = {
@@ -533,7 +497,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyle10.java"), expected);
     }
 
-    @Test
     public void testJavadocStyleRecordsAndCompactCtors() throws Exception {
         final String[] expected = {
             "23: " + getCheckMessage(MSG_NO_PERIOD),
@@ -556,7 +519,6 @@ public class JavadocStyleCheckTest
             expected);
     }
 
-    @Test
     public void testHtmlTagToString() {
         final HtmlTag tag = new HtmlTag("id", 3, 5, true, false, "<a href=\"URL\"/>");
         assertWithMessage("Invalid toString result")
@@ -565,7 +527,6 @@ public class JavadocStyleCheckTest
                 + "closedTag=true, incompleteTag=false]");
     }
 
-    @Test
     public void testNeverEndingXmlCommentInsideJavadoc() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -573,7 +534,6 @@ public class JavadocStyleCheckTest
                 getPath("InputJavadocStyleNeverEndingXmlComment.java"), expected);
     }
 
-    @Test
     public void testInterfaceMemberScopeIsPublic()
             throws Exception {
         final String[] expected = {
@@ -586,7 +546,6 @@ public class JavadocStyleCheckTest
                 expected);
     }
 
-    @Test
     public void testEnumCtorScopeIsPrivate()
             throws Exception {
         final String[] expected = {
@@ -600,7 +559,6 @@ public class JavadocStyleCheckTest
                 expected);
     }
 
-    @Test
     public void testLowerCasePropertyForTag() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 

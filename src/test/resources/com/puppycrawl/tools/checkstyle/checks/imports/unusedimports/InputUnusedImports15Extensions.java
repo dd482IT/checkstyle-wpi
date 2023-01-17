@@ -12,7 +12,6 @@ package com.puppycrawl.tools.checkstyle.checks.imports.unusedimports;
     int version();
 }
 
-@MyAnnotation1(name = "ABC", version = 1)
 public class InputUnusedImports15Extensions
 {
 

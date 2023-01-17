@@ -18,7 +18,6 @@ import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
 
-@TestClassAnnotation
 class InputLeftCurlyTestNlWithAnnotations
 { // ok
     private static final int X = 10;
@@ -44,7 +43,7 @@ class InputLeftCurlyTestNlWithAnnotations
     }
 }
 
-@TestClassAnnotation // violation below ''{' at column 55 should be on a new line'
+// violation below ''{' at column 55 should be on a new line'
 class InputLeftCurlyAnnotations2TestNlWithAnnotations {
     private static final int X = 10;
     @Override

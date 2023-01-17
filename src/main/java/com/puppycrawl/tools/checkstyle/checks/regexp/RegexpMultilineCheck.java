@@ -248,11 +248,9 @@ import com.puppycrawl.tools.checkstyle.api.FileText;
  *
  * @since 5.0
  */
-@StatelessCheck
 public class RegexpMultilineCheck extends AbstractFileSetCheck {
 
     /** Specify the format of the regular expression to match. */
-    @XdocsPropertyType(PropertyType.PATTERN)
     private String format = "$.";
     /**
      * Specify the message which is used to notify about violations,

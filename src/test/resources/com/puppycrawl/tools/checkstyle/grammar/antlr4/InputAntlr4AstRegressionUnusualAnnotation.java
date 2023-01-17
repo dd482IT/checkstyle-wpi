@@ -16,21 +16,21 @@ public class InputAntlr4AstRegressionUnusualAnnotation {
 
     public class Inner<S> {
         public Inner() {}
-        public <@A T> Inner(@B Object o) {}
-        public <@C T> Object g(Inner<@D S> this, Object @E [] o) {
-            return new @F int @G [5];
+        public <T> Inner(Object o) {}
+        public <T> Object g(Inner<S> this, Object[] o) {
+            return new int[5];
         }
     }
 
-    public <@BL T extends @BO Inner<@BP Integer @BQ []>>
-    @BR Inner<@BS Inner<@BT String>> func4() {
-        return (@BU Inner<@BV Inner<@BW String>>)
-            new <@BX Inner<@BY Integer>> @BZ Inner<@CA Inner<@CB String>>(null);
+    public <T extends Inner<Integer[]>>
+    Inner<Inner<String>> func4() {
+        return (Inner<Inner<String>>)
+            new <Inner<Integer>> Inner<Inner<String>>(null);
     }
 
      class Test {
         class InnerException extends Exception { }
-        void foo() throws @C Test.@C InnerException {    }
+        void foo() throws Test.InnerException {    }
     }
 
     @Target(ElementType.TYPE_USE) @interface C { }

@@ -37,7 +37,6 @@ public class AnonInnerLengthCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/sizes/anoninnerlength";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final AnonInnerLengthCheck checkObj = new AnonInnerLengthCheck();
         final int[] expected = {TokenTypes.LITERAL_NEW};
@@ -46,7 +45,6 @@ public class AnonInnerLengthCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final AnonInnerLengthCheck anonInnerLengthCheckObj =
                 new AnonInnerLengthCheck();
@@ -58,7 +56,6 @@ public class AnonInnerLengthCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "53:35: " + getCheckMessage(MSG_KEY, 21, 20),
@@ -67,7 +64,6 @@ public class AnonInnerLengthCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnonInnerLength.java"), expected);
     }
 
-    @Test
     public void testNonDefault() throws Exception {
         final String[] expected = {
             "54:35: " + getCheckMessage(MSG_KEY, 21, 6),

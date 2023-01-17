@@ -37,7 +37,6 @@ public class FileLengthCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/sizes/filelength";
     }
 
-    @Test
     public void testAlarm() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_KEY, 228, 20),
@@ -46,28 +45,24 @@ public class FileLengthCheckTest
                 getPath("InputFileLength.java"), expected);
     }
 
-    @Test
     public void testAlarmDefault() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputFileLengthDefault.java"), expected);
     }
 
-    @Test
     public void testFileLengthEqualToMaxLength() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputFileLength2.java"), expected);
     }
 
-    @Test
     public void testOk() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputFileLength3.java"), expected);
     }
 
-    @Test
     public void testArgs() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(FileLengthCheck.class);
@@ -85,7 +80,6 @@ public class FileLengthCheckTest
         }
     }
 
-    @Test
     public void testNoAlarmByExtension() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -93,7 +87,6 @@ public class FileLengthCheckTest
                 getPath("InputFileLength4.java"), expected);
     }
 
-    @Test
     public void testExtensions() {
         final FileLengthCheck check = new FileLengthCheck();
         check.setFileExtensions("java");

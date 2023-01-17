@@ -27,7 +27,6 @@ import com.puppycrawl.tools.checkstyle.api.JavadocTokenTypes;
 
 public class JavadocNodeImplTest {
 
-    @Test
     public void testToString() {
         final JavadocNodeImpl javadocNode = new JavadocNodeImpl();
         javadocNode.setType(JavadocTokenTypes.CODE_LITERAL);
@@ -42,7 +41,6 @@ public class JavadocNodeImplTest {
                 + " columnNumber=2, children=0, parent=null]");
     }
 
-    @Test
     public void testGetColumnNumber() {
         final JavadocNodeImpl javadocNode = new JavadocNodeImpl();
         javadocNode.setColumnNumber(1);

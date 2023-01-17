@@ -58,7 +58,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/suppresswarningsholder";
     }
 
-    @AfterEach
     public void cleanUp() {
         // clear cache that may have been set by tests
 
@@ -69,7 +68,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         map.clear();
     }
 
-    @Test
     public void testGet() {
         final SuppressWarningsHolder checkObj = new SuppressWarningsHolder();
         final int[] expected = {TokenTypes.ANNOTATION};
@@ -81,7 +79,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testOnComplexAnnotations() throws Exception {
         final Configuration checkConfig = createModuleConfig(SuppressWarningsHolder.class);
 
@@ -90,7 +87,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputSuppressWarningsHolder.java"), expected);
     }
 
-    @Test
     public void testOnComplexAnnotationsNonConstant() throws Exception {
         final Configuration checkConfig = createModuleConfig(SuppressWarningsHolder.class);
 
@@ -100,7 +96,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputSuppressWarningsHolderNonConstant.java"), expected);
     }
 
-    @Test
     public void testCustomAnnotation() throws Exception {
         final Configuration checkConfig = createModuleConfig(SuppressWarningsHolder.class);
 
@@ -109,7 +104,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputSuppressWarningsHolder5.java"), expected);
     }
 
-    @Test
     public void testAll() throws Exception {
         final Configuration checkConfig = createModuleConfig(SuppressWarningsHolder.class);
         final DefaultConfiguration treeWalker = createModuleConfig(TreeWalker.class);
@@ -132,7 +126,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         verify(root, getPath("InputSuppressWarningsHolder6.java"), expected);
     }
 
-    @Test
     public void testGetDefaultAlias() {
         assertWithMessage("Default alias differs from expected")
             .that(SuppressWarningsHolder.getDefaultAlias("SomeName"))
@@ -142,7 +135,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
             .isEqualTo("somename");
     }
 
-    @Test
     public void testSetAliasListEmpty() {
         final SuppressWarningsHolder holder = new SuppressWarningsHolder();
         holder.setAliasList("");
@@ -151,7 +143,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
             .isEqualTo("");
     }
 
-    @Test
     public void testSetAliasListCorrect() {
         final SuppressWarningsHolder holder = new SuppressWarningsHolder();
         holder.setAliasList("alias=value");
@@ -160,7 +151,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
             .isEqualTo("value");
     }
 
-    @Test
     public void testSetAliasListWrong() {
         final SuppressWarningsHolder holder = new SuppressWarningsHolder();
 
@@ -175,7 +165,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testIsSuppressed() throws Exception {
         populateHolder("MockEntry", 100, 100, 350, 350);
         final AuditEvent event = createAuditEvent("check", 100, 10);
@@ -185,7 +174,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testIsSuppressedByName() throws Exception {
         populateHolder("check", 100, 100, 350, 350);
         final SuppressWarningsHolder holder = new SuppressWarningsHolder();
@@ -197,7 +185,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testIsSuppressedByModuleId() throws Exception {
         populateHolder("check", 100, 100, 350, 350);
         final AuditEvent event = createAuditEvent("check", 350, 350);
@@ -207,7 +194,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testIsSuppressedAfterEventEnd() throws Exception {
         populateHolder("check", 100, 100, 350, 350);
         final AuditEvent event = createAuditEvent("check", 350, 352);
@@ -217,7 +203,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testIsSuppressedAfterEventEnd2() throws Exception {
         populateHolder("check", 100, 100, 350, 350);
         final AuditEvent event = createAuditEvent("check", 400, 10);
@@ -227,7 +212,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testIsSuppressedAfterEventStart() throws Exception {
         populateHolder("check", 100, 100, 350, 350);
         final AuditEvent event = createAuditEvent("check", 100, 100);
@@ -237,7 +221,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testIsSuppressedAfterEventStart2() throws Exception {
         populateHolder("check", 100, 100, 350, 350);
         final AuditEvent event = createAuditEvent("check", 100, 0);
@@ -247,7 +230,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testIsSuppressedWithAllArgument() throws Exception {
         populateHolder("all", 100, 100, 350, 350);
 
@@ -277,7 +259,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testAnnotationInTry() throws Exception {
         final Configuration checkConfig = createModuleConfig(SuppressWarningsHolder.class);
 
@@ -286,7 +267,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputSuppressWarningsHolder2.java"), expected);
     }
 
-    @Test
     public void testEmptyAnnotation() throws Exception {
         final Configuration checkConfig = createModuleConfig(SuppressWarningsHolder.class);
 
@@ -295,7 +275,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputSuppressWarningsHolder3.java"), expected);
     }
 
-    @Test
     public void testGetAllAnnotationValuesWrongArg() throws ReflectiveOperationException {
         final SuppressWarningsHolder holder = new SuppressWarningsHolder();
         final Method getAllAnnotationValues = holder.getClass()
@@ -332,7 +311,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testGetAnnotationValuesWrongArg() throws ReflectiveOperationException {
         final SuppressWarningsHolder holder = new SuppressWarningsHolder();
         final Method getAllAnnotationValues = holder.getClass()
@@ -363,7 +341,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testGetAnnotationTargetWrongArg() throws ReflectiveOperationException {
         final SuppressWarningsHolder holder = new SuppressWarningsHolder();
         final Method getAnnotationTarget = holder.getClass()
@@ -398,7 +375,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testAstWithoutChildren() {
         final SuppressWarningsHolder holder = new SuppressWarningsHolder();
         final DetailAstImpl methodDef = new DetailAstImpl();
@@ -415,7 +391,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testAnnotationWithFullName() throws Exception {
         final Configuration checkConfig = createModuleConfig(SuppressWarningsHolder.class);
 
@@ -424,7 +399,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputSuppressWarningsHolder4.java"), expected);
     }
 
-    @Test
     public void testSuppressWarningsAsAnnotationProperty() throws Exception {
         final Configuration checkConfig = createModuleConfig(SuppressWarningsHolder.class);
 
@@ -433,7 +407,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputSuppressWarningsHolder7.java"), expected);
     }
 
-    @Test
     @SuppressWarnings("unchecked")
     public void testClearState() throws Exception {
         final SuppressWarningsHolder check = new SuppressWarningsHolder();
@@ -478,7 +451,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
         return new AuditEvent(source, "filename", violation);
     }
 
-    @Test
     public void testSuppressWarningsTextBlocks() throws Exception {
         final Configuration checkConfig = createModuleConfig(SuppressWarningsHolder.class);
         final DefaultConfiguration treeWalker = createModuleConfig(TreeWalker.class);
@@ -506,7 +478,6 @@ public class SuppressWarningsHolderTest extends AbstractModuleTestSupport {
             getNonCompilablePath("InputSuppressWarningsHolderTextBlocks.java"), expected);
     }
 
-    @Test
     public void testWithAndWithoutCheckSuffixDifferentCases() throws Exception {
         final Configuration checkConfig = createModuleConfig(SuppressWarningsHolder.class);
         final DefaultConfiguration treeWalker = createModuleConfig(TreeWalker.class);

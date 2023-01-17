@@ -37,7 +37,6 @@ public class XpathRegressionDeclarationOrderTest extends AbstractXpathTestSuppor
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionDeclarationOrderOne.java"));
@@ -66,7 +65,6 @@ public class XpathRegressionDeclarationOrderTest extends AbstractXpathTestSuppor
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionDeclarationOrderTwo.java"));

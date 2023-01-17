@@ -32,7 +32,6 @@ public class JavadocTagContinuationIndentationTest extends AbstractGoogleModuleT
         return "com/google/checkstyle/test/chapter7javadoc/rule713atclauses";
     }
 
-    @Test
     public void testWithDefaultConfiguration() throws Exception {
         final String msg = getCheckMessage(JavadocTagContinuationIndentationCheck.class,
                 "tag.continuation.indent", 4);

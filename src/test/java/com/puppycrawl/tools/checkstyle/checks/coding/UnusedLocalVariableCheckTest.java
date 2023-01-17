@@ -45,7 +45,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/unusedlocalvariable";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final UnusedLocalVariableCheck checkObj =
                 new UnusedLocalVariableCheck();
@@ -77,7 +76,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final UnusedLocalVariableCheck typeParameterNameCheckObj =
                 new UnusedLocalVariableCheck();
@@ -109,7 +107,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testUnusedLocalVariable() throws Exception {
         final String[] expected = {
             "27:9: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "sameName"),
@@ -131,7 +128,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 getPath("InputUnusedLocalVariable.java"), expected);
     }
 
-    @Test
     public void testUnusedLocalVar2() throws Exception {
         final String[] expected = {
             "17:14: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "i"),
@@ -149,7 +145,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnusedLocalVarInAnonInnerClasses() throws Exception {
         final String[] expected = {
             "14:9: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "a"),
@@ -167,7 +162,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnusedLocalVarGenericAnonInnerClasses() throws Exception {
         final String[] expected = {
             "13:9: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "l"),
@@ -184,7 +178,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnusedLocalVarDepthOfClasses() throws Exception {
         final String[] expected = {
             "28:9: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "r"),
@@ -197,7 +190,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnusedLocalVarNestedClasses() throws Exception {
         final String[] expected = {
             "21:13: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "V"),
@@ -213,7 +205,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnusedLocalVarNestedClasses2() throws Exception {
         final String[] expected = {
             "29:9: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "q"),
@@ -227,7 +218,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnusedLocalVarNestedClasses3() throws Exception {
         final String[] expected = {
             "36:17: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "p2"),
@@ -241,7 +231,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnusedLocalVarEnum() throws Exception {
         final String[] expected = {
             "22:9: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "a"),
@@ -255,7 +244,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnusedLocalVarRecords() throws Exception {
         final String[] expected = {
             "16:9: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "var1"),
@@ -268,7 +256,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnusedLocalVarWithoutPackageStatement() throws Exception {
         final String[] expected = {
             "12:9: " + getCheckMessage(MSG_UNUSED_LOCAL_VARIABLE, "a"),
@@ -280,7 +267,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testUnusedLocalVariableTernaryAndExpressions() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -288,7 +274,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testClearStateVariables() throws Exception {
         final UnusedLocalVariableCheck check = new UnusedLocalVariableCheck();
         final Optional<DetailAST> methodDef = TestUtil.findTokenInAstByPredicate(
@@ -310,7 +295,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testClearStateClasses() throws Exception {
         final UnusedLocalVariableCheck check = new UnusedLocalVariableCheck();
         final Optional<DetailAST> classDef = TestUtil.findTokenInAstByPredicate(
@@ -345,7 +329,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testClearStateAnonInnerClass() throws Exception {
         final UnusedLocalVariableCheck check = new UnusedLocalVariableCheck();
         final DetailAST root = JavaParser.parseFile(
@@ -379,7 +362,6 @@ public class UnusedLocalVariableCheckTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testClearStatePackageDef() throws Exception {
         final UnusedLocalVariableCheck check = new UnusedLocalVariableCheck();
         final Optional<DetailAST> packageDef = TestUtil.findTokenInAstByPredicate(

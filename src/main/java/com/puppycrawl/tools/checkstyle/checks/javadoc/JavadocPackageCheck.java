@@ -82,7 +82,6 @@ import com.puppycrawl.tools.checkstyle.api.FileText;
  *
  * @since 5.0
  */
-@GlobalStatefulCheck
 public class JavadocPackageCheck extends AbstractFileSetCheck {
 
     /**

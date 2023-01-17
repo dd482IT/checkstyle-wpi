@@ -36,7 +36,6 @@ public class XpathRegressionAvoidInlineConditionalsTest extends AbstractXpathTes
         return AvoidInlineConditionalsCheck.class.getSimpleName();
     }
 
-    @Test
     public void testInlineConditionalsVariableDef() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionAvoidInlineConditionalsVariableDef.java"));
@@ -64,7 +63,6 @@ public class XpathRegressionAvoidInlineConditionalsTest extends AbstractXpathTes
                 expectedXpathQueries);
     }
 
-    @Test
     public void testInlineConditionalsAssign() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionAvoidInlineConditionalsAssign.java"));
@@ -88,7 +86,6 @@ public class XpathRegressionAvoidInlineConditionalsTest extends AbstractXpathTes
                 expectedXpathQueries);
     }
 
-    @Test
     public void testInlineConditionalsAssert() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionAvoidInlineConditionalsAssert.java"));

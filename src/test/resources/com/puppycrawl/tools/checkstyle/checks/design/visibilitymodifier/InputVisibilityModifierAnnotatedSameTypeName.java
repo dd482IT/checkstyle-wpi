@@ -28,9 +28,7 @@ import com.puppycrawl.tools.checkstyle.checks.design.visibilitymodifier.InputVis
 
 public class InputVisibilityModifierAnnotatedSameTypeName
 {
-    @Rule
     public TemporaryFolder publicJUnitRule = new TemporaryFolder(); // violation
 
-    @ClassRule
     public TemporaryFolder publicJUnitClassRule = new TemporaryFolder(); // violation
 }

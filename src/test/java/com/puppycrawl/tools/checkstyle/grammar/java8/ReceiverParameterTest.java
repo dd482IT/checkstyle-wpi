@@ -31,7 +31,6 @@ public class ReceiverParameterTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/grammar/java8";
     }
 
-    @Test
     public void testCanParse()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

@@ -100,7 +100,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 3.2
  */
-@FileStatefulCheck
 public final class PackageDeclarationCheck extends AbstractCheck {
 
     /**

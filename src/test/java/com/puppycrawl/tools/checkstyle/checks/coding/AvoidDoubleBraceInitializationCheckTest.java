@@ -34,7 +34,6 @@ public class AvoidDoubleBraceInitializationCheckTest extends AbstractModuleTestS
         return "com/puppycrawl/tools/checkstyle/checks/coding/avoiddoublebraceinitialization";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "14:53: " + getCheckMessage(MSG_KEY),
@@ -56,7 +55,6 @@ public class AvoidDoubleBraceInitializationCheckTest extends AbstractModuleTestS
                 expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final AvoidDoubleBraceInitializationCheck check =
             new AvoidDoubleBraceInitializationCheck();

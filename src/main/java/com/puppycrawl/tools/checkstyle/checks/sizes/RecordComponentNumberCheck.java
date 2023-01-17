@@ -132,7 +132,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 8.36
  */
-@StatelessCheck
 public class RecordComponentNumberCheck extends AbstractCheck {
 
     /**

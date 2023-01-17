@@ -36,7 +36,6 @@ public class LocalVariableNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/localvariablename";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final LocalVariableNameCheck localVariableNameCheck = new LocalVariableNameCheck();
         final int[] expected = {TokenTypes.VARIABLE_DEF};
@@ -46,7 +45,6 @@ public class LocalVariableNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault()
             throws Exception {
 
@@ -62,7 +60,6 @@ public class LocalVariableNameCheckTest
                 getPath("InputLocalVariableName.java"), expected);
     }
 
-    @Test
     public void testInnerClass()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -70,7 +67,6 @@ public class LocalVariableNameCheckTest
                 getPath("InputLocalVariableNameInnerClass.java"), expected);
     }
 
-    @Test
     public void testLoopVariables()
             throws Exception {
 

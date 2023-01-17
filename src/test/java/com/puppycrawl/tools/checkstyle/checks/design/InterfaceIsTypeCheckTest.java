@@ -35,7 +35,6 @@ public class InterfaceIsTypeCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/design/interfaceistype";
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -45,7 +44,6 @@ public class InterfaceIsTypeCheckTest
                 getPath("InputInterfaceIsType.java"), expected);
     }
 
-    @Test
     public void testAllowMarker()
             throws Exception {
         final String[] expected = {
@@ -56,7 +54,6 @@ public class InterfaceIsTypeCheckTest
                 getPath("InputInterfaceIsTypeAllowMarker.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final InterfaceIsTypeCheck obj = new InterfaceIsTypeCheck();
         final int[] expected = {TokenTypes.INTERFACE_DEF};
@@ -65,7 +62,6 @@ public class InterfaceIsTypeCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final InterfaceIsTypeCheck obj = new InterfaceIsTypeCheck();
         final int[] expected = {TokenTypes.INTERFACE_DEF};

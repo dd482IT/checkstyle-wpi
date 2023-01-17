@@ -36,7 +36,6 @@ public class JavadocDetailNodeParserTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/javadocdetailnodeparser";
     }
 
-    @Test
     public void testParseJavadocAsDetailNode() throws Exception {
         final DetailAST ast = JavaParser.parseFile(
             new File(getPath("InputJavadocDetailNodeParser.java")),

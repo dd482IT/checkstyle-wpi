@@ -48,7 +48,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
     /**
      * Test of setHeader method, of class RegexpHeaderCheck.
      */
-    @Test
     public void testSetHeaderNull() {
         // check null passes
         final RegexpHeaderCheck instance = new RegexpHeaderCheck();
@@ -65,7 +64,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
     /**
      * Test of setHeader method, of class RegexpHeaderCheck.
      */
-    @Test
     public void testSetHeaderEmpty() {
         // check null passes
         final RegexpHeaderCheck instance = new RegexpHeaderCheck();
@@ -82,7 +80,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
     /**
      * Test of setHeader method, of class RegexpHeaderCheck.
      */
-    @Test
     public void testSetHeaderSimple() {
         final RegexpHeaderCheck instance = new RegexpHeaderCheck();
         // check valid header passes
@@ -100,7 +97,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
     /**
      * Test of setHeader method, of class RegexpHeaderCheck.
      */
-    @Test
     public void testSetHeader() {
         // check invalid header passes
         final RegexpHeaderCheck instance = new RegexpHeaderCheck();
@@ -118,7 +114,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testDefaultConfiguration() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpHeaderCheck.class);
         createChecker(checkConfig);
@@ -126,7 +121,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderDefaultConfig.java"), expected);
     }
 
-    @Test
     public void testEmptyFilename() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpHeaderCheck.class);
         checkConfig.addProperty("headerFile", "");
@@ -143,7 +137,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testRegexpHeader() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -154,7 +147,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderIgnore.java"), expected);
     }
 
-    @Test
     public void testNonMatchingRegexpHeader() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(RegexpHeaderCheck.class);
@@ -167,7 +159,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderNonMatching.java"), expected);
     }
 
-    @Test
     public void testRegexpHeaderUrl() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -178,7 +169,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderIgnore.java"), expected);
     }
 
-    @Test
     public void testInlineRegexpHeader() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -189,7 +179,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderIgnore.java"), expected);
     }
 
-    @Test
     public void testFailureForMultilineRegexp() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -208,7 +197,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testInlineRegexpHeaderConsecutiveNewlines() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -219,7 +207,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderConsecutiveNewLines.java"), expected);
     }
 
-    @Test
     public void testInlineRegexpHeaderConsecutiveNewlinesThroughConfigFile() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -230,7 +217,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderConsecutiveNewLines.java"), expected);
     }
 
-    @Test
     public void testRegexpHeaderIgnore() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -239,7 +225,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderIgnore.java"), expected);
     }
 
-    @Test
     public void testRegexpHeaderMulti1() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -249,7 +234,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderDefaultConfig.java"), expected);
     }
 
-    @Test
     public void testRegexpHeaderMulti2() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -259,7 +243,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderMulti2.java"), expected);
     }
 
-    @Test
     public void testRegexpHeaderMulti3() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -269,7 +252,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderDefaultConfig.java"), expected);
     }
 
-    @Test
     public void testRegexpHeaderMulti4() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -279,7 +261,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderMulti4.java"), expected);
     }
 
-    @Test
     public void testRegexpHeaderMulti5() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -291,7 +272,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderMulti5.java"), expected);
     }
 
-    @Test
     public void testRegexpHeaderMulti6() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -301,7 +281,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderMulti6.java"), expected);
     }
 
-    @Test
     public void testRegexpHeaderSmallHeader() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -311,7 +290,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderSmallHeader.java"), expected);
     }
 
-    @Test
     public void testEmptyMultiline()
             throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpHeaderCheck.class);
@@ -323,7 +301,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderSmallHeader.java"), expected);
     }
 
-    @Test
     public void testRegexpHeaderMulti52()
             throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpHeaderCheck.class);
@@ -334,7 +311,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderMulti52.java"), expected);
     }
 
-    @Test
     public void testIgnoreLinesSorted() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(RegexpHeaderCheck.class);
@@ -344,7 +320,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderIgnoreLinesSorted.java"), expected);
     }
 
-    @Test
     public void testHeaderWithInvalidRegexp() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpHeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputRegexpHeader.invalid.header"));
@@ -361,7 +336,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testNoWarningIfSingleLinedLeft() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpHeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputRegexpHeader4.header"));
@@ -369,7 +343,6 @@ public class RegexpHeaderCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpHeaderMulti5.java"), expected);
     }
 
-    @Test
     public void testNoHeaderMissingErrorInCaseHeaderSizeEqualToFileSize() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpHeaderCheck.class);
         checkConfig.addProperty("headerFile", getPath("InputRegexpHeader3.header"));

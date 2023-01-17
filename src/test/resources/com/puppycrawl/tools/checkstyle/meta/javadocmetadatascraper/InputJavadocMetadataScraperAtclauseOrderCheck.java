@@ -95,7 +95,6 @@ import com.puppycrawl.tools.checkstyle.StatelessCheck;
  *
  * @since 6.0
  */
-@StatelessCheck
 public abstract class InputJavadocMetadataScraperAtclauseOrderCheck {
 
 }

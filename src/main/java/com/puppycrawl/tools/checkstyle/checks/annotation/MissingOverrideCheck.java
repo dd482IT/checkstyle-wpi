@@ -168,7 +168,6 @@ import com.puppycrawl.tools.checkstyle.utils.JavadocUtil;
  *
  * @since 5.0
  */
-@StatelessCheck
 public final class MissingOverrideCheck extends AbstractCheck {
 
     /**

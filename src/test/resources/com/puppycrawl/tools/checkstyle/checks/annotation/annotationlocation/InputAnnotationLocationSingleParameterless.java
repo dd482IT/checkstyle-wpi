@@ -17,24 +17,24 @@ import java.lang.annotation.Target;
 
 class InputAnnotationLocationSingleParameterless {
 
-    @Annotation void singleParameterless() {}
+    void singleParameterless() {}
 
     // violation below 'Annotation 'Annotation' should be alone on line.'
-    @Annotation @Annotation void multipleParameterless() {}
+    void multipleParameterless() {}
 
-    @Annotation("") void parameterized() {} // violation '.* should be alone on line.'
+    void parameterized() {} // violation '.* should be alone on line.'
 
-    @Annotation(value = "") void namedParameterized() {} // violation '.* should be alone on line.'
+    void namedParameterized() {} // violation '.* should be alone on line.'
 
-    @Annotation @Annotation("") @Annotation(value = "") void multiple() {} // 2 violations
+    void multiple() {} // 2 violations
 
-    @Annotation("") @Annotation(value = "") void multipleParametrized() {} // 2 violations
+    void multipleParametrized() {} // 2 violations
 
     void parameterlessSamelineInForEach() {
-        for (@Annotation Object o : new Object[0]) break; //ok
-        for (@Annotation @Annotation Object o : new Object[0]) break; //ok
-        for (@Annotation Object o;;) break; // ok
-        for (@Annotation @Annotation Object o;;) break; //ok
+        for (Object o : new Object[0]) break; //ok
+        for (Object o : new Object[0]) break; //ok
+        for (Object o;;) break; // ok
+        for (Object o;;) break; //ok
     }
 
     @Repeatable(Annotations.class)

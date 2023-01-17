@@ -87,7 +87,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  * @noinspectionreason HtmlTagCanBeJavadocTag - encoded symbols were not decoded
  *      when replaced with Javadoc tag
  */
-@StatelessCheck
 public class StringLiteralEqualityCheck extends AbstractCheck {
 
     /**

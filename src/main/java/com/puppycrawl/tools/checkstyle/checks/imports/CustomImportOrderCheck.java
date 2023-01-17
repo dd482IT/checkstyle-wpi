@@ -656,7 +656,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 5.8
  */
-@FileStatefulCheck
 public class CustomImportOrderCheck extends AbstractCheck {
 
     /**

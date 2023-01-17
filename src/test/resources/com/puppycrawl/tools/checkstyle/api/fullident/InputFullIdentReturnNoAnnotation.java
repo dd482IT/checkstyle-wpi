@@ -10,7 +10,7 @@ import org.junit.Assert;
 import com.google.common.reflect.Invokable;
 
 public class InputFullIdentReturnNoAnnotation {
-    private static <T> @Nullable T invoke(Invokable<?, ? extends T> factory, List<?> args)
+    private static <T> T invoke(Invokable<?, ? extends T> factory, List<?> args)
                 throws InvocationTargetException, IllegalAccessException {
             T returnValue = factory.invoke(null, args.toArray());
             if (returnValue == null) {

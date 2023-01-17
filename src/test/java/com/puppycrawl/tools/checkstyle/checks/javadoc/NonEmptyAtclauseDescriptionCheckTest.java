@@ -35,7 +35,6 @@ public class NonEmptyAtclauseDescriptionCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/nonemptyatclausedescription";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final NonEmptyAtclauseDescriptionCheck checkObj =
             new NonEmptyAtclauseDescriptionCheck();
@@ -45,7 +44,6 @@ public class NonEmptyAtclauseDescriptionCheckTest
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final NonEmptyAtclauseDescriptionCheck checkObj =
             new NonEmptyAtclauseDescriptionCheck();
@@ -55,7 +53,6 @@ public class NonEmptyAtclauseDescriptionCheckTest
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testCheckOne() throws Exception {
         final String[] expected = {
             // this is a case with description that is sequences of spaces
@@ -80,7 +77,6 @@ public class NonEmptyAtclauseDescriptionCheckTest
         verifyWithInlineConfigParser(getPath("InputNonEmptyAtclauseDescriptionOne.java"), expected);
     }
 
-    @Test
     public void testCheckTwo() throws Exception {
         final String[] expected = {
             "16: " + getCheckMessage(MSG_KEY),

@@ -38,25 +38,21 @@ public class XmlMetaReaderTest extends AbstractPathTestSupport {
         return "com/puppycrawl/tools/checkstyle/meta/xmlmetareader";
     }
 
-    @Test
     public void test() {
         assertThat(XmlMetaReader.readAllModulesIncludingThirdPartyIfAny()).hasSize(199);
     }
 
-    @Test
     public void testDuplicatePackage() {
         assertThat(XmlMetaReader
                     .readAllModulesIncludingThirdPartyIfAny("com.puppycrawl.tools.checkstyle.meta"))
                 .hasSize(199);
     }
 
-    @Test
     public void testBadPackage() {
         assertThat(XmlMetaReader.readAllModulesIncludingThirdPartyIfAny("DOES.NOT.EXIST"))
                 .hasSize(199);
     }
 
-    @Test
     public void testReadXmlMetaCheckWithProperties() throws Exception {
         final String path = getPath("InputXmlMetaReaderCheckWithProps.xml");
         try (InputStream is = Files.newInputStream(Paths.get(path))) {
@@ -83,7 +79,6 @@ public class XmlMetaReaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testReadXmlMetaCheckNoProperties() throws Exception {
         final String path = getPath("InputXmlMetaReaderCheckNoProps.xml");
         try (InputStream is = Files.newInputStream(Paths.get(path))) {
@@ -101,7 +96,6 @@ public class XmlMetaReaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testReadXmlMetaFilter() throws Exception {
         final String path = getPath("InputXmlMetaReaderFilter.xml");
         try (InputStream is = Files.newInputStream(Paths.get(path))) {
@@ -120,7 +114,6 @@ public class XmlMetaReaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testReadXmlMetaFileFilter() throws Exception {
         final String path = getPath("InputXmlMetaReaderFileFilter.xml");
         try (InputStream is = Files.newInputStream(Paths.get(path))) {
@@ -143,7 +136,6 @@ public class XmlMetaReaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testReadXmlMetaModuleTypeNull() throws Exception {
         try (InputStream is = IOUtils.toInputStream("", "UTF-8")) {
             assertThat(XmlMetaReader.read(is, null)).isNull();

@@ -1,5 +1,4 @@
 /** */
-@Example
 package com.puppycrawl.tools.checkstyle.utils.blockcommentposition.inputs.annotation;
 
 import java.lang.annotation.ElementType;

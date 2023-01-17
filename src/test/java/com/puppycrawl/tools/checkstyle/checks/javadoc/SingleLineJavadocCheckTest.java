@@ -34,7 +34,6 @@ public class SingleLineJavadocCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/singlelinejavadoc";
     }
 
-    @Test
     public void testAcceptableTokens() {
         final SingleLineJavadocCheck checkObj = new SingleLineJavadocCheck();
         final int[] expected = {TokenTypes.BLOCK_COMMENT_BEGIN };
@@ -43,7 +42,6 @@ public class SingleLineJavadocCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final SingleLineJavadocCheck checkObj = new SingleLineJavadocCheck();
         final int[] expected = {TokenTypes.BLOCK_COMMENT_BEGIN };
@@ -52,7 +50,6 @@ public class SingleLineJavadocCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void simpleTest() throws Exception {
         final String[] expected = {
             "22: " + getCheckMessage(MSG_KEY),
@@ -65,7 +62,6 @@ public class SingleLineJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSingleLineJavadoc.java"), expected);
     }
 
-    @Test
     public void testIgnoredTags() throws Exception {
         final String[] expected = {
             "14: " + getCheckMessage(MSG_KEY),

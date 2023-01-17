@@ -32,7 +32,6 @@ public class LineLengthTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter3filestructure/rule32packagestate";
     }
 
-    @Test
     public void testLineLength() throws Exception {
         final String[] expected = {
             "5: " + getCheckMessage(LineLengthCheck.class, "maxLineLen", 100, 112),

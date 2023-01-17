@@ -35,7 +35,6 @@ class InputWhitespaceAroundEmptyTypesAndCycles2
     private static final String ALLOWS_NULL_KEYS = "";
     private static final String ALLOWS_NULL_VALUES = "";
 
-    @MapFeature.Require({ALLOWS_NULL_KEYS, ALLOWS_NULL_VALUES})
     private void foo()
     {
         int i = 0;

@@ -43,7 +43,6 @@ public class PkgImportControlTest {
     private final PkgImportControl icBootRegexpParen = new PkgImportControl(icRootRegexpParent,
             "bo+t", true, MismatchStrategy.DELEGATE_TO_PARENT);
 
-    @BeforeEach
     public void setUp() {
         icRoot.addChild(icCommon);
         icRoot.addImportRule(
@@ -70,14 +69,12 @@ public class PkgImportControlTest {
         icRootRegexpParent.addChild(icBootRegexpParen);
     }
 
-    @Test
     public void testDotMetaCharacter() {
         assertWithMessage("Unexpected response")
             .that(icUncommon.locateFinest("com-kazgroup.courtlink.uncommon.regexp", "MyClass"))
             .isNull();
     }
 
-    @Test
     public void testLocateFinest() {
         assertWithMessage("Unexpected response")
             .that(icRoot.locateFinest("com.kazgroup.courtlink.domain", "MyClass"))
@@ -90,7 +87,6 @@ public class PkgImportControlTest {
             .isNull();
     }
 
-    @Test
     public void testEnsureTrailingDot() {
         assertWithMessage("Unexpected response")
             .that(icRoot.locateFinest("com.kazgroup.courtlinkkk", "MyClass"))
@@ -100,7 +96,6 @@ public class PkgImportControlTest {
             .isNull();
     }
 
-    @Test
     public void testCheckAccess() {
         assertWithMessage("Unexpected access result")
             .that(icCommon.checkAccess(
@@ -134,14 +129,12 @@ public class PkgImportControlTest {
             .isEqualTo(AccessResult.DISALLOWED);
     }
 
-    @Test
     public void testUnknownPkg() {
         assertWithMessage("Unexpected response")
             .that(icRoot.locateFinest("net.another", "MyClass"))
             .isNull();
     }
 
-    @Test
     public void testRegExpChildLocateFinest() {
         assertWithMessage("Unexpected response")
             .that(icRootRegexpChild.locateFinest("com.kazgroup.courtlink.domain", "MyClass"))
@@ -154,7 +147,6 @@ public class PkgImportControlTest {
             .isNull();
     }
 
-    @Test
     public void testRegExpChildCheckAccess() {
         assertWithMessage("Unexpected access result")
             .that(icCommonRegexpChild.checkAccess("com.kazgroup.courtlink.common", "MyClass",
@@ -202,14 +194,12 @@ public class PkgImportControlTest {
             .isEqualTo(AccessResult.DISALLOWED);
     }
 
-    @Test
     public void testRegExpChildUnknownPkg() {
         assertWithMessage("Unexpected response")
             .that(icRootRegexpChild.locateFinest("net.another", "MyClass"))
             .isNull();
     }
 
-    @Test
     public void testRegExpParentInRootIsConsidered() {
         assertWithMessage("Package should not be null")
             .that(icRootRegexpParent.locateFinest("com", "MyClass"))
@@ -228,7 +218,6 @@ public class PkgImportControlTest {
             .isEqualTo(icRootRegexpParent);
     }
 
-    @Test
     public void testRegExpParentInSubpackageIsConsidered() {
         assertWithMessage("Invalid package")
             .that(icRootRegexpParent
@@ -240,7 +229,6 @@ public class PkgImportControlTest {
             .isEqualTo(icBootRegexpParen);
     }
 
-    @Test
     public void testRegExpParentEnsureTrailingDot() {
         assertWithMessage("Invalid package")
             .that(icRootRegexpParent.locateFinest("com.kazgroup.courtlinkkk", "MyClass"))
@@ -250,7 +238,6 @@ public class PkgImportControlTest {
             .isNull();
     }
 
-    @Test
     public void testRegExpParentAlternationInParentIsHandledCorrectly() {
         // the regular expression has to be adjusted to (com\.foo|com\.bar)
         final PkgImportControl root = new PkgImportControl("com\\.foo|com\\.bar", true,
@@ -272,7 +259,6 @@ public class PkgImportControlTest {
             .isEqualTo(common);
     }
 
-    @Test
     public void testRegExpParentAlternationInParentIfUserCaresForIt() {
         // the regular expression has to be adjusted to (com\.foo|com\.bar)
         final PkgImportControl root = new PkgImportControl("(com\\.foo|com\\.bar)", true,
@@ -294,7 +280,6 @@ public class PkgImportControlTest {
             .isEqualTo(common);
     }
 
-    @Test
     public void testRegExpParentAlternationInSubpackageIsHandledCorrectly() {
         final PkgImportControl root = new PkgImportControl("org.somewhere", false,
                 MismatchStrategy.DISALLOWED);
@@ -313,7 +298,6 @@ public class PkgImportControlTest {
             .isEqualTo(subpackages);
     }
 
-    @Test
     public void testRegExpParentUnknownPkg() {
         assertWithMessage("Package should not be null")
             .that(icRootRegexpParent.locateFinest("net.another", "MyClass"))

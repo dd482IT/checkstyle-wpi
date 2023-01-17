@@ -168,7 +168,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 3.1
  */
-@StatelessCheck
 public class MissingSwitchDefaultCheck extends AbstractCheck {
 
     /**

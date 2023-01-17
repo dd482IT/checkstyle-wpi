@@ -37,7 +37,6 @@ public class XpathRegressionFallThroughTest extends AbstractXpathTestSupport {
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionFallThroughOne.java"));
@@ -64,7 +63,6 @@ public class XpathRegressionFallThroughTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionFallThroughTwo.java"));

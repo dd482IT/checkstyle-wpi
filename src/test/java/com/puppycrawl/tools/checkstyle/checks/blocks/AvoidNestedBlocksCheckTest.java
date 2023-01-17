@@ -35,7 +35,6 @@ public class AvoidNestedBlocksCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/blocks/avoidnestedblocks";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final AvoidNestedBlocksCheck checkObj = new AvoidNestedBlocksCheck();
         final int[] expected = {TokenTypes.SLIST};
@@ -44,7 +43,6 @@ public class AvoidNestedBlocksCheckTest
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testStrictSettings()
             throws Exception {
         final String[] expected = {
@@ -57,7 +55,6 @@ public class AvoidNestedBlocksCheckTest
                 getPath("InputAvoidNestedBlocksDefault.java"), expected);
     }
 
-    @Test
     public void testAllowSwitchInCase()
             throws Exception {
 
@@ -70,7 +67,6 @@ public class AvoidNestedBlocksCheckTest
                 getPath("InputAvoidNestedBlocksAllowInSwitchCase.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final AvoidNestedBlocksCheck constantNameCheckObj = new AvoidNestedBlocksCheck();
         final int[] actual = constantNameCheckObj.getAcceptableTokens();

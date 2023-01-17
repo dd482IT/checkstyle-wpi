@@ -42,7 +42,6 @@ public class CodeSelectorPresentationTest extends AbstractPathTestSupport {
 
     private ImmutableList<Integer> linesToPosition;
 
-    @BeforeEach
     public void loadFile() throws Exception {
         model = new MainFrameModel();
         model.setParseMode(ParseMode.JAVA_WITH_JAVADOC_AND_COMMENTS);
@@ -75,7 +74,6 @@ public class CodeSelectorPresentationTest extends AbstractPathTestSupport {
         return convertedLinesToPosition;
     }
 
-    @Test
     public void testDetailASTSelection() {
         final CodeSelectorPresentation selector = new CodeSelectorPresentation(tree,
                 linesToPosition);
@@ -88,7 +86,6 @@ public class CodeSelectorPresentationTest extends AbstractPathTestSupport {
                 .isEqualTo(279);
     }
 
-    @Test
     public void testDetailASTLeafSelection() {
         final DetailAST leaf = tree.getLastChild().getFirstChild();
         final CodeSelectorPresentation selector = new CodeSelectorPresentation(leaf,
@@ -102,7 +99,6 @@ public class CodeSelectorPresentationTest extends AbstractPathTestSupport {
                 .isEqualTo(131);
     }
 
-    @Test
     public void testDetailASTNoSelection() {
         final DetailAST leaf = tree.getFirstChild();
         final CodeSelectorPresentation selector = new CodeSelectorPresentation(leaf,
@@ -116,7 +112,6 @@ public class CodeSelectorPresentationTest extends AbstractPathTestSupport {
                 .isEqualTo(94);
     }
 
-    @Test
     public void testDetailNodeSelection() {
         final DetailNode javadoc = (DetailNode) model.getParseTreeTableModel()
                 .getChild(tree.getFirstChild().getNextSibling().getFirstChild(), 0);
@@ -131,7 +126,6 @@ public class CodeSelectorPresentationTest extends AbstractPathTestSupport {
                 .isEqualTo(96);
     }
 
-    @Test
     public void testDetailNodeLeafSelection() {
         final DetailNode javadoc = (DetailNode) model.getParseTreeTableModel()
                 .getChild(tree.getFirstChild().getNextSibling().getFirstChild(), 0);

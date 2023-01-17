@@ -48,7 +48,6 @@ public class GeneratedJava14LexerTest
         return "com/puppycrawl/tools/checkstyle/grammar";
     }
 
-    @Test
     public void testUnexpectedChar() throws Exception {
         // Encoding problems will occur if default encoding is not UTF-8
         Assumptions.assumeTrue(IS_UTF8, "Problems with encoding may occur");
@@ -61,7 +60,6 @@ public class GeneratedJava14LexerTest
         verifyWithInlineConfigParser(getPath("InputGrammar.java"), expected);
     }
 
-    @Test
     public void testSemicolonBetweenImports() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(

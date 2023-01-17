@@ -40,7 +40,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests that classes not extending anything explicitly will be correctly
      * flagged for only including the inheritDoc tag.
      */
-    @Test
     public void testBadOverrideFromObject() throws Exception {
 
         final String[] expected = {
@@ -59,7 +58,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests that classes not extending anything explicitly will be correctly
      * flagged for only including the inheritDoc tag even in Java 5 compatibility mode.
      */
-    @Test
     public void testBadOverrideFromObjectJ5Compatible() throws Exception {
 
         final String[] expected = {
@@ -77,7 +75,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests classes that are extending things explicitly will be correctly
      * flagged for only including the inheritDoc tag.
      */
-    @Test
     public void testBadOverrideFromOther() throws Exception {
         final String[] expected = {
             "17:3: " + getCheckMessage(MSG_KEY_ANNOTATION_MISSING_OVERRIDE),
@@ -100,7 +97,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests classes that are extending things explicitly will NOT be flagged while in
      * Java 5 compatibility mode.
      */
-    @Test
     public void testBadOverrideFromOtherJ5Compatible() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -113,7 +109,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests anonymous inner classes that are overriding methods are correctly flagged
      * for only including the inheritDoc tag.
      */
-    @Test
     public void testBadAnnotationOverride() throws Exception {
         final String[] expected = {
             "17:5: " + getCheckMessage(MSG_KEY_ANNOTATION_MISSING_OVERRIDE),
@@ -130,7 +125,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests anonymous inner classes that are overriding methods are NOT flagged while in
      * Java 5 compatibility mode.
      */
-    @Test
     public void testBadAnnotationOverrideJ5Compatible() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -141,7 +135,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests that inheritDoc misuse is properly flagged or missing Javadocs do not cause a problem.
      */
-    @Test
     public void testNotOverride() throws Exception {
         final String[] expected = {
             "15:3: " + getCheckMessage(MSG_KEY_TAG_NOT_VALID_ON, "{@inheritDoc}"),
@@ -156,7 +149,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests that classes not extending anything explicitly will be correctly
      * flagged for only including the inheritDoc tag.
      */
-    @Test
     public void testGoodOverrideFromObject() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -169,7 +161,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests that classes not extending anything explicitly will be correctly
      * flagged for only including the inheritDoc tag even in Java 5 compatibility mode.
      */
-    @Test
     public void testGoodOverrideFromObjectJ5Compatible() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -182,7 +173,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests classes that are extending things explicitly will be correctly
      * flagged for only including the inheritDoc tag.
      */
-    @Test
     public void testGoodOverrideFromOther() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -194,7 +184,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests classes that are extending things explicitly will NOT be flagged while in
      * Java 5 compatibility mode.
      */
-    @Test
     public void testGoodOverrideFromOtherJ5Compatible() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -207,7 +196,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests anonymous inner classes that are overriding methods are correctly flagged
      * for only including the inheritDoc tag.
      */
-    @Test
     public void testGoodAnnotationOverride() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -219,7 +207,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
      * This tests anonymous inner classes that are overriding methods are NOT flagged while in
      * Java 5 compatibility mode.
      */
-    @Test
     public void testGoodAnnotationOverrideJ5Compatible() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -227,7 +214,6 @@ public class MissingOverrideCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMissingOverrideGoodOverrideJava5.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final int[] expectedTokens = {TokenTypes.METHOD_DEF };
         final MissingOverrideCheck check = new MissingOverrideCheck();

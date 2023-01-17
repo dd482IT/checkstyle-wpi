@@ -87,7 +87,6 @@ public class ArchUnitTest {
      * trace anymore if this method was annotated with {@code Override} or not (limitation of
      * Archunit), eventually we need to make checkstyle's Check on this.
      */
-    @Test
     public void nonProtectedCheckMethodsTest() {
         // This list contains methods which have been overridden and are set to ignore in this test.
         final String[] methodsWithOverrideAnnotation = {
@@ -119,7 +118,6 @@ public class ArchUnitTest {
      * packages. Changes in Util classes are not considered to be breaking changes as they are
      * "internal". Therefore classes in api should not depend on them.
      */
-    @Test
     public void testClassesInApiDoNotDependOnClassesInUtil() {
         final JavaClasses apiPackage = new ClassFileImporter()
             .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)

@@ -35,7 +35,6 @@ public class MethodTypeParameterNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/methodtypeparametername";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final MethodTypeParameterNameCheck methodTypeParameterNameCheck =
             new MethodTypeParameterNameCheck();
@@ -46,7 +45,6 @@ public class MethodTypeParameterNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final MethodTypeParameterNameCheck checkObj =
             new MethodTypeParameterNameCheck();
@@ -56,7 +54,6 @@ public class MethodTypeParameterNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testMethodDefault()
             throws Exception {
 
@@ -73,7 +70,6 @@ public class MethodTypeParameterNameCheckTest
                 getPath("InputMethodTypeParameterName.java"), expected);
     }
 
-    @Test
     public void testMethodFooName()
             throws Exception {
 

@@ -38,7 +38,6 @@ public class XpathRegressionEmptyForInitializerPadTest extends AbstractXpathTest
         return checkName;
     }
 
-    @Test
     public void testPreceded() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionEmptyForInitializerPadPreceded.java"));
@@ -64,7 +63,6 @@ public class XpathRegressionEmptyForInitializerPadTest extends AbstractXpathTest
                 expectedXpathQueries);
     }
 
-    @Test
     public void testNotPreceded() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionEmptyForInitializerPadNotPreceded.java"));

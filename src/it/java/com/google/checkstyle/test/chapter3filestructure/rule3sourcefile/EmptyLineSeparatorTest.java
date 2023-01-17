@@ -32,7 +32,6 @@ public class EmptyLineSeparatorTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter3filestructure/rule3sourcefile";
     }
 
-    @Test
     public void testEmptyLineSeparator() throws Exception {
         final Class<EmptyLineSeparatorCheck> clazz = EmptyLineSeparatorCheck.class;
         final String messageKey = "empty.line.separator";

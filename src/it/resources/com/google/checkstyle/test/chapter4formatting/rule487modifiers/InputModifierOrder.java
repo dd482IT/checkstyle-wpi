@@ -17,49 +17,49 @@ strictfp abstract class InputModifierOrder //warn
     }
 
     /** Single annotation without other modifiers */
-    @MyAnnotation2 void someMethod()
+    void someMethod()
     {
     }
 
     /** Illegal order of annotation - must come first */
-    private @MyAnnotation2 void someMethod2() //warn
+    private void someMethod2() //warn
     {
     }
 
     /** Annotation in middle of other modifiers otherwise in correct order */
-    private @MyAnnotation2 strictfp void someMethod3() //warn
+    private strictfp void someMethod3() //warn
     {
     }
 
     /** Correct order */
-    @MyAnnotation2 private strictfp void someMethod4()
+    private strictfp void someMethod4()
     {
     }
 
     /** Annotation in middle of other modifiers otherwise in correct order */
-    @MyAnnotation2 public static @MyAnnotation4 strictfp void someMethod5() //warn
+    public static strictfp void someMethod5() //warn
     {
     }
 
-    @MyAnnotation2 public static final synchronized strictfp void fooMethod() {}; //ok
+    public static final synchronized strictfp void fooMethod() {}; //ok
 
-    strictfp protected final @MyAnnotation2 static synchronized void fooMethod1() {}; //warn
+    strictfp protected final static synchronized void fooMethod1() {}; //warn
 
-    synchronized @MyAnnotation2 strictfp private final static void fooMethod2() {}; //warn
+    synchronized strictfp private final static void fooMethod2() {}; //warn
 
-    @MyAnnotation2 static synchronized final strictfp protected void fooMethod3() {}; //warn
+    static synchronized final strictfp protected void fooMethod3() {}; //warn
 
-    @MyAnnotation2 strictfp static final synchronized private void fooMethod4() {}; //warn
+    strictfp static final synchronized private void fooMethod4() {}; //warn
 
-    synchronized final strictfp @MyAnnotation2 static public void fooMethod5() {}; //warn
+    synchronized final strictfp static public void fooMethod5() {}; //warn
 
-    @MyAnnotation2 static synchronized strictfp private final void fooMethod6() {}; //warn
+    static synchronized strictfp private final void fooMethod6() {}; //warn
 
-    final strictfp synchronized static protected @MyAnnotation2 void fooMethod7() {}; //warn
+    final strictfp synchronized static protected void fooMethod7() {}; //warn
 
-    @MyAnnotation2 abstract protected void fooMet(); //warn
+    abstract protected void fooMet(); //warn
 
-    abstract @MyAnnotation2 public void fooMet1(); //warn
+    abstract public void fooMet1(); //warn
 
     /** holder for redundant 'public' modifier check. */
     public static interface InputRedundantPublicModifier
@@ -93,21 +93,21 @@ final class RedundantFinalClass
     {
     }
 
-    protected @MyAnnotation2 static synchronized native void fooMethod(); // warn
+    protected static synchronized native void fooMethod(); // warn
 
-    static protected @MyAnnotation2 synchronized native void fooMethod1(); // warn
+    static protected synchronized native void fooMethod1(); // warn
 
-    @MyAnnotation2 protected synchronized native void fooMethod2(); // ok
+    protected synchronized native void fooMethod2(); // ok
 
-    native synchronized protected static @MyAnnotation2 void fooMethod3(); // warn
+    native synchronized protected static void fooMethod3(); // warn
 
-    native @MyAnnotation2 protected static synchronized void fooMethod4(); // warn
+    native protected static synchronized void fooMethod4(); // warn
 
-    public static @MyAnnotation2 synchronized native void fooMethod5(); // warn
+    public static synchronized native void fooMethod5(); // warn
 
-    synchronized static native @MyAnnotation2 public void fooMethod6(); // warn
+    synchronized static native public void fooMethod6(); // warn
 
-    static synchronized private native @MyAnnotation2 void fooMethod7(); // warn
+    static synchronized private native void fooMethod7(); // warn
 }
 
 /** Holder for redundant modifiers of inner implementation */
@@ -138,21 +138,21 @@ class WithInner
 
         volatile public int whatImReading; //warn
 
-        @MyAnnotation2 protected synchronized native void fooMethod(); // ok
+        protected synchronized native void fooMethod(); // ok
 
-        protected @MyAnnotation2 synchronized native void fooMethod1(); // warn
+        protected synchronized native void fooMethod1(); // warn
 
-        synchronized protected @MyAnnotation2 native void fooMethod2(); // warn
+        synchronized protected native void fooMethod2(); // warn
 
-        native synchronized protected @MyAnnotation2 void fooMethod3(); // warn
+        native synchronized protected void fooMethod3(); // warn
 
-        native @MyAnnotation2 protected synchronized void fooMethod4(); // warn
+        native protected synchronized void fooMethod4(); // warn
 
-        public @MyAnnotation2 synchronized native void fooMethod5(); // warn
+        public synchronized native void fooMethod5(); // warn
 
-        synchronized native @MyAnnotation2 public void fooMethod6(); // warn
+        synchronized native public void fooMethod6(); // warn
 
-        synchronized private native @MyAnnotation2 void fooMethod7(); // warn
+        synchronized private native void fooMethod7(); // warn
 
         /**
          * Anonymous class
@@ -169,21 +169,21 @@ class WithInner
 
             volatile public int whatImReading; //warn
 
-            protected @MyAnnotation2 synchronized native void fooMethod(); // warn
+            protected synchronized native void fooMethod(); // warn
 
-            protected @MyAnnotation2 synchronized native void fooMethod1(); // warn
+            protected synchronized native void fooMethod1(); // warn
 
-            synchronized protected @MyAnnotation2 native void fooMethod2(); // warn
+            synchronized protected native void fooMethod2(); // warn
 
-            native synchronized protected @MyAnnotation2 void fooMethod3(); // warn
+            native synchronized protected void fooMethod3(); // warn
 
-            @MyAnnotation2 protected synchronized native void fooMethod4(); // ok
+            protected synchronized native void fooMethod4(); // ok
 
-            public @MyAnnotation2 synchronized native void fooMethod5(); // warn
+            public synchronized native void fooMethod5(); // warn
 
-            synchronized native @MyAnnotation2 public void fooMethod6(); // warn
+            synchronized native public void fooMethod6(); // warn
 
-            synchronized private native @MyAnnotation2 void fooMethod7(); // warn
+            synchronized private native void fooMethod7(); // warn
         };
     }
 
@@ -198,25 +198,25 @@ class WithInner
 
         volatile public int whatImReading; //warn
 
-        @MyAnnotation2 public final synchronized strictfp void fooMethod() {}; //ok
+        public final synchronized strictfp void fooMethod() {}; //ok
 
-        strictfp protected final @MyAnnotation2 synchronized void fooMethod1() {}; //warn
+        strictfp protected final synchronized void fooMethod1() {}; //warn
 
-        synchronized @MyAnnotation2 strictfp private final void fooMethod2() {}; //warn
+        synchronized strictfp private final void fooMethod2() {}; //warn
 
-        @MyAnnotation2 synchronized final strictfp protected void fooMethod3() {}; //warn
+        synchronized final strictfp protected void fooMethod3() {}; //warn
 
-        @MyAnnotation2 strictfp final synchronized private void fooMethod4() {}; //warn
+        strictfp final synchronized private void fooMethod4() {}; //warn
 
-        synchronized final strictfp @MyAnnotation2 public void fooMethod5() {}; //warn
+        synchronized final strictfp public void fooMethod5() {}; //warn
 
-        @MyAnnotation2 synchronized strictfp private final void fooMethod6() {}; //warn
+        synchronized strictfp private final void fooMethod6() {}; //warn
 
-        final strictfp synchronized protected @MyAnnotation2 void fooMethod7() {}; //warn
+        final strictfp synchronized protected void fooMethod7() {}; //warn
 
-        @MyAnnotation2 abstract protected void fooMet(); //warn
+        abstract protected void fooMet(); //warn
 
-        abstract @MyAnnotation2 public void fooMet1(); //warn
+        abstract public void fooMet1(); //warn
     }
 }
 

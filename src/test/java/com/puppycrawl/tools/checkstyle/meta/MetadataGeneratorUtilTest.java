@@ -41,7 +41,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import com.puppycrawl.tools.checkstyle.AbstractModuleTestSupport;
 import com.puppycrawl.tools.checkstyle.internal.utils.CheckUtil;
 
-@ExtendWith(SystemOutGuard.class)
 public final class MetadataGeneratorUtilTest extends AbstractModuleTestSupport {
 
     private final Set<String> modulesContainingNoMetadataFile = Set.of(
@@ -67,8 +66,7 @@ public final class MetadataGeneratorUtilTest extends AbstractModuleTestSupport {
      * @noinspectionreason UseOfSystemOutOrSystemErr - generation of metadata
      *      requires {@code System.out} for error messages
      */
-    @Test
-    public void testMetadataFilesGenerationAllFiles(@SystemOutGuard.SysOut Capturable systemOut)
+    public void testMetadataFilesGenerationAllFiles(Capturable systemOut)
             throws Exception {
         systemOut.captureMuted();
 

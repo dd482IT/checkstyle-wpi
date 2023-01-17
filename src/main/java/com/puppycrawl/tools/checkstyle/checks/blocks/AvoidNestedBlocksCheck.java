@@ -144,7 +144,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 3.1
  */
-@StatelessCheck
 public class AvoidNestedBlocksCheck extends AbstractCheck {
 
     /**

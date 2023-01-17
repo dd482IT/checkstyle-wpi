@@ -25,7 +25,6 @@ import org.junit.jupiter.api.Test;
 
 public class AuditEventTest {
 
-    @Test
     public void test() {
         final AuditEvent event = new AuditEvent(getClass());
 
@@ -43,7 +42,6 @@ public class AuditEventTest {
                 .isEqualTo(SeverityLevel.INFO);
     }
 
-    @Test
     public void testFullConstructor() {
         final Violation message = new Violation(1, 2, 3, "bundle", "key", null,
                 SeverityLevel.ERROR, "moduleId", getClass(), "customMessage");

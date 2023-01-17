@@ -98,7 +98,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 3.4
  */
-@StatelessCheck
 public class EmptyForInitializerPadCheck
     extends AbstractCheck {
 

@@ -10,14 +10,14 @@ trailingArrayComma = ignore
 package com.puppycrawl.tools.checkstyle.checks.annotation.annotationusestyle;
 
 @Deprecated // ok
-@SomeArrays(pooches={DOGS.LEO}) // ok
+// ok
 @SuppressWarnings({""}) // ok
 public class InputAnnotationUseStyleEverythingMixed
 {
 
 }
 
-@SomeArrays(pooches={DOGS.LEO}, um={}, duh={"bleh"}) // ok
+// ok
 @SuppressWarnings("") //compact_no_array // ok
 @Deprecated() // ok
 class Dep7 {
@@ -25,18 +25,18 @@ class Dep7 {
 }
 
 @Deprecated // ok
-@SomeArrays(pooches={DOGS.LEO}) // ok
+// ok
 @SuppressWarnings({""}) // ok
 enum SON7 {
 
     @Deprecated // ok
-    @SomeArrays(pooches={DOGS.LEO}, um={""}, duh={"bleh"}) // ok
-    @APooch(dog=DOGS.HERBIE) // ok
-    @Another("") //compact_no_array // ok
+    // ok
+    // ok
+    //compact_no_array // ok
     ETHAN
 }
 
-@InputAnnotationUseStyleCustomAnnotation4() // ok
+// ok
 enum DOGS7 {
 
     @Deprecated() // ok
@@ -45,15 +45,15 @@ enum DOGS7 {
 }
 
 @interface SomeArrays7 {
-    @Another("") //compact // ok
+    //compact // ok
     String[] um() default {};
-    @Another({""}) //compact // ok
+    //compact // ok
     String[] duh() default {};
-    @Another(value={""}) //expanded // ok
+    //expanded // ok
     DOGS[] pooches();
 }
 
-@Another(value={""}) //expanded // ok
+//expanded // ok
 enum E7 {
 
 }
@@ -64,12 +64,12 @@ enum E7 {
 
 @interface Another7 {
     String[] value() default {};
-    @Another({"foo", "bar"}) //compact style // ok
+    //compact style // ok
     String value1() default "";
 }
 
-@SomeArrays(pooches = {}) // ok
-@Another({}) // ok
+// ok
+// ok
 class Closing7 {
     static final String UN_U = "UN_U";
 
@@ -77,17 +77,17 @@ class Closing7 {
     int d;
 }
 
-@AnnotationWithAnnotationValue(@Another) // ok
+// ok
 class Example25 {}
-@AnnotationWithAnnotationValue(value = @Another) // ok
+// ok
 class Example26 {}
-@AnnotationWithAnnotationValue(@Another()) // ok
+// ok
 class Example27 {}
-@AnnotationWithAnnotationValue(value = @Another()) // ok
+// ok
 class Example28 {}
 
 class Foo7 {
-   Foo7(@Another String par1, @Another int par2) {} // ok
+   Foo7(String par1, int par2) {} // ok
 }
 
 @interface AnnotationWithAnnotationValue7 {

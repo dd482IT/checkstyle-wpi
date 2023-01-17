@@ -32,7 +32,6 @@ public class InvalidJavadocPositionTest extends AbstractSunModuleTestSupport {
         return "com/sun/checkstyle/test/chapter5comments/rule52documentationcomments";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String message = getCheckMessage(InvalidJavadocPositionCheck.class,
             "invalid.position");

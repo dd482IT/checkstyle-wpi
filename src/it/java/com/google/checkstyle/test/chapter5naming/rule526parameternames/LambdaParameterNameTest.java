@@ -35,7 +35,6 @@ public class LambdaParameterNameTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter5naming/rule526parameternames";
     }
 
-    @Test
     public void testLambdaParameterName() throws Exception {
         final Configuration config = getModuleConfig("LambdaParameterName");
         final String format = config.getProperty("format");

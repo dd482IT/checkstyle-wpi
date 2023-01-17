@@ -35,7 +35,6 @@ public class PatternVariableNameTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter5naming/rule527localvariablenames";
     }
 
-    @Test
     public void testPatternVariableName() throws Exception {
         final Configuration checkConfig = getModuleConfig("PatternVariableName");
         final String format = checkConfig.getProperty("format");

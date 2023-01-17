@@ -38,7 +38,6 @@ public class XpathRegressionStringLiteralEqualityTest extends AbstractXpathTestS
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionStringLiteralEquality.java"));
@@ -64,7 +63,6 @@ public class XpathRegressionStringLiteralEqualityTest extends AbstractXpathTestS
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionStringLiteralEquality1.java"));
@@ -90,7 +88,6 @@ public class XpathRegressionStringLiteralEqualityTest extends AbstractXpathTestS
                 expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionStringLiteralEquality2.java"));

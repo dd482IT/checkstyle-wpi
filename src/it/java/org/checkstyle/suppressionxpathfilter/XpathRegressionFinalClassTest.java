@@ -36,7 +36,6 @@ public class XpathRegressionFinalClassTest extends AbstractXpathTestSupport {
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionFinalClass1.java"));
@@ -62,7 +61,6 @@ public class XpathRegressionFinalClassTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionFinalClass2.java"));

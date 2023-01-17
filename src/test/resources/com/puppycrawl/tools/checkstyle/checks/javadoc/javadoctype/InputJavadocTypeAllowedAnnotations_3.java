@@ -17,11 +17,11 @@ package com.puppycrawl.tools.checkstyle.checks.javadoc.javadoctype;
 
 import java.lang.SuppressWarnings;
 
-@ThisIsOk_3 // ok
+// ok
 class InputJavadocTypeAllowedAnnotations_3 {
 }
 
-@com.puppycrawl.tools.checkstyle.checks.javadoc.javadoctype.ThisIsOk_3 // ok
+// ok
 class InputJavadocTypeAllowedAnnotationsFQN_3 {
 }
 

@@ -138,7 +138,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 5.7
  */
-@StatelessCheck
 public class SuppressWarningsHolder
     extends AbstractCheck {
 

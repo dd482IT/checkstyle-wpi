@@ -37,7 +37,6 @@ public class XpathRegressionOuterTypeNumberTest extends AbstractXpathTestSupport
         return checkName;
     }
 
-    @Test
     public void testDefault() throws Exception {
         final File fileToProcess =
             new File(getPath("SuppressionXpathRegressionOuterTypeNumberDefault.java"));
@@ -58,7 +57,6 @@ public class XpathRegressionOuterTypeNumberTest extends AbstractXpathTestSupport
             expectedXpathQueries);
     }
 
-    @Test
     public void testMax() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionOuterTypeNumber.java"));

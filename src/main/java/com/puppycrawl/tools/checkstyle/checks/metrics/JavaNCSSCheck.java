@@ -193,7 +193,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  */
 // -@cs[AbbreviationAsWordInName] We can not change it as,
 // check's name is a part of API (used in configurations).
-@FileStatefulCheck
 public class JavaNCSSCheck extends AbstractCheck {
 
     /**

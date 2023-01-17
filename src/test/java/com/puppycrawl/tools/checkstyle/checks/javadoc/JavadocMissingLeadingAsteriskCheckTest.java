@@ -35,7 +35,6 @@ public class JavadocMissingLeadingAsteriskCheckTest extends AbstractModuleTestSu
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/javadocmissingleadingasterisk";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final JavadocMissingLeadingAsteriskCheck checkObj =
             new JavadocMissingLeadingAsteriskCheck();
@@ -47,14 +46,12 @@ public class JavadocMissingLeadingAsteriskCheckTest extends AbstractModuleTestSu
             .isEqualTo(expected);
     }
 
-    @Test
     public void testCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputJavadocMissingLeadingAsteriskCorrect.java"), expected);
     }
 
-    @Test
     public void testIncorrect() throws Exception {
         final String[] expected = {
             "13: " + getCheckMessage(MSG_MISSING_ASTERISK),

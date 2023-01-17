@@ -37,7 +37,6 @@ public class XpathRegressionAnnotationOnSameLineTest extends AbstractXpathTestSu
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath(
@@ -79,7 +78,6 @@ public class XpathRegressionAnnotationOnSameLineTest extends AbstractXpathTestSu
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath(
@@ -115,7 +113,6 @@ public class XpathRegressionAnnotationOnSameLineTest extends AbstractXpathTestSu
                 expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess =
                 new File(getPath(

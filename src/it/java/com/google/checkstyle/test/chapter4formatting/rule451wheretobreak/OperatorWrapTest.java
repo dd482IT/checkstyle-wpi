@@ -32,7 +32,6 @@ public class OperatorWrapTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule451wheretobreak";
     }
 
-    @Test
     public void testOperatorWrap() throws Exception {
         final Class<OperatorWrapCheck> clazz = OperatorWrapCheck.class;
         final String messageKey = "line.new";

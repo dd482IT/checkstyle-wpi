@@ -34,7 +34,6 @@ public class FileImportControlTest {
     private final FileImportControl fileRegexpNode = new FileImportControl(root, ".*Other.*",
             true);
 
-    @BeforeEach
     public void setUp() {
         root.addChild(fileNode);
         root.addChild(fileRegexpNode);
@@ -47,7 +46,6 @@ public class FileImportControlTest {
             new PkgImportRule(true, false, "org.apache.commons", false, false));
     }
 
-    @Test
     public void testLocateFinest() {
         assertWithMessage("Unexpected response")
             .that(root.locateFinest("com.kazgroup.courtlink.domain", "Random"))

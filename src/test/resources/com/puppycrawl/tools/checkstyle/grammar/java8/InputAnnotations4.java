@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
 
 public class InputAnnotations4 {
 
-    public static void methodName(@NotNull String args) {
+    public static void methodName(String args) {
 
     }
 

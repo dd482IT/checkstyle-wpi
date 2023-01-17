@@ -37,7 +37,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/regexp/regexp";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final RegexpCheck regexpCheck = new RegexpCheck();
         assertWithMessage("RegexpCheck#getAcceptableTokens should return empty array by default")
@@ -45,7 +44,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final RegexpCheck checkObj = new RegexpCheck();
         assertWithMessage("RegexpCheck#getRequiredTokens should return empty array by default")
@@ -53,14 +51,12 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testRequiredPass() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputRegexpSemantic.java"), expected);
     }
 
-    @Test
     public void testRequiredFail() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(RegexpCheck.class);
@@ -71,21 +67,18 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputRegexpSemantic2.java"), expected);
     }
 
-    @Test
     public void testRequiredNoDuplicatesPass() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputRegexpSemantic3.java"), expected);
     }
 
-    @Test
     public void testSetDuplicatesTrue() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputRegexpSemantic4.java"), expected);
     }
 
-    @Test
     public void testRequiredNoDuplicatesFail() throws Exception {
         final String[] expected = {
             "27: " + getCheckMessage(MSG_DUPLICATE_REGEXP, "Boolean x = new Boolean"),
@@ -95,21 +88,18 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSemantic5.java"), expected);
     }
 
-    @Test
     public void testIllegalPass() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputRegexpSemantic6.java"), expected);
     }
 
-    @Test
     public void testStopEarly() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputRegexpCheckStopEarly.java"), expected);
     }
 
-    @Test
     public void testIllegalFailBelowErrorLimit() throws Exception {
         final String[] expected = {
             "15: " + getCheckMessage(MSG_ILLEGAL_REGEXP, "^import"),
@@ -120,7 +110,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSemantic7.java"), expected);
     }
 
-    @Test
     public void testIllegalFailAboveErrorLimit() throws Exception {
         final String error = "The error limit has been exceeded, "
                 + "the check is aborting, there may be more unreported errors.";
@@ -132,7 +121,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSemantic8.java"), expected);
     }
 
-    @Test
     public void testMessagePropertyGood()
             throws Exception {
         final String[] expected = {
@@ -142,7 +130,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSemantic9.java"), expected);
     }
 
-    @Test
     public void testMessagePropertyBad()
             throws Exception {
         final String[] expected = {
@@ -152,7 +139,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSemantic10.java"), expected);
     }
 
-    @Test
     public void testMessagePropertyBad2()
             throws Exception {
         final String[] expected = {
@@ -162,7 +148,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSemantic11.java"), expected);
     }
 
-    @Test
     public void testIgnoreCaseTrue() throws Exception {
         final String[] expected = {
             "77: " + getCheckMessage(MSG_ILLEGAL_REGEXP,
@@ -172,7 +157,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSemantic12.java"), expected);
     }
 
-    @Test
     public void testIgnoreCaseFalse() throws Exception {
         final String[] expectedTrue = {
             "77: " + getCheckMessage(MSG_ILLEGAL_REGEXP,
@@ -186,7 +170,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSemantic14.java"), expectedFalse);
     }
 
-    @Test
     public void testIgnoreCommentsCppStyle() throws Exception {
         // See if the comment is removed properly
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -194,7 +177,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpTrailingComment.java"), expected);
     }
 
-    @Test
     public void testIgnoreCommentsFalseCppStyle() throws Exception {
         // See if the comment is removed properly
         final String[] expected = {
@@ -204,7 +186,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpTrailingComment2.java"), expected);
     }
 
-    @Test
     public void testIgnoreCommentsBlockStyle() throws Exception {
         // See if the comment is removed properly
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -212,7 +193,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpTrailingComment3.java"), expected);
     }
 
-    @Test
     public void testIgnoreCommentsFalseBlockStyle() throws Exception {
         final String[] expected = {
             "31: " + getCheckMessage(MSG_ILLEGAL_REGEXP, "c-style\\s1"),
@@ -221,7 +201,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpTrailingComment4.java"), expected);
     }
 
-    @Test
     public void testIgnoreCommentsMultipleBlockStyle() throws Exception {
         // See if a second comment on the same line is removed properly
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -229,21 +208,18 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpTrailingComment5.java"), expected);
     }
 
-    @Test
     public void testIgnoreCommentsMultiLine() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputRegexpTrailingComment6.java"), expected);
     }
 
-    @Test
     public void testIgnoreCommentsInlineStart() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputRegexpTrailingComment7.java"), expected);
     }
 
-    @Test
     public void testIgnoreCommentsInlineEnd() throws Exception {
         final String[] expected = {
             "34: " + getCheckMessage(MSG_ILLEGAL_REGEXP, "int z"),
@@ -252,7 +228,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpTrailingComment8.java"), expected);
     }
 
-    @Test
     public void testIgnoreCommentsInlineMiddle() throws Exception {
         final String[] expected = {
             "35: " + getCheckMessage(MSG_ILLEGAL_REGEXP, "int y"),
@@ -261,7 +236,6 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpTrailingComment9.java"), expected);
     }
 
-    @Test
     public void testIgnoreCommentsNoSpaces() throws Exception {
         // make sure the comment is not turned into spaces
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -269,14 +243,12 @@ public class RegexpCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpTrailingComment10.java"), expected);
     }
 
-    @Test
     public void testOnFileStartingWithEmptyLine() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpCheck.class);
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verify(checkConfig, getPath("InputRegexpStartingWithEmptyLine.java"), expected);
     }
 
-    @Test
     public void testIgnoreCommentsCppStyleWithIllegalPatternFalse() throws Exception {
         // See if the comment is removed properly
         final DefaultConfiguration checkConfig =

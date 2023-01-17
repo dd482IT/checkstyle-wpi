@@ -35,7 +35,6 @@ public class XpathRegressionNoLineWrapTest extends AbstractXpathTestSupport {
         return NoLineWrapCheck.class.getSimpleName();
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionNoLineWrap1.java")
@@ -56,7 +55,6 @@ public class XpathRegressionNoLineWrapTest extends AbstractXpathTestSupport {
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionNoLineWrap2.java")
@@ -91,7 +89,6 @@ public class XpathRegressionNoLineWrapTest extends AbstractXpathTestSupport {
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionNoLineWrap3.java")

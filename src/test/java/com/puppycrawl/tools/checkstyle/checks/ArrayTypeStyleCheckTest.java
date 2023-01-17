@@ -35,7 +35,6 @@ public class ArrayTypeStyleCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/arraytypestyle";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final ArrayTypeStyleCheck checkObj = new ArrayTypeStyleCheck();
         final int[] expected = {TokenTypes.ARRAY_DECLARATOR};
@@ -44,7 +43,6 @@ public class ArrayTypeStyleCheckTest
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testJavaStyleOn()
             throws Exception {
         final String[] expected = {
@@ -61,7 +59,6 @@ public class ArrayTypeStyleCheckTest
                 getPath("InputArrayTypeStyle.java"), expected);
     }
 
-    @Test
     public void testJavaStyleOff()
             throws Exception {
         final String[] expected = {
@@ -79,7 +76,6 @@ public class ArrayTypeStyleCheckTest
                 getPath("InputArrayTypeStyleOff.java"), expected);
     }
 
-    @Test
     public void testNestedGenerics()
             throws Exception {
         final String[] expected = {
@@ -92,7 +88,6 @@ public class ArrayTypeStyleCheckTest
                 getPath("InputArrayTypeStyleNestedGenerics.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final int[] expected = {TokenTypes.ARRAY_DECLARATOR };
         final ArrayTypeStyleCheck check = new ArrayTypeStyleCheck();

@@ -42,7 +42,6 @@ public class DeclarationOrderCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/declarationorder";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -72,7 +71,6 @@ public class DeclarationOrderCheckTest
                 getPath("InputDeclarationOrder.java"), expected);
     }
 
-    @Test
     public void testOnlyConstructors() throws Exception {
 
         final String[] expected = {
@@ -88,7 +86,6 @@ public class DeclarationOrderCheckTest
                 getPath("InputDeclarationOrderOnlyConstructors.java"), expected);
     }
 
-    @Test
     public void testOnlyModifiers() throws Exception {
 
         final String[] expected = {
@@ -116,7 +113,6 @@ public class DeclarationOrderCheckTest
                 getPath("InputDeclarationOrderOnlyModifiers.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final DeclarationOrderCheck check = new DeclarationOrderCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -130,7 +126,6 @@ public class DeclarationOrderCheckTest
             .isNotNull();
     }
 
-    @Test
     public void testParents() {
         final DetailAstImpl parent = new DetailAstImpl();
         parent.setType(TokenTypes.STATIC_INIT);
@@ -158,7 +153,6 @@ public class DeclarationOrderCheckTest
             .isEmpty();
     }
 
-    @Test
     public void testImproperToken() {
         final DetailAstImpl parent = new DetailAstImpl();
         parent.setType(TokenTypes.STATIC_INIT);
@@ -176,7 +170,6 @@ public class DeclarationOrderCheckTest
             .isEmpty();
     }
 
-    @Test
     public void testForwardReference() throws Exception {
         final String[] expected = {
             "20:5: " + getCheckMessage(MSG_ACCESS),
@@ -193,7 +186,6 @@ public class DeclarationOrderCheckTest
                 getPath("InputDeclarationOrderForwardReference.java"), expected);
     }
 
-    @Test
     public void testDeclarationOrderRecordsAndCompactCtors() throws Exception {
         final String[] expected = {
             "21:9: " + getCheckMessage(MSG_CONSTRUCTOR),
@@ -207,7 +199,6 @@ public class DeclarationOrderCheckTest
             expected);
     }
 
-    @Test
     public void testDeclarationOrderInterfaceMemberScopeIsPublic() throws Exception {
         final String[] expected = {
             "21:3: " + getCheckMessage(MSG_STATIC),
@@ -217,7 +208,6 @@ public class DeclarationOrderCheckTest
             expected);
     }
 
-    @Test
     public void testVariableAccess() throws Exception {
         final String[] expected = {
             "23:5: " + getCheckMessage(MSG_ACCESS),
@@ -226,7 +216,6 @@ public class DeclarationOrderCheckTest
                 getPath("InputDeclarationOrderVariableAccess.java"), expected);
     }
 
-    @Test
     public void testAvoidDuplicatesForStaticFinalFields() throws Exception {
         final String[] expected = {
             "14:5: " + getCheckMessage(MSG_STATIC),

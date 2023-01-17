@@ -9,7 +9,6 @@ processJavadoc = (default)true
 // this file content is based on package-info.java file structure
 // Created: 2005
 ///////////////////////////////////////////////////////////////////////////////////////////////
-@MyAnnotation
 package com.puppycrawl.tools.checkstyle.checks.imports.unusedimports;
 
 import com.puppycrawl.tools.checkstyle.MyAnnotation; // ok

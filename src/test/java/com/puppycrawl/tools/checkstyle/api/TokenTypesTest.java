@@ -35,7 +35,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
 
 public class TokenTypesTest {
 
-    @Test
     public void testAllTokenTypesHasDescription() {
         final String tokenTypes = "com.puppycrawl.tools.checkstyle.api.tokentypes";
         final ResourceBundle bundle = ResourceBundle.getBundle(tokenTypes, Locale.ROOT);
@@ -50,7 +49,6 @@ public class TokenTypesTest {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testAllDescriptionsEndsWithPeriod() {
         final Set<String> badDescriptions = Arrays.stream(TokenUtil.getAllTokenIds())
             .mapToObj(TokenUtil::getTokenName)
@@ -62,7 +60,6 @@ public class TokenTypesTest {
                 .isEqualTo(Collections.emptySet());
     }
 
-    @Test
     public void testGetShortDescription() {
         assertWithMessage("short description for EQUAL")
                 .that(TokenUtil.getShortDescription("EQUAL"))
@@ -89,7 +86,6 @@ public class TokenTypesTest {
                 .isEqualTo("The <code>>>></code> (unsigned shift right) operator.");
     }
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(isUtilsClassHasPrivateConstructor(TokenTypes.class))

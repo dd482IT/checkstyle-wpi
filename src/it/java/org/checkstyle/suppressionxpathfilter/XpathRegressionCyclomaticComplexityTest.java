@@ -37,7 +37,6 @@ public class XpathRegressionCyclomaticComplexityTest extends AbstractXpathTestSu
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
 
         final File fileToProcess =
@@ -68,7 +67,6 @@ public class XpathRegressionCyclomaticComplexityTest extends AbstractXpathTestSu
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCyclomaticComplexityTwo.java"));

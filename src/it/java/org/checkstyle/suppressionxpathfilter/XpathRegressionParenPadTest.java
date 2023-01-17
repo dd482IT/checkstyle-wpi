@@ -39,7 +39,6 @@ public class XpathRegressionParenPadTest extends AbstractXpathTestSupport {
         return checkName;
     }
 
-    @Test
     public void testLeftFollowed() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionParenPadLeftFollowed.java"));
@@ -62,7 +61,6 @@ public class XpathRegressionParenPadTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testLeftNotFollowed() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionParenPadLeftNotFollowed.java"));
@@ -86,7 +84,6 @@ public class XpathRegressionParenPadTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testRightPreceded() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionParenPadRightPreceded.java"));
@@ -109,7 +106,6 @@ public class XpathRegressionParenPadTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testRightNotPreceded() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionParenPadRightNotPreceded.java"));

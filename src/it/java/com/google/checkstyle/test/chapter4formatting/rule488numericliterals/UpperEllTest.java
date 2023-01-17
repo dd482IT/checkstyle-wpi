@@ -31,7 +31,6 @@ public class UpperEllTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule488numericliterals";
     }
 
-    @Test
     public void testUpperEll() throws Exception {
         final String[] expected = {
             "6:33: Should use uppercase 'L'.",

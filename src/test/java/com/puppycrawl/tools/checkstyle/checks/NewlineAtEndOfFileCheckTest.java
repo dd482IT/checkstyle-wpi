@@ -50,7 +50,6 @@ public class NewlineAtEndOfFileCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/newlineatendoffile";
     }
 
-    @Test
     public void testNewlineLfAtEndOfFile() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -58,7 +57,6 @@ public class NewlineAtEndOfFileCheckTest
             expected);
     }
 
-    @Test
     public void testNewlineLfAtEndOfFileLfNotOverlapWithCrLf() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_KEY_WRONG_ENDING),
@@ -68,7 +66,6 @@ public class NewlineAtEndOfFileCheckTest
             expected);
     }
 
-    @Test
     public void testNewlineCrlfAtEndOfFile() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -76,7 +73,6 @@ public class NewlineAtEndOfFileCheckTest
             expected);
     }
 
-    @Test
     public void testNewlineCrAtEndOfFile() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -84,7 +80,6 @@ public class NewlineAtEndOfFileCheckTest
             expected);
     }
 
-    @Test
     public void testAnyNewlineAtEndOfFile() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -98,7 +93,6 @@ public class NewlineAtEndOfFileCheckTest
             expected);
     }
 
-    @Test
     public void testNoNewlineLfAtEndOfFile() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_KEY_NO_NEWLINE_EOF),
@@ -108,7 +102,6 @@ public class NewlineAtEndOfFileCheckTest
             expected);
     }
 
-    @Test
     public void testNoNewlineAtEndOfFile() throws Exception {
         final String msgKeyNoNewlineEof = "File does not end with a newline :)";
         final String[] expected = {
@@ -119,7 +112,6 @@ public class NewlineAtEndOfFileCheckTest
             expected);
     }
 
-    @Test
     public void testSetLineSeparatorFailure()
             throws Exception {
         final DefaultConfiguration checkConfig =
@@ -138,7 +130,6 @@ public class NewlineAtEndOfFileCheckTest
         }
     }
 
-    @Test
     public void testEmptyFileFile() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(NewlineAtEndOfFileCheck.class);
@@ -152,7 +143,6 @@ public class NewlineAtEndOfFileCheckTest
             expected);
     }
 
-    @Test
     public void testFileWithEmptyLineOnly() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(NewlineAtEndOfFileCheck.class);
@@ -164,7 +154,6 @@ public class NewlineAtEndOfFileCheckTest
                 expected);
     }
 
-    @Test
     public void testFileWithEmptyLineOnlyWithLfCrCrlf() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(NewlineAtEndOfFileCheck.class);
@@ -176,7 +165,6 @@ public class NewlineAtEndOfFileCheckTest
                 expected);
     }
 
-    @Test
     public void testWrongFile() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(NewlineAtEndOfFileCheck.class);
         final NewlineAtEndOfFileCheck check = new NewlineAtEndOfFileCheck();
@@ -195,7 +183,6 @@ public class NewlineAtEndOfFileCheckTest
                 .isEqualTo(getCheckMessage(MSG_KEY_UNABLE_OPEN, ""));
     }
 
-    @Test
     public void testWrongSeparatorLength() throws Exception {
         try (RandomAccessFile file =
                      new ReadZeroRandomAccessFile(getPath("InputNewlineAtEndOfFileLf.java"), "r")) {
@@ -212,7 +199,6 @@ public class NewlineAtEndOfFileCheckTest
         }
     }
 
-    @Test
     public void testTrimOptionProperty() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(

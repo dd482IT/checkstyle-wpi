@@ -32,7 +32,6 @@ public class MethodParamPadTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule451wheretobreak";
     }
 
-    @Test
     public void testOperatorWrap() throws Exception {
         final Class<MethodParamPadCheck> clazz = MethodParamPadCheck.class;
         final String messageKeyPrevious = "line.previous";

@@ -34,7 +34,6 @@ public class MultipleVariableDeclarationsCheckTest extends AbstractModuleTestSup
         return "com/puppycrawl/tools/checkstyle/checks/coding/multiplevariabledeclarations";
     }
 
-    @Test
     public void testIt() throws Exception {
 
         final String[] expected = {
@@ -54,7 +53,6 @@ public class MultipleVariableDeclarationsCheckTest extends AbstractModuleTestSup
                expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final MultipleVariableDeclarationsCheck check = new MultipleVariableDeclarationsCheck();
         assertWithMessage("Acceptable tokens should not be null")

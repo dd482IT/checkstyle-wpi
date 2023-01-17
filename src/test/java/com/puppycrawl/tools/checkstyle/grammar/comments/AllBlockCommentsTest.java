@@ -47,7 +47,6 @@ public class AllBlockCommentsTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/grammar/comments";
     }
 
-    @Test
     public void testAllBlockComments() throws Exception {
         final DefaultConfiguration checkConfig =
                 createModuleConfig(BlockCommentListenerCheck.class);

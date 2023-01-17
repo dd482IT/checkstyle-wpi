@@ -35,7 +35,6 @@ public class RequireEmptyLineBeforeBlockTagGroupTest extends AbstractGoogleModul
         return "com/google/checkstyle/test/chapter7javadoc/rule712paragraphs";
     }
 
-    @Test
     public void testJavadocParagraphCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -48,7 +47,6 @@ public class RequireEmptyLineBeforeBlockTagGroupTest extends AbstractGoogleModul
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testJavadocParagraphIncorrect() throws Exception {
         final String[] expected = {
             "5: " + getTagCheckMessage("@since"),

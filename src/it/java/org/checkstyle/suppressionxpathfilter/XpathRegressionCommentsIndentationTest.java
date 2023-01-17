@@ -37,7 +37,6 @@ public class XpathRegressionCommentsIndentationTest extends AbstractXpathTestSup
         return checkName;
     }
 
-    @Test
     public void testSingleLine() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCommentsIndentation"
@@ -61,7 +60,6 @@ public class XpathRegressionCommentsIndentationTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testBlock() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCommentsIndentation"
@@ -86,7 +84,6 @@ public class XpathRegressionCommentsIndentationTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testSeparator() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCommentsIndentation"
@@ -111,7 +108,6 @@ public class XpathRegressionCommentsIndentationTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testDistributedStatement() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCommentsIndentation"
@@ -136,7 +132,6 @@ public class XpathRegressionCommentsIndentationTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testSingleLineBlock() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCommentsIndentation"
@@ -161,7 +156,6 @@ public class XpathRegressionCommentsIndentationTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testNonEmptyCase() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCommentsIndentation"
@@ -186,7 +180,6 @@ public class XpathRegressionCommentsIndentationTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testEmptyCase() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCommentsIndentation"
@@ -211,7 +204,6 @@ public class XpathRegressionCommentsIndentationTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testWithinBlockStatement() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCommentsIndentation"

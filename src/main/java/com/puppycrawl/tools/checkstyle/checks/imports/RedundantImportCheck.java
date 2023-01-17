@@ -81,7 +81,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 3.0
  */
-@FileStatefulCheck
 public class RedundantImportCheck
     extends AbstractCheck {
 

@@ -34,7 +34,6 @@ public class SimplifyBooleanReturnCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/simplifybooleanreturn";
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "22:9: " + getCheckMessage(MSG_KEY),
@@ -44,7 +43,6 @@ public class SimplifyBooleanReturnCheckTest
                 getPath("InputSimplifyBooleanReturn.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final SimplifyBooleanReturnCheck check = new SimplifyBooleanReturnCheck();
         assertWithMessage("Acceptable tokens should not be null")

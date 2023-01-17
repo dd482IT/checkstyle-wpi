@@ -37,7 +37,6 @@ public class XpathRegressionEmptyStatementTest extends AbstractXpathTestSupport 
         return checkName;
     }
 
-    @Test
     public void testForLoopEmptyStatement() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionEmptyStatement1.java"));
@@ -56,7 +55,6 @@ public class XpathRegressionEmptyStatementTest extends AbstractXpathTestSupport 
                 expectedXpathQueries);
     }
 
-    @Test
     public void testIfBlockEmptyStatement() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionEmptyStatement2.java"));

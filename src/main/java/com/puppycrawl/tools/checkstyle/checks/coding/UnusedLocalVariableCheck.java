@@ -130,7 +130,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 9.3
  */
-@FileStatefulCheck
 public class UnusedLocalVariableCheck extends AbstractCheck {
 
     /**

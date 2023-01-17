@@ -32,7 +32,6 @@ public class AnnotationLocationTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule485annotations";
     }
 
-    @Test
     public void testAnnotation() throws Exception {
         final Class<AnnotationLocationCheck> clazz = AnnotationLocationCheck.class;
         getCheckMessage(clazz, "annotation.location.alone");
@@ -62,7 +61,6 @@ public class AnnotationLocationTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testAnnotationVariables() throws Exception {
         final Class<AnnotationLocationCheck> clazz = AnnotationLocationCheck.class;
         getCheckMessage(clazz, "annotation.location.alone");

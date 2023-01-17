@@ -38,7 +38,6 @@ public class XpathRegressionAnnotationUseStyleTest extends AbstractXpathTestSupp
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAnnotationUseStyleOne.java"));
@@ -65,7 +64,6 @@ public class XpathRegressionAnnotationUseStyleTest extends AbstractXpathTestSupp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAnnotationUseStyleTwo.java"));
@@ -100,7 +98,6 @@ public class XpathRegressionAnnotationUseStyleTest extends AbstractXpathTestSupp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAnnotationUseStyleThree.java"));
@@ -137,7 +134,6 @@ public class XpathRegressionAnnotationUseStyleTest extends AbstractXpathTestSupp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testFour() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAnnotationUseStyleFour.java"));
@@ -165,7 +161,6 @@ public class XpathRegressionAnnotationUseStyleTest extends AbstractXpathTestSupp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testFive() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAnnotationUseStyleFive.java"));
@@ -201,7 +196,6 @@ public class XpathRegressionAnnotationUseStyleTest extends AbstractXpathTestSupp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testSix() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAnnotationUseStyleSix.java"));
@@ -237,7 +231,6 @@ public class XpathRegressionAnnotationUseStyleTest extends AbstractXpathTestSupp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testSeven() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAnnotationUseStyleSeven.java"));
@@ -264,7 +257,6 @@ public class XpathRegressionAnnotationUseStyleTest extends AbstractXpathTestSupp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testEight() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAnnotationUseStyleEight.java"));

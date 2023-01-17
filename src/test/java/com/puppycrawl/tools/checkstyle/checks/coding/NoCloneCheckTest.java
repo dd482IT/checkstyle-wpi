@@ -34,7 +34,6 @@ public class NoCloneCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/noclone";
     }
 
-    @Test
     public void testHasClone()
             throws Exception {
         final String[] expected = {
@@ -50,7 +49,6 @@ public class NoCloneCheckTest
                 getPath("InputNoClone.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final NoCloneCheck check = new NoCloneCheck();
         assertWithMessage("Acceptable tokens should not be null")

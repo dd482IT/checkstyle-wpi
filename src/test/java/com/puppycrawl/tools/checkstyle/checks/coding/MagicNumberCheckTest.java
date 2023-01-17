@@ -34,7 +34,6 @@ public class MagicNumberCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/magicnumber";
     }
 
-    @Test
     public void testLocalVariables()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -42,7 +41,6 @@ public class MagicNumberCheckTest
                 getPath("InputMagicNumber_8.java"), expected);
     }
 
-    @Test
     public void testLocalVariables2()
             throws Exception {
         final String[] expected = {
@@ -52,7 +50,6 @@ public class MagicNumberCheckTest
                 getPath("InputMagicNumber_9.java"), expected);
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -106,7 +103,6 @@ public class MagicNumberCheckTest
                 getPath("InputMagicNumber_1.java"), expected);
     }
 
-    @Test
     public void testIgnoreSome()
             throws Exception {
         final String[] expected = {
@@ -153,7 +149,6 @@ public class MagicNumberCheckTest
                 getPath("InputMagicNumber_2.java"), expected);
     }
 
-    @Test
     public void testIgnoreNone()
             throws Exception {
         final String[] expected = {
@@ -228,7 +223,6 @@ public class MagicNumberCheckTest
                 getPath("InputMagicNumber_3.java"), expected);
     }
 
-    @Test
     public void testIntegersOnly()
             throws Exception {
         final String[] expected = {
@@ -274,7 +268,6 @@ public class MagicNumberCheckTest
                 getPath("InputMagicNumber_4.java"), expected);
     }
 
-    @Test
     public void testIgnoreNegativeOctalHex() throws Exception {
         final String[] expected = {
             "55:26: " + getCheckMessage(MSG_KEY, "3_000"),
@@ -314,7 +307,6 @@ public class MagicNumberCheckTest
                 getPath("InputMagicNumber_5.java"), expected);
     }
 
-    @Test
     public void testIgnoreHashCodeMethod() throws Exception {
         final String[] expected = {
             "55:26: " + getCheckMessage(MSG_KEY, "3_000"),
@@ -362,7 +354,6 @@ public class MagicNumberCheckTest
                 getPath("InputMagicNumber_6.java"), expected);
     }
 
-    @Test
     public void testIgnoreFieldDeclaration()
             throws Exception {
         final String[] expected = {
@@ -403,7 +394,6 @@ public class MagicNumberCheckTest
                 getPath("InputMagicNumber_7.java"), expected);
     }
 
-    @Test
     public void testWaiverParentToken()
             throws Exception {
         final String[] expected = {
@@ -463,7 +453,6 @@ public class MagicNumberCheckTest
                 getPath("InputMagicNumber.java"), expected);
     }
 
-    @Test
     public void testMagicNumberRecordsDefault()
             throws Exception {
         final String[] expected = {
@@ -477,7 +466,6 @@ public class MagicNumberCheckTest
                 getNonCompilablePath("InputMagicNumberRecordsDefault.java"), expected);
     }
 
-    @Test
     public void testMagicNumberIgnoreFieldDeclarationRecords()
             throws Exception {
         final String[] expected = {
@@ -491,7 +479,6 @@ public class MagicNumberCheckTest
                 expected);
     }
 
-    @Test
     public void testIgnoreInAnnotationElementDefault() throws Exception {
         final String[] expected = {
             "18:29: " + getCheckMessage(MSG_KEY, "10"),

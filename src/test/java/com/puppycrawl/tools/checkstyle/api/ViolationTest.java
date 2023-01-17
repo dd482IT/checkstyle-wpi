@@ -30,7 +30,6 @@ import nl.jqno.equalsverifier.EqualsVerifierReport;
 
 public class ViolationTest {
 
-    @Test
     public void testEqualsAndHashCode() {
         final EqualsVerifierReport ev = EqualsVerifier.forClass(Violation.class)
                 .usingGetClass().report();
@@ -39,7 +38,6 @@ public class ViolationTest {
                 .isTrue();
     }
 
-    @Test
     public void testGetSeverityLevel() {
         final Violation violation = createSampleViolation();
 
@@ -48,7 +46,6 @@ public class ViolationTest {
             .isEqualTo(SeverityLevel.ERROR);
     }
 
-    @Test
     public void testGetModuleId() {
         final Violation violation = createSampleViolation();
 
@@ -57,7 +54,6 @@ public class ViolationTest {
             .isEqualTo("module");
     }
 
-    @Test
     public void testGetSourceName() {
         final Violation violation = createSampleViolation();
 
@@ -66,8 +62,6 @@ public class ViolationTest {
             .isEqualTo("com.puppycrawl.tools.checkstyle.api.Violation");
     }
 
-    @DefaultLocale("en")
-    @Test
     public void testMessageInEnglish() {
         final Violation violation = createSampleViolation();
 
@@ -76,8 +70,6 @@ public class ViolationTest {
             .isEqualTo("Empty statement.");
     }
 
-    @DefaultLocale("fr")
-    @Test
     public void testGetKey() {
         final Violation violation = createSampleViolation();
 
@@ -86,7 +78,6 @@ public class ViolationTest {
             .isEqualTo("empty.statement");
     }
 
-    @Test
     public void testTokenType() {
         final Violation violation1 = new Violation(1, 1, TokenTypes.CLASS_DEF,
                 "messages.properties", "key", null, SeverityLevel.ERROR, null,
@@ -103,7 +94,6 @@ public class ViolationTest {
             .isEqualTo(TokenTypes.OBJBLOCK);
     }
 
-    @Test
     public void testGetColumnCharIndex() {
         final Violation violation1 = new Violation(1, 1, 123,
                 TokenTypes.CLASS_DEF, "messages.properties", "key", null, SeverityLevel.ERROR,
@@ -114,7 +104,6 @@ public class ViolationTest {
             .isEqualTo(123);
     }
 
-    @Test
     public void testCompareToWithDifferentModuleId() {
         final Violation message1 = createSampleViolationWithId("module1");
         final Violation message2 = createSampleViolationWithId("module2");
@@ -131,7 +120,6 @@ public class ViolationTest {
                 .isTrue();
     }
 
-    @Test
     public void testCompareToWithDifferentLines() {
         final Violation message1 = createSampleViolationWithLine(1);
         final Violation message1a = createSampleViolationWithLine(1);
@@ -149,7 +137,6 @@ public class ViolationTest {
             .isEqualTo(0);
     }
 
-    @Test
     public void testCompareToWithDifferentColumns() {
         final Violation message1 = createSampleViolationWithColumn(1);
         final Violation message1a = createSampleViolationWithColumn(1);

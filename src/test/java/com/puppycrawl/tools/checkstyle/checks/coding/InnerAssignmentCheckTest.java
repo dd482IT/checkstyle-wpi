@@ -35,7 +35,6 @@ public class InnerAssignmentCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/innerassignment";
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "22:15: " + getCheckMessage(MSG_KEY),
@@ -61,7 +60,6 @@ public class InnerAssignmentCheckTest
                 getPath("InputInnerAssignment.java"), expected);
     }
 
-    @Test
     public void testLambdaExpression() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -69,7 +67,6 @@ public class InnerAssignmentCheckTest
                 expected);
     }
 
-    @Test
     public void testInnerAssignmentNotInLoopContext() throws Exception {
         final String[] expected = {
             "12:28: " + getCheckMessage(MSG_KEY),
@@ -79,7 +76,6 @@ public class InnerAssignmentCheckTest
                 expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final InnerAssignmentCheck check = new InnerAssignmentCheck();
         assertWithMessage("Acceptable tokens should not be null")

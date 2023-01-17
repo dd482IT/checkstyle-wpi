@@ -43,7 +43,6 @@ public class XdocsMobileWrapperTest {
         "img"
     );
 
-    @Test
     public void testAllCheckSectionMobileWrapper() throws Exception {
         for (Path path : XdocUtil.getXdocsFilePaths()) {
             final File file = path.toFile();

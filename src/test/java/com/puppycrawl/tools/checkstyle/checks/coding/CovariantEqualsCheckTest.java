@@ -34,7 +34,6 @@ public class CovariantEqualsCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/covariantequals";
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -49,7 +48,6 @@ public class CovariantEqualsCheckTest
                 getPath("InputCovariantEquals.java"), expected);
     }
 
-    @Test
     public void testCovariantEqualsRecords()
             throws Exception {
         final String[] expected = {
@@ -60,7 +58,6 @@ public class CovariantEqualsCheckTest
                 getNonCompilablePath("InputCovariantEqualsRecords.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final CovariantEqualsCheck check = new CovariantEqualsCheck();
         assertWithMessage("Acceptable tokens should not be null")

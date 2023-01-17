@@ -36,7 +36,6 @@ public class DesignForExtensionCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/design/designforextension";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final DesignForExtensionCheck checkObj = new DesignForExtensionCheck();
         final int[] expected = {TokenTypes.METHOD_DEF};
@@ -45,7 +44,6 @@ public class DesignForExtensionCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "50:5: " + getCheckMessage(MSG_KEY, "InputDesignForExtension", "doh"),
@@ -55,7 +53,6 @@ public class DesignForExtensionCheckTest
                 getPath("InputDesignForExtension.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final DesignForExtensionCheck obj = new DesignForExtensionCheck();
         final int[] expected = {TokenTypes.METHOD_DEF};
@@ -64,7 +61,6 @@ public class DesignForExtensionCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testOverridableMethods() throws Exception {
         final String[] expected = {
             "14:9: " + getCheckMessage(MSG_KEY, "A", "foo1"),
@@ -91,7 +87,6 @@ public class DesignForExtensionCheckTest
                 getPath("InputDesignForExtensionOverridableMethods.java"), expected);
     }
 
-    @Test
     public void testIgnoredAnnotationsOption() throws Exception {
         final String[] expected = {
             "39:5: "
@@ -107,14 +102,12 @@ public class DesignForExtensionCheckTest
                 getPath("InputDesignForExtensionIgnoredAnnotations.java"), expected);
     }
 
-    @Test
     public void testIgnoreAnnotationsOptionWithMultipleAnnotations() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputDesignForExtensionMultipleAnnotations.java"), expected);
     }
 
-    @Test
     public void testNativeMethods() throws Exception {
         final String[] expected = {
             "16:5: " + getCheckMessage(MSG_KEY, "InputDesignForExtensionNativeMethods", "foo1"),
@@ -124,7 +117,6 @@ public class DesignForExtensionCheckTest
                 getPath("InputDesignForExtensionNativeMethods.java"), expected);
     }
 
-    @Test
     public void testDesignForExtensionRecords() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -133,7 +125,6 @@ public class DesignForExtensionCheckTest
                 getNonCompilablePath("InputDesignForExtensionRecords.java"), expected);
     }
 
-    @Test
     public void testRequiredJavadocPhrase() throws Exception {
         final String className = "InputDesignForExtensionRequiredJavadocPhrase";
         final String[] expected = {
@@ -146,7 +137,6 @@ public class DesignForExtensionCheckTest
                 getPath("InputDesignForExtensionRequiredJavadocPhrase.java"), expected);
     }
 
-    @Test
     public void testRequiredJavadocPhraseMultiLine() throws Exception {
         final String className = "InputDesignForExtensionRequiredJavadocPhraseMultiLine";
         final String[] expected = {
@@ -157,7 +147,6 @@ public class DesignForExtensionCheckTest
             expected);
     }
 
-    @Test
     public void testInterfaceMemberScopeIsPublic() throws Exception {
         final String[] expected = {
             "15:9: " + getCheckMessage(MSG_KEY, "Inner", "getProperty"),

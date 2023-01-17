@@ -103,7 +103,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 8.30
  */
-@StatelessCheck
 public class AvoidDoubleBraceInitializationCheck extends AbstractCheck {
 
     /**

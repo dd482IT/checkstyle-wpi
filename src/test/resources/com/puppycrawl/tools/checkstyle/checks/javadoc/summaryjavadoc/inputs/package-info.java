@@ -8,7 +8,6 @@ period = (default).
 */
 
 /** */ // violation 'Summary javadoc is missing.'
-@Example
 package com.puppycrawl.tools.checkstyle.checks.javadoc.summaryjavadoc.inputs;
 
 import java.lang.annotation.ElementType;

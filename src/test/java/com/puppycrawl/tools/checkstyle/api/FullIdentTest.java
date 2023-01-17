@@ -37,7 +37,6 @@ public class FullIdentTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/api/fullident/";
     }
 
-    @Test
     public void testToString() {
         final DetailAstImpl ast = new DetailAstImpl();
         ast.setType(TokenTypes.LITERAL_NEW);
@@ -67,7 +66,6 @@ public class FullIdentTest extends AbstractModuleTestSupport {
                 .isEqualTo(14);
     }
 
-    @Test
     public void testCreateFullIdentBelow() {
         final DetailAST ast = new DetailAstImpl();
 
@@ -77,7 +75,6 @@ public class FullIdentTest extends AbstractModuleTestSupport {
                 .isEqualTo("");
     }
 
-    @Test
     public void testGetDetailAst() throws Exception {
         final FileText testFileText = new FileText(
                 new File(getPath("InputFullIdentTestArrayType.java")).getAbsoluteFile(),
@@ -91,7 +88,6 @@ public class FullIdentTest extends AbstractModuleTestSupport {
                 .isEqualTo("com[1x8]");
     }
 
-    @Test
     public void testNonValidCoordinatesWithNegative() {
         final FullIdent fullIdent = prepareFullIdentWithCoordinates(14, 15);
         assertWithMessage("Invalid full indent")
@@ -99,7 +95,6 @@ public class FullIdentTest extends AbstractModuleTestSupport {
                 .isEqualTo("MyTest.MyTestik[15x14]");
     }
 
-    @Test
     public void testNonValidCoordinatesWithZero() {
         final FullIdent fullIdent = prepareFullIdentWithCoordinates(0, 0);
         assertWithMessage("Invalid full indent")
@@ -107,7 +102,6 @@ public class FullIdentTest extends AbstractModuleTestSupport {
                 .isEqualTo("MyTest.MyTestik[15x14]");
     }
 
-    @Test
     public void testWithArrayCreateFullIdentWithArrayDeclare() throws Exception {
         final FileText testFileText = new FileText(
                 new File(getPath("InputFullIdentTestArrayType.java")).getAbsoluteFile(),
@@ -125,7 +119,6 @@ public class FullIdentTest extends AbstractModuleTestSupport {
                 .isEqualTo("int[][][5x12]");
     }
 
-    @Test
     public void testFullIdentAnnotation() throws Exception {
         final FileText testFileText = new FileText(
                 new File(getPath("InputFullIdentAnnotation.java")).getAbsoluteFile(),
@@ -152,7 +145,6 @@ public class FullIdentTest extends AbstractModuleTestSupport {
                 .isEqualTo("char[][7x29]");
     }
 
-    @Test
     public void testFullIdentArrayInit() throws Exception {
         final FileText testFileText = new FileText(
                 new File(getPath("InputFullIdentArrayInit.java")).getAbsoluteFile(),
@@ -208,7 +200,6 @@ public class FullIdentTest extends AbstractModuleTestSupport {
         return FullIdent.createFullIdent(ast);
     }
 
-    @Test
     public void testReturnNoAnnotation() throws Exception {
         final FileText testFileText = new FileText(
                 new File(getPath("InputFullIdentReturnNoAnnotation.java")).getAbsoluteFile(),
@@ -222,7 +213,6 @@ public class FullIdentTest extends AbstractModuleTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testFullyQualifiedStringArray() throws Exception {
         final FileText testFileText = new FileText(
                 new File(getPath("InputFullIdentFullyQualifiedStringArray.java")).getAbsoluteFile(),

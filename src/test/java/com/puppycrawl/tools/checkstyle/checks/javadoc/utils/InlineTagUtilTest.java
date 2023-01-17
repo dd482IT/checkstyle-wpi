@@ -29,14 +29,12 @@ import com.puppycrawl.tools.checkstyle.internal.utils.TestUtil;
 
 public class InlineTagUtilTest {
 
-    @Test
     public void testHasPrivateConstructor() throws Exception {
         assertWithMessage("Constructor is not private")
                 .that(TestUtil.isUtilsClassHasPrivateConstructor(InlineTagUtil.class))
                 .isTrue();
     }
 
-    @Test
     public void testExtractInlineTags() {
         final String[] text = {
             "/** @see elsewhere ",
@@ -56,7 +54,6 @@ public class InlineTagUtilTest {
         assertTag(tags.get(3), "link", "Class link text", 4, 4);
     }
 
-    @Test
     public void testMultiLineLinkTag() {
         final String[] text = {
             "/**",
@@ -72,7 +69,6 @@ public class InlineTagUtilTest {
         assertTag(tags.get(0), "link", "foo bar baz", 2, 4);
     }
 
-    @Test
     public void testCollapseWhitespace() {
         final String[] text = {
             "/**",
@@ -87,7 +83,6 @@ public class InlineTagUtilTest {
         assertTag(tags.get(0), "code", "foo bar baz", 2, 4);
     }
 
-    @Test
     public void extractInlineTags() {
         final String[] source = {
             "  {@link foo}",
@@ -103,7 +98,6 @@ public class InlineTagUtilTest {
         assertTag(tag, "link", "foo", 1, 3);
     }
 
-    @Test
     public void testBadInputExtractInlineTagsLineFeed() {
         try {
             InlineTagUtil.extractInlineTags("abc\ndef");
@@ -116,7 +110,6 @@ public class InlineTagUtilTest {
         }
     }
 
-    @Test
     public void testBadInputExtractInlineTagsCarriageReturn() {
         try {
             InlineTagUtil.extractInlineTags("abc\rdef");

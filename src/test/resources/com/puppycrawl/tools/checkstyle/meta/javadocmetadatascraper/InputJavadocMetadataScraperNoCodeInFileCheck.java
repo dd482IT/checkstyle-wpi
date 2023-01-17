@@ -47,7 +47,6 @@ import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
  *
  * @since 8.33
  */
-@StatelessCheck
 public abstract class InputJavadocMetadataScraperNoCodeInFileCheck extends AbstractCheck {
 
 }

@@ -119,18 +119,6 @@ public class InputIndentationInvalidArrayInitIndent { //indent:0 exp:0
             String[] description2() default { "hello",
             "checkstyle"};
         }
-        @SomeAnnotation1(values =
-            {
-              "hello",
-            "checkstyle"
-            },
-            description = { "hello",
-              "checkstyle"
-        },
-            description2 = {
-            "hello", "chekstyle"
-            }
-        )
       void worked();
     }
 }

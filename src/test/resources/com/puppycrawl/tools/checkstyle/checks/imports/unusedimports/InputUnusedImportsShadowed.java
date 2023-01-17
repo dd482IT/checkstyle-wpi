@@ -46,7 +46,6 @@ public class InputUnusedImportsShadowed
             List x = null;
         }
 
-        @Set
         interface List {
             Map foo();
             class Map {

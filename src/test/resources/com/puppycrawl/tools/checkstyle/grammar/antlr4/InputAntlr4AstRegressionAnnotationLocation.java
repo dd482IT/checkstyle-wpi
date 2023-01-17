@@ -5,13 +5,11 @@ import java.lang.annotation.Repeatable;
 import java.lang.annotation.Target;
 
 
-@AnnotationAnnotation(value = "foo")
-  @AnnotationAnnotation // violation
-@AnnotationAnnotation("bar") @interface InputAntlr4AstRegressionAnnotationLocation { // violation
+  // violation
+@interface InputAntlr4AstRegressionAnnotationLocation { // violation
 
-    @AnnotationAnnotation(value = "foo")
-      @AnnotationAnnotation // violation
-    @AnnotationAnnotation("bar") String value(); // violation
+      // violation
+    String value(); // violation
 
 }
 

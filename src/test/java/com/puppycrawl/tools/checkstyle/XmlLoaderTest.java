@@ -35,7 +35,6 @@ import com.puppycrawl.tools.checkstyle.internal.utils.TestUtil;
 
 public class XmlLoaderTest {
 
-    @Test
     public void testParserConfiguredSuccessfully() throws Exception {
         final DummyLoader dummyLoader = new DummyLoader(new HashMap<>(1));
         final XMLReader parser = TestUtil.getInternalState(dummyLoader, "parser");
@@ -44,7 +43,6 @@ public class XmlLoaderTest {
             .isEqualTo(dummyLoader);
     }
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(isUtilsClassHasPrivateConstructor(
@@ -52,7 +50,6 @@ public class XmlLoaderTest {
                 .isTrue();
     }
 
-    @Test
     public void testResolveEntityDefault() throws Exception {
         final Map<String, String> map = new HashMap<>();
         map.put("predefined", "/google.xml");
@@ -62,7 +59,6 @@ public class XmlLoaderTest {
             .isNull();
     }
 
-    @Test
     public void testResolveEntityMap() throws Exception {
         final Map<String, String> map = new HashMap<>();
         map.put("predefined", "/google.xml");

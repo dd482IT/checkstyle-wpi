@@ -260,7 +260,6 @@ import com.puppycrawl.tools.checkstyle.utils.ScopeUtil;
  *
  * @since 8.21
  */
-@FileStatefulCheck
 public class MissingJavadocMethodCheck extends AbstractCheck {
 
     /**

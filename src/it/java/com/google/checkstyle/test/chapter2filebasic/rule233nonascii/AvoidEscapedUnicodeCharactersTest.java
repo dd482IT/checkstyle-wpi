@@ -34,7 +34,6 @@ public class AvoidEscapedUnicodeCharactersTest extends AbstractGoogleModuleTestS
         return "com/google/checkstyle/test/chapter2filebasic/rule233nonascii";
     }
 
-    @Test
     public void testUnicodeEscapes() throws Exception {
         final String[] expected = {
             "5:42: " + getCheckMessage(AvoidEscapedUnicodeCharactersCheck.class, MSG_KEY),

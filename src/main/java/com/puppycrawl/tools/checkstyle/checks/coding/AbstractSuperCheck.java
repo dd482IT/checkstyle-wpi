@@ -34,7 +34,6 @@ import com.puppycrawl.tools.checkstyle.utils.ScopeUtil;
  * invokes the super method.
  * </p>
  */
-@FileStatefulCheck
 public abstract class AbstractSuperCheck
         extends AbstractCheck {
 

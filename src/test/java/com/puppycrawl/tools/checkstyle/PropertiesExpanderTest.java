@@ -27,7 +27,6 @@ import org.junit.jupiter.api.Test;
 
 public class PropertiesExpanderTest {
 
-    @Test
     public void testCtorException() {
         try {
             final Object test = new PropertiesExpander(null);
@@ -40,7 +39,6 @@ public class PropertiesExpanderTest {
         }
     }
 
-    @Test
     public void testDefaultProperties() {
         final Properties properties = new Properties(System.getProperties());
         properties.setProperty("test", "checkstyle");

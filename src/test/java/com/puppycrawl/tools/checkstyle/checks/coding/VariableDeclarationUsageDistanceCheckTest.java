@@ -36,7 +36,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
         return "com/puppycrawl/tools/checkstyle/checks/coding/variabledeclarationusagedistance";
     }
 
-    @Test
     public void testGeneralLogic() throws Exception {
         final String[] expected = {
             "42:9: " + getCheckMessage(MSG_KEY, "a", 2, 1),
@@ -80,7 +79,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
                 getPath("InputVariableDeclarationUsageDistanceGeneral.java"), expected);
     }
 
-    @Test
     public void testGeneralLogic2() throws Exception {
         final String[] expected = {
             "17:9: " + getCheckMessage(MSG_KEY, "first", 5, 1),
@@ -91,7 +89,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
                 getPath("InputVariableDeclarationUsageDistanceGeneral2.java"), expected);
     }
 
-    @Test
     public void testIfStatements() throws Exception {
         final String[] expected = {
             "18:9: " + getCheckMessage(MSG_KEY, "a", 4, 1),
@@ -108,7 +105,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
             getPath("InputVariableDeclarationUsageDistanceIfStatements.java"), expected);
     }
 
-    @Test
     public void testDistance() throws Exception {
         final String[] expected = {
             "83:9: " + getCheckMessage(MSG_KEY, "count", 4, 3),
@@ -125,7 +121,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
                 getPath("InputVariableDeclarationUsageDistance.java"), expected);
     }
 
-    @Test
     public void testVariableRegExp() throws Exception {
         final String[] expected = {
             "50:9: " + getCheckMessage(MSG_KEY, "temp", 2, 1),
@@ -158,7 +153,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
                 getPath("InputVariableDeclarationUsageDistanceRegExp.java"), expected);
     }
 
-    @Test
     public void testValidateBetweenScopesOption() throws Exception {
         final String[] expected = {
             "42:9: " + getCheckMessage(MSG_KEY, "a", 2, 1),
@@ -190,7 +184,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
                 getPath("InputVariableDeclarationUsageDistanceScopes.java"), expected);
     }
 
-    @Test
     public void testIgnoreFinalOption() throws Exception {
         final String[] expected = {
             "42:9: " + getCheckMessage(MSG_KEY_EXT, "a", 2, 1),
@@ -232,7 +225,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
                 getPath("InputVariableDeclarationUsageDistanceFinal.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final VariableDeclarationUsageDistanceCheck check =
             new VariableDeclarationUsageDistanceCheck();
@@ -247,7 +239,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
             .isNotNull();
     }
 
-    @Test
     public void testDefaultConfiguration() throws Exception {
         final String[] expected = {
             "83:9: " + getCheckMessage(MSG_KEY_EXT, "count", 4, 3),
@@ -263,7 +254,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
                 getPath("InputVariableDeclarationUsageDistanceDefault.java"), expected);
     }
 
-    @Test
     public void testDefaultConfiguration2() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -271,7 +261,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
             getPath("InputVariableDeclarationUsageDistanceDefault2.java"), expected);
     }
 
-    @Test
     public void testAnonymousClass() throws Exception {
         final String[] expected = {
             "19:9: " + getCheckMessage(MSG_KEY_EXT, "prefs", 4, 3),
@@ -282,7 +271,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
                 expected);
     }
 
-    @Test
     public void testLabels() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -290,7 +278,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
                 getPath("InputVariableDeclarationUsageDistanceLabels.java"), expected);
     }
 
-    @Test
     public void testVariableDeclarationUsageDistanceSwitchExpressions() throws Exception {
 
         final int maxDistance = 1;
@@ -309,7 +296,6 @@ public class VariableDeclarationUsageDistanceCheckTest extends
         verifyWithInlineConfigParser(getNonCompilablePath(filename), expected);
     }
 
-    @Test
     public void testVariableDeclarationUsageDistanceSwitchExpressions2() throws Exception {
         final int maxDistance = 1;
         final String[] expected = {

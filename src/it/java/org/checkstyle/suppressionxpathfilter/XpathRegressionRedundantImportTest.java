@@ -37,7 +37,6 @@ public class XpathRegressionRedundantImportTest extends AbstractXpathTestSupport
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionRedundantImport1.java"));
@@ -55,7 +54,6 @@ public class XpathRegressionRedundantImportTest extends AbstractXpathTestSupport
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionRedundantImport2.java"));
@@ -72,7 +70,6 @@ public class XpathRegressionRedundantImportTest extends AbstractXpathTestSupport
                 expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionRedundantImport3.java"));

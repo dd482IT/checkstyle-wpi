@@ -6,7 +6,7 @@ ModifierOrder
 
 package com.puppycrawl.tools.checkstyle.checks.modifier.modifierorder;
 
-public @InterfaceAnnotation @interface InputModifierOrderAnnotationDeclaration { // violation
+public @interface InputModifierOrderAnnotationDeclaration { // violation
     int getValue();
 }
 

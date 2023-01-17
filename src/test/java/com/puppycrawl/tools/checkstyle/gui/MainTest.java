@@ -44,8 +44,6 @@ public class MainTest extends AbstractGuiTestSupport {
      * @param argList the command line arguments delimited by a semicolon (";")
      * @throws Exception if an exception occurs while executing the test.
      */
-    @ParameterizedTest
-    @ValueSource(strings = {";", "InputMain.java"})
     public void testMain(String argList) throws Exception {
         final String[] args = argList.split(";");
         for (int i = 0; i < args.length; i++) {

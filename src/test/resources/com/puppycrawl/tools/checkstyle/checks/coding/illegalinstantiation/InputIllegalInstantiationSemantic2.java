@@ -140,7 +140,7 @@ class InputIllegalInstantiationSemantic2
 
     private void method() {
         Boolean[] array = new Boolean[3];
-        Object object = new @Interned Object();
+        Object object = new Object();
         Map<Class<?>, Boolean> x = new HashMap<Class<?>, Boolean>();
     }
 

@@ -173,7 +173,6 @@ import com.puppycrawl.tools.checkstyle.utils.ScopeUtil;
  *
  * @since 3.0
  */
-@StatelessCheck
 public class JavadocVariableCheck
     extends AbstractCheck {
 

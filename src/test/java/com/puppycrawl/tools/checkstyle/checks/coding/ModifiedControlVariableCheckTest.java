@@ -45,7 +45,6 @@ public class ModifiedControlVariableCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/modifiedcontrolvariable";
     }
 
-    @Test
     public void testModifiedControlVariable() throws Exception {
         final String[] expected = {
             "17:14: " + getCheckMessage(MSG_KEY, "i"),
@@ -62,7 +61,6 @@ public class ModifiedControlVariableCheckTest
                 getPath("InputModifiedControlVariableBothForLoops.java"), expected);
     }
 
-    @Test
     public void testEnhancedForLoopVariableTrue() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -71,7 +69,6 @@ public class ModifiedControlVariableCheckTest
                 expected);
     }
 
-    @Test
     public void testEnhancedForLoopVariableFalse() throws Exception {
 
         final String[] expected = {
@@ -82,7 +79,6 @@ public class ModifiedControlVariableCheckTest
                 expected);
     }
 
-    @Test
     public void testEnhancedForLoopVariable2() throws Exception {
 
         final String[] expected = {
@@ -93,7 +89,6 @@ public class ModifiedControlVariableCheckTest
                 expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final ModifiedControlVariableCheck check = new ModifiedControlVariableCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -107,7 +102,6 @@ public class ModifiedControlVariableCheckTest
             .isNotNull();
     }
 
-    @Test
     public void testImproperToken() {
         final ModifiedControlVariableCheck check = new ModifiedControlVariableCheck();
 
@@ -131,7 +125,6 @@ public class ModifiedControlVariableCheckTest
         }
     }
 
-    @Test
     public void testVariousAssignments() throws Exception {
         final String[] expected = {
             "14:15: " + getCheckMessage(MSG_KEY, "i"),
@@ -169,7 +162,6 @@ public class ModifiedControlVariableCheckTest
      *
      * @throws Exception when code tested throws exception
      */
-    @Test
     @SuppressWarnings("unchecked")
     public void testClearState() throws Exception {
         final ModifiedControlVariableCheck check = new ModifiedControlVariableCheck();

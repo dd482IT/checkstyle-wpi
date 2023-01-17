@@ -31,9 +31,9 @@ class Outer {
 
 class Test {
     void m() {
-        @A Outer p1 = new @A Outer(); // ok
+        Outer p1 = new Outer(); // ok
         // violation below 'Unused local variable 'p2'.'
-        @A Outer.@B Inner p2 = p1.new @B Inner();
+        Outer.Inner p2 = p1.new Inner();
     }
 
     @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})

@@ -102,7 +102,6 @@ import com.puppycrawl.tools.checkstyle.utils.CheckUtil;
  *
  * @since 5.0
  */
-@FileStatefulCheck
 public class EqualsAvoidNullCheck extends AbstractCheck {
 
     /**

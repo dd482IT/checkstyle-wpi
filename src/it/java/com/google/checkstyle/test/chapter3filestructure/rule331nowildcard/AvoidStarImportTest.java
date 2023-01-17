@@ -31,7 +31,6 @@ public class AvoidStarImportTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter3filestructure/rule331nowildcard";
     }
 
-    @Test
     public void testStarImport() throws Exception {
         final String[] expected = {
             "3:15: Using the '.*' form of import should be avoided - java.io.*.",

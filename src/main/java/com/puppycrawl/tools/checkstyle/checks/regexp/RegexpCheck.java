@@ -470,7 +470,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 4.0
  */
-@FileStatefulCheck
 public class RegexpCheck extends AbstractCheck {
 
     /**

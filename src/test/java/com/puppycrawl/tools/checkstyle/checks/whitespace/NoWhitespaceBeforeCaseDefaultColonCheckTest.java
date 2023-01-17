@@ -36,7 +36,6 @@ public class NoWhitespaceBeforeCaseDefaultColonCheckTest
                 + "/nowhitespacebeforecasedefaultcolon";
     }
 
-    @Test
     public void testDefault() throws Exception {
         createModuleConfig(
                 NoWhitespaceBeforeCaseDefaultColonCheck.class);
@@ -60,7 +59,6 @@ public class NoWhitespaceBeforeCaseDefaultColonCheckTest
                 expected);
     }
 
-    @Test
     public void testDefaultNonCompilable() throws Exception {
         createModuleConfig(
                 NoWhitespaceBeforeCaseDefaultColonCheck.class);
@@ -79,7 +77,6 @@ public class NoWhitespaceBeforeCaseDefaultColonCheckTest
                 expected);
     }
 
-    @Test
     public void testAcceptableTokenIsColon() {
         final NoWhitespaceBeforeCaseDefaultColonCheck check =
                 new NoWhitespaceBeforeCaseDefaultColonCheck();

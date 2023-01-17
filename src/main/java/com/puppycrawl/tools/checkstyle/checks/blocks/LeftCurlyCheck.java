@@ -222,7 +222,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 3.0
  */
-@StatelessCheck
 public class LeftCurlyCheck
     extends AbstractCheck {
 

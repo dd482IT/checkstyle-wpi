@@ -37,14 +37,12 @@ public class SuppressionsStringPrinterTest extends AbstractTreeTestSupport {
         return "com/puppycrawl/tools/checkstyle/suppressionsstringprinter";
     }
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(isUtilsClassHasPrivateConstructor(SuppressionsStringPrinter.class))
                 .isTrue();
     }
 
-    @Test
     public void testCorrect() throws Exception {
         final String expected = "/COMPILATION_UNIT/CLASS_DEF"
                 + "[./IDENT[@text='InputSuppressionsStringPrinter']]" + EOL
@@ -64,7 +62,6 @@ public class SuppressionsStringPrinterTest extends AbstractTreeTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testCustomTabWidth() throws Exception {
         final String expected = "/COMPILATION_UNIT/CLASS_DEF"
                 + "[./IDENT[@text='InputSuppressionsStringPrinter']]"
@@ -87,7 +84,6 @@ public class SuppressionsStringPrinterTest extends AbstractTreeTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testCustomTabWidthEmptyResult() throws Exception {
         final File input = new File(getPath("InputSuppressionsStringPrinter.java"));
         final String lineAndColumnNumber = "5:13";
@@ -99,7 +95,6 @@ public class SuppressionsStringPrinterTest extends AbstractTreeTestSupport {
             .isEqualTo(EOL);
     }
 
-    @Test
     public void testInvalidLineAndColumnNumberParameter() throws Exception {
         final File input = new File(getPath("InputSuppressionsStringPrinter.java"));
         final String invalidLineAndColumnNumber = "abc-432";
@@ -116,7 +111,6 @@ public class SuppressionsStringPrinterTest extends AbstractTreeTestSupport {
         }
     }
 
-    @Test
     public void testParseFileTextThrowable() throws Exception {
         final File input = new File(getNonCompilablePath("InputSuppressionsStringPrinter.java"));
         final String lineAndColumnNumber = "2:3";

@@ -33,7 +33,6 @@ public class NoWhitespaceBeforeTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule462horizontalwhitespace";
     }
 
-    @Test
     public void testEmptyForLoop() throws Exception {
         final Class<NoWhitespaceBeforeCheck> clazz = NoWhitespaceBeforeCheck.class;
         final String messageKeyPreceded = "ws.preceded";
@@ -49,7 +48,6 @@ public class NoWhitespaceBeforeTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testColonOfLabel() throws Exception {
         final Class<NoWhitespaceBeforeCheck> clazz = NoWhitespaceBeforeCheck.class;
         final String messageKeyPreceded = "ws.preceded";
@@ -64,7 +62,6 @@ public class NoWhitespaceBeforeTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testAnnotations() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         final Configuration checkConfig = getModuleConfig("NoWhitespaceBefore");

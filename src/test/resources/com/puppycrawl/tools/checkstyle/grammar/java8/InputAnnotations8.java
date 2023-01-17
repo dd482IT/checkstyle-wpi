@@ -18,10 +18,10 @@ import java.util.Map;
 public class InputAnnotations8 {
 
     public void main(String[] args) {
-        Map.@NotNull Entry entry;
+        Map.Entry entry;
         MyObject myObject = new MyObject();
-        myObject.<@NotBlank String>myMethod();
-        myObject.new @NotNull MyObject2();
+        myObject.<String>myMethod();
+        myObject.new MyObject2();
 
     }
 

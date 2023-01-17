@@ -43,7 +43,6 @@ public class JavaNCSSCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/metrics/javancss";
     }
 
-    @Test
     public void test() throws Exception {
 
         final String[] expected = {
@@ -66,7 +65,6 @@ public class JavaNCSSCheckTest extends AbstractModuleTestSupport {
                 getPath("InputJavaNCSS.java"), expected);
     }
 
-    @Test
     public void testEqualToMax() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -75,14 +73,12 @@ public class JavaNCSSCheckTest extends AbstractModuleTestSupport {
                 getPath("InputJavaNCSS2.java"), expected);
     }
 
-    @Test
     public void testDefaultConfiguration() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputJavaNCSS3.java"), expected);
     }
 
-    @Test
     public void testRecordsAndCompactCtors() throws Exception {
 
         final String[] expected = {
@@ -106,7 +102,6 @@ public class JavaNCSSCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testForMutation() throws Exception {
         final String[] expected = {
             "13:1: " + getCheckMessage(MSG_CLASS, 84, 80),
@@ -117,7 +112,6 @@ public class JavaNCSSCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testRecordMax() throws Exception {
         final String[] expected = {
             "14:1: " + getCheckMessage(MSG_CLASS, 152, 80),
@@ -129,7 +123,6 @@ public class JavaNCSSCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final JavaNCSSCheck javaNcssCheckObj = new JavaNCSSCheck();
         final int[] actual = javaNcssCheckObj.getAcceptableTokens();
@@ -173,7 +166,6 @@ public class JavaNCSSCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final JavaNCSSCheck javaNcssCheckObj = new JavaNCSSCheck();
         final int[] actual = javaNcssCheckObj.getRequiredTokens();

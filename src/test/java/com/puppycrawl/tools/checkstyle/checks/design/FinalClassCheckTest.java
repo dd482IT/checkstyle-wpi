@@ -36,7 +36,6 @@ public class FinalClassCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/design/finalclass";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final FinalClassCheck checkObj = new FinalClassCheck();
         final int[] expected = {
@@ -54,7 +53,6 @@ public class FinalClassCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testFinalClass() throws Exception {
         final String[] expected = {
             "11:1: " + getCheckMessage(MSG_KEY, "InputFinalClass"),
@@ -69,7 +67,6 @@ public class FinalClassCheckTest
                 getPath("InputFinalClass.java"), expected);
     }
 
-    @Test
     public void testClassWithPrivateCtorAndNestedExtendingSubclass() throws Exception {
         final String[] expected = {
             "22:5: " + getCheckMessage(MSG_KEY, "C"),
@@ -80,7 +77,6 @@ public class FinalClassCheckTest
                 expected);
     }
 
-    @Test
     public void testClassWithPrivateCtorAndNestedExtendingSubclassWithoutPackage()
             throws Exception {
         final String[] expected = {
@@ -92,7 +88,6 @@ public class FinalClassCheckTest
                 expected);
     }
 
-    @Test
     public void testFinalClassConstructorInRecord() throws Exception {
 
         final String[] expected = {
@@ -104,7 +99,6 @@ public class FinalClassCheckTest
             expected);
     }
 
-    @Test
     public void testImproperToken() {
         final FinalClassCheck finalClassCheck = new FinalClassCheck();
         final DetailAstImpl badAst = new DetailAstImpl();
@@ -119,7 +113,6 @@ public class FinalClassCheckTest
         }
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final FinalClassCheck obj = new FinalClassCheck();
         final int[] expected = {
@@ -137,7 +130,6 @@ public class FinalClassCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testFinalClassInnerAndNestedClasses() throws Exception {
         final String[] expected = {
             "19:5: " + getCheckMessage(MSG_KEY, "SameName"),
@@ -148,7 +140,6 @@ public class FinalClassCheckTest
         verifyWithInlineConfigParser(getPath("InputFinalClassInnerAndNestedClass.java"), expected);
     }
 
-    @Test
     public void testFinalClassStaticNestedClasses() throws Exception {
 
         final String[] expected = {
@@ -165,7 +156,6 @@ public class FinalClassCheckTest
                 expected);
     }
 
-    @Test
     public void testFinalClassEnum() throws Exception {
         final String[] expected = {
             "35:5: " + getCheckMessage(MSG_KEY, "DerivedClass"),
@@ -173,7 +163,6 @@ public class FinalClassCheckTest
         verifyWithInlineConfigParser(getPath("InputFinalClassEnum.java"), expected);
     }
 
-    @Test
     public void testFinalClassAnnotation() throws Exception {
         final String[] expected = {
             "15:5: " + getCheckMessage(MSG_KEY, "DerivedClass"),
@@ -181,7 +170,6 @@ public class FinalClassCheckTest
         verifyWithInlineConfigParser(getPath("InputFinalClassAnnotation.java"), expected);
     }
 
-    @Test
     public void testFinalClassInterface() throws Exception {
         final String[] expected = {
             "15:5: " + getCheckMessage(MSG_KEY, "DerivedClass"),
@@ -189,7 +177,6 @@ public class FinalClassCheckTest
         verifyWithInlineConfigParser(getPath("InputFinalClassInterface.java"), expected);
     }
 
-    @Test
     public void testFinalClassAnonymousInnerClass() throws Exception {
         final String[] expected = {
             "11:9: " + getCheckMessage(MSG_KEY, "b"),
@@ -204,7 +191,6 @@ public class FinalClassCheckTest
         verifyWithInlineConfigParser(getPath("InputFinalClassAnonymousInnerClass.java"), expected);
     }
 
-    @Test
     public void testFinalClassNestedInInterface() throws Exception {
         final String[] expected = {
             "24:5: " + getCheckMessage(MSG_KEY, "b"),
@@ -215,7 +201,6 @@ public class FinalClassCheckTest
             getPath("InputFinalClassNestedInInterfaceWithAnonInnerClass.java"), expected);
     }
 
-    @Test
     public void testFinalClassNestedInEnum() throws Exception {
         final String[] expected = {
             "13:9: " + getCheckMessage(MSG_KEY, "j"),
@@ -225,7 +210,6 @@ public class FinalClassCheckTest
                                      expected);
     }
 
-    @Test
     public void testFinalClassNestedInRecord() throws Exception {
         final String[] expected = {
             "13:9: " + getCheckMessage(MSG_KEY, "c"),

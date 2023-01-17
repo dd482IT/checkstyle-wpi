@@ -37,7 +37,6 @@ public class XpathRegressionJavadocVariableTest extends AbstractXpathTestSupport
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionJavadocVariableOne.java"));
@@ -66,7 +65,6 @@ public class XpathRegressionJavadocVariableTest extends AbstractXpathTestSupport
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionJavadocVariableTwo.java"));

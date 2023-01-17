@@ -12,10 +12,10 @@ import org.junit.Assert;
 import com.google.common.reflect.Invokable;
 
 public class InputAstRegressionAnnotatedMethodVariableArityParam {
-    void varargLong(@I String @L [] @K [] @J ... vararg2) { }
+    void varargLong(String[][] ... vararg2) { }
     @SuppressWarnings("unused")
     void withUpperBound(List<? extends int[][]> list) {}
-    private static <T> @Nullable T invoke(Invokable<?, ? extends T> factory, List<?> args)
+    private static <T> T invoke(Invokable<?, ? extends T> factory, List<?> args)
                 throws InvocationTargetException, IllegalAccessException {
             return null;
         }

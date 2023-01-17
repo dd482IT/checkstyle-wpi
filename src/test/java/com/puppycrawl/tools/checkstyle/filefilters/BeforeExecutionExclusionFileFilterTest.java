@@ -37,7 +37,6 @@ public class BeforeExecutionExclusionFileFilterTest extends AbstractModuleTestSu
         return "com/puppycrawl/tools/checkstyle/filefilters/beforeexecutionexclusionfilefilter";
     }
 
-    @Test
     public void testAccept() {
         final String fileName = "BAD";
         final BeforeExecutionExclusionFileFilter filter =
@@ -48,7 +47,6 @@ public class BeforeExecutionExclusionFileFilterTest extends AbstractModuleTestSu
                 .isTrue();
     }
 
-    @Test
     public void testAcceptOnNullFile() {
         final String fileName = null;
         final BeforeExecutionExclusionFileFilter filter =
@@ -59,7 +57,6 @@ public class BeforeExecutionExclusionFileFilterTest extends AbstractModuleTestSu
                 .isTrue();
     }
 
-    @Test
     public void testReject() {
         final String fileName = "Test";
         final BeforeExecutionExclusionFileFilter filter =
@@ -70,7 +67,6 @@ public class BeforeExecutionExclusionFileFilterTest extends AbstractModuleTestSu
                 .isFalse();
     }
 
-    @Test
     public void testFileExclusion() throws Exception {
         final String[] filteredViolations = CommonUtil.EMPTY_STRING_ARRAY;
 

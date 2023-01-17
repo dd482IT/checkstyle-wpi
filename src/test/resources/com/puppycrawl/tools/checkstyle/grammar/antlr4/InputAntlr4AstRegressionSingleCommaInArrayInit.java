@@ -1,6 +1,6 @@
 package com.puppycrawl.tools.checkstyle.grammar.antlr4;
 
 public class InputAntlr4AstRegressionSingleCommaInArrayInit {
-    @Foo({,}) void b() { }
+    void b() { }
 }
 @interface Foo { int[] value(); }

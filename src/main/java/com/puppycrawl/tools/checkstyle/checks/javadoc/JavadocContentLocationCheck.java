@@ -150,7 +150,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 8.27
  */
-@StatelessCheck
 public class JavadocContentLocationCheck extends AbstractCheck {
 
     /**

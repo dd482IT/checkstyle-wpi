@@ -34,7 +34,6 @@ public class NoWhitespaceBeforeCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/nowhitespacebefore";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "34:15: " + getCheckMessage(MSG_KEY, "++"),
@@ -55,7 +54,6 @@ public class NoWhitespaceBeforeCheckTest
                 getPath("InputNoWhitespaceBeforeDefault.java"), expected);
     }
 
-    @Test
     public void testDot() throws Exception {
         final String[] expected = {
             "9:13: " + getCheckMessage(MSG_KEY, "."),
@@ -69,7 +67,6 @@ public class NoWhitespaceBeforeCheckTest
                 getPath("InputNoWhitespaceBeforeDot.java"), expected);
     }
 
-    @Test
     public void testDotAllowLineBreaks() throws Exception {
         final String[] expected = {
             "9:13: " + getCheckMessage(MSG_KEY, "."),
@@ -80,7 +77,6 @@ public class NoWhitespaceBeforeCheckTest
                 getPath("InputNoWhitespaceBeforeDotAllowLineBreaks.java"), expected);
     }
 
-    @Test
     public void testMethodReference() throws Exception {
         final String[] expected = {
             "25:32: " + getCheckMessage(MSG_KEY, "::"),
@@ -90,7 +86,6 @@ public class NoWhitespaceBeforeCheckTest
                 getPath("InputNoWhitespaceBeforeMethodRef.java"), expected);
     }
 
-    @Test
     public void testDotAtTheStartOfTheLine() throws Exception {
         final String[] expected = {
             "10:1: " + getCheckMessage(MSG_KEY, "."),
@@ -99,7 +94,6 @@ public class NoWhitespaceBeforeCheckTest
                 getPath("InputNoWhitespaceBeforeAtStartOfTheLine.java"), expected);
     }
 
-    @Test
     public void testMethodRefAtTheStartOfTheLine() throws Exception {
         final String[] expected = {
             "22:3: " + getCheckMessage(MSG_KEY, "::"),
@@ -108,7 +102,6 @@ public class NoWhitespaceBeforeCheckTest
                 getPath("InputNoWhitespaceBeforeAtStartOfTheLine2.java"), expected);
     }
 
-    @Test
     public void testEmptyForLoop() throws Exception {
         final String[] expected = {
             "20:24: " + getCheckMessage(MSG_KEY, ";"),
@@ -118,7 +111,6 @@ public class NoWhitespaceBeforeCheckTest
                 getPath("InputNoWhitespaceBeforeEmptyForLoop.java"), expected);
     }
 
-    @Test
     public void testNoWhitespaceBeforeTextBlocksWithTabIndent() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -127,7 +119,6 @@ public class NoWhitespaceBeforeCheckTest
                 getNonCompilablePath("InputNoWhitespaceBeforeTextBlocksTabIndent.java"), expected);
     }
 
-    @Test
     public void testNoWhitespaceBeforeWithEmoji() throws Exception {
         final String[] expected = {
             "13:15: " + getCheckMessage(MSG_KEY, ","),

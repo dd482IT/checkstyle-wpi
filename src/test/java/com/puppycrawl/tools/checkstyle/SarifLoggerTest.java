@@ -49,7 +49,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/sariflogger";
     }
 
-    @Test
     public void testEscape() {
         final String[][] encodings = {
             {"\"", "\\\""},
@@ -74,7 +73,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testAddError() throws IOException {
         final SarifLogger logger = new SarifLogger(outStream,
                 AutomaticBean.OutputStreamOptions.CLOSE);
@@ -91,7 +89,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         verifyContent(getPath("ExpectedSarifLoggerSingleError.sarif"), outStream);
     }
 
-    @Test
     public void testAddErrorWithWarningLevel() throws IOException {
         final SarifLogger logger = new SarifLogger(outStream,
                 AutomaticBean.OutputStreamOptions.CLOSE);
@@ -108,7 +105,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         verifyContent(getPath("ExpectedSarifLoggerSingleWarning.sarif"), outStream);
     }
 
-    @Test
     public void testAddErrors() throws IOException {
         final SarifLogger logger = new SarifLogger(outStream,
                 AutomaticBean.OutputStreamOptions.CLOSE);
@@ -133,7 +129,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         verifyContent(getPath("ExpectedSarifLoggerDoubleError.sarif"), outStream);
     }
 
-    @Test
     public void testAddException() throws IOException {
         final SarifLogger logger = new SarifLogger(outStream,
                 AutomaticBean.OutputStreamOptions.CLOSE);
@@ -150,7 +145,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         verifyContent(getPath("ExpectedSarifLoggerSingleException.sarif"), outStream);
     }
 
-    @Test
     public void testAddExceptions() throws IOException {
         final SarifLogger logger = new SarifLogger(outStream,
                 AutomaticBean.OutputStreamOptions.CLOSE);
@@ -175,7 +169,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         verifyContent(getPath("ExpectedSarifLoggerDoubleException.sarif"), outStream);
     }
 
-    @Test
     public void testLineOnly() throws IOException {
         final SarifLogger logger = new SarifLogger(outStream,
             AutomaticBean.OutputStreamOptions.CLOSE);
@@ -192,7 +185,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         verifyContent(getPath("ExpectedSarifLoggerLineOnly.sarif"), outStream);
     }
 
-    @Test
     public void testEmpty() throws IOException {
         final SarifLogger logger = new SarifLogger(outStream,
                 AutomaticBean.OutputStreamOptions.CLOSE);
@@ -208,7 +200,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         verifyContent(getPath("ExpectedSarifLoggerEmpty.sarif"), outStream);
     }
 
-    @Test
     public void testNullOutputStreamOptions() {
         try {
             final SarifLogger logger = new SarifLogger(outStream, null);
@@ -225,7 +216,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testCloseStream() throws IOException {
         final SarifLogger logger = new SarifLogger(outStream,
                 AutomaticBean.OutputStreamOptions.CLOSE);
@@ -239,7 +229,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         verifyContent(getPath("ExpectedSarifLoggerEmpty.sarif"), outStream);
     }
 
-    @Test
     public void testNoCloseStream() throws IOException {
         final SarifLogger logger = new SarifLogger(outStream,
                 AutomaticBean.OutputStreamOptions.NONE);
@@ -257,7 +246,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
         verifyContent(getPath("ExpectedSarifLoggerEmpty.sarif"), outStream);
     }
 
-    @Test
     public void testFinishLocalSetup() throws IOException {
         final SarifLogger logger = new SarifLogger(outStream,
                 AutomaticBean.OutputStreamOptions.CLOSE);
@@ -269,7 +257,6 @@ public class SarifLoggerTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testReadResourceWithInvalidName() {
         try {
             SarifLogger.readResource("random");

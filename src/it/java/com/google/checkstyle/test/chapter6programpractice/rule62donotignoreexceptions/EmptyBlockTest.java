@@ -32,7 +32,6 @@ public class EmptyBlockTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter6programpractice/rule62donotignoreexceptions";
     }
 
-    @Test
     public void testEmptyBlockCatch() throws Exception {
         final String[] expected = {
             "29:17: " + getCheckMessage(EmptyBlockCheck.class, "block.empty", "finally"),

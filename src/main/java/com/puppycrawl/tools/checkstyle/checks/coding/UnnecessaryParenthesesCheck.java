@@ -253,7 +253,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 3.4
  */
-@FileStatefulCheck
 public class UnnecessaryParenthesesCheck extends AbstractCheck {
 
     /**

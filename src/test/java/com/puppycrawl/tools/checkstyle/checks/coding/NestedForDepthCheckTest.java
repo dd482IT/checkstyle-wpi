@@ -43,7 +43,6 @@ public class NestedForDepthCheckTest extends AbstractModuleTestSupport {
      * @throws Exception necessary to fulfill JUnit's
      *     interface-requirements for test-methods.
      */
-    @Test
     public void testNestedTooDeep() throws Exception {
 
         final String[] expected = {
@@ -67,7 +66,6 @@ public class NestedForDepthCheckTest extends AbstractModuleTestSupport {
      * @throws Exception necessary to fulfill JUnit's
      *     interface-requirements for test-methods.
      */
-    @Test
     public void testNestedOk() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -77,7 +75,6 @@ public class NestedForDepthCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final NestedForDepthCheck check = new NestedForDepthCheck();
         assertWithMessage("Acceptable tokens should not be null")

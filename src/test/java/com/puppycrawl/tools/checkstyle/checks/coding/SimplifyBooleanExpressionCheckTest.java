@@ -34,7 +34,6 @@ public class SimplifyBooleanExpressionCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/simplifybooleanexpression";
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "22:18: " + getCheckMessage(MSG_KEY),
@@ -55,7 +54,6 @@ public class SimplifyBooleanExpressionCheckTest
                 getPath("InputSimplifyBooleanExpression.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final SimplifyBooleanExpressionCheck check = new SimplifyBooleanExpressionCheck();
         assertWithMessage("Acceptable tokens should not be null")

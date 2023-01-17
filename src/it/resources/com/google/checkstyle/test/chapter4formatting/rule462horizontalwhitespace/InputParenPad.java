@@ -114,7 +114,6 @@ public class InputParenPad
                         ( ( 3 < 4 )? false : true ) : // warning
                         ( ( 1 == 1 ) ? false : true) ) ).toString(); // warning
     }
-    @MyAnnotation
     public boolean bar(boolean a) {
         assert ( true ); // warning
         return true;

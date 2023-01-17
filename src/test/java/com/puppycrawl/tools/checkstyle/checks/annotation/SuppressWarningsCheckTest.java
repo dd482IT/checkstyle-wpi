@@ -36,7 +36,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings with default regex.
      */
-    @Test
     public void testSingleDefault() throws Exception {
 
         final String[] expected = {
@@ -58,7 +57,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings all warnings disabled on everything.
      */
-    @Test
     public void testSingleAll() throws Exception {
 
         final String[] expected = {
@@ -99,7 +97,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings unchecked warning disabled on everything.
      */
-    @Test
     public void testSingleNoUnchecked() throws Exception {
 
         final String[] expected = {
@@ -122,7 +119,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings unchecked warning disabled on certain tokens.
      */
-    @Test
     public void testSingleNoUncheckedTokens() throws Exception {
 
         final String[] expected = {
@@ -142,7 +138,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings un* warning disabled on everything.
      */
-    @Test
     public void testSingleNoUnWildcard() throws Exception {
 
         final String[] expected = {
@@ -174,7 +169,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings unchecked, unused warning disabled on everything.
      */
-    @Test
     public void testSingleNoUncheckedUnused() throws Exception {
 
         final String[] expected = {
@@ -203,7 +197,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings *, unchecked, unused warning disabled on everything.
      */
-    @Test
     public void testSingleNoUncheckedUnusedAll() throws Exception {
 
         final String[] expected = {
@@ -244,7 +237,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings with default regex.
      */
-    @Test
     public void testCompactDefault() throws Exception {
 
         final String[] expected = {
@@ -258,7 +250,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsCompact1.java"), expected);
     }
 
-    @Test
     public void testCompactDefaultNonConstant() throws Exception {
 
         final String[] expected = {
@@ -287,7 +278,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings all warnings disabled on everything.
      */
-    @Test
     public void testCompactAll() throws Exception {
 
         final String[] expected = {
@@ -314,7 +304,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsCompact2.java"), expected);
     }
 
-    @Test
     public void testCompactAllNonConstant() throws Exception {
 
         final String[] expected = {
@@ -374,7 +363,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings unchecked warning disabled on everything.
      */
-    @Test
     public void testCompactNoUnchecked() throws Exception {
 
         final String[] expected = {
@@ -392,7 +380,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings unchecked warning disabled on certain tokens.
      */
-    @Test
     public void testCompactNoUncheckedTokens() throws Exception {
 
         final String[] expected = {
@@ -403,7 +390,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsCompact4.java"), expected);
     }
 
-    @Test
     public void testCompactNoUncheckedTokensNonConstant() throws Exception {
 
         final String[] expected = {
@@ -420,7 +406,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings un* warning disabled on everything.
      */
-    @Test
     public void testCompactNoUnWildcard() throws Exception {
 
         final String[] expected = {
@@ -440,7 +425,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsCompact5.java"), expected);
     }
 
-    @Test
     public void testCompactNoUnWildcardNonConstant() throws Exception {
 
         final String[] expected = {
@@ -481,7 +465,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings unchecked, unused warning disabled on everything.
      */
-    @Test
     public void testCompactNoUncheckedUnused() throws Exception {
 
         final String[] expected = {
@@ -500,7 +483,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsCompact6.java"), expected);
     }
 
-    @Test
     public void testCompactNoUncheckedUnusedNonConstant() throws Exception {
 
         final String[] expected = {
@@ -535,7 +517,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings *, unchecked, unused warning disabled on everything.
      */
-    @Test
     public void testCompactNoUncheckedUnusedAll() throws Exception {
 
         final String[] expected = {
@@ -562,7 +543,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsCompact7.java"), expected);
     }
 
-    @Test
     public void testCompactNoUncheckedUnusedAllNonConstant() throws Exception {
 
         final String[] expected = {
@@ -622,7 +602,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings with default regex.
      */
-    @Test
     public void testExpandedDefault() throws Exception {
 
         final String[] expected = {
@@ -636,7 +615,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsExpanded1.java"), expected);
     }
 
-    @Test
     public void testExpandedDefaultNonConstant() throws Exception {
 
         final String[] expected = {
@@ -663,7 +641,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings all warnings disabled on everything.
      */
-    @Test
     public void testExpandedAll() throws Exception {
 
         final String[] expected = {
@@ -690,7 +667,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsExpanded2.java"), expected);
     }
 
-    @Test
     public void testExpandedAllNonConstant() throws Exception {
 
         final String[] expected = {
@@ -746,7 +722,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings unchecked warning disabled on everything.
      */
-    @Test
     public void testExpandedNoUnchecked() throws Exception {
 
         final String[] expected = {
@@ -761,7 +736,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsExpanded3.java"), expected);
     }
 
-    @Test
     public void testExpandedNoUncheckedNonConstant() throws Exception {
 
         final String[] expected = {
@@ -788,7 +762,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings unchecked warning disabled on certain tokens.
      */
-    @Test
     public void testExpandedNoUncheckedTokens() throws Exception {
 
         final String[] expected = {
@@ -799,7 +772,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsExpanded4.java"), expected);
     }
 
-    @Test
     public void testExpandedNoUncheckedTokensNonConstant() throws Exception {
 
         final String[] expected = {
@@ -816,7 +788,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings un* warning disabled on everything.
      */
-    @Test
     public void testExpandedNoUnWildcard() throws Exception {
 
         final String[] expected = {
@@ -836,7 +807,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsExpanded5.java"), expected);
     }
 
-    @Test
     public void testExpandedNoUnWildcardNonConstant() throws Exception {
 
         final String[] expected = {
@@ -873,7 +843,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings unchecked, unused warning disabled on everything.
      */
-    @Test
     public void testExpandedNoUncheckedUnused() throws Exception {
 
         final String[] expected = {
@@ -892,7 +861,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsExpanded6.java"), expected);
     }
 
-    @Test
     public void testExpandedNoUncheckedUnusedNonConstant() throws Exception {
 
         final String[] expected = {
@@ -928,7 +896,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests SuppressWarnings *, unchecked, unused warning disabled on everything.
      */
-    @Test
     public void testExpandedNoUncheckedUnusedAll() throws Exception {
 
         final String[] expected = {
@@ -955,7 +922,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsExpanded7.java"), expected);
     }
 
-    @Test
     public void testExpandedNoUncheckedUnusedAllNonConstant() throws Exception {
 
         final String[] expected = {
@@ -1008,7 +974,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputSuppressWarningsExpandedNonConstant7.java"), expected);
     }
 
-    @Test
     public void testUncheckedInConstant() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -1017,7 +982,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsConstants.java"), expected);
     }
 
-    @Test
     public void testValuePairAnnotation() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -1026,7 +990,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsValuePair.java"), expected);
     }
 
-    @Test
     public void testWorkingProperlyOnComplexAnnotations() throws Exception {
 
         final String[] expected = {
@@ -1039,7 +1002,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSuppressWarningsHolder.java"), expected);
     }
 
-    @Test
     public void testWorkingProperlyOnComplexAnnotationsNonConstant() throws Exception {
 
         final String[] expected = {
@@ -1053,7 +1015,6 @@ public class SuppressWarningsCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputSuppressWarningsHolderNonConstant.java"), expected);
     }
 
-    @Test
     public void testSuppressWarningsRecords() throws Exception {
 
         final String[] expected = {

@@ -37,7 +37,6 @@ public abstract class InputJavadocMethodExtendAnnotation<E> // ok
   private static final String SUPPORTS_ADD = "";
   private static final String SUPPORTS_REMOVE = null;
 
-@CollectionFeature.Require
   public void testSetCount_zeroToZero_unsupported() { // ok
     try {
       assertZeroToZero();

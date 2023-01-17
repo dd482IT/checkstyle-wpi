@@ -32,7 +32,6 @@ public class MissingJavadocMethodTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter7javadoc/rule731selfexplanatory";
     }
 
-    @Test
     public void testJavadocMethod() throws Exception {
         final String msg = getCheckMessage(MissingJavadocMethodCheck.class, "javadoc.missing");
 

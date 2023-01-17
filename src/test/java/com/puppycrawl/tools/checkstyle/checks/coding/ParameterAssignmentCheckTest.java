@@ -43,7 +43,6 @@ public class ParameterAssignmentCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/parameterassignment";
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -65,14 +64,12 @@ public class ParameterAssignmentCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testReceiverParameter() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputParameterAssignmentReceiver.java"), expected);
     }
 
-    @Test
     public void testEnhancedSwitch() throws Exception {
         final String[] expected = {
             "14:28: " + getCheckMessage(MSG_KEY, "a"),
@@ -83,7 +80,6 @@ public class ParameterAssignmentCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final ParameterAssignmentCheck check = new ParameterAssignmentCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -104,7 +100,6 @@ public class ParameterAssignmentCheckTest extends AbstractModuleTestSupport {
      *
      * @throws Exception when code tested throws exception
      */
-    @Test
     @SuppressWarnings("unchecked")
     public void testClearState() throws Exception {
         final ParameterAssignmentCheck check = new ParameterAssignmentCheck();

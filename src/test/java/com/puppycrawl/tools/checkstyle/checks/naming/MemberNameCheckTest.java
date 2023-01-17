@@ -35,7 +35,6 @@ public class MemberNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/membername";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final MemberNameCheck checkObj = new MemberNameCheck();
         final int[] expected = {TokenTypes.VARIABLE_DEF};
@@ -44,7 +43,6 @@ public class MemberNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testSpecified()
             throws Exception {
 
@@ -58,7 +56,6 @@ public class MemberNameCheckTest
                 getPath("InputMemberNameSimple.java"), expected);
     }
 
-    @Test
     public void testInnerClass()
             throws Exception {
 
@@ -71,7 +68,6 @@ public class MemberNameCheckTest
                 getPath("InputMemberNameInner.java"), expected);
     }
 
-    @Test
     public void testDefaults() throws Exception {
 
         final String pattern = "^[a-z][a-zA-Z0-9]*$";
@@ -86,7 +82,6 @@ public class MemberNameCheckTest
                 getPath("InputMemberName.java"), expected);
     }
 
-    @Test
     public void testUnderlined() throws Exception {
 
         final String pattern = "^_[a-z]*$";
@@ -101,7 +96,6 @@ public class MemberNameCheckTest
                 getPath("InputMemberName2.java"), expected);
     }
 
-    @Test
     public void testPublicOnly() throws Exception {
 
         final String pattern = "^_[a-z]*$";
@@ -113,7 +107,6 @@ public class MemberNameCheckTest
                 getPath("InputMemberName3.java"), expected);
     }
 
-    @Test
     public void testProtectedOnly() throws Exception {
 
         final String pattern = "^_[a-z]*$";
@@ -125,7 +118,6 @@ public class MemberNameCheckTest
                 getPath("InputMemberName4.java"), expected);
     }
 
-    @Test
     public void testPackageOnly() throws Exception {
 
         final String pattern = "^_[a-z]*$";
@@ -137,7 +129,6 @@ public class MemberNameCheckTest
                 getPath("InputMemberName5.java"), expected);
     }
 
-    @Test
     public void testPrivateOnly() throws Exception {
 
         final String pattern = "^_[a-z]*$";
@@ -149,7 +140,6 @@ public class MemberNameCheckTest
                 getPath("InputMemberName6.java"), expected);
     }
 
-    @Test
     public void testNotPrivate() throws Exception {
 
         final String pattern = "^[a-z][a-zA-Z0-9]*$";
@@ -163,7 +153,6 @@ public class MemberNameCheckTest
                 getPath("InputMemberName7.java"), expected);
     }
 
-    @Test
     public void memberNameExtended() throws Exception {
 
         final String pattern = "^[a-z][a-z0-9][a-zA-Z0-9]*$";
@@ -206,7 +195,6 @@ public class MemberNameCheckTest
                 getPath("InputMemberNameExtended.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final MemberNameCheck memberNameCheckObj = new MemberNameCheck();
         final int[] actual = memberNameCheckObj.getAcceptableTokens();

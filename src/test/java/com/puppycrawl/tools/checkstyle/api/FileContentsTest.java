@@ -34,7 +34,6 @@ import com.puppycrawl.tools.checkstyle.internal.utils.TestUtil;
 
 public class FileContentsTest {
 
-    @Test
     public void testTextFileName() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Arrays.asList("123", "456")));
@@ -50,7 +49,6 @@ public class FileContentsTest {
                 .isEqualTo("filename");
     }
 
-    @Test
     public void testIsLineBlank() {
         assertWithMessage("Invalid result")
                 .that(new FileContents(
@@ -64,7 +62,6 @@ public class FileContentsTest {
                 .isTrue();
     }
 
-    @Test
     public void testLineIsComment() {
         assertWithMessage("Invalid result")
                 .that(new FileContents(
@@ -78,7 +75,6 @@ public class FileContentsTest {
                 .isTrue();
     }
 
-    @Test
     public void testDeprecatedAbbreviatedMethod() {
         // just to make UT coverage 100%
         final FileContents fileContents = new FileContents(
@@ -98,7 +94,6 @@ public class FileContentsTest {
                 .isEqualTo(cComment.toString());
     }
 
-    @Test
     public void testSinglelineCommentNotIntersect() {
         // just to make UT coverage 100%
         final FileContents fileContents = new FileContents(
@@ -109,7 +104,6 @@ public class FileContentsTest {
                 .isFalse();
     }
 
-    @Test
     public void testSinglelineCommentIntersect() {
         // just to make UT coverage 100%
         final FileContents fileContents = new FileContents(
@@ -120,7 +114,6 @@ public class FileContentsTest {
                 .isTrue();
     }
 
-    @Test
     public void testReportCppComment() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Collections.singletonList("   //  ")));
@@ -132,7 +125,6 @@ public class FileContentsTest {
                 .isEqualTo(new Comment(new String[] {" //  "}, 2, 1, 6).toString());
     }
 
-    @Test
     public void testHasIntersectionWithSingleLineComment() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Arrays.asList("     ", "  //test   ",
@@ -144,7 +136,6 @@ public class FileContentsTest {
                 .isTrue();
     }
 
-    @Test
     public void testReportComment() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Collections.singletonList("  //   ")));
@@ -156,7 +147,6 @@ public class FileContentsTest {
                 .isEqualTo(new Comment(new String[] {"/"}, 2, 1, 2).toString());
     }
 
-    @Test
     public void testReportBlockCommentSameLine() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Collections.singletonList("/* a */ /* b */ ")));
@@ -172,7 +162,6 @@ public class FileContentsTest {
                 ).toString());
     }
 
-    @Test
     public void testReportBlockCommentMultiLine() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Arrays.asList("/*", "c", "*/")));
@@ -186,7 +175,6 @@ public class FileContentsTest {
             );
     }
 
-    @Test
     public void testReportBlockCommentJavadoc() {
         final FileContents fileContents = new FileContents(new FileText(new File("filename"),
                 Arrays.asList("/** A */", "", "//", "/**/", "/* B */")));
@@ -208,7 +196,6 @@ public class FileContentsTest {
                 .isNull();
     }
 
-    @Test
     public void testHasIntersectionWithBlockComment() {
         final FileContents fileContents = new FileContents(new FileText(new File("filename"),
                         Arrays.asList("  /* */    ", "    ", "  /* test   ", "  */  ", "   ")));
@@ -220,7 +207,6 @@ public class FileContentsTest {
                 .isTrue();
     }
 
-    @Test
     public void testHasIntersectionWithBlockComment2() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Arrays.asList("  /* */    ", "    ", " ")));
@@ -231,7 +217,6 @@ public class FileContentsTest {
                 .isFalse();
     }
 
-    @Test
     public void testReportJavadocComment() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Collections.singletonList("  /** */   ")));
@@ -243,7 +228,6 @@ public class FileContentsTest {
                 .isEqualTo(new Comment(new String[] {"/** *"}, 2, 1, 6).toString());
     }
 
-    @Test
     public void testReportJavadocComment2() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Collections.singletonList("  /** */   ")));
@@ -260,7 +244,6 @@ public class FileContentsTest {
      * we keep this method until https://github.com/checkstyle/checkstyle/issues/11723
      */
     @Deprecated(since = "10.2")
-    @Test
     public void testInPackageInfo() {
         final FileContents fileContents = new FileContents(new FileText(
                 new File("package-info.java"),
@@ -276,7 +259,6 @@ public class FileContentsTest {
      * we keep this method until https://github.com/checkstyle/checkstyle/issues/11723
      */
     @Deprecated(since = "10.2")
-    @Test
     public void testNotInPackageInfo() {
         final FileContents fileContents = new FileContents(new FileText(
                 new File("some-package-info.java"),
@@ -287,7 +269,6 @@ public class FileContentsTest {
                 .isFalse();
     }
 
-    @Test
     public void testGetJavadocBefore() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Collections.singletonList("    ")));
@@ -301,7 +282,6 @@ public class FileContentsTest {
                 .isEqualTo(new Comment(new String[] {"// "}, 2, 1, 2).toString());
     }
 
-    @Test
     public void testExtractBlockComment() {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Arrays.asList("   ", "    ", "  /* test   ",
@@ -316,7 +296,6 @@ public class FileContentsTest {
                 .isEqualTo(new String[] {"/* test   ", "  *"});
     }
 
-    @Test
     public void testHasIntersectionEarlyOut() throws Exception {
         final FileContents fileContents = new FileContents(
                 new FileText(new File("filename"), Collections.emptyList()));

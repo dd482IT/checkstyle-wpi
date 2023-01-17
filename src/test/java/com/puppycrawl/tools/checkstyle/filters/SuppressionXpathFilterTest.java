@@ -51,7 +51,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/filters/suppressionxpathfilter";
     }
 
-    @Test
     public void testAcceptOne() throws Exception {
         final String[] suppressed = CommonUtil.EMPTY_STRING_ARRAY;
         verifyFilterWithInlineConfigParser(getPath("InputSuppressionXpathFilterAcceptOne.java"),
@@ -59,7 +58,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
                                            removeSuppressed(ALL_MESSAGES, suppressed));
     }
 
-    @Test
     public void testAcceptTwo() throws Exception {
         final String[] expected = {
             "20:29: " + getCheckMessage(ConstantNameCheck.class, MSG_INVALID_PATTERN,
@@ -70,7 +68,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
                                            expected, removeSuppressed(expected, suppressed));
     }
 
-    @Test
     public void testAcceptOnNullFile() throws Exception {
         final String[] suppressed = CommonUtil.EMPTY_STRING_ARRAY;
         verifyFilterWithInlineConfigParser(
@@ -78,7 +75,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
             removeSuppressed(ALL_MESSAGES, suppressed));
     }
 
-    @Test
     public void testNonExistentSuppressionFileWithFalseOptional() throws Exception {
         final String fileName = getPath("non_existent_suppression_file.xml");
         try {
@@ -93,7 +89,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testExistingInvalidSuppressionFileWithTrueOptional() throws Exception {
         final String fileName = getPath("InputSuppressionXpathFilterInvalidFile.xml");
         try {
@@ -109,7 +104,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testExistingSuppressionFileWithTrueOptional() throws Exception {
         final String[] suppressed = CommonUtil.EMPTY_STRING_ARRAY;
         verifyFilterWithInlineConfigParser(
@@ -117,7 +111,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
             removeSuppressed(ALL_MESSAGES, suppressed));
     }
 
-    @Test
     public void testNonExistentSuppressionFileWithTrueOptional() throws Exception {
         final String[] suppressed = CommonUtil.EMPTY_STRING_ARRAY;
         verifyFilterWithInlineConfigParser(
@@ -125,7 +118,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
             ALL_MESSAGES, removeSuppressed(ALL_MESSAGES, suppressed));
     }
 
-    @Test
     public void testReject() throws Exception {
         final String[] suppressed = {
             "20:29: " + getCheckMessage(ConstantNameCheck.class,
@@ -136,7 +128,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
                                            removeSuppressed(ALL_MESSAGES, suppressed));
     }
 
-    @Test
     public void testEqualsAndHashCode() {
         final EqualsVerifierReport ev = EqualsVerifier.forClass(SuppressionXpathFilter.class)
                 .usingGetClass()
@@ -147,7 +138,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testExternalResource() throws Exception {
         final boolean optional = false;
         final String fileName = getPath("InputSuppressionXpathFilterIdAndQuery.xml");
@@ -169,7 +159,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
         return suppressionXpathFilter;
     }
 
-    @Test
     public void testFalseEncodeString() throws Exception {
         final String pattern = "[^a-zA-z0-9]*";
         final String[] expected = {
@@ -198,7 +187,6 @@ public class SuppressionXpathFilterTest extends AbstractModuleTestSupport {
                                            expected, removeSuppressed(expected, suppressed));
     }
 
-    @Test
     public void testFalseEncodeChar() throws Exception {
         final String pattern = "[^a-zA-z0-9]*";
         final String[] expected = {

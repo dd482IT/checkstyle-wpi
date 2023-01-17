@@ -17,8 +17,7 @@ import java.lang.annotation.RetentionPolicy;
    String date();
 }
 
-@CheckForNull // violation
-@TypeQualifierDefault(ElementType.METHOD)
+// violation
 @Retention(RetentionPolicy.RUNTIME)
 @interface InputOneTopLevelClassAnnotation2B {
    String author();

@@ -74,7 +74,6 @@ import com.puppycrawl.tools.checkstyle.utils.JavadocUtil;
  *
  * @since 8.22
  */
-@StatelessCheck
 public class MissingJavadocPackageCheck extends AbstractCheck {
 
     /**

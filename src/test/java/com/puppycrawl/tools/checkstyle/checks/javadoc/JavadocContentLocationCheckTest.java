@@ -36,7 +36,6 @@ public class JavadocContentLocationCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/javadoccontentlocation";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final JavadocContentLocationCheck checkObj = new JavadocContentLocationCheck();
         final int[] expected = {TokenTypes.BLOCK_COMMENT_BEGIN };
@@ -45,7 +44,6 @@ public class JavadocContentLocationCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetDefaultTokens() {
         final JavadocContentLocationCheck checkObj = new JavadocContentLocationCheck();
         final int[] expected = {TokenTypes.BLOCK_COMMENT_BEGIN };
@@ -54,7 +52,6 @@ public class JavadocContentLocationCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "17:5: " + getCheckMessage(MSG_JAVADOC_CONTENT_SECOND_LINE),
@@ -64,7 +61,6 @@ public class JavadocContentLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputJavadocContentLocationDefault.java"), expected);
     }
 
-    @Test
     public void testFirstLine() throws Exception {
         final String[] expected = {
             "12:5: " + getCheckMessage(MSG_JAVADOC_CONTENT_FIRST_LINE),
@@ -74,7 +70,6 @@ public class JavadocContentLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputJavadocContentLocationFirstLine.java"), expected);
     }
 
-    @Test
     public void testPackage() throws Exception {
         final String[] expected = {
             "8:1: " + getCheckMessage(MSG_JAVADOC_CONTENT_SECOND_LINE),
@@ -83,7 +78,6 @@ public class JavadocContentLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("package-info.java"), expected);
     }
 
-    @Test
     public void testInterface() throws Exception {
         final String[] expected = {
             "10:1: " + getCheckMessage(MSG_JAVADOC_CONTENT_FIRST_LINE),
@@ -92,14 +86,12 @@ public class JavadocContentLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputJavadocContentLocationInterface.java"), expected);
     }
 
-    @Test
     public void testOptionalSpacesAndAsterisks() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputJavadocContentLocationTrailingSpace.java"), expected);
     }
 
-    @Test
     public void testTrimOptionProperty() throws Exception {
         final String[] expected = {
             "12:5: " + getCheckMessage(MSG_JAVADOC_CONTENT_FIRST_LINE),

@@ -34,14 +34,12 @@ public class NoLineWrapCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/nolinewrap";
     }
 
-    @Test
     public void testCaseWithoutLineWrapping() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputNoLineWrapGood.java"), expected);
     }
 
-    @Test
     public void testDefaultTokensLineWrapping() throws Exception {
         final String[] expected = {
             "8:1: " + getCheckMessage(MSG_KEY, "package"),
@@ -52,7 +50,6 @@ public class NoLineWrapCheckTest
                 getPath("InputNoLineWrapBad.java"), expected);
     }
 
-    @Test
     public void testCustomTokensLineWrapping()
             throws Exception {
         final String[] expected = {
@@ -66,7 +63,6 @@ public class NoLineWrapCheckTest
                 getPath("InputNoLineWrapBad2.java"), expected);
     }
 
-    @Test
     public void testNoLineWrapRecordsAndCompactCtors()
             throws Exception {
 

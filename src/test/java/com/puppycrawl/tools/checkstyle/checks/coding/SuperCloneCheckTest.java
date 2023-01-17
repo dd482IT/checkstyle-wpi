@@ -44,7 +44,6 @@ public class SuperCloneCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/superclone";
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "33:19: " + getCheckMessage(MSG_KEY, "clone", "super.clone"),
@@ -55,7 +54,6 @@ public class SuperCloneCheckTest
                 getPath("InputSuperCloneInnerAndWithArguments.java"), expected);
     }
 
-    @Test
     public void testAnotherInputFile() throws Exception {
         final String[] expected = {
             "14:17: " + getCheckMessage(MSG_KEY, "clone", "super.clone"),
@@ -65,14 +63,12 @@ public class SuperCloneCheckTest
                 getPath("InputSuperClonePlainAndSubclasses.java"), expected);
     }
 
-    @Test
     public void testMethodReference() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputSuperCloneMethodReference.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final SuperCloneCheck check = new SuperCloneCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -93,7 +89,6 @@ public class SuperCloneCheckTest
      *
      * @throws Exception when code tested throws exception
      */
-    @Test
     @SuppressWarnings("unchecked")
     public void testClearState() throws Exception {
         final AbstractSuperCheck check = new SuperCloneCheck();

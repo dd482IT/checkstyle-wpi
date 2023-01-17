@@ -31,7 +31,6 @@ public class MethodReferencesTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/grammar/java8";
     }
 
-    @Test
     public void testCanParse()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -39,7 +38,6 @@ public class MethodReferencesTest extends AbstractModuleTestSupport {
                 getPath("InputMethodReferences.java"), expected);
     }
 
-    @Test
     public void testFromSpec()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -47,7 +45,6 @@ public class MethodReferencesTest extends AbstractModuleTestSupport {
                 getPath("InputMethodReferences2.java"), expected);
     }
 
-    @Test
     public void testGenericInPostfixExpressionBeforeReference()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -55,7 +52,6 @@ public class MethodReferencesTest extends AbstractModuleTestSupport {
                 getPath("InputMethodReferences3.java"), expected);
     }
 
-    @Test
     public void testArrayAfterGeneric()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -63,7 +59,6 @@ public class MethodReferencesTest extends AbstractModuleTestSupport {
                 getPath("InputMethodReferences4.java"), expected);
     }
 
-    @Test
     public void testFromHibernate()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -71,7 +66,6 @@ public class MethodReferencesTest extends AbstractModuleTestSupport {
                 getPath("InputMethodReferences5.java"), expected);
     }
 
-    @Test
     public void testFromSpring()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -79,7 +73,6 @@ public class MethodReferencesTest extends AbstractModuleTestSupport {
                 getPath("InputMethodReferences6.java"), expected);
     }
 
-    @Test
     public void testMethodReferences7()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

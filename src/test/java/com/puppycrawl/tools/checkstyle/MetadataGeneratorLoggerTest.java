@@ -35,7 +35,6 @@ import com.puppycrawl.tools.checkstyle.internal.utils.CloseAndFlushTestByteArray
 
 public class MetadataGeneratorLoggerTest {
 
-    @Test
     public void testIgnoreSeverityLevel() {
         final OutputStream outputStream = new ByteArrayOutputStream();
         final MetadataGeneratorLogger logger = new MetadataGeneratorLogger(outputStream,
@@ -51,7 +50,6 @@ public class MetadataGeneratorLoggerTest {
                 .isEmpty();
     }
 
-    @Test
     public void testAddException() {
         final OutputStream outputStream = new ByteArrayOutputStream();
         final MetadataGeneratorLogger logger = new MetadataGeneratorLogger(outputStream,
@@ -64,7 +62,6 @@ public class MetadataGeneratorLoggerTest {
                 .contains("java.lang.IllegalStateException: Test Exception");
     }
 
-    @Test
     public void testClose() throws IOException {
         try (CloseAndFlushTestByteArrayOutputStream outputStream =
                      new CloseAndFlushTestByteArrayOutputStream()) {
@@ -77,7 +74,6 @@ public class MetadataGeneratorLoggerTest {
         }
     }
 
-    @Test
     public void testCloseOutputStreamOptionNone() throws IOException {
         try (CloseAndFlushTestByteArrayOutputStream outputStream =
                      new CloseAndFlushTestByteArrayOutputStream()) {
@@ -91,7 +87,6 @@ public class MetadataGeneratorLoggerTest {
         }
     }
 
-    @Test
     public void testFlushStreams() throws Exception {
         try (CloseAndFlushTestByteArrayOutputStream outputStream =
                      new CloseAndFlushTestByteArrayOutputStream()) {

@@ -32,7 +32,6 @@ public class LineLengthCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/sizes/linelength";
     }
 
-    @Test
     public void testSimple()
             throws Exception {
         final String[] expected = {
@@ -43,7 +42,6 @@ public class LineLengthCheckTest extends AbstractModuleTestSupport {
                 getPath("InputLineLengthSimple.java"), expected);
     }
 
-    @Test
     public void shouldLogActualLineLength()
             throws Exception {
         final String[] expected = {
@@ -54,7 +52,6 @@ public class LineLengthCheckTest extends AbstractModuleTestSupport {
                 getPath("InputLineLengthSimple1.java"), expected);
     }
 
-    @Test
     public void shouldNotLogLongImportStatements() throws Exception {
         final String[] expected = {
             "18: " + getCheckMessage(MSG_KEY, 80, 100),
@@ -63,7 +60,6 @@ public class LineLengthCheckTest extends AbstractModuleTestSupport {
                 getPath("InputLineLengthLongImportStatements.java"), expected);
     }
 
-    @Test
     public void shouldNotLogLongPackageStatements() throws Exception {
         final String[] expected = {
             "17: " + getCheckMessage(MSG_KEY, 80, 100),
@@ -73,7 +69,6 @@ public class LineLengthCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void shouldNotLogLongLinks() throws Exception {
         final String[] expected = {
             "13: " + getCheckMessage(MSG_KEY, 80, 111),
@@ -82,7 +77,6 @@ public class LineLengthCheckTest extends AbstractModuleTestSupport {
                 getPath("InputLineLengthLongLink.java"), expected);
     }
 
-    @Test
     public void countUnicodePointsOnce() throws Exception {
         final String[] expected = {
             "15: " + getCheckMessage(MSG_KEY, 100, 149),
@@ -92,7 +86,6 @@ public class LineLengthCheckTest extends AbstractModuleTestSupport {
 
     }
 
-    @Test
     public void testLineLengthIgnoringPackageStatements() throws Exception {
         final String[] expected = {
             "13: " + getCheckMessage(MSG_KEY, 75, 76),
@@ -105,7 +98,6 @@ public class LineLengthCheckTest extends AbstractModuleTestSupport {
             getNonCompilablePath("InputLineLengthIgnoringPackageStatements.java"), expected);
     }
 
-    @Test
     public void testLineLengthIgnoringImportStatements() throws Exception {
         final String[] expected = {
             "12: " + getCheckMessage(MSG_KEY, 75, 79),

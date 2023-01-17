@@ -197,7 +197,6 @@ import com.puppycrawl.tools.checkstyle.utils.ScopeUtil;
  *
  * @since 3.2
  */
-@FileStatefulCheck
 public class DeclarationOrderCheck extends AbstractCheck {
 
     /**

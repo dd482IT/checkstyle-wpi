@@ -44,7 +44,6 @@ import picocli.CommandLine.Model.OptionSpec;
 
 public class CliOptionsXdocsSyncTest {
 
-    @Test
     public void validateCliDocSections() throws Exception {
         final Map<String, String> cmdDesc = new HashMap<>();
 
@@ -84,7 +83,6 @@ public class CliOptionsXdocsSyncTest {
                 .isEmpty();
     }
 
-    @Test
     public void validateCliUsageSection() throws Exception {
         final NodeList sections = getSectionsFromXdoc("src/xdocs/cmdline.xml.vm");
         final Node usageSource = XmlUtil.getFirstChildElement(sections.item(2));

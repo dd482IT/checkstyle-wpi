@@ -83,7 +83,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 5.3
  */
-@FileStatefulCheck
 public class OuterTypeFilenameCheck extends AbstractCheck {
 
     /**

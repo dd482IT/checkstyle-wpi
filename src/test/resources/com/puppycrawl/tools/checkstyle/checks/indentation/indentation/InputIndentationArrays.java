@@ -51,7 +51,7 @@ class InputIndentationArrays { //indent:0 exp:0
     33 //indent:4 exp:4
   }; //indent:2 exp:2
 
-  @VisibleForTesting static final int[] halfPowersOf10 = //indent:2 exp:2
+  static final int[] halfPowersOf10 = //indent:2 exp:2
       {3, 31, 316, 3162, 31622, 3162277, 31622776, 316227766, Integer.MAX_VALUE}; //indent:6 exp:6
 
   public byte[] asBytes() { //indent:2 exp:2

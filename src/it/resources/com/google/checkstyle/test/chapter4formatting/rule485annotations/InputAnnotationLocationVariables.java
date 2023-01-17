@@ -1,93 +1,71 @@
 package com.google.checkstyle.test.chapter4formatting.rule485annotations;
 
-@MyAnnotation2 @MyAnnotation1 // ok - in variables config
+// ok - in variables config
 class InputAnnotationLocationVariables
 {
 
-    @MyAnnotation2 @MyAnnotation1
     public int a;
 
-    @MyAnnotation1 public int b;
+    public int b;
 
-    @MyAnnotation2
-    @MyAnnotation1
     public int c;
 
-    @MyAnnotation1
     public int d;
 
-    @MyAnnotation2
-        @MyAnnotation1 // ok - in variables config
+        // ok - in variables config
     public InputAnnotationLocationVariables() {}
 
-    @MyAnnotationWithParam("foo")
-    @MyAnnotation2 void foo1() {}
+    void foo1() {}
 
-    @MyAnnotation1
-       @MyAnnotation2 // ok - in variables config
+       // ok - in variables config
     void foo2() {}
 
-    @MyAnnotation1
-        @MyAnnotation2 // ok - in variables config
-      @MyAnnotation3 // ok - in variables configwarn
-          @MyAnnotation4 // ok - in variables config
+        // ok - in variables config
+      // ok - in variables configwarn
+          // ok - in variables config
     class InnerClass
     {
-        @MyAnnotation2 @MyAnnotation1
         public int a;
 
-        @MyAnnotation1 public int b;
+        public int b;
 
-        @MyAnnotation2
-        @MyAnnotation1
         public int c;
 
-        @MyAnnotation1
         public int d;
 
-        @MyAnnotation2
-        @MyAnnotation1 public InnerClass()
+        public InnerClass()
         {
             // OOOO Auto-generated constructor stub
         }
-        @MyAnnotation1
-            @MyAnnotation2 // ok - in variables config
+            // ok - in variables config
         void foo1() {}
 
-        @MyAnnotation1
-            @MyAnnotation2 // ok - in variables config
+            // ok - in variables config
         void foo2() {}
     }
 
-    @MyAnnotation1
-       @MyAnnotation2 //warn
+       //warn
     InnerClass anon = new InnerClass()
     {
-        @MyAnnotation2 @MyAnnotation1 public int a;
+        public int a;
 
-        @MyAnnotation1 public int b;
+        public int b;
 
-        @MyAnnotation2
-        @MyAnnotation1
         public int c;
 
-        @MyAnnotation1
         public int d;
 
-        @MyAnnotation1
-           @MyAnnotation2 void foo1() {} // ok - in variables config
+           void foo1() {} // ok - in variables config
 
-        @MyAnnotation1
-          @MyAnnotation2 // ok - in variables config
+          // ok - in variables config
         void foo2() {}
 
-        @MyAnnotation1 void foo42() {}
+        void foo42() {}
     };
 
 }
 
-@MyAnnotation1
- @MyAnnotation2 // ok - in variables config
+ // ok - in variables config
 class FooVariables {}
 
 @interface MyAnnotationVariables1 {}

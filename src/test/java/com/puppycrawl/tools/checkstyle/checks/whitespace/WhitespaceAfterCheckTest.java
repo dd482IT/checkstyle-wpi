@@ -36,7 +36,6 @@ public class WhitespaceAfterCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/whitespaceafter";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final WhitespaceAfterCheck checkObj = new WhitespaceAfterCheck();
         assertWithMessage(
@@ -45,7 +44,6 @@ public class WhitespaceAfterCheckTest
                         .isEmpty();
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "45:39: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ","),
@@ -56,7 +54,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testCast() throws Exception {
         final String[] expected = {
             "91:20: " + getCheckMessage(MSG_WS_TYPECAST),
@@ -66,7 +63,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testMultilineCast() throws Exception {
         final String[] expected = {
             "14:23: " + getCheckMessage(MSG_WS_TYPECAST),
@@ -76,7 +72,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testSemi() throws Exception {
         final String[] expected = {
             "57:22: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ";"),
@@ -88,7 +83,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testLiteralWhile() throws Exception {
         final String[] expected = {
             "46:9: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "while"),
@@ -98,7 +92,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testLiteralIf() throws Exception {
         final String[] expected = {
             "25:9: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "if"),
@@ -108,7 +101,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testLiteralElse() throws Exception {
         final String[] expected = {
             "34:11: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "else"),
@@ -118,7 +110,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testLiteralFor() throws Exception {
         final String[] expected = {
             "58:9: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "for"),
@@ -128,7 +119,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testLiteralFinally() throws Exception {
         final String[] expected = {
             "14:13: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "finally"),
@@ -139,7 +129,6 @@ public class WhitespaceAfterCheckTest
             expected);
     }
 
-    @Test
     public void testLiteralReturn() throws Exception {
         final String[] expected = {
             "17:9: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "return"),
@@ -152,7 +141,6 @@ public class WhitespaceAfterCheckTest
             expected);
     }
 
-    @Test
     public void testLiteralDo() throws Exception {
         final String[] expected = {
             "70:9: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "do"),
@@ -162,7 +150,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testLiteralYield() throws Exception {
         final String[] expected = {
             "17:9: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "yield"),
@@ -172,7 +159,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testLiteralSynchronized() throws Exception {
         final String[] expected = {
             "13:9: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "synchronized"),
@@ -184,7 +170,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testDoWhile() throws Exception {
         final String[] expected = {
             "25:11: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "while"),
@@ -194,7 +179,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testLiteralTry() throws Exception {
         final String[] expected = {
             "20:9: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "try"),
@@ -205,7 +189,6 @@ public class WhitespaceAfterCheckTest
             expected);
     }
 
-    @Test
     public void testLiteralCatch() throws Exception {
         final String[] expected = {
             "14:14: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "catch"),
@@ -215,7 +198,6 @@ public class WhitespaceAfterCheckTest
             expected);
     }
 
-    @Test
     public void testLiteralCase() throws Exception {
         final String[] expected = {
             "15:13: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "case"),
@@ -225,7 +207,6 @@ public class WhitespaceAfterCheckTest
             expected);
     }
 
-    @Test
     public void testLiteralCase2() throws Exception {
         final String[] expected = {
             "13:13: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "case"),
@@ -235,7 +216,6 @@ public class WhitespaceAfterCheckTest
             expected);
     }
 
-    @Test
     public void testEmptyForIterator() throws Exception {
         final String[] expected = {
             "18:30: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ";"),
@@ -246,7 +226,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testTypeArgumentAndParameterCommas() throws Exception {
         final String[] expected = {
             "20:20: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ","),
@@ -258,7 +237,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void test1322879() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -266,7 +244,6 @@ public class WhitespaceAfterCheckTest
                expected);
     }
 
-    @Test
     public void testCountUnicodeCorrectly() throws Exception {
         final String[] expected = {
             "14:20: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ";"),
@@ -275,7 +252,6 @@ public class WhitespaceAfterCheckTest
                 getPath("InputWhitespaceAfterCountUnicodeCorrectly.java"), expected);
     }
 
-    @Test
     public void testVarargs() throws Exception {
         final String[] expected = {
             "14:27: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "..."),
@@ -287,7 +263,6 @@ public class WhitespaceAfterCheckTest
         verifyWithInlineConfigParser(getPath("InputWhitespaceAfterVarargs.java"), expected);
     }
 
-    @Test
     public void testSwitchStatements() throws Exception {
         final String[] expected = {
             "18:9: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "switch"),
@@ -304,7 +279,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testLambdaExpressions() throws Exception {
         final String[] expected = {
             "17:29: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "->"),
@@ -316,7 +290,6 @@ public class WhitespaceAfterCheckTest
                 expected);
     }
 
-    @Test
     public void testWhitespaceAfterWithEmoji() throws Exception {
         final String[] expected = {
             "13:48: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ","),

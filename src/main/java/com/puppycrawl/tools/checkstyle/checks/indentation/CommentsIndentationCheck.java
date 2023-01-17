@@ -250,7 +250,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 6.10
  */
-@StatelessCheck
 public class CommentsIndentationCheck extends AbstractCheck {
 
     /**

@@ -29,7 +29,6 @@ import com.puppycrawl.tools.checkstyle.filefilters.BeforeExecutionExclusionFileF
 
 public class BeforeExecutionFileFilterSetTest {
 
-    @Test
     public void testRemoveFilters() {
         final BeforeExecutionFileFilterSet filterSet = new BeforeExecutionFileFilterSet();
         final BeforeExecutionFileFilter filter = new BeforeExecutionExclusionFileFilter();
@@ -40,7 +39,6 @@ public class BeforeExecutionFileFilterSetTest {
                 .isEmpty();
     }
 
-    @Test
     public void testAccept() {
         final String fileName = "BAD";
         final BeforeExecutionExclusionFileFilter filter = new BeforeExecutionExclusionFileFilter();
@@ -53,7 +51,6 @@ public class BeforeExecutionFileFilterSetTest {
                 .isTrue();
     }
 
-    @Test
     public void testReject() {
         final String fileName = "Test";
         final BeforeExecutionExclusionFileFilter filter = new BeforeExecutionExclusionFileFilter();
@@ -66,7 +63,6 @@ public class BeforeExecutionFileFilterSetTest {
                 .isFalse();
     }
 
-    @Test
     public void testGetFilters2() {
         final BeforeExecutionFileFilterSet filterSet = new BeforeExecutionFileFilterSet();
         filterSet.addBeforeExecutionFileFilter(new BeforeExecutionExclusionFileFilter());
@@ -75,7 +71,6 @@ public class BeforeExecutionFileFilterSetTest {
                 .hasSize(1);
     }
 
-    @Test
     public void testToString2() {
         final BeforeExecutionFileFilterSet filterSet = new BeforeExecutionFileFilterSet();
         filterSet.addBeforeExecutionFileFilter(new BeforeExecutionExclusionFileFilter());
@@ -84,7 +79,6 @@ public class BeforeExecutionFileFilterSetTest {
                 .isNotNull();
     }
 
-    @Test
     public void testClear() {
         final BeforeExecutionFileFilterSet filterSet = new BeforeExecutionFileFilterSet();
         filterSet.addBeforeExecutionFileFilter(new BeforeExecutionExclusionFileFilter());

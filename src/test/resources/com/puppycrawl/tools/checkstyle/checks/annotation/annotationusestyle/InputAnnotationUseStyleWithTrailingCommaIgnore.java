@@ -32,14 +32,12 @@ public class InputAnnotationUseStyleWithTrailingCommaIgnore
     }
 
     // violation below 'Annotation style must be 'COMPACT_NO_ARRAY''
-    @Test3(value={"foo",}, more={"bar",})
     /**
 
     */
     enum P {
 
         // violation below 'Annotation style must be 'COMPACT_NO_ARRAY''
-        @Pooches3(tokens={Pooches3.class,},other={1,})
         L,
 
         /**

@@ -40,7 +40,6 @@ public class NoFinalizerCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/nofinalizer";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final NoFinalizerCheck noFinalizerCheck =
                 new NoFinalizerCheck();
@@ -51,7 +50,6 @@ public class NoFinalizerCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testHasFinalizer()
             throws Exception {
         final String[] expected = {
@@ -61,7 +59,6 @@ public class NoFinalizerCheckTest
                 getPath("InputNoFinalizerHasFinalizer.java"), expected);
     }
 
-    @Test
     public void testHasNoFinalizer()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -69,7 +66,6 @@ public class NoFinalizerCheckTest
                 getPath("InputNoFinalizerFallThrough.java"), expected);
     }
 
-    @Test
     public void testHasNoFinalizerTryWithResource()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

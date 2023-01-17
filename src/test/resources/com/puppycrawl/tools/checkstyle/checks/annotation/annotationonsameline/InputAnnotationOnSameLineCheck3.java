@@ -11,22 +11,22 @@ package com.puppycrawl.tools.checkstyle.checks.annotation.annotationonsameline;
 
 public class InputAnnotationOnSameLineCheck3 {
 
-    @Annotation3 int x;     // ok
+    int x;     // ok
 
     int y;
 
-    @Annotation3            // violation
-    @SomeClass2.Annotation  // violation
+    // violation
+    // violation
     @java.lang.Deprecated   // violation
     public int getX() {
         return (int) x;
     }
 
-    @Annotation4 @Annotation3  // violation
+    // violation
     public int field;
 
     public
-    @Annotation3 int field2; // ok
+    int field2; // ok
 }
 
 class SomeClass2 {

@@ -18,8 +18,8 @@ import java.lang.annotation.Target;
 public class InputAnnotations5 {
 
 
-    void monitorTemperature() throws @Critical Exception {  }
-    void monitorTemperature2() throws NullPointerException, @Critical Exception {  }
+    void monitorTemperature() throws Exception {  }
+    void monitorTemperature2() throws NullPointerException, Exception {  }
 
     @Target(ElementType.TYPE_USE)
     @interface Critical {

@@ -30,7 +30,7 @@ Exception { return null; //indent:0 exp:6 warn
  public InputIndentationInvalidThrowsIndent2() //indent:1 exp:1
 throws Exception {//indent:0 exp:6 warn
  } //indent:1 exp:1
- @TestAnnotation //indent:1 exp:1
+ //indent:1 exp:1
  public //indent:1 exp:1
     static //indent:4 exp:4
     void m9() //indent:4 exp:4

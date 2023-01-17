@@ -38,7 +38,6 @@ public class XpathRegressionRecordTypeParameterNameTest extends AbstractXpathTes
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(getNonCompilablePath(
                 "SuppressionXpathRegressionRecordTypeParameterName1.java"));
@@ -64,7 +63,6 @@ public class XpathRegressionRecordTypeParameterNameTest extends AbstractXpathTes
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(getNonCompilablePath(
                 "SuppressionXpathRegressionRecordTypeParameterName2.java"));

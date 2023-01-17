@@ -196,19 +196,15 @@ class TestHashCodeMethod_5 {
         int z=101; // violation
     }
 
-    @InputMagicNumberIntMethodAnnotation(42)
     public void another() {
     }
 
-    @InputMagicNumberIntMethodAnnotation(value=43)
     public void another2() {
     }
 
-    @InputMagicNumberIntMethodAnnotation(-44)
     public void anotherNegative() {
     }
 
-    @InputMagicNumberIntMethodAnnotation(value=-45)
     public void anotherNegative2() {
     }
 }

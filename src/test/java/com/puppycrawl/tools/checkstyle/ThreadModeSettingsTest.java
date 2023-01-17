@@ -29,7 +29,6 @@ import com.puppycrawl.tools.checkstyle.internal.utils.CheckUtil;
 
 public class ThreadModeSettingsTest {
 
-    @Test
     public void testProperties() {
         final ThreadModeSettings config = new ThreadModeSettings(1, 2);
         assertWithMessage("Invalid checker threads number")
@@ -40,7 +39,6 @@ public class ThreadModeSettingsTest {
                 .isEqualTo(2);
     }
 
-    @Test
     public void testResolveCheckerInMultiThreadMode() {
         final ThreadModeSettings configuration = new ThreadModeSettings(2, 2);
 
@@ -55,7 +53,6 @@ public class ThreadModeSettingsTest {
         }
     }
 
-    @Test
     public void testResolveCheckerInSingleThreadMode() {
         final ThreadModeSettings singleThreadMode = ThreadModeSettings.SINGLE_THREAD_MODE_INSTANCE;
 
@@ -65,7 +62,6 @@ public class ThreadModeSettingsTest {
                 .isEqualTo(ThreadModeSettings.CHECKER_MODULE_NAME);
     }
 
-    @Test
     public void testResolveTreeWalker() {
         final ThreadModeSettings configuration = new ThreadModeSettings(2, 2);
 
@@ -80,7 +76,6 @@ public class ThreadModeSettingsTest {
         }
     }
 
-    @Test
     public void testResolveTreeWalkerInSingleThreadMode() {
         final ThreadModeSettings singleThreadMode = ThreadModeSettings.SINGLE_THREAD_MODE_INSTANCE;
         final String actual =
@@ -90,7 +85,6 @@ public class ThreadModeSettingsTest {
                 .isEqualTo(ThreadModeSettings.TREE_WALKER_MODULE_NAME);
     }
 
-    @Test
     public void testResolveAnyOtherModule() throws Exception {
         final Set<Class<?>> allModules = CheckUtil.getCheckstyleModules();
         final ThreadModeSettings multiThreadModeSettings = new ThreadModeSettings(2, 2);

@@ -14,13 +14,11 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Repeatable;
 import java.lang.annotation.Target;
 
-@EnumAnnotation(value = "foo")
-  @EnumAnnotation // violation '.* incorrect .* level 2, .* should be 0.'
-@EnumAnnotation("bar") enum InputAnnotationLocationEnum { // violation '.* should be alone on line.'
+  // violation '.* incorrect .* level 2, .* should be 0.'
+enum InputAnnotationLocationEnum { // violation '.* should be alone on line.'
 
-    @EnumAnnotation(value = "foo")
-      @EnumAnnotation // violation '.* incorrect .* level 6, .* should be 4.'
-    @EnumAnnotation("bar") ENUM_VALUE(); // violation '.* should be alone on line.'
+      // violation '.* incorrect .* level 6, .* should be 4.'
+    ENUM_VALUE(); // violation '.* should be alone on line.'
 
     InputAnnotationLocationEnum() {
     }

@@ -35,7 +35,6 @@ public class TrailingCommentCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/trailingcomment";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final TrailingCommentCheck checkObj = new TrailingCommentCheck();
         final int[] expected = {TokenTypes.SINGLE_LINE_COMMENT,
@@ -45,7 +44,6 @@ public class TrailingCommentCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final TrailingCommentCheck checkObj = new TrailingCommentCheck();
         final int[] expected = {TokenTypes.SINGLE_LINE_COMMENT,
@@ -55,7 +53,6 @@ public class TrailingCommentCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testDefaults() throws Exception {
         final String[] expected = {
             "13:12: " + getCheckMessage(MSG_KEY),
@@ -71,7 +68,6 @@ public class TrailingCommentCheckTest extends AbstractModuleTestSupport {
                 getPath("InputTrailingComment.java"), expected);
     }
 
-    @Test
     public void testLegalComment() throws Exception {
         final String[] expected = {
             "13:12: " + getCheckMessage(MSG_KEY),
@@ -86,7 +82,6 @@ public class TrailingCommentCheckTest extends AbstractModuleTestSupport {
                 getPath("InputTrailingComment2.java"), expected);
     }
 
-    @Test
     public void testFormat() throws Exception {
         final String[] expected = {
             "1:1: " + getCheckMessage(MSG_KEY),
@@ -112,7 +107,6 @@ public class TrailingCommentCheckTest extends AbstractModuleTestSupport {
                 getPath("InputTrailingComment3.java"), expected);
     }
 
-    @Test
     public void testLegalCommentWithNoPrecedingWhitespace() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -120,7 +114,6 @@ public class TrailingCommentCheckTest extends AbstractModuleTestSupport {
                 getPath("InputTrailingCommentWithNoPrecedingWhitespace.java"), expected);
     }
 
-    @Test
     public void testWithEmoji() throws Exception {
         final String[] expected = {
             "13:24: " + getCheckMessage(MSG_KEY),

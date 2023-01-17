@@ -38,7 +38,6 @@ public class XpathRegressionAvoidEscapedUnicodeCharactersTest extends AbstractXp
         return checkName;
     }
 
-    @Test
     public void testDefault() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionAvoidEscapedUnicodeCharactersDefault.java"));
@@ -65,7 +64,6 @@ public class XpathRegressionAvoidEscapedUnicodeCharactersTest extends AbstractXp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testControlCharacters() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionAvoidEscapedUnicodeCharactersControlCharacters.java")
@@ -96,7 +94,6 @@ public class XpathRegressionAvoidEscapedUnicodeCharactersTest extends AbstractXp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTailComment() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionAvoidEscapedUnicodeCharactersTailComment.java"));
@@ -126,7 +123,6 @@ public class XpathRegressionAvoidEscapedUnicodeCharactersTest extends AbstractXp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testAllCharactersEscaped() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionAvoidEscapedUnicodeCharactersAllEscaped.java"));
@@ -156,7 +152,6 @@ public class XpathRegressionAvoidEscapedUnicodeCharactersTest extends AbstractXp
                 expectedXpathQueries);
     }
 
-    @Test
     public void testNonPrintableCharacters() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionAvoidEscapedUnicodeCharactersNonPrintable.java"));

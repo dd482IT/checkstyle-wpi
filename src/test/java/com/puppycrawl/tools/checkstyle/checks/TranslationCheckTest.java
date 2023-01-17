@@ -56,7 +56,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
 
 public class TranslationCheckTest extends AbstractXmlTestSupport {
 
-    @TempDir
     public File temporaryFolder;
 
     @Override
@@ -64,7 +63,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/translation";
     }
 
-    @Test
     public void testTranslation() throws Exception {
         final Configuration checkConfig = createModuleConfig(TranslationCheck.class);
         final String[] expected = {
@@ -81,7 +79,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testDifferentBases() throws Exception {
         final Configuration checkConfig = createModuleConfig(TranslationCheck.class);
         final String[] expected = {
@@ -100,7 +97,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testDifferentPaths() throws Exception {
         final File file = new File(temporaryFolder, "messages_test_de.properties");
         try (Writer writer = Files.newBufferedWriter(file.toPath(), StandardCharsets.UTF_8)) {
@@ -131,7 +127,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
      *
      * @throws Exception when code tested throws exception
      */
-    @Test
     public void testStateIsCleared() throws Exception {
         final File fileToProcess = new File(
                 getPath("InputTranslationCheckFireErrors_de.properties")
@@ -149,7 +144,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testFileExtension() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("baseName", "^InputTranslation.*$");
@@ -163,7 +157,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testLogOutput() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "ja,de");
@@ -197,7 +190,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             firstErrorMessage, secondErrorMessage);
     }
 
-    @Test
     public void testOnePropertyFileSet() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -211,7 +203,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testLogIoExceptionFileNotFound() throws Exception {
         // I can't put wrong file here. Checkstyle fails before check started.
         // I saw some usage of file or handling of wrong file in Checker, or somewhere
@@ -239,7 +230,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             .isEqualTo(violation);
     }
 
-    @Test
     public void testLogIoException() throws Exception {
         // I can't put wrong file here. Checkstyle fails before check started.
         // I saw some usage of file or handling of wrong file in Checker, or somewhere
@@ -264,7 +254,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             .isEqualTo(violation);
     }
 
-    @Test
     public void testLogIllegalArgumentException() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("baseName", "^bad.*$");
@@ -284,7 +273,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testDefaultTranslationFileIsMissing() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "ja,,, de, ja");
@@ -305,7 +293,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testTranslationFilesAreMissing() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "ja, de");
@@ -326,7 +313,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testBaseNameWithSeparatorDefaultTranslationIsMissing() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "fr");
@@ -346,7 +332,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testBaseNameWithSeparatorTranslationsAreMissing() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "fr, tr");
@@ -367,7 +352,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testIsNotMessagesBundle() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "de");
@@ -385,7 +369,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testTranslationFileWithLanguageCountryVariantIsMissing() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "es, de");
@@ -407,7 +390,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testTranslationFileWithLanguageCountryVariantArePresent() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "es, fr");
@@ -426,7 +408,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testBaseNameOption() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "de, es, fr, ja");
@@ -453,7 +434,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testFileExtensions() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "de, es, fr, ja");
@@ -484,7 +464,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testEqualBaseNamesButDifferentExtensions() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "de, es, fr, ja");
@@ -515,7 +494,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testEqualBaseNamesButDifferentExtensions2() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "de, es");
@@ -545,7 +523,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testRegexpToMatchPartOfBaseName() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "de, es, fr, ja");
@@ -570,7 +547,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testBundlesWithSameNameButDifferentPaths() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(TranslationCheck.class);
         checkConfig.addProperty("requiredTranslations", "de");
@@ -593,7 +569,6 @@ public class TranslationCheckTest extends AbstractXmlTestSupport {
             expected);
     }
 
-    @Test
     public void testWrongUserSpecifiedLanguageCodes() {
         final TranslationCheck check = new TranslationCheck();
         try {

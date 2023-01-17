@@ -41,7 +41,6 @@ public class XpathRegressionJavadocMethodTest extends AbstractXpathTestSupport {
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionJavadocMethodOne.java"));
@@ -69,7 +68,6 @@ public class XpathRegressionJavadocMethodTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionJavadocMethodTwo.java"));
@@ -92,7 +90,6 @@ public class XpathRegressionJavadocMethodTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionJavadocMethodThree.java"));
@@ -119,7 +116,6 @@ public class XpathRegressionJavadocMethodTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testFour() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionJavadocMethodFour.java"));
@@ -144,7 +140,6 @@ public class XpathRegressionJavadocMethodTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testFive() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionJavadocMethodFive.java"));

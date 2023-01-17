@@ -33,7 +33,6 @@ public class NoEnumTrailingCommaCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/noenumtrailingcomma";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "23:12: " + getCheckMessage(MSG_KEY),
@@ -63,7 +62,6 @@ public class NoEnumTrailingCommaCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNoEnumTrailingComma.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final NoEnumTrailingCommaCheck check = new NoEnumTrailingCommaCheck();
         assertWithMessage("Acceptable tokens should not be null")

@@ -11,44 +11,44 @@ package com.puppycrawl.tools.checkstyle.checks.annotation.annotationonsameline;
 
 import java.util.List;
 
-@Ann        // violation
-@Ann2 interface TestInterface {
+// violation
+interface TestInterface {
 
-    @Ann    // violation
-    @Ann2 Integer getX();
+    // violation
+    Integer getX();
 }
 
-public @Ann     // violation
-@Ann2 class InputAnnotationOnSameLineCheckOnDifferentTokens implements @Ann     // violation
-        @Ann2 TestInterface {
+public // violation
+class InputAnnotationOnSameLineCheckOnDifferentTokens implements // violation
+        TestInterface {
 
-    @Ann        // violation
-    @Ann2 private Integer x = new @Ann      // violation
-            @Ann2 Integer(0);
+    // violation
+    private Integer x = new // violation
+            Integer(0);
 
-    private List<@Ann       // violation
-            @Ann2 Integer> integerList;
+    private List<// violation
+            Integer> integerList;
 
-    @Ann        // violation
-    @Ann2 enum TestEnum {
+    // violation
+    enum TestEnum {
         A1, A2
     }
 
-    @Ann        // violation
-    @Ann2 public InputAnnotationOnSameLineCheckOnDifferentTokens() {}
+    // violation
+    public InputAnnotationOnSameLineCheckOnDifferentTokens() {}
 
-    @Ann        // violation
-    @Ann2 public void setX(@Ann             // violation
-            @Ann2 int x) throws @Ann        // violation
-                    @Ann2 Exception {
-        this.<@Ann                          // violation
-                @Ann2 Integer> getXAs();
+    // violation
+    public void setX(// violation
+            int x) throws // violation
+                    Exception {
+        this.<// violation
+                Integer> getXAs();
         this.x = x;
     }
 
     @Override public Integer getX() {
-        return (@Ann                        // violation
-                @Ann2 Integer) x;
+        return (// violation
+                Integer) x;
     }
 
     public <T> T getXAs() {
@@ -56,9 +56,9 @@ public @Ann     // violation
     }
 }
 
-@Ann        // violation
-@Ann2 @interface TestAnnotation {
+// violation
+@interface TestAnnotation {
 
-    @Ann    // violation
-    @Ann2 int x();
+    // violation
+    int x();
 }

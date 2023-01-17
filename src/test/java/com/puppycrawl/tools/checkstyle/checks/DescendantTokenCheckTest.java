@@ -36,7 +36,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/descendanttoken";
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -44,7 +43,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenIllegalTokens.java"), expected);
     }
 
-    @Test
     public void testMaximumNumber()
             throws Exception {
         final String[] expected = {
@@ -54,7 +52,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenIllegalTokens2.java"), expected);
     }
 
-    @Test
     public void testMessage()
             throws Exception {
         final String[] expected = {
@@ -64,7 +61,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenIllegalTokens3.java"), expected);
     }
 
-    @Test
     public void testMinimumNumber()
             throws Exception {
         final String[] expected = {
@@ -74,7 +70,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenIllegalTokens4.java"), expected);
     }
 
-    @Test
     public void testMinimumDepth()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -82,7 +77,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenIllegalTokens5.java"), expected);
     }
 
-    @Test
     public void testMaximumDepth()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -90,7 +84,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenIllegalTokens6.java"), expected);
     }
 
-    @Test
     public void testEmptyStatements()
             throws Exception {
 
@@ -117,7 +110,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenEmptyStatement.java"), expected);
     }
 
-    @Test
     public void testMissingSwitchDefault() throws Exception {
 
         final String[] expected = {
@@ -128,7 +120,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenMissingSwitchDefault.java"), expected);
     }
 
-    @Test
     public void testStringLiteralEquality() throws Exception {
         final String[] expected = {
             "22:18: Literal Strings should be compared using equals(), not '=='.",
@@ -139,7 +130,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenStringLiteralEquality.java"), expected);
     }
 
-    @Test
     public void testIllegalTokenDefault() throws Exception {
 
         final String[] expected = {
@@ -151,7 +141,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenIllegalTokens7.java"), expected);
     }
 
-    @Test
     public void testIllegalTokenNative() throws Exception {
 
         final String[] expected = {
@@ -161,7 +150,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenIllegalTokens8.java"), expected);
     }
 
-    @Test
     public void testReturnFromCatch() throws Exception {
 
         final String[] expected = {
@@ -173,7 +161,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenReturnFromCatch.java"), expected);
     }
 
-    @Test
     public void testReturnFromFinally() throws Exception {
 
         final String[] expected = {
@@ -185,7 +172,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenReturnFromFinally.java"), expected);
     }
 
-    @Test
     public void testNoSum() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -194,7 +180,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenReturnFromFinally2.java"), expected);
     }
 
-    @Test
     public void testWithSumCustomMsg() throws Exception {
 
         final String[] expected = {
@@ -208,7 +193,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenReturnFromFinally3.java"), expected);
     }
 
-    @Test
     public void testWithSumDefaultMsg() throws Exception {
 
         final String[] expected = {
@@ -222,7 +206,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenReturnFromFinally4.java"), expected);
     }
 
-    @Test
     public void testWithSumLessThenMinDefMsg() throws Exception {
 
         final String[] expected = {
@@ -239,7 +222,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenReturnFromFinally5.java"), expected);
     }
 
-    @Test
     public void testWithSumLessThenMinCustomMsg() throws Exception {
 
         final String[] expected = {
@@ -256,7 +238,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenReturnFromFinally6.java"), expected);
     }
 
-    @Test
     public void testMaxTokenType() throws Exception {
         final String[] expected = {
             "21:48: " + getCheckMessage(MSG_KEY_MAX, 1, 0, "OBJBLOCK", "LCURLY"),
@@ -266,7 +247,6 @@ public class DescendantTokenCheckTest extends AbstractModuleTestSupport {
                 getPath("InputDescendantTokenLastTokenType.java"), expected);
     }
 
-    @Test
     public void testMaxTokenTypeReverseOrder() throws Exception {
         final String[] expected = {
             "21:49: " + getCheckMessage(MSG_KEY_MAX, 1, 0, "OBJBLOCK", "LCURLY"),

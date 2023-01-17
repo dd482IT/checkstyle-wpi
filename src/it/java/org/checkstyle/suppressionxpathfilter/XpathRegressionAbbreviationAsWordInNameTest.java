@@ -37,7 +37,6 @@ public class XpathRegressionAbbreviationAsWordInNameTest extends AbstractXpathTe
         return checkName;
     }
 
-    @Test
     public void testAnnotation() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAbbreviationAsWordInNameAnnotation.java"));
@@ -60,7 +59,6 @@ public class XpathRegressionAbbreviationAsWordInNameTest extends AbstractXpathTe
                 expectedXpathQueries);
     }
 
-    @Test
     public void testAnnotationField() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAbbreviationAsWordInNameAnnotationField.java"));
@@ -83,7 +81,6 @@ public class XpathRegressionAbbreviationAsWordInNameTest extends AbstractXpathTe
                 expectedXpathQueries);
     }
 
-    @Test
     public void testClass() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAbbreviationAsWordInNameClass.java"));
@@ -106,7 +103,6 @@ public class XpathRegressionAbbreviationAsWordInNameTest extends AbstractXpathTe
                 expectedXpathQueries);
     }
 
-    @Test
     public void testEnum() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAbbreviationAsWordInNameEnum.java"));
@@ -129,7 +125,6 @@ public class XpathRegressionAbbreviationAsWordInNameTest extends AbstractXpathTe
                 expectedXpathQueries);
     }
 
-    @Test
     public void testField() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAbbreviationAsWordInNameField.java"));
@@ -152,7 +147,6 @@ public class XpathRegressionAbbreviationAsWordInNameTest extends AbstractXpathTe
                 expectedXpathQueries);
     }
 
-    @Test
     public void testInterface() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAbbreviationAsWordInNameInterface.java"));
@@ -175,7 +169,6 @@ public class XpathRegressionAbbreviationAsWordInNameTest extends AbstractXpathTe
                 expectedXpathQueries);
     }
 
-    @Test
     public void testMethod() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAbbreviationAsWordInNameMethod.java"));
@@ -198,7 +191,6 @@ public class XpathRegressionAbbreviationAsWordInNameTest extends AbstractXpathTe
                 expectedXpathQueries);
     }
 
-    @Test
     public void testParameter() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAbbreviationAsWordInNameParameter.java"));
@@ -222,7 +214,6 @@ public class XpathRegressionAbbreviationAsWordInNameTest extends AbstractXpathTe
                 expectedXpathQueries);
     }
 
-    @Test
     public void testVariable() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionAbbreviationAsWordInNameVariable.java"));

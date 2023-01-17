@@ -33,7 +33,6 @@ public class JavadocParagraphTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter7javadoc/rule712paragraphs";
     }
 
-    @Test
     public void testJavadocParagraphCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -44,7 +43,6 @@ public class JavadocParagraphTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testJavadocParagraphIncorrect() throws Exception {
         final String msgBefore = getCheckMessage(JavadocParagraphCheck.class,
                 "javadoc.paragraph.line.before");

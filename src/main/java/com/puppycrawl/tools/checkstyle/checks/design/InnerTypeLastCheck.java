@@ -74,7 +74,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 5.2
  */
-@FileStatefulCheck
 public class InnerTypeLastCheck extends AbstractCheck {
 
     /**

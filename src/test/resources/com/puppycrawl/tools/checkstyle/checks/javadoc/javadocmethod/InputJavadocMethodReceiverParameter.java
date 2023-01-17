@@ -36,7 +36,7 @@ public class InputJavadocMethodReceiverParameter {
      *
      * @param buffer dummy argument
      */
-    public void foo(@Ann(Object.class) InputJavadocMethodReceiverParameter this, // ok
+    public void foo(InputJavadocMethodReceiverParameter this, // ok
             final ByteBuffer buffer) {
         buffer.putInt(1);
     }

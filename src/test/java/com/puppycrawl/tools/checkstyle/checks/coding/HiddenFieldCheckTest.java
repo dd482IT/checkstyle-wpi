@@ -44,7 +44,6 @@ public class HiddenFieldCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/hiddenfield";
     }
 
-    @Test
     public void testStaticVisibilityFromLambdas() throws Exception {
         final String[] expected = {
             "31:34: " + getCheckMessage(MSG_KEY, "value"),
@@ -68,7 +67,6 @@ public class HiddenFieldCheckTest
                 getPath("InputHiddenFieldLambdas.java"), expected);
     }
 
-    @Test
     public void testStaticVisibilityFromAnonymousClasses() throws Exception {
         final String[] expected = {
             "22:45: " + getCheckMessage(MSG_KEY, "other"),
@@ -81,7 +79,6 @@ public class HiddenFieldCheckTest
                 getPath("InputHiddenFieldStaticVisibility.java"), expected);
     }
 
-    @Test
     public void testNoParameters()
             throws Exception {
         final String[] expected = {
@@ -108,7 +105,6 @@ public class HiddenFieldCheckTest
                 getPath("InputHiddenField1.java"), expected);
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -153,7 +149,6 @@ public class HiddenFieldCheckTest
     }
 
     /** Tests ignoreFormat property. */
-    @Test
     public void testIgnoreFormat()
             throws Exception {
         final DefaultConfiguration checkConfig =
@@ -197,7 +192,6 @@ public class HiddenFieldCheckTest
     }
 
     /** Tests ignoreSetter property. */
-    @Test
     public void testIgnoreSetter()
             throws Exception {
         final String[] expected = {
@@ -238,7 +232,6 @@ public class HiddenFieldCheckTest
     }
 
     /** Tests ignoreSetter and setterCanReturnItsClass properties. */
-    @Test
     public void testIgnoreChainSetter()
             throws Exception {
         final String[] expected = {
@@ -277,7 +270,6 @@ public class HiddenFieldCheckTest
     }
 
     /** Tests ignoreConstructorParameter property. */
-    @Test
     public void testIgnoreConstructorParameter()
             throws Exception {
         final String[] expected = {
@@ -319,7 +311,6 @@ public class HiddenFieldCheckTest
     }
 
     /** Test against a class with field declarations in different order. */
-    @Test
     public void testReordered()
             throws Exception {
         final String[] expected = {
@@ -348,7 +339,6 @@ public class HiddenFieldCheckTest
                 getPath("InputHiddenFieldReorder.java"), expected);
     }
 
-    @Test
     public void testIgnoreAbstractMethods() throws Exception {
 
         final String[] expected = {
@@ -391,14 +381,12 @@ public class HiddenFieldCheckTest
                 getPath("InputHiddenField7.java"), expected);
     }
 
-    @Test
     public void testReceiverParameter() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputHiddenFieldReceiver.java"), expected);
     }
 
-    @Test
     public void testHiddenFieldEnhancedInstanceof() throws Exception {
 
         final String[] expected = {
@@ -409,7 +397,6 @@ public class HiddenFieldCheckTest
                 getNonCompilablePath("InputHiddenFieldEnhancedInstanceof.java"), expected);
     }
 
-    @Test
     public void testHiddenFieldSwitchExpression() throws Exception {
 
         final String[] expected = {
@@ -432,7 +419,6 @@ public class HiddenFieldCheckTest
                 getNonCompilablePath("InputHiddenFieldSwitchExpression.java"), expected);
     }
 
-    @Test
     public void testHiddenFieldRecords() throws Exception {
 
         final String[] expected = {
@@ -450,7 +436,6 @@ public class HiddenFieldCheckTest
                 getNonCompilablePath("InputHiddenFieldRecords.java"), expected);
     }
 
-    @Test
     public void testHiddenFieldLambdasInNestedScope() throws Exception {
         final String[] expected = {
             "21:34: " + getCheckMessage(MSG_KEY, "value"),
@@ -459,7 +444,6 @@ public class HiddenFieldCheckTest
             getPath("InputHiddenFieldLambdas2.java"), expected);
     }
 
-    @Test
     public void testClassNestedInRecord() throws Exception {
 
         final String[] expected = {
@@ -477,7 +461,6 @@ public class HiddenFieldCheckTest
      *
      * @throws Exception when code tested throws exception
      */
-    @Test
     public void testClearState() throws Exception {
         final HiddenFieldCheck check = new HiddenFieldCheck();
         final DetailAST root = JavaParser.parseFile(new File(getPath("InputHiddenField8.java")),

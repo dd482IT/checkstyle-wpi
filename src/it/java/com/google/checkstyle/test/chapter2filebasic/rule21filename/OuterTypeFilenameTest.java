@@ -35,7 +35,6 @@ public class OuterTypeFilenameTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter2filebasic/rule21filename";
     }
 
-    @Test
     public void testOuterTypeFilename1() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -46,7 +45,6 @@ public class OuterTypeFilenameTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testOuterTypeFilename2() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -57,7 +55,6 @@ public class OuterTypeFilenameTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testOuterTypeFilename3() throws Exception {
         final String[] expected = {
             "3:1: " + getCheckMessage(OuterTypeFilenameCheck.class, MSG_KEY),

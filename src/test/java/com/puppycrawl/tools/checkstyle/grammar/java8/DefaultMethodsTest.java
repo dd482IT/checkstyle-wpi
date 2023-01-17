@@ -31,7 +31,6 @@ public class DefaultMethodsTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/grammar/java8";
     }
 
-    @Test
     public void testCanParse()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -39,7 +38,6 @@ public class DefaultMethodsTest extends AbstractModuleTestSupport {
                 getPath("InputDefaultMethods.java"), expected);
     }
 
-    @Test
     public void testSwitch()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

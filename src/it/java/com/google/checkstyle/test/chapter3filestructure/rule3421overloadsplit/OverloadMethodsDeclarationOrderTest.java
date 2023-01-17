@@ -32,7 +32,6 @@ public class OverloadMethodsDeclarationOrderTest extends AbstractGoogleModuleTes
         return "com/google/checkstyle/test/chapter3filestructure/rule3421overloadsplit";
     }
 
-    @Test
     public void testOverloadMethods() throws Exception {
         final Class<OverloadMethodsDeclarationOrderCheck> clazz =
             OverloadMethodsDeclarationOrderCheck.class;

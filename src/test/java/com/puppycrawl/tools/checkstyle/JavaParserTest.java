@@ -41,21 +41,18 @@ public class JavaParserTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/javaparser";
     }
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(TestUtil.isUtilsClassHasPrivateConstructor(JavaParser.class))
                 .isTrue();
     }
 
-    @Test
     public void testNullRootWithComments() {
         assertWithMessage("Invalid return root")
             .that(JavaParser.appendHiddenCommentNodes(null))
             .isNull();
     }
 
-    @Test
     public void testAppendHiddenBlockCommentNodes() throws Exception {
         final DetailAST root =
             JavaParser.parseFile(new File(getPath("InputJavaParserHiddenComments.java")),
@@ -97,7 +94,6 @@ public class JavaParserTest extends AbstractModuleTestSupport {
             .isEqualTo(1);
     }
 
-    @Test
     public void testAppendHiddenSingleLineCommentNodes() throws Exception {
         final DetailAST root =
             JavaParser.parseFile(new File(getPath("InputJavaParserHiddenComments.java")),
@@ -137,7 +133,6 @@ public class JavaParserTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testAppendHiddenSingleLineCommentNodes2() throws Exception {
         final DetailAST root =
             JavaParser.parseFile(new File(getPath("InputJavaParserHiddenComments2.java")),
@@ -177,7 +172,6 @@ public class JavaParserTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testDontAppendCommentNodes() throws Exception {
         final DetailAST root =
             JavaParser.parseFile(new File(getPath("InputJavaParserHiddenComments.java")),
@@ -190,7 +184,6 @@ public class JavaParserTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testParseException() throws Exception {
         final File input = new File(getNonCompilablePath("InputJavaParser.java"));
         try {
@@ -213,7 +206,6 @@ public class JavaParserTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testComments() throws Exception {
         final DetailAST root =
             JavaParser.parseFile(new File(getPath("InputJavaParserHiddenComments3.java")),
@@ -228,7 +220,6 @@ public class JavaParserTest extends AbstractModuleTestSupport {
             .isEqualTo(Arrays.asList("5,4", "8,0"));
     }
 
-    @Test
     public void testJava14TextBlocks() throws Exception {
         final DetailAST root =
             JavaParser.parseFile(new File(
@@ -256,7 +247,6 @@ public class JavaParserTest extends AbstractModuleTestSupport {
             .isEqualTo(expectedContents);
     }
 
-    @Test
     public void testNoFreezeOnDeeplyNestedLambdas() throws Exception {
         final File file =
                 new File(getNonCompilablePath("InputJavaParserNoFreezeOnDeeplyNestedLambdas.java"));
@@ -265,7 +255,6 @@ public class JavaParserTest extends AbstractModuleTestSupport {
                 .isNotNull();
     }
 
-    @Test
     public void testFullJavaIdentifierSupport() throws Exception {
         final File file =
                 new File(getNonCompilablePath("InputJavaParserFullJavaIdentifierSupport.java"));

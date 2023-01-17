@@ -80,7 +80,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 8.45
  */
-@StatelessCheck
 public class NoWhitespaceBeforeCaseDefaultColonCheck
     extends AbstractCheck {
 

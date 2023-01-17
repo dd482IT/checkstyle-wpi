@@ -99,7 +99,6 @@ import com.puppycrawl.tools.checkstyle.utils.JavadocUtil;
  *
  * @since 8.36
  */
-@StatelessCheck
 public class RequireEmptyLineBeforeBlockTagGroupCheck extends AbstractJavadocCheck {
 
     /**

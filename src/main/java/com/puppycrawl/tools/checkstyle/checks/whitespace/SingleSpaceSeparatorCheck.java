@@ -124,7 +124,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 6.19
  */
-@StatelessCheck
 public class SingleSpaceSeparatorCheck extends AbstractCheck {
 
     /**

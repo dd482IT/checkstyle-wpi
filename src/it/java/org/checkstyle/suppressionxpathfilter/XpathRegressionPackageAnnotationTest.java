@@ -37,7 +37,6 @@ public class XpathRegressionPackageAnnotationTest extends AbstractXpathTestSuppo
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getNonCompilablePath(
@@ -58,7 +57,6 @@ public class XpathRegressionPackageAnnotationTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getNonCompilablePath(

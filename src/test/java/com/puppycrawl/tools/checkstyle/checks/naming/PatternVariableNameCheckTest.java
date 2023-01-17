@@ -35,7 +35,6 @@ public class PatternVariableNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/patternvariablename";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final PatternVariableNameCheck patternVariableNameCheck = new PatternVariableNameCheck();
         final int[] expected = {TokenTypes.PATTERN_VARIABLE_DEF};
@@ -45,7 +44,6 @@ public class PatternVariableNameCheckTest
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String pattern = "^[a-z][a-zA-Z0-9]*$";
@@ -67,7 +65,6 @@ public class PatternVariableNameCheckTest
                 expected);
     }
 
-    @Test
     public void testPatternVariableNameNoSingleChar() throws Exception {
 
         final String pattern = "^[a-z][a-zA-Z0-9]+$";

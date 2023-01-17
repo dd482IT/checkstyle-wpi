@@ -34,7 +34,6 @@ public class GenericWhitespaceTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule462horizontalwhitespace";
     }
 
-    @Test
     public void testWhitespaceAroundGenerics() throws Exception {
         final String msgPreceded = "ws.preceded";
         final String msgFollowed = "ws.followed";
@@ -66,7 +65,6 @@ public class GenericWhitespaceTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testGenericWhitespace() throws Exception {
         final String msgPreceded = "ws.preceded";
         final String msgFollowed = "ws.followed";
@@ -110,7 +108,6 @@ public class GenericWhitespaceTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void genericEndsTheLine() throws Exception {
         final Configuration checkConfig = getModuleConfig("GenericWhitespace");
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

@@ -22,6 +22,5 @@ import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
  * invokes the super method.
  * </p>
  */
-@FileStatefulCheck
 public abstract class InputJavadocMetadataScraperAbstractSuperCheck extends AbstractCheck {
 }

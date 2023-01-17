@@ -174,7 +174,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 3.5
  */
-@FileStatefulCheck
 public class MultipleStringLiteralsCheck extends AbstractCheck {
 
     /**
@@ -203,7 +202,6 @@ public class MultipleStringLiteralsCheck extends AbstractCheck {
      * don't match ignoredStringsRegexp. This allows you to exclude syntactical
      * contexts like annotations or static initializers from the check.
      */
-    @XdocsPropertyType(PropertyType.TOKEN_ARRAY)
     private final BitSet ignoreOccurrenceContext = new BitSet();
 
     /**

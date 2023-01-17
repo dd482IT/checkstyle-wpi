@@ -37,7 +37,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/indentation/commentsindentation";
     }
 
-    @Test
     public void testCommentIsAtTheEndOfBlock() throws Exception {
         final String[] expected = {
             "25:26: " + getCheckMessage(MSG_KEY_SINGLE, 24, 25, 8),
@@ -92,7 +91,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath(testInputFile), expected);
     }
 
-    @Test
     public void testCommentIsInsideSwitchBlock() throws Exception {
         final String[] expected = {
             "27:13: " + getCheckMessage(MSG_KEY_BLOCK, 28, 12, 16),
@@ -120,7 +118,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath(testInputFile), expected);
     }
 
-    @Test
     public void testCommentIsInsideEmptyBlock() throws Exception {
         final String[] expected = {
             "16:20: " + getCheckMessage(MSG_KEY_SINGLE, 19, 19, 31),
@@ -135,7 +132,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath(testInputFile), expected);
     }
 
-    @Test
     public void testSurroundingCode() throws Exception {
         final String[] expected = {
             "20:15: " + getCheckMessage(MSG_KEY_SINGLE, 21, 14, 12),
@@ -155,14 +151,12 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath(testInputFile), expected);
     }
 
-    @Test
     public void testNoNpeWhenBlockCommentEndsClassFile() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         final String testInputFile = "InputCommentsIndentationNoNpe.java";
         verifyWithInlineConfigParser(getPath(testInputFile), expected);
     }
 
-    @Test
     public void testCheckOnlySingleLineComments() throws Exception {
         final String[] expected = {
             "20:15: " + getCheckMessage(MSG_KEY_SINGLE, 21, 14, 12),
@@ -175,7 +169,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath(testInputFile), expected);
     }
 
-    @Test
     public void testCheckOnlyBlockComments() throws Exception {
         final String[] expected = {
             "30:17: " + getCheckMessage(MSG_KEY_BLOCK, 31, 16, 12),
@@ -190,7 +183,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath(testInputFile), expected);
     }
 
-    @Test
     public void testVisitToken() {
         final CommentsIndentationCheck check = new CommentsIndentationCheck();
         final DetailAstImpl methodDef = new DetailAstImpl();
@@ -208,7 +200,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testJavadoc() throws Exception {
         final String[] expected = {
             "10:3: " + getCheckMessage(MSG_KEY_BLOCK, 13, 2, 0),
@@ -220,7 +211,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath(testInputFile), expected);
     }
 
-    @Test
     public void testMultiblockStructures() throws Exception {
         final String[] expected = {
             "19:9: " + getCheckMessage(MSG_KEY_SINGLE, 18, 8, 12),
@@ -246,7 +236,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath(testInputFile), expected);
     }
 
-    @Test
     public void testCommentsAfterAnnotation() throws Exception {
         final String[] expected = {
             "21:5: " + getCheckMessage(MSG_KEY_SINGLE, 22, 4, 0),
@@ -259,7 +248,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
         verifyWithInlineConfigParser(getPath(testInputFile), expected);
     }
 
-    @Test
     public void testCommentsInSameMethodCallWithSameIndent() throws Exception {
         final String[] expected = {
             "23:7: " + getCheckMessage(MSG_KEY_SINGLE, 24, 6, 4),
@@ -270,7 +258,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testCommentIndentationWithEmoji() throws Exception {
         final String[] expected = {
             "14:9: " + getCheckMessage(MSG_KEY_SINGLE, 15, 8, 16),
@@ -289,7 +276,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testCommentsBlockCommentBeforePackage() throws Exception {
         final String[] expected = {
             "8:1: " + getCheckMessage(MSG_KEY_BLOCK, 11, 0, 1),
@@ -299,7 +285,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testCommentsAfterRecordsAndCompactCtors() throws Exception {
         final String[] expected = {
             "15:17: " + getCheckMessage(MSG_KEY_SINGLE, 16, 16, 20),
@@ -313,7 +298,6 @@ public class CommentsIndentationCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testCommentsAtTheEndOfMethodCall() throws Exception {
         final String[] expected = {
             "24:16: " + getCheckMessage(MSG_KEY_SINGLE, 20, 15, 8),

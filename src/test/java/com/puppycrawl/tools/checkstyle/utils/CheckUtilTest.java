@@ -46,14 +46,12 @@ public class CheckUtilTest extends AbstractPathTestSupport {
         return "com/puppycrawl/tools/checkstyle/utils/checkutil";
     }
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(isUtilsClassHasPrivateConstructor(CheckUtil.class))
                 .isTrue();
     }
 
-    @Test
     public void testParseDoubleWithIncorrectToken() {
         final double parsedDouble = CheckUtil.parseDouble("1_02", TokenTypes.ASSIGN);
         assertWithMessage("Invalid parse result")
@@ -61,7 +59,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
             .isEqualTo(Double.NaN);
     }
 
-    @Test
     public void testElseWithCurly() {
         final DetailAstImpl ast = new DetailAstImpl();
         ast.setType(TokenTypes.ASSIGN);
@@ -102,7 +99,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testEquals() {
         final DetailAstImpl litStatic = new DetailAstImpl();
         litStatic.setType(TokenTypes.LITERAL_STATIC);
@@ -146,7 +142,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testGetAccessModifierFromModifiersTokenWrongTokenType() {
         final DetailAstImpl modifiers = new DetailAstImpl();
         modifiers.setType(TokenTypes.METHOD_DEF);
@@ -165,7 +160,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetTypeParameterNames() throws Exception {
         final DetailAST parameterizedClassNode = getNodeFromFile(TokenTypes.CLASS_DEF);
         final List<String> expected = Arrays.asList("V", "C");
@@ -176,7 +170,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetTypeParameters() throws Exception {
         final DetailAST parameterizedClassNode = getNodeFromFile(TokenTypes.CLASS_DEF);
         final DetailAST firstTypeParameter =
@@ -190,7 +183,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testIsEqualsMethod() throws Exception {
         final DetailAST equalsMethodNode = getNodeFromFile(TokenTypes.METHOD_DEF);
         final DetailAST someOtherMethod = equalsMethodNode.getNextSibling();
@@ -203,7 +195,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testIsElseIf() throws Exception {
         final DetailAST targetMethodNode = getNodeFromFile(TokenTypes.METHOD_DEF).getNextSibling();
         final DetailAST firstElseNode = getNode(targetMethodNode, TokenTypes.LITERAL_ELSE);
@@ -224,7 +215,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testIsNonVoidMethod() throws Exception {
         final DetailAST nonVoidMethod = getNodeFromFile(TokenTypes.METHOD_DEF);
         final DetailAST voidMethod = nonVoidMethod.getNextSibling();
@@ -237,7 +227,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testIsGetterMethod() throws Exception {
         final DetailAST notGetterMethod = getNodeFromFile(TokenTypes.METHOD_DEF);
         final DetailAST getterMethod = notGetterMethod.getNextSibling().getNextSibling();
@@ -250,7 +239,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testIsSetterMethod() throws Exception {
         final DetailAST firstClassMethod = getNodeFromFile(TokenTypes.METHOD_DEF);
         final DetailAST setterMethod =
@@ -265,7 +253,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testGetAccessModifierFromModifiersToken() throws Exception {
         final DetailAST interfaceDef = getNodeFromFile(TokenTypes.INTERFACE_DEF);
         final AccessModifierOption modifierInterface = CheckUtil
@@ -305,7 +292,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
             .isEqualTo(AccessModifierOption.PACKAGE);
     }
 
-    @Test
     public void testGetFirstNode() throws Exception {
         final DetailAST classDef = getNodeFromFile(TokenTypes.CLASS_DEF);
 
@@ -316,7 +302,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
             .isEqualTo(firstChild);
     }
 
-    @Test
     public void testGetFirstNode1() {
         final DetailAstImpl child = new DetailAstImpl();
         child.setLineNo(5);
@@ -334,7 +319,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
             .isEqualTo(root);
     }
 
-    @Test
     public void testGetFirstNode2() {
         final DetailAstImpl child = new DetailAstImpl();
         child.setLineNo(6);
@@ -352,7 +336,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
             .isEqualTo(root);
     }
 
-    @Test
     public void testIsReceiverParameter() throws Exception {
         final DetailAST objBlock = getNodeFromFile(TokenTypes.OBJBLOCK);
         final DetailAST methodWithReceiverParameter = objBlock.getLastChild().getPreviousSibling()
@@ -370,7 +353,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testParseDoubleFloatingPointValues() {
         assertWithMessage("Invalid parse result")
             .that(CheckUtil.parseDouble("-0.05f", TokenTypes.NUM_FLOAT))
@@ -392,7 +374,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
             .isEqualTo(Double.NaN);
     }
 
-    @Test
     public void testParseDoubleIntegerValues() {
         assertWithMessage("Invalid parse result")
             .that(CheckUtil.parseDouble("0L", TokenTypes.NUM_LONG))
@@ -429,7 +410,6 @@ public class CheckUtilTest extends AbstractPathTestSupport {
             .isEqualTo(59.0);
     }
 
-    @Test
     public void testParseClassNames() {
         final Set<String> actual = CheckUtil.parseClassNames(
                 "I.am.class.name.with.dot.in.the.end.", "ClassOnly", "my.Class");

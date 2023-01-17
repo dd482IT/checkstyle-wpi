@@ -36,7 +36,6 @@ public class JavadocTagContinuationIndentationCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/javadoctagcontinuationindentation";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final JavadocTagContinuationIndentationCheck checkObj =
             new JavadocTagContinuationIndentationCheck();
@@ -46,7 +45,6 @@ public class JavadocTagContinuationIndentationCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testFp() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -54,7 +52,6 @@ public class JavadocTagContinuationIndentationCheckTest
                expected);
     }
 
-    @Test
     public void testCheck() throws Exception {
         final String[] expected = {
             "55: " + getCheckMessage(MSG_KEY, 4),
@@ -77,7 +74,6 @@ public class JavadocTagContinuationIndentationCheckTest
                 expected);
     }
 
-    @Test
     public void testCheckWithOffset3() throws Exception {
         final String[] expected = {
             "15: " + getCheckMessage(MSG_KEY, 3),
@@ -88,7 +84,6 @@ public class JavadocTagContinuationIndentationCheckTest
                 expected);
     }
 
-    @Test
     public void testCheckWithDescription() throws Exception {
         final String[] expected = {
             "16: " + getCheckMessage(MSG_KEY, 4),
@@ -103,7 +98,6 @@ public class JavadocTagContinuationIndentationCheckTest
                 expected);
     }
 
-    @Test
     public void testBlockTag() throws Exception {
         final String[] expected = {
             "21: " + getCheckMessage(MSG_KEY, 4),

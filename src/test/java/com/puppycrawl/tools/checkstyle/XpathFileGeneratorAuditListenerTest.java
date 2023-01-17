@@ -92,7 +92,6 @@ public class XpathFileGeneratorAuditListenerTest {
         astFilter.accept(event4);
     }
 
-    @Test
     public void testFinishLocalSetup() {
         final OutputStream out = new ByteArrayOutputStream();
         final XpathFileGeneratorAuditListener listener =
@@ -107,7 +106,6 @@ public class XpathFileGeneratorAuditListenerTest {
             .isEmpty();
     }
 
-    @Test
     public void testFileStarted() {
         final OutputStream out = new ByteArrayOutputStream();
         final XpathFileGeneratorAuditListener listener =
@@ -121,7 +119,6 @@ public class XpathFileGeneratorAuditListenerTest {
             .isEmpty();
     }
 
-    @Test
     public void testFileFinished() {
         final OutputStream out = new ByteArrayOutputStream();
         final XpathFileGeneratorAuditListener listener =
@@ -135,7 +132,6 @@ public class XpathFileGeneratorAuditListenerTest {
             .isEmpty();
     }
 
-    @Test
     public void testAddException() {
         final OutputStream out = new ByteArrayOutputStream();
         final XpathFileGeneratorAuditListener logger =
@@ -157,7 +153,6 @@ public class XpathFileGeneratorAuditListenerTest {
         }
     }
 
-    @Test
     public void testCorrectOne() {
         final AuditEvent event = createAuditEvent("InputXpathFileGeneratorAuditListener.java",
                 FIRST_MESSAGE);
@@ -181,7 +176,6 @@ public class XpathFileGeneratorAuditListenerTest {
         verifyOutput(expected, event);
     }
 
-    @Test
     public void testCorrectTwo() {
         final AuditEvent event1 = createAuditEvent("InputXpathFileGeneratorAuditListener.java",
                 SECOND_MESSAGE);
@@ -214,7 +208,6 @@ public class XpathFileGeneratorAuditListenerTest {
         verifyOutput(expected, event1, event2);
     }
 
-    @Test
     public void testOnlyOneMatching() {
         final AuditEvent event1 = createAuditEvent("InputXpathFileGeneratorAuditListener.java",
                 10, 5, MethodParamPadCheck.class);
@@ -243,7 +236,6 @@ public class XpathFileGeneratorAuditListenerTest {
         verifyOutput(expected, event1, event2, event3);
     }
 
-    @Test
     public void testCloseStream() {
         final XpathFileGeneratorAuditListener listener =
                 new XpathFileGeneratorAuditListener(outStream,
@@ -257,7 +249,6 @@ public class XpathFileGeneratorAuditListenerTest {
             .isEqualTo(1);
     }
 
-    @Test
     public void testNoCloseStream() {
         final XpathFileGeneratorAuditListener listener =
                 new XpathFileGeneratorAuditListener(outStream,

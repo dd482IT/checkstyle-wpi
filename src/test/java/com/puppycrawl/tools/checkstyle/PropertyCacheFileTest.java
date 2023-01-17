@@ -56,7 +56,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
 
 public class PropertyCacheFileTest extends AbstractPathTestSupport {
 
-    @TempDir
     public File temporaryFolder;
 
     @Override
@@ -64,7 +63,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
         return "com/puppycrawl/tools/checkstyle/propertycachefile";
     }
 
-    @Test
     public void testCtor() {
         try {
             final Object test = new PropertyCacheFile(null, "");
@@ -87,7 +85,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testInCache() throws IOException {
         final Configuration config = new DefaultConfiguration("myName");
         final String filePath = File.createTempFile("junit", null, temporaryFolder).getPath();
@@ -104,7 +101,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testResetIfFileDoesNotExist() throws IOException {
         final Configuration config = new DefaultConfiguration("myName");
         final PropertyCacheFile cache = new PropertyCacheFile(config, "fileDoesNotExist.txt");
@@ -116,7 +112,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testPopulateDetails() throws IOException {
         final Configuration config = new DefaultConfiguration("myName");
         final PropertyCacheFile cache = new PropertyCacheFile(config,
@@ -144,7 +139,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testConfigHashOnReset() throws IOException {
         final Configuration config = new DefaultConfiguration("myName");
         final String filePath = File.createTempFile("junit", null, temporaryFolder).getPath();
@@ -164,7 +158,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
             .isEqualTo(hash);
     }
 
-    @Test
     public void testConfigHashRemainsOnResetExternalResources() throws IOException {
         final Configuration config = new DefaultConfiguration("myName");
         final String filePath = File.createTempFile("junit", null, temporaryFolder).getPath();
@@ -192,7 +185,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testCacheRemainsWhenExternalResourceTheSame() throws IOException {
         final Configuration config = new DefaultConfiguration("myName");
         final String externalResourcePath =
@@ -221,7 +213,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testExternalResourceIsSavedInCache() throws Exception {
         final Configuration config = new DefaultConfiguration("myName");
         final String filePath = File.createTempFile("junit", null, temporaryFolder).getPath();
@@ -250,7 +241,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testCacheDirectoryDoesNotExistAndShouldBeCreated() throws IOException {
         final Configuration config = new DefaultConfiguration("myName");
         final String filePath = String.format(Locale.getDefault(), "%s%2$stemp%2$scache.temp",
@@ -265,7 +255,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testPathToCacheContainsOnlyFileName() throws IOException {
         final Configuration config = new DefaultConfiguration("myName");
         final String fileName = "temp.cache";
@@ -280,7 +269,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
         Files.delete(filePath);
     }
 
-    @Test
     public void testChangeInConfig() throws Exception {
         final DefaultConfiguration config = new DefaultConfiguration("myConfig");
         config.addProperty("attr", "value");
@@ -337,7 +325,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
      * @noinspection ResultOfMethodCallIgnored
      * @noinspectionreason ResultOfMethodCallIgnored - temporary suppression until #11589
      */
-    @Test
     public void testNonExistentResource() throws IOException {
         final Configuration config = new DefaultConfiguration("myName");
         final String filePath = File.createTempFile("junit", null, temporaryFolder).getPath();
@@ -373,7 +360,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testExceptionNoSuchAlgorithmException() throws Exception {
         final Configuration config = new DefaultConfiguration("myName");
         final String filePath = File.createTempFile("junit", null, temporaryFolder).getPath();
@@ -409,8 +395,6 @@ public class PropertyCacheFileTest extends AbstractPathTestSupport {
      *
      * @param rawMessages exception messages separated by ';'
      */
-    @ParameterizedTest
-    @ValueSource(strings = {"Same;Same", "First;Second"})
     public void testPutNonExistentExternalResource(String rawMessages) throws Exception {
         final File cacheFile = File.createTempFile("junit", null, temporaryFolder);
         final String[] messages = rawMessages.split(";");

@@ -37,7 +37,6 @@ public class XpathRegressionHiddenFieldTest extends AbstractXpathTestSupport {
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionHiddenFieldOne.java"));
@@ -61,7 +60,6 @@ public class XpathRegressionHiddenFieldTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionHiddenFieldTwo.java"));

@@ -15,18 +15,18 @@ import java.lang.annotation.Repeatable;
 
 class InputAnnotationLocationParameterized {
 
-    @Annotation void singleParameterless() {} // violation '.* should be alone on line.'
+    void singleParameterless() {} // violation '.* should be alone on line.'
 
-    @Annotation @Annotation void multipleParameterless() {} // 2 violations
+    void multipleParameterless() {} // 2 violations
 
-    @Annotation("") void parameterized() {}
+    void parameterized() {}
 
-    @Annotation(value = "") void namedParameterized() {}
+    void namedParameterized() {}
 
-    @Annotation @Annotation("") @Annotation(value = "") void multiple() {} // 3 violations
+    void multiple() {} // 3 violations
 
     // violation below 'Annotation 'Annotation' should be alone on line.'
-    @Annotation("") @Annotation(value = "") void multipleParametrized() {}
+    void multipleParametrized() {}
 
     @Repeatable(Annotations.class)
     @interface Annotation {

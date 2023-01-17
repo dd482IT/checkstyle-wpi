@@ -25,7 +25,7 @@ public class InputNoWhitespaceAfterWithEmoji {
         return "😅🧐 dsad "; // ok
     }
     public String foo2() {
-        String str = (@ MyAnnotation String) "🤩dsa😂adsad"; // 2 violations
+        String str = (String) "🤩dsa😂adsad"; // 2 violations
         String str3 = str + "😂" + "sadsa" +"😅🧐" +    " " ;
         return("  🎄😂  ");
     }

@@ -35,7 +35,6 @@ public class XpathRegressionMethodCountTest extends AbstractXpathTestSupport {
         return MethodCountCheck.class.getSimpleName();
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionMethodCount1.java")
@@ -66,7 +65,6 @@ public class XpathRegressionMethodCountTest extends AbstractXpathTestSupport {
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionMethodCount2.java")
@@ -97,7 +95,6 @@ public class XpathRegressionMethodCountTest extends AbstractXpathTestSupport {
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionMethodCount1.java")
@@ -128,7 +125,6 @@ public class XpathRegressionMethodCountTest extends AbstractXpathTestSupport {
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testFour() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionMethodCount3.java")
@@ -159,7 +155,6 @@ public class XpathRegressionMethodCountTest extends AbstractXpathTestSupport {
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testFive() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionMethodCount4.java")

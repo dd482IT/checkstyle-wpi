@@ -37,7 +37,6 @@ public class MethodNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/methodname";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final MethodNameCheck checkObj = new MethodNameCheck();
         final int[] expected = {TokenTypes.METHOD_DEF};
@@ -46,7 +45,6 @@ public class MethodNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault()
             throws Exception {
 
@@ -59,7 +57,6 @@ public class MethodNameCheckTest
                 getPath("InputMethodNameSimple.java"), expected);
     }
 
-    @Test
     public void testMethodEqClass() throws Exception {
 
         final String pattern = "^[a-z][a-zA-Z0-9]*$";
@@ -87,7 +84,6 @@ public class MethodNameCheckTest
                 getPath("InputMethodNameEqualClassName.java"), expected);
     }
 
-    @Test
     public void testMethodEqClassAllow() throws Exception {
         final String pattern = "^[a-z][a-zA-Z0-9]*$";
 
@@ -109,7 +105,6 @@ public class MethodNameCheckTest
                 getPath("InputMethodNameEqualClassName2.java"), expected);
     }
 
-    @Test
     public void testAccessTuning() throws Exception {
         final String pattern = "^[a-z][a-zA-Z0-9]*$";
 
@@ -129,7 +124,6 @@ public class MethodNameCheckTest
                 getPath("InputMethodNameEqualClassName3.java"), expected);
     }
 
-    @Test
     public void testForNpe() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -138,7 +132,6 @@ public class MethodNameCheckTest
                 getPath("InputMethodNameExtra.java"), expected);
     }
 
-    @Test
     public void testOverriddenMethods() throws Exception {
 
         final String pattern = "^[a-z][a-zA-Z0-9]*$";
@@ -152,7 +145,6 @@ public class MethodNameCheckTest
                 getPath("InputMethodNameOverriddenMethods.java"), expected);
     }
 
-    @Test
     public void testInterfacesExcludePublic() throws Exception {
         final String pattern = "^[a-z][a-zA-Z0-9]*$";
 
@@ -166,7 +158,6 @@ public class MethodNameCheckTest
             expected);
     }
 
-    @Test
     public void testInterfacesExcludePrivate() throws Exception {
         final String pattern = "^[a-z][a-zA-Z0-9]*$";
 
@@ -182,7 +173,6 @@ public class MethodNameCheckTest
             expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final MethodNameCheck methodNameCheckObj = new MethodNameCheck();
         final int[] actual = methodNameCheckObj.getAcceptableTokens();
@@ -194,7 +184,6 @@ public class MethodNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testRecordInInterfaceBody() throws Exception {
 
         final String pattern = "^[a-z][a-zA-Z0-9]*$";

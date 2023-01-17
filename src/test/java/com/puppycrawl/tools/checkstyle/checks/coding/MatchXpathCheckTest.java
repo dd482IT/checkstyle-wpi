@@ -36,7 +36,6 @@ public class MatchXpathCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/matchxpath";
     }
 
-    @Test
     public void testCheckWithEmptyQuery()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -44,7 +43,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpath.java"), expected);
     }
 
-    @Test
     public void testNoStackoverflowError()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -52,7 +50,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpathNoStackoverflowError.java"), expected);
     }
 
-    @Test
     public void testCheckWithImplicitEmptyQuery()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -60,7 +57,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpath2.java"), expected);
     }
 
-    @Test
     public void testCheckWithMatchingMethodNames()
             throws Exception {
         final String[] expected = {
@@ -71,7 +67,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpath3.java"), expected);
     }
 
-    @Test
     public void testCheckWithNoMatchingMethodName()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -79,7 +74,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpath4.java"), expected);
     }
 
-    @Test
     public void testCheckWithSingleLineCommentsStartsWithSpace() throws Exception {
         final String[] expected = {
             "13:25: " + getCheckMessage(MatchXpathCheck.MSG_KEY),
@@ -89,7 +83,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpathSingleLineComments.java"), expected);
     }
 
-    @Test
     public void testCheckWithBlockComments() throws Exception {
         final String[] expected = {
             "12:5: " + getCheckMessage(MatchXpathCheck.MSG_KEY),
@@ -99,7 +92,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpathBlockComments.java"), expected);
     }
 
-    @Test
     public void testCheckWithMultilineComments() throws Exception {
         final String[] expected = {
             "14:5: " + getCheckMessage(MatchXpathCheck.MSG_KEY),
@@ -109,7 +101,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpathMultilineComments.java"), expected);
     }
 
-    @Test
     public void testCheckWithDoubleBraceInitialization()
             throws Exception {
         final String[] expected = {
@@ -119,7 +110,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpathDoubleBrace.java"), expected);
     }
 
-    @Test
     public void testImitateIllegalThrowsCheck()
             throws Exception {
         final String[] expected = {
@@ -131,7 +121,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpathIllegalThrows.java"), expected);
     }
 
-    @Test
     public void testImitateExecutableStatementCountCheck()
             throws Exception {
         final String[] expected = {
@@ -141,7 +130,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpathExecutableStatementCount.java"), expected);
     }
 
-    @Test
     public void testForbidPrintStackTrace()
             throws Exception {
         final String[] expected = {
@@ -151,7 +139,6 @@ public class MatchXpathCheckTest
                 getPath("InputMatchXpathForbidPrintStackTrace.java"), expected);
     }
 
-    @Test
     public void testForbidParameterizedConstructor()
             throws Exception {
         final String[] expected = {
@@ -163,7 +150,6 @@ public class MatchXpathCheckTest
                 expected);
     }
 
-    @Test
     public void testAvoidInstanceCreationWithoutVar()
             throws Exception {
         final String[] expected = {
@@ -174,7 +160,6 @@ public class MatchXpathCheckTest
                 expected);
     }
 
-    @Test
     public void testInvalidQuery() {
         final MatchXpathCheck matchXpathCheck = new MatchXpathCheck();
 
@@ -187,7 +172,6 @@ public class MatchXpathCheckTest
         }
     }
 
-    @Test
     public void testEvaluationException() {
         final MatchXpathCheck matchXpathCheck = new MatchXpathCheck();
         matchXpathCheck.setQuery("count(*) div 0");
@@ -207,7 +191,6 @@ public class MatchXpathCheckTest
         }
     }
 
-    @Test
     public void testGetDefaultTokens() {
         final MatchXpathCheck matchXpathCheck = new MatchXpathCheck();
         assertWithMessage("Expected empty array")
@@ -215,7 +198,6 @@ public class MatchXpathCheckTest
                 .isEmpty();
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final MatchXpathCheck matchXpathCheck = new MatchXpathCheck();
         assertWithMessage("Expected empty array")
@@ -223,7 +205,6 @@ public class MatchXpathCheckTest
                 .isEmpty();
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final MatchXpathCheck matchXpathCheck = new MatchXpathCheck();
         assertWithMessage("Expected empty array")

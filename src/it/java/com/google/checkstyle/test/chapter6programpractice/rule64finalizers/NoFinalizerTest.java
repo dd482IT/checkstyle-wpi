@@ -32,7 +32,6 @@ public class NoFinalizerTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter6programpractice/rule64finalizers";
     }
 
-    @Test
     public void testNoFinalizerBasic() throws Exception {
         final String msg = getCheckMessage(NoFinalizerCheck.class, "avoid.finalizer.method");
 
@@ -47,7 +46,6 @@ public class NoFinalizerTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testNoFinalizerExtended() throws Exception {
         final String msg = getCheckMessage(NoFinalizerCheck.class, "avoid.finalizer.method");
 

@@ -34,7 +34,6 @@ public class IllegalThrowsCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/illegalthrows";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -47,7 +46,6 @@ public class IllegalThrowsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalThrowsTestDefault.java"), expected);
     }
 
-    @Test
     public void testIllegalClassNames() throws Exception {
         // check that incorrect names don't break the Check
         final String[] expected = {
@@ -62,7 +60,6 @@ public class IllegalThrowsCheckTest extends AbstractModuleTestSupport {
     /**
      * Test to validate the IllegalThrowsCheck with ignoredMethodNames attribute.
      */
-    @Test
     public void testIgnoreMethodNames() throws Exception {
 
         final String[] expected = {
@@ -77,7 +74,6 @@ public class IllegalThrowsCheckTest extends AbstractModuleTestSupport {
     /**
      * Test to validate the IllegalThrowsCheck with both the attributes specified.
      */
-    @Test
     public void testIllegalClassNamesWithIgnoreMethodNames() throws Exception {
         final String[] expected = {
             "14:33: " + getCheckMessage(MSG_KEY, "NullPointerException"),
@@ -92,7 +88,6 @@ public class IllegalThrowsCheckTest extends AbstractModuleTestSupport {
      * Test to validate the IllegalThrowsCheck with <b>ignoreOverriddenMethods</b>
      * property.
      */
-    @Test
     public void testIgnoreOverriddenMethods() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -105,7 +100,6 @@ public class IllegalThrowsCheckTest extends AbstractModuleTestSupport {
      * Test to validate the IllegalThrowsCheck without <b>ignoreOverriddenMethods</b>
      * property.
      */
-    @Test
     public void testNotIgnoreOverriddenMethods() throws Exception {
 
         final String[] expected = {
@@ -117,7 +111,6 @@ public class IllegalThrowsCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalThrowsNotIgnoreOverriddenMethod.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final IllegalThrowsCheck check = new IllegalThrowsCheck();
         assertWithMessage("Acceptable tokens should not be null")

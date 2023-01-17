@@ -67,16 +67,13 @@ enum MyEnum2
 }
 
 class Bug21230032 {
-    @Rock(band = "GnR")
     private String band;
 
     class Inner {
-        @Rock(band = {"GnR"})
         private String band;
     }
 
     class Inner2 {
-        @Rock(band = {"Tool"})
         private String band;
     }
     /*     \m/(>.<)\m/     */

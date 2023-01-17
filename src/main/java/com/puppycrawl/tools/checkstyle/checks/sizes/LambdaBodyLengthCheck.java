@@ -138,7 +138,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 8.37
  */
-@StatelessCheck
 public class LambdaBodyLengthCheck extends AbstractCheck {
 
     /**

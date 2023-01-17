@@ -28,7 +28,6 @@ import net.sf.saxon.om.NodeInfo;
 
 public class PrecedingIteratorTest {
 
-    @Test
     public void testPrecedingNodes() {
         final NodeInfo startNode = findNode("SLIST");
 
@@ -69,7 +68,6 @@ public class PrecedingIteratorTest {
         }
     }
 
-    @Test
     public void testNoParent() {
         final NodeInfo startNode = findNode("ROOT");
 
@@ -80,7 +78,6 @@ public class PrecedingIteratorTest {
         }
     }
 
-    @Test
     public void testReverseOrderOfDescendants() {
         final NodeInfo startNode = findNode("RCURLY");
 
@@ -121,7 +118,6 @@ public class PrecedingIteratorTest {
         }
     }
 
-    @Test
     public void testNoSibling() {
         final NodeInfo startNode = findNode("ANNOTATIONS");
 

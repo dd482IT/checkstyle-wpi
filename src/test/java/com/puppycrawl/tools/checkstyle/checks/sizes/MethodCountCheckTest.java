@@ -39,7 +39,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/sizes/methodcount";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final MethodCountCheck checkObj = new MethodCountCheck();
         final int[] expected = {TokenTypes.METHOD_DEF};
@@ -48,7 +47,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final MethodCountCheck methodCountCheckObj =
             new MethodCountCheck();
@@ -68,7 +66,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefaults() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -77,7 +74,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMethodCount.java"), expected);
     }
 
-    @Test
     public void testThrees() throws Exception {
 
         final String[] expected = {
@@ -96,7 +92,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMethodCount1.java"), expected);
     }
 
-    @Test
     public void testEnum() throws Exception {
 
         final String[] expected = {
@@ -108,7 +103,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMethodCount2.java"), expected);
     }
 
-    @Test
     public void testWithPackageModifier() throws Exception {
 
         final String[] expected = {
@@ -119,7 +113,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMethodCount3.java"), expected);
     }
 
-    @Test
     public void testOnInterfaceDefinitionWithField() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -128,7 +121,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMethodCount4.java"), expected);
     }
 
-    @Test
     public void testWithInterfaceDefinitionInClass() throws Exception {
 
         final String[] expected = {
@@ -139,7 +131,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMethodCount5.java"), expected);
     }
 
-    @Test
     public void testPartialTokens() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -148,7 +139,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMethodCount6.java"), expected);
     }
 
-    @Test
     public void testCountMethodToCorrectDefinition() throws Exception {
 
         final String[] expected = {
@@ -159,7 +149,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMethodCount7.java"), expected);
     }
 
-    @Test
     public void testInterfaceMemberScopeIsPublic() throws Exception {
 
         final String[] expected = {
@@ -172,7 +161,6 @@ public class MethodCountCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testMethodCountRecords() throws Exception {
         final int max = 2;
 

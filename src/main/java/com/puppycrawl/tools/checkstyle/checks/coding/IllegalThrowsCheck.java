@@ -149,7 +149,6 @@ import com.puppycrawl.tools.checkstyle.utils.CheckUtil;
  *
  * @since 4.0
  */
-@StatelessCheck
 public final class IllegalThrowsCheck extends AbstractCheck {
 
     /**

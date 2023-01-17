@@ -33,7 +33,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  * or such spaces are forbidden.
  * </p>
  */
-@StatelessCheck
 public abstract class AbstractParenPadCheck
     extends AbstractCheck {
 

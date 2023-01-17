@@ -34,20 +34,17 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/singlespaceseparator";
     }
 
-    @Test
     public void testNoSpaceErrors() throws Exception {
         verifyWithInlineConfigParser(
                 getPath("InputSingleSpaceSeparatorNoErrors.java"),
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testNoStackoverflowError() throws Exception {
         verifyWithLimitedResources(getPath("InputSingleSpaceSeparatorNoStackoverflowError.java"),
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final SingleSpaceSeparatorCheck check = new SingleSpaceSeparatorCheck();
 
@@ -56,7 +53,6 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(CommonUtil.EMPTY_INT_ARRAY);
     }
 
-    @Test
     public void testSpaceErrors() throws Exception {
         final String[] expected = {
             "8:10: " + getCheckMessage(MSG_KEY),
@@ -97,7 +93,6 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSingleSpaceSeparatorErrors.java"), expected);
     }
 
-    @Test
     public void testSpaceErrorsAroundComments() throws Exception {
         final String[] expected = {
             "12:11: " + getCheckMessage(MSG_KEY),
@@ -112,7 +107,6 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSingleSpaceSeparatorComments.java"), expected);
     }
 
-    @Test
     public void testSpaceErrorsInChildNodes() throws Exception {
         final String[] expected = {
             "12:16: " + getCheckMessage(MSG_KEY),
@@ -122,7 +116,6 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSingleSpaceSeparatorChildNodes.java"), expected);
     }
 
-    @Test
     public void testMinColumnNo() throws Exception {
         final String[] expected = {
             "12:4: " + getCheckMessage(MSG_KEY),
@@ -132,7 +125,6 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSingleSpaceSeparatorMinColumnNo.java"), expected);
     }
 
-    @Test
     public void testWhitespaceInStartOfTheLine() throws Exception {
         final String[] expected = {
             "12:7: " + getCheckMessage(MSG_KEY),
@@ -142,7 +134,6 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSingleSpaceSeparatorStartOfTheLine.java"), expected);
     }
 
-    @Test
     public void testSpaceErrorsIfCommentsIgnored() throws Exception {
         final String[] expected = {
             "20:14: " + getCheckMessage(MSG_KEY),
@@ -152,7 +143,6 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSingleSpaceSeparatorComments2.java"), expected);
     }
 
-    @Test
     public void testEmpty() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -160,7 +150,6 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSingleSpaceSeparatorEmpty.java"), expected);
     }
 
-    @Test
     public void testSpaceErrorsWithEmoji() throws Exception {
         final String[] expected = {
             "14:18: " + getCheckMessage(MSG_KEY),
@@ -181,7 +170,6 @@ public class SingleSpaceSeparatorCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSingleSpaceSeparatorWithEmoji.java"), expected);
     }
 
-    @Test
     public void testSpaceErrorsAroundCommentsWithEmoji() throws Exception {
         final String[] expected = {
             "25:22: " + getCheckMessage(MSG_KEY),

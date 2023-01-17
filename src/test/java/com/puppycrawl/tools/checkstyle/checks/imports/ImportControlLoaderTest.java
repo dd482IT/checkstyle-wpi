@@ -49,7 +49,6 @@ public class ImportControlLoaderTest {
                 + "checkstyle/checks/imports/importcontrolloader/" + filename;
     }
 
-    @Test
     public void testLoad() throws CheckstyleException {
         final AbstractImportControl root =
                 ImportControlLoader.load(
@@ -59,7 +58,6 @@ public class ImportControlLoaderTest {
             .isNotNull();
     }
 
-    @Test
     public void testWrongFormatUri() throws Exception {
         try {
             ImportControlLoader.load(new URI("aaa://"
@@ -78,7 +76,6 @@ public class ImportControlLoaderTest {
         }
     }
 
-    @Test
     public void testExtraElementInConfig() throws Exception {
         final AbstractImportControl root =
                 ImportControlLoader.load(
@@ -88,7 +85,6 @@ public class ImportControlLoaderTest {
             .isNotNull();
     }
 
-    @Test
     // UT uses Reflection to avoid removing null-validation from static method
     public void testSafeGetThrowsException() {
         final AttributesImpl attr = new AttributesImpl() {
@@ -117,7 +113,6 @@ public class ImportControlLoaderTest {
         }
     }
 
-    @Test
     // UT uses Reflection to cover IOException from 'loader.parseInputSource(source);'
     // because this is possible situation (though highly unlikely), which depends on hardware
     // and is difficult to emulate
@@ -144,7 +139,6 @@ public class ImportControlLoaderTest {
         }
     }
 
-    @Test
     public void testInputStreamFailsOnRead() throws Exception {
         try (InputStream inputStream = mock(InputStream.class)) {
             final int available = doThrow(IOException.class).when(inputStream).available();

@@ -19,10 +19,10 @@ public class InputAnnotationLocationDeprecatedAndCustom {
     public class Annotation
     {
         @Deprecated // <--method, separate line
-        public void test(@MyAnnotation String s) { // ok
-            @MyAnnotation // <--variable, separate line
+        public void test(String s) { // ok
+            // <--variable, separate line
             Integer i;
-            for (@MyAnnotation char c : s.toCharArray()) { // ok
+            for (char c : s.toCharArray()) { // ok
             }
         }
     }
@@ -32,22 +32,22 @@ public class InputAnnotationLocationDeprecatedAndCustom {
             try {
                 // some code
             }
-            catch (@MyAnnotation Exception ex) {
+            catch (Exception ex) {
 
             }
         }
 
         public void foo2() {
-            for (@MyAnnotation int i = 0; i < 10; i++) {
+            for (int i = 0; i < 10; i++) {
 
             }
         }
 
         public void foo3() {
-            MathOperation c = (@MyAnnotation int a, @MyAnnotation int b) -> a + b;
+            MathOperation c = (int a, int b) -> a + b;
         }
 
-        public void foo4(@MyAnnotation int a, @MyAnnotation int b) {}
+        public void foo4(int a, int b) {}
 
         public void foo5(@SuppressWarnings("unchecked") int a) {}
     }

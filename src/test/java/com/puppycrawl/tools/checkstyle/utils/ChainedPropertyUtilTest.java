@@ -42,14 +42,12 @@ public class ChainedPropertyUtilTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/utils/chainedpropertyutil";
     }
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private.")
             .that(isUtilsClassHasPrivateConstructor(ChainedPropertyUtil.class))
             .isTrue();
     }
 
-    @Test
     public void testPropertyChaining() throws Exception {
         final File propertiesFile =
             new File(getPath("InputChainedPropertyUtil.properties"));
@@ -79,7 +77,6 @@ public class ChainedPropertyUtilTest extends AbstractModuleTestSupport {
             .isEqualTo("value");
     }
 
-    @Test
     public void testPropertyChainingPropertyNotFound() throws Exception {
         final File propertiesFile =
             new File(getPath("InputChainedPropertyUtilUndefinedProperty.properties"));
@@ -98,7 +95,6 @@ public class ChainedPropertyUtilTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testPropertyChainingRecursiveUnresolvable() throws Exception {
         final File propertiesFile =
             new File(getPath("InputChainedPropertyUtilRecursiveUnresolvable.properties"));

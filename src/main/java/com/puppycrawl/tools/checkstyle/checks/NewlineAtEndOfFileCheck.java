@@ -164,7 +164,6 @@ import com.puppycrawl.tools.checkstyle.api.FileText;
  *
  * @since 3.1
  */
-@StatelessCheck
 public class NewlineAtEndOfFileCheck
     extends AbstractFileSetCheck {
 

@@ -120,7 +120,6 @@ import com.puppycrawl.tools.checkstyle.utils.CheckUtil;
  *
  * @since 3.0
  */
-@FileStatefulCheck
 public class EqualsHashCodeCheck
         extends AbstractCheck {
 

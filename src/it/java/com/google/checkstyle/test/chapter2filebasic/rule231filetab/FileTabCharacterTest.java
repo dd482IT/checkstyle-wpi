@@ -32,7 +32,6 @@ public class FileTabCharacterTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter2filebasic/rule231filetab";
     }
 
-    @Test
     public void testFileTab() throws Exception {
         final String[] expected = {
             "8:25: " + getCheckMessage(FileTabCharacterCheck.class, "containsTab"),

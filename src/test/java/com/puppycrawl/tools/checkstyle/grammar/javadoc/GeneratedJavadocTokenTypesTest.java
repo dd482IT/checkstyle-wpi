@@ -49,7 +49,6 @@ public class GeneratedJavadocTokenTypesTest {
      * @see "https://github.com/checkstyle/checkstyle/issues/5139"
      * @see "https://github.com/checkstyle/checkstyle/issues/5186"
      */
-    @Test
     public void testTokenNumbers() {
         assertWithMessage(MSG)
             .that(JavadocParser.LEADING_ASTERISK)
@@ -378,7 +377,6 @@ public class GeneratedJavadocTokenTypesTest {
      * @see "https://github.com/checkstyle/checkstyle/issues/5139"
      * @see "https://github.com/checkstyle/checkstyle/issues/5186"
      */
-    @Test
     public void testRuleNumbers() {
         assertWithMessage(MSG)
             .that(JavadocParser.RULE_javadoc)

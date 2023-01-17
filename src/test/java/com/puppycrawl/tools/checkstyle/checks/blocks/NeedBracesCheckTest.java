@@ -33,7 +33,6 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/blocks/needbraces";
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "30:9: " + getCheckMessage(MSG_KEY_NEED_BRACES, "do"),
@@ -64,7 +63,6 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNeedBracesTestIt.java"), expected);
     }
 
-    @Test
     public void testItWithAllowsOn() throws Exception {
         final String[] expected = {
             "44:9: " + getCheckMessage(MSG_KEY_NEED_BRACES, "while"),
@@ -90,7 +88,6 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNeedBracesTestItWithAllowsOn.java"), expected);
     }
 
-    @Test
     public void testSingleLineStatements() throws Exception {
         final String[] expected = {
             "32:9: " + getCheckMessage(MSG_KEY_NEED_BRACES, "if"),
@@ -109,7 +106,6 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNeedBracesSingleLineStatements.java"), expected);
     }
 
-    @Test
     public void testSingleLineLambda() throws Exception {
         final String[] expected = {
             "16:29: " + getCheckMessage(MSG_KEY_NEED_BRACES, "->"),
@@ -121,7 +117,6 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNeedBracesTestSingleLineLambda.java"), expected);
     }
 
-    @Test
     public void testDoNotAllowSingleLineLambda() throws Exception {
         final String[] expected = {
             "14:28: " + getCheckMessage(MSG_KEY_NEED_BRACES, "->"),
@@ -135,7 +130,6 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNeedBracesTestNotAllowSingleLineLambda.java"), expected);
     }
 
-    @Test
     public void testSingleLineCaseDefault() throws Exception {
         final String[] expected = {
             "81:13: " + getCheckMessage(MSG_KEY_NEED_BRACES, "case"),
@@ -147,14 +141,12 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNeedBracesTestSingleLineCaseDefault.java"), expected);
     }
 
-    @Test
     public void testSingleLineCaseDefault2() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputNeedBracesTestSingleLineCaseDefault2.java"), expected);
     }
 
-    @Test
     public void testSingleLineCaseDefaultNoSingleLine() throws Exception {
         final String[] expected = {
             "18:9: " + getCheckMessage(MSG_KEY_NEED_BRACES, "case"),
@@ -168,14 +160,12 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNeedBracesTestCaseDefaultNoSingleLine.java"), expected);
     }
 
-    @Test
     public void testCycles() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputNeedBracesTestCycles.java"), expected);
     }
 
-    @Test
     public void testConditions() throws Exception {
         final String[] expected = {
             "50:9: " + getCheckMessage(MSG_KEY_NEED_BRACES, "case"),
@@ -186,7 +176,6 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNeedBracesTestConditions.java"), expected);
     }
 
-    @Test
     public void testAllowEmptyLoopBodyTrue() throws Exception {
         final String[] expected = {
             "106:9: " + getCheckMessage(MSG_KEY_NEED_BRACES, "if"),
@@ -195,7 +184,6 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNeedBracesLoopBodyTrue.java"), expected);
     }
 
-    @Test
     public void testAllowEmptyLoopBodyFalse() throws Exception {
         final String[] expected = {
             "19:9: " + getCheckMessage(MSG_KEY_NEED_BRACES, "while"),
@@ -220,14 +208,12 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNeedBracesLoopBodyFalse.java"), expected);
     }
 
-    @Test
     public void testEmptySingleLineDefaultStmt() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputNeedBracesEmptySingleLineDefaultStmt.java"), expected);
     }
 
-    @Test
     public void testNeedBracesSwitchExpressionNoSingleLine() throws Exception {
         final String[] expected = {
             "16:13: " + getCheckMessage(MSG_KEY_NEED_BRACES, "case"),
@@ -252,7 +238,6 @@ public class NeedBracesCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testNeedBracesSwitchExpression() throws Exception {
         final String[] expected = {
             "16:13: " + getCheckMessage(MSG_KEY_NEED_BRACES, "case"),

@@ -33,37 +33,26 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 public class InputVisibilityModifierAnnotated {
-    @Rule
     public TemporaryFolder publicJUnitRule = new TemporaryFolder();
 
-    @org.junit.Rule
     public TemporaryFolder fqPublicJUnitRule = new TemporaryFolder();
 
-    @VisibleForTesting
     public String googleCommonsAnnotatedPublic;
 
-    @VisibleForTesting
     String googleCommonsAnnotatedPackage;
 
-    @VisibleForTesting
     protected String googleCommonsAnnotatedProtected;
 
-    @com.google.common.annotations.VisibleForTesting
     public String fqGoogleCommonsAnnotatedPublic;
 
-    @com.google.common.annotations.VisibleForTesting
     String fqGoogleCommonsAnnotatedPackage;
 
-    @com.google.common.annotations.VisibleForTesting
     protected String fqGoogleCommonsAnnotatedProtected;
 
-    @CustomAnnotation
     public String customAnnotatedPublic; // violation
 
-    @CustomAnnotation
     String customAnnotatedPackage; // violation
 
-    @CustomAnnotation
     protected String customAnnotatedProtected; // violation
 
     public String unannotatedPublic; // violation
@@ -76,9 +65,7 @@ public class InputVisibilityModifierAnnotated {
     public @interface CustomAnnotation {
     }
 
-    @ClassRule
     public static TemporaryFolder publicJUnitClassRule = new TemporaryFolder();
 
-    @org.junit.ClassRule
     public static TemporaryFolder fqPublicJUnitClassRule = new TemporaryFolder();
 }

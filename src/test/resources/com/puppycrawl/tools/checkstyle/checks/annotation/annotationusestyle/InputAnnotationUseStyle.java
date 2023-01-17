@@ -10,7 +10,7 @@ trailingArrayComma = ignore
 package com.puppycrawl.tools.checkstyle.checks.annotation.annotationusestyle;
 
 @interface InputAnnotationUseStyle {
-    @Another32(value={"foo", "bar"}) //expanded // ok
+    //expanded // ok
     DOGS[] pooches();
 }
 

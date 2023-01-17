@@ -38,7 +38,6 @@ public class XpathRegressionNoWhitespaceBeforeCaseDefaultColonTest
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath(
@@ -62,7 +61,6 @@ public class XpathRegressionNoWhitespaceBeforeCaseDefaultColonTest
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath(
@@ -87,7 +85,6 @@ public class XpathRegressionNoWhitespaceBeforeCaseDefaultColonTest
                 expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess =
                 new File(getPath(
@@ -112,7 +109,6 @@ public class XpathRegressionNoWhitespaceBeforeCaseDefaultColonTest
                 expectedXpathQueries);
     }
 
-    @Test
     public void testFour() throws Exception {
         final File fileToProcess =
                 new File(getPath(

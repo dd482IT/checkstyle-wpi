@@ -222,7 +222,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 6.0
  */
-@StatelessCheck
 public class AnnotationLocationCheck extends AbstractCheck {
 
     /**

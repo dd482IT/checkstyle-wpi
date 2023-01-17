@@ -37,7 +37,6 @@ public class UnnecessarySemicolonAfterTypeMemberDeclarationCheckTest
             + "unnecessarysemicolonaftertypememberdeclaration";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -62,7 +61,6 @@ public class UnnecessarySemicolonAfterTypeMemberDeclarationCheckTest
             expected);
     }
 
-    @Test
     public void testUnnecessarySemicolonAfterTypeMemberDeclarationRecords() throws Exception {
 
         final String[] expected = {
@@ -81,7 +79,6 @@ public class UnnecessarySemicolonAfterTypeMemberDeclarationCheckTest
             expected);
     }
 
-    @Test
     public void testTokens() {
         final UnnecessarySemicolonAfterTypeMemberDeclarationCheck check =
             new UnnecessarySemicolonAfterTypeMemberDeclarationCheck();

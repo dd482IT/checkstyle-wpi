@@ -39,7 +39,7 @@ public class InputJava14Records // ok
 
     // Simple Annotated Record components
     public @interface NonNull1 {}
-    public record AnnotatedBinaryNode(@Native @NonNull1 Node left, @NonNull1 Node right) { }
+    public record AnnotatedBinaryNode(@Native Node left, Node right) { }
 
     public interface Coords {
         public double x();
@@ -91,7 +91,6 @@ public class InputJava14Records // ok
     }
 
     public record ThingAnnotatedConstructor(String name1, String name2) {
-        @NonNull1
         public ThingAnnotatedConstructor {
             Objects.requireNonNull(name1);
             Objects.requireNonNull(name2);

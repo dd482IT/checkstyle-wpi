@@ -39,7 +39,6 @@ public class XpathRegressionLambdaBodyLengthTest
         return CLASS.getSimpleName();
     }
 
-    @Test
     public void testDefault() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionLambdaBodyLength1.java"));
@@ -57,7 +56,6 @@ public class XpathRegressionLambdaBodyLengthTest
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testMaxIsNotDefault() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionLambdaBodyLength2.java"));

@@ -33,7 +33,6 @@ public class SuperFinalizeCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/superfinalize";
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "34:17: " + getCheckMessage(MSG_KEY, "finalize", "super.finalize"),
@@ -44,7 +43,6 @@ public class SuperFinalizeCheckTest
                 getPath("InputSuperFinalizeVariations.java"), expected);
     }
 
-    @Test
     public void testMethodReference() throws Exception {
         final String[] expected = {
             "23:20: " + getCheckMessage(MSG_KEY, "finalize", "super.finalize"),

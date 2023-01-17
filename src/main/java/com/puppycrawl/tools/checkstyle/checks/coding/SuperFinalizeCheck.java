@@ -67,7 +67,6 @@ import com.puppycrawl.tools.checkstyle.StatelessCheck;
  *
  * @since 3.2
  */
-@StatelessCheck
 public class SuperFinalizeCheck extends AbstractSuperCheck {
 
     @Override

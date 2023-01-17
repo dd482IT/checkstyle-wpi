@@ -198,7 +198,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 3.0
  */
-@GlobalStatefulCheck
 public class TranslationCheck extends AbstractFileSetCheck {
 
     /**

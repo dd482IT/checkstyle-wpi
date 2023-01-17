@@ -102,7 +102,6 @@ public class SuppressionCommentFilterTest
         return "com/puppycrawl/tools/checkstyle/filters/suppressioncommentfilter";
     }
 
-    @Test
     public void testNone() throws Exception {
         final String[] messages = {
             "35:17: "
@@ -160,7 +159,6 @@ public class SuppressionCommentFilterTest
     }
 
     // Suppress all checks between default comments
-    @Test
     public void testDefault() throws Exception {
         final String[] suppressed = {
             "48:17: "
@@ -179,7 +177,6 @@ public class SuppressionCommentFilterTest
         verifySuppressedWithParser("InputSuppressionCommentFilter2.java", suppressed);
     }
 
-    @Test
     public void testCheckC() throws Exception {
         final String[] suppressed = {
             "75:17: "
@@ -193,7 +190,6 @@ public class SuppressionCommentFilterTest
         verifySuppressedWithParser("InputSuppressionCommentFilter3.java", suppressed);
     }
 
-    @Test
     public void testCheckCpp() throws Exception {
         final String[] suppressed = {
             "48:17: "
@@ -206,7 +202,6 @@ public class SuppressionCommentFilterTest
     }
 
     // Suppress all checks between CS_OFF and CS_ON
-    @Test
     public void testOffFormat() throws Exception {
         final String[] suppressed = {
             "64:17: "
@@ -227,7 +222,6 @@ public class SuppressionCommentFilterTest
 
     // Test suppression of checks of only one type
     //  Suppress only ConstantNameCheck between CS_OFF and CS_ON
-    @Test
     public void testOffFormatCheck() throws Exception {
         final String[] suppressed = {
             "71:30: "
@@ -237,7 +231,6 @@ public class SuppressionCommentFilterTest
         verifySuppressedWithParser("InputSuppressionCommentFilter6.java", suppressed);
     }
 
-    @Test
     public void testArgumentSuppression() throws Exception {
         final String[] suppressed = {
             "110:11: "
@@ -246,7 +239,6 @@ public class SuppressionCommentFilterTest
         verifySuppressedWithParser("InputSuppressionCommentFilter7.java", suppressed);
     }
 
-    @Test
     public void testExpansion() throws Exception {
         final String[] suppressed = {
             "54:17: "
@@ -262,7 +254,6 @@ public class SuppressionCommentFilterTest
         verifySuppressedWithParser("InputSuppressionCommentFilter8.java", suppressed);
     }
 
-    @Test
     public void testMessage() throws Exception {
         final String[] suppressed = CommonUtil.EMPTY_STRING_ARRAY;
         verifySuppressedWithParser("InputSuppressionCommentFilter9.java", suppressed);
@@ -281,7 +272,6 @@ public class SuppressionCommentFilterTest
                 removeSuppressed(messages, suppressed));
     }
 
-    @Test
     public void testEqualsAndHashCodeOfTagClass() {
         final Object tag = getTagsAfterExecutionOnDefaultFilter("//CHECKSTYLE:OFF").get(0);
         final EqualsVerifierReport ev = EqualsVerifier.forClass(tag.getClass())
@@ -291,7 +281,6 @@ public class SuppressionCommentFilterTest
                 .isTrue();
     }
 
-    @Test
     public void testToStringOfTagClass() {
         final Object tag = getTagsAfterExecutionOnDefaultFilter("//CHECKSTYLE:OFF").get(0);
         assertWithMessage("Invalid toString result")
@@ -300,7 +289,6 @@ public class SuppressionCommentFilterTest
                     + " tagCheckRegexp=.*, tagMessageRegexp=null, tagIdRegexp=null]");
     }
 
-    @Test
     public void testToStringOfTagClassWithMessage() {
         final SuppressionCommentFilter filter = new SuppressionCommentFilter();
         filter.setMessageFormat(".*");
@@ -312,7 +300,6 @@ public class SuppressionCommentFilterTest
                 + " tagCheckRegexp=.*, tagMessageRegexp=.*, tagIdRegexp=null]");
     }
 
-    @Test
     public void testCompareToOfTagClass() {
         final List<Comparable<Object>> tags1 =
                 getTagsAfterExecutionOnDefaultFilter("//CHECKSTYLE:OFF", " //CHECKSTYLE:ON");
@@ -345,7 +332,6 @@ public class SuppressionCommentFilterTest
             .isEqualTo(0);
     }
 
-    @Test
     public void testInvalidCheckFormat() throws Exception {
         final DefaultConfiguration treeWalkerConfig =
             createModuleConfig(TreeWalker.class);
@@ -370,7 +356,6 @@ public class SuppressionCommentFilterTest
         }
     }
 
-    @Test
     public void testInvalidMessageFormat() throws Exception {
         final DefaultConfiguration treeWalkerConfig =
             createModuleConfig(TreeWalker.class);
@@ -395,7 +380,6 @@ public class SuppressionCommentFilterTest
         }
     }
 
-    @Test
     public void testAcceptNullViolation() {
         final SuppressionCommentFilter filter = new SuppressionCommentFilter();
         final FileContents contents = new FileContents(new FileText(new File("filename"),
@@ -411,7 +395,6 @@ public class SuppressionCommentFilterTest
             .isNull();
     }
 
-    @Test
     public void testAcceptNullFileContents() {
         final SuppressionCommentFilter filter = new SuppressionCommentFilter();
         final FileContents contents = null;
@@ -422,7 +405,6 @@ public class SuppressionCommentFilterTest
                 .isTrue();
     }
 
-    @Test
     public void testSuppressByCheck() throws Exception {
         final String[] suppressedViolation = {
             "42:17: "
@@ -457,7 +439,6 @@ public class SuppressionCommentFilterTest
                 expectedViolation, suppressedViolation);
     }
 
-    @Test
     public void testSuppressById() throws Exception {
         final String[] suppressedViolation = {
             "42:17: "
@@ -492,7 +473,6 @@ public class SuppressionCommentFilterTest
                 expectedViolation, suppressedViolation);
     }
 
-    @Test
     public void testSuppressByCheckAndId() throws Exception {
         final String[] suppressedViolation = {
             "42:17: "
@@ -527,7 +507,6 @@ public class SuppressionCommentFilterTest
                 expectedViolation, suppressedViolation);
     }
 
-    @Test
     public void testSuppressByIdAndMessage() throws Exception {
         final String[] suppressedViolation = {
             "54:17: "
@@ -559,7 +538,6 @@ public class SuppressionCommentFilterTest
                 expectedViolation, suppressedViolation);
     }
 
-    @Test
     public void testSuppressByCheckAndMessage() throws Exception {
         final String[] suppressedViolation = {
             "54:17: "
@@ -591,7 +569,6 @@ public class SuppressionCommentFilterTest
                 expectedViolation, suppressedViolation);
     }
 
-    @Test
     public void testFindNearestMatchDontAllowSameColumn() {
         final SuppressionCommentFilter suppressionCommentFilter = new SuppressionCommentFilter();
         final FileContents contents = new FileContents(new FileText(new File("filename"),
@@ -605,7 +582,6 @@ public class SuppressionCommentFilterTest
             .isFalse();
     }
 
-    @Test
     public void testTagsAreClearedEachRun() {
         final SuppressionCommentFilter suppressionCommentFilter = new SuppressionCommentFilter();
         final List<?> tags1 = getTagsAfterExecution(suppressionCommentFilter,

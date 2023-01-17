@@ -20,7 +20,6 @@ public class InputMissingJavadocMethodsNotSkipWritten { // ok
      * @param BAD
      *            This param doesn't exist.
      */
-    @MyAnnotation
     public void InputMissingJavadocMethodsNotSkipWritten() {
     }
 
@@ -30,17 +29,14 @@ public class InputMissingJavadocMethodsNotSkipWritten { // ok
      * @param BAD
      *            This param doesn't exist.
      */
-    @MyAnnotation
     public void test() {
     }
 
     /** Description. */
-    @MyAnnotation
     public void test2() {
     }
 
     /** Description. */
-    @MyAnnotation
     public String test3(int a) throws Exception {
         return "";
     }

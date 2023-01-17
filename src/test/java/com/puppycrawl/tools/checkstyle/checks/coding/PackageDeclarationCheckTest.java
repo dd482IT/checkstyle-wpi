@@ -37,7 +37,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/packagedeclaration";
     }
 
-    @Test
     public void testDefaultNoPackage() throws Exception {
 
         final String[] expected = {
@@ -48,7 +47,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputPackageDeclarationNoPackage.java"), expected);
     }
 
-    @Test
     public void testDefaultWithPackage() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -57,7 +55,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputPackageDeclarationPlain.java"), expected);
     }
 
-    @Test
     public void testOnFileWithCommentOnly() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -66,7 +63,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputPackageDeclarationWithCommentOnly.java"), expected);
     }
 
-    @Test
     public void testFileForDiffDirectoryMismatch() throws Exception {
 
         final String[] expected = {
@@ -77,7 +73,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputPackageDeclarationDiffDirectory.java"), expected);
     }
 
-    @Test
     public void testFileForDirectoryMismatchAtParent() throws Exception {
 
         final String[] expected = {
@@ -89,7 +84,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testFileForDirectoryMismatchAtSubpackage() throws Exception {
 
         final String[] expected = {
@@ -101,7 +95,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testFileIgnoreDiffDirectoryMismatch() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -110,7 +103,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testFileIgnoreDirectoryMismatchAtParent() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -119,7 +111,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testFileIgnoreDirectoryMismatchAtSubpackage() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -128,7 +119,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testNoPackage() throws Exception {
         final String[] expected = {
             "9:1: " + getCheckMessage(MSG_KEY_MISSING),
@@ -139,8 +129,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @SuppressForbidden
-    @Test
     public void testEmptyFile() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(PackageDeclarationCheck.class);
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -150,7 +138,6 @@ public class PackageDeclarationCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final PackageDeclarationCheck check = new PackageDeclarationCheck();
         assertWithMessage("Acceptable tokens should not be null")

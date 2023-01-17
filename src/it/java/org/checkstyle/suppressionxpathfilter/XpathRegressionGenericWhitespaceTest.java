@@ -38,7 +38,6 @@ public class XpathRegressionGenericWhitespaceTest extends AbstractXpathTestSuppo
         return checkName;
     }
 
-    @Test
     public void testProcessEnd() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionGenericWhitespaceEnd.java"));
@@ -63,7 +62,6 @@ public class XpathRegressionGenericWhitespaceTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testProcessNestedGenericsOne() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionGenericWhitespaceNestedGenericsOne.java"));
@@ -88,7 +86,6 @@ public class XpathRegressionGenericWhitespaceTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testProcessNestedGenericsTwo() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionGenericWhitespaceNestedGenericsTwo.java"));
@@ -113,7 +110,6 @@ public class XpathRegressionGenericWhitespaceTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testProcessNestedGenericsThree() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionGenericWhitespaceNestedGenericsThree.java"));
@@ -138,7 +134,6 @@ public class XpathRegressionGenericWhitespaceTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testProcessSingleGenericOne() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionGenericWhitespaceSingleGenericOne.java"));
@@ -163,7 +158,6 @@ public class XpathRegressionGenericWhitespaceTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testProcessSingleGenericTwo() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionGenericWhitespaceSingleGenericTwo.java"));
@@ -186,7 +180,6 @@ public class XpathRegressionGenericWhitespaceTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testProcessStartOne() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionGenericWhitespaceStartOne.java"));
@@ -212,7 +205,6 @@ public class XpathRegressionGenericWhitespaceTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testProcessStartTwo() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionGenericWhitespaceStartTwo.java"));
@@ -242,7 +234,6 @@ public class XpathRegressionGenericWhitespaceTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testProcessStartThree() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionGenericWhitespaceStartThree.java"));

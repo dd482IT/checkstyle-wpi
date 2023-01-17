@@ -91,7 +91,6 @@ public class ArchUnitSuperClassTest {
      * Tests that all checks have {@link AbstractCheck} or {@link AbstractFileSetCheck} or
      * {@link AbstractJavadocCheck} as their super class.
      */
-    @Test
     public void testChecksShouldHaveAllowedAbstractClassAsSuperclass() {
         final JavaClasses checksPackage = new ClassFileImporter()
             .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)

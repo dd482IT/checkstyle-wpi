@@ -40,7 +40,6 @@ import com.puppycrawl.tools.checkstyle.api.Violation;
 
 public class SuppressionFilterTest extends AbstractModuleTestSupport {
 
-    @TempDir
     public File temporaryFolder;
 
     @Override
@@ -48,7 +47,6 @@ public class SuppressionFilterTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/filters/suppressionfilter";
     }
 
-    @Test
     public void testAccept() throws Exception {
         final String fileName = getPath("InputSuppressionFilterNone.xml");
         final boolean optional = false;
@@ -61,7 +59,6 @@ public class SuppressionFilterTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testAcceptFalse() throws Exception {
         final String fileName = getPath("InputSuppressionFilterSuppress.xml");
         final boolean optional = false;
@@ -76,7 +73,6 @@ public class SuppressionFilterTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testAcceptOnNullFile() throws CheckstyleException {
         final String fileName = null;
         final boolean optional = false;
@@ -88,7 +84,6 @@ public class SuppressionFilterTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testNonExistentSuppressionFileWithFalseOptional() {
         final String fileName = "non_existent_suppression_file.xml";
         try {
@@ -103,7 +98,6 @@ public class SuppressionFilterTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testExistingInvalidSuppressionFileWithTrueOptional() throws IOException {
         final String fileName = getPath("InputSuppressionFilterInvalidFile.xml");
         try {
@@ -119,7 +113,6 @@ public class SuppressionFilterTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testExistingSuppressionFileWithTrueOptional() throws Exception {
         final String fileName = getPath("InputSuppressionFilterNone.xml");
         final boolean optional = true;
@@ -132,7 +125,6 @@ public class SuppressionFilterTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testNonExistentSuppressionFileWithTrueOptional() throws Exception {
         final String fileName = "non_existent_suppression_file.xml";
         final boolean optional = true;
@@ -145,7 +137,6 @@ public class SuppressionFilterTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testNonExistentSuppressionUrlWithTrueOptional() throws Exception {
         final String fileName =
                 "https://checkstyle.org/non_existent_suppression.xml";
@@ -159,7 +150,6 @@ public class SuppressionFilterTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testUseCacheLocalFileExternalResourceContentDoesNotChange() throws Exception {
         final DefaultConfiguration filterConfig = createModuleConfig(SuppressionFilter.class);
         filterConfig.addProperty("file", getPath("InputSuppressionFilterNone.xml"));
@@ -175,7 +165,6 @@ public class SuppressionFilterTest extends AbstractModuleTestSupport {
         execute(checkerConfig, filePath);
     }
 
-    @Test
     public void testUseCacheRemoteFileExternalResourceContentDoesNotChange() throws Exception {
         final String[] urlCandidates = {
             "https://checkstyle.org/files/suppressions_none.xml",

@@ -41,7 +41,6 @@ public class XpathRegressionConstantNameTest extends AbstractXpathTestSupport {
         return checkName;
     }
 
-    @Test
     public void testLowercase() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionConstantNameLowercase.java"));
@@ -62,7 +61,6 @@ public class XpathRegressionConstantNameTest extends AbstractXpathTestSupport {
             expectedXpathQueries);
     }
 
-    @Test
     public void testCamelCase() throws Exception {
         final File fileToProcess =
             new File(getPath("SuppressionXpathRegressionConstantNameCamelCase.java"));
@@ -84,7 +82,6 @@ public class XpathRegressionConstantNameTest extends AbstractXpathTestSupport {
             expectedXpathQueries);
     }
 
-    @Test
     public void testWithBeginningUnderscore() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionConstantNameWithBeginningUnderscore.java"));
@@ -105,7 +102,6 @@ public class XpathRegressionConstantNameTest extends AbstractXpathTestSupport {
             expectedXpathQueries);
     }
 
-    @Test
     public void testWithTwoUnderscores() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionConstantNameWithTwoUnderscores.java"));

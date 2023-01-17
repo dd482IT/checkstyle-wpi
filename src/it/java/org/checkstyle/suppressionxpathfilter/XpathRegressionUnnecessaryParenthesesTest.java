@@ -36,7 +36,6 @@ public class XpathRegressionUnnecessaryParenthesesTest extends AbstractXpathTest
         return UnnecessaryParenthesesCheck.class.getSimpleName();
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionUnnecessaryParentheses1.java")
@@ -65,7 +64,6 @@ public class XpathRegressionUnnecessaryParenthesesTest extends AbstractXpathTest
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionUnnecessaryParentheses2.java")
@@ -94,7 +92,6 @@ public class XpathRegressionUnnecessaryParenthesesTest extends AbstractXpathTest
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionUnnecessaryParentheses3.java")
@@ -118,7 +115,6 @@ public class XpathRegressionUnnecessaryParenthesesTest extends AbstractXpathTest
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testFour() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionUnnecessaryParentheses4.java")
@@ -143,7 +139,6 @@ public class XpathRegressionUnnecessaryParenthesesTest extends AbstractXpathTest
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testFive() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionUnnecessaryParentheses5.java")
@@ -168,7 +163,6 @@ public class XpathRegressionUnnecessaryParenthesesTest extends AbstractXpathTest
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testSix() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionUnnecessaryParentheses6.java")
@@ -193,7 +187,6 @@ public class XpathRegressionUnnecessaryParenthesesTest extends AbstractXpathTest
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testSeven() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionUnnecessaryParentheses7.java")
@@ -222,7 +215,6 @@ public class XpathRegressionUnnecessaryParenthesesTest extends AbstractXpathTest
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testEight() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionUnnecessaryParentheses8.java")

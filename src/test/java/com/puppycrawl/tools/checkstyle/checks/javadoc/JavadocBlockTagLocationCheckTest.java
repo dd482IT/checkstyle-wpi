@@ -35,7 +35,6 @@ public class JavadocBlockTagLocationCheckTest extends AbstractModuleTestSupport 
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/javadocblocktaglocation";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final JavadocBlockTagLocationCheck checkObj = new JavadocBlockTagLocationCheck();
         final int[] expected = {
@@ -46,7 +45,6 @@ public class JavadocBlockTagLocationCheckTest extends AbstractModuleTestSupport 
             .isEqualTo(expected);
     }
 
-    @Test
     public void testCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -63,7 +61,6 @@ public class JavadocBlockTagLocationCheckTest extends AbstractModuleTestSupport 
      *
      * @throws Exception if exception occurs during verification process.
      */
-    @Test
     public void testMultilineCodeBlock() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -71,7 +68,6 @@ public class JavadocBlockTagLocationCheckTest extends AbstractModuleTestSupport 
                 getPath("InputJavadocBlockTagLocationMultilineCodeBlock.java"), expected);
     }
 
-    @Test
     public void testIncorrect() throws Exception {
         final String[] expected = {
             "15: " + getCheckMessage(MSG_BLOCK_TAG_LOCATION, "author"),
@@ -86,7 +82,6 @@ public class JavadocBlockTagLocationCheckTest extends AbstractModuleTestSupport 
                 getPath("InputJavadocBlockTagLocationIncorrect.java"), expected);
     }
 
-    @Test
     public void testCustomTags() throws Exception {
         final String[] expected = {
             "14: " + getCheckMessage(MSG_BLOCK_TAG_LOCATION, "apiNote"),

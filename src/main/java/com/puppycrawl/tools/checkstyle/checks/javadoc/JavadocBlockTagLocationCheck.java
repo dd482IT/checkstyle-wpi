@@ -143,7 +143,6 @@ import com.puppycrawl.tools.checkstyle.api.JavadocTokenTypes;
  *
  * @since 8.24
  */
-@StatelessCheck
 public class JavadocBlockTagLocationCheck extends AbstractJavadocCheck {
 
     /**

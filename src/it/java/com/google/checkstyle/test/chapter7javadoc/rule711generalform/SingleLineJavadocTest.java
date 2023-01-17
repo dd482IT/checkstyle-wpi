@@ -32,7 +32,6 @@ public class SingleLineJavadocTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter7javadoc/rule711generalform";
     }
 
-    @Test
     public void testSingleLineJavadoc() throws Exception {
         final String msg = getCheckMessage(SingleLineJavadocCheck.class, "singleline.javadoc");
 

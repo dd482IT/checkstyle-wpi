@@ -73,7 +73,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 8.33
  */
-@StatelessCheck
 public class NoCodeInFileCheck extends AbstractCheck {
 
     /**

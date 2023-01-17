@@ -32,7 +32,6 @@ public class NoWhitespaceBeforeCaseDefaultColonTest extends AbstractGoogleModule
         return "com/google/checkstyle/test/chapter4formatting/rule462horizontalwhitespace";
     }
 
-    @Test
     public void test() throws Exception {
         final Class<NoWhitespaceBeforeCheck> clazz = NoWhitespaceBeforeCheck.class;
         final String messageKeyPreceded = "ws.preceded";

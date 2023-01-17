@@ -15,7 +15,6 @@ package com.puppycrawl.tools.checkstyle.checks.coding.requirethis; // ok
     int version();
 }
 
-@MyAnnotation1(name = "ABC", version = 1)
 public class InputRequireThis15Extensions
 {
 

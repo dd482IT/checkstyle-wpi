@@ -34,7 +34,6 @@ public class InvalidJavadocPositionCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/invalidjavadocposition";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final int[] expected = {
             TokenTypes.BLOCK_COMMENT_BEGIN,
@@ -47,7 +46,6 @@ public class InvalidJavadocPositionCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final int[] expected = {
             TokenTypes.BLOCK_COMMENT_BEGIN,
@@ -60,7 +58,6 @@ public class InvalidJavadocPositionCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "7:9: " + getCheckMessage(MSG_KEY),
@@ -94,7 +91,6 @@ public class InvalidJavadocPositionCheckTest extends AbstractModuleTestSupport {
                 getPath("InputInvalidJavadocPosition.java"), expected);
     }
 
-    @Test
     public void testPackageInfo() throws Exception {
         final String[] expected = {
             "7:1: " + getCheckMessage(MSG_KEY),
@@ -103,7 +99,6 @@ public class InvalidJavadocPositionCheckTest extends AbstractModuleTestSupport {
                 getPath("package-info.java"), expected);
     }
 
-    @Test
     public void testPackageInfoComment() throws Exception {
         final String[] expected = {
             "7:1: " + getCheckMessage(MSG_KEY),

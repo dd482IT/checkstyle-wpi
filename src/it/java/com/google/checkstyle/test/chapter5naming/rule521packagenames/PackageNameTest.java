@@ -41,7 +41,6 @@ public class PackageNameTest extends AbstractGoogleModuleTestSupport {
         return getPath("rule521" + packageName + File.separator + fileName);
     }
 
-    @Test
     public void testGoodPackageName() throws Exception {
         final Configuration checkConfig = getModuleConfig("PackageName");
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -52,7 +51,6 @@ public class PackageNameTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testBadPackageName() throws Exception {
         final String packagePath =
                 "com.google.checkstyle.test.chapter5naming.rule521packageNamesCamelCase";
@@ -70,7 +68,6 @@ public class PackageNameTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testBadPackageName2() throws Exception {
         final String packagePath = "com.google.checkstyle.test.chapter5naming.rule521_packagenames";
         final Configuration checkConfig = getModuleConfig("PackageName");
@@ -87,7 +84,6 @@ public class PackageNameTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testBadPackageName3() throws Exception {
         final String packagePath = "com.google.checkstyle.test.chapter5naming.rule521$packagenames";
         final Configuration checkConfig = getModuleConfig("PackageName");

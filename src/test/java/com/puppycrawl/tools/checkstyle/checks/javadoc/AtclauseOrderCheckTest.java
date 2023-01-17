@@ -35,7 +35,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/atclauseorder";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final AtclauseOrderCheck checkObj = new AtclauseOrderCheck();
         final int[] expected = {TokenTypes.BLOCK_COMMENT_BEGIN};
@@ -44,7 +43,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final AtclauseOrderCheck checkObj = new AtclauseOrderCheck();
         final int[] expected = {TokenTypes.BLOCK_COMMENT_BEGIN};
@@ -53,7 +51,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -61,7 +58,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAtclauseOrderCorrect.java"), expected);
     }
 
-    @Test
     public void testIncorrect() throws Exception {
         final String tagOrder = "[@author, @version, @param, @return, @throws, @exception, @see,"
                 + " @since, @serial, @serialField, @serialData, @deprecated]";
@@ -111,7 +107,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAtclauseOrderIncorrect.java"), expected);
     }
 
-    @Test
     public void testIncorrectCustom() throws Exception {
         final String tagOrder = "[@since, @version, @param, @return, @throws, @exception,"
                 + " @deprecated, @see, @serial, @serialField, @serialData, @author]";
@@ -122,7 +117,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAtclauseOrderIncorrectCustom.java"), expected);
     }
 
-    @Test
     public void testPackageInfo() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -130,7 +124,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("package-info.java"), expected);
     }
 
-    @Test
     public void testAtclauseOrderRecords() throws Exception {
         final String tagOrder = "[@author, @version, @param, @return, @throws, @exception,"
             + " @see, @since, @serial, @serialField, @serialData, @deprecated]";
@@ -149,7 +142,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputAtclauseOrderRecords.java"), expected);
     }
 
-    @Test
     public void testMethodReturningArrayType() throws Exception {
         final String tagOrder = "[@author, @version, @param, @return, @throws, @exception, @see,"
                 + " @since, @serial, @serialField, @serialData, @deprecated]";
@@ -162,7 +154,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAtclauseOrderMethodReturningArrayType.java"), expected);
     }
 
-    @Test
     public void testAtclauseOrderLotsOfRecords() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -170,7 +161,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputAtclauseOrderLotsOfRecords.java"), expected);
     }
 
-    @Test
     public void testAtclause() throws Exception {
         final String tagOrder = "[@author, @version, @param, @return, @throws, @exception, @see,"
                 + " @since, @serial, @serialField, @serialData, @deprecated]";
@@ -202,7 +192,6 @@ public class AtclauseOrderCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAtclauseOrderWithAnnotationsOutsideJavadoc.java"), expected);
     }
 
-    @Test
     public void testNewArrayDeclaratorStructure() throws Exception {
         final String tagOrder = "[@author, @version, @param, @return, @throws, @exception, @see,"
                 + " @since, @serial, @serialField, @serialData, @deprecated]";

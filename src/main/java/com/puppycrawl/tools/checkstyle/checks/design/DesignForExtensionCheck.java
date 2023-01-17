@@ -282,7 +282,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 3.1
  */
-@StatelessCheck
 public class DesignForExtensionCheck extends AbstractCheck {
 
     /**

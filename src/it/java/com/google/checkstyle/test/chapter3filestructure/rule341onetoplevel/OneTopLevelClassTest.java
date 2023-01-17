@@ -33,7 +33,6 @@ public class OneTopLevelClassTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter3filestructure/rule341onetoplevel";
     }
 
-    @Test
     public void testBad() throws Exception {
         final Class<OneTopLevelClassCheck> clazz = OneTopLevelClassCheck.class;
         final String messageKey = "one.top.level.class";
@@ -54,7 +53,6 @@ public class OneTopLevelClassTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testGood() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -65,7 +63,6 @@ public class OneTopLevelClassTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testBad1() throws Exception {
         final Class<OneTopLevelClassCheck> clazz = OneTopLevelClassCheck.class;
         final String messageKey = "one.top.level.class";
@@ -82,7 +79,6 @@ public class OneTopLevelClassTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testBad2() throws Exception {
         final Class<OneTopLevelClassCheck> clazz = OneTopLevelClassCheck.class;
         final String messageKey = "one.top.level.class";

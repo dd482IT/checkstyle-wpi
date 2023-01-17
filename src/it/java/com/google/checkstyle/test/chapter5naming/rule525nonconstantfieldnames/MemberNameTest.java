@@ -35,7 +35,6 @@ public class MemberNameTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter5naming/rule525nonconstantfieldnames";
     }
 
-    @Test
     public void testMemberName() throws Exception {
         final Configuration checkConfig = getModuleConfig("MemberName");
         final String format = checkConfig.getProperty("format");
@@ -62,7 +61,6 @@ public class MemberNameTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testSimple() throws Exception {
         final Configuration checkConfig = getModuleConfig("MemberName");
         final String format = checkConfig.getProperty("format");

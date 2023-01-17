@@ -56,7 +56,6 @@ public class GeneratedJavaTokenTypesTest {
      * Issue: <a href="https://github.com/checkstyle/checkstyle/issues/505">#505</a>
      * </p>
      */
-    @Test
     public void testTokenNumbering() {
         final String message = "A token's number has changed. Please open"
                 + " 'GeneratedJavaTokenTypesTest' and confirm which token is at fault.\n"

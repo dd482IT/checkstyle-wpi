@@ -21,8 +21,8 @@ public class InputAntlr4AstRegressionNestedTypeParametersAndArrayDeclarators {
     }
 
     class Test1 {
-        @A1 Outer . @B1 GInner<@C1 MyList<@D1 Object @E1[] @F1[]>>
-                .@G1 GInner2<@H1 Integer, @I Object> @J[] @K[] f4arrtop;
+        Outer . GInner<MyList<Object[][]>>
+                .GInner2<Integer, Object>[][] f4arrtop;
     }
 }
 

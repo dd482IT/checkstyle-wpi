@@ -54,7 +54,6 @@ public class PackageNamesLoaderTest extends AbstractPathTestSupport {
         return "com/puppycrawl/tools/checkstyle/packagenamesloader";
     }
 
-    @Test
     public void testDefault()
             throws CheckstyleException {
         final Set<String> packageNames = PackageNamesLoader
@@ -65,7 +64,6 @@ public class PackageNamesLoaderTest extends AbstractPathTestSupport {
             .isEmpty();
     }
 
-    @Test
     public void testNoPackages() throws Exception {
         final Set<String> actualPackageNames = PackageNamesLoader
                 .getPackageNames(new TestUrlsClassLoader(Collections.emptyEnumeration()));
@@ -75,7 +73,6 @@ public class PackageNamesLoaderTest extends AbstractPathTestSupport {
             .isEmpty();
     }
 
-    @Test
     public void testPackagesFile() throws Exception {
         final Enumeration<URL> enumeration = Collections.enumeration(Collections.singleton(
                 new File(getPath("InputPackageNamesLoaderFile.xml")).toURI().toURL()));
@@ -113,7 +110,6 @@ public class PackageNamesLoaderTest extends AbstractPathTestSupport {
             .isEqualTo(checkstylePackagesSet);
     }
 
-    @Test
     public void testPackagesWithDots() throws Exception {
         final Enumeration<URL> enumeration = Collections.enumeration(Collections.singleton(
                 new File(getPath("InputPackageNamesLoaderWithDots.xml")).toURI().toURL()));
@@ -134,7 +130,6 @@ public class PackageNamesLoaderTest extends AbstractPathTestSupport {
             .isEqualTo(checkstylePackagesSet);
     }
 
-    @Test
     public void testPackagesWithDotsEx() throws Exception {
         final Enumeration<URL> enumeration = Collections.enumeration(Collections.singleton(
                 new File(getPath("InputPackageNamesLoaderWithDotsEx.xml")).toURI().toURL()));
@@ -156,7 +151,6 @@ public class PackageNamesLoaderTest extends AbstractPathTestSupport {
             .isEqualTo(checkstylePackagesSet);
     }
 
-    @Test
     public void testPackagesWithSaxException() throws Exception {
         final Enumeration<URL> enumeration = Collections.enumeration(Collections.singleton(
                 new File(getPath("InputPackageNamesLoaderNotXml.java")).toURI().toURL()));
@@ -173,7 +167,6 @@ public class PackageNamesLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testPackagesWithIoException() throws Exception {
         final URLConnection urlConnection = new URLConnection(null) {
             @Override
@@ -211,7 +204,6 @@ public class PackageNamesLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testPackagesWithIoExceptionGetResources() {
         try {
             PackageNamesLoader.getPackageNames(new TestIoExceptionClassLoader());

@@ -14,7 +14,6 @@ tokens = (default)ANNOTATION_DEF, ANNOTATION_FIELD_DEF, CLASS_DEF, CTOR_DEF, \
 */
 
 /** Example */ // violation 'First sentence should end with a period.'
-@Example
 package com.puppycrawl.tools.checkstyle.checks.javadoc.javadocstyle.missingperiod;
 
 import java.lang.annotation.ElementType;

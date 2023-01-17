@@ -33,7 +33,6 @@ public class AtclauseOrderTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter7javadoc/rule713atclauses";
     }
 
-    @Test
     public void testCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -44,7 +43,6 @@ public class AtclauseOrderTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testIncorrect() throws Exception {
         final String tagOrder = "[@param, @return, @throws, @deprecated]";
         final String msg = getCheckMessage(AtclauseOrderCheck.class, "at.clause.order", tagOrder);

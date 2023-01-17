@@ -70,7 +70,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 8.29
  */
-@StatelessCheck
 public final class AvoidNoArgumentSuperConstructorCallCheck extends AbstractCheck {
 
     /**

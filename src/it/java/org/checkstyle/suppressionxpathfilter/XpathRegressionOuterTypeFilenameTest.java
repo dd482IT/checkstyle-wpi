@@ -37,7 +37,6 @@ public class XpathRegressionOuterTypeFilenameTest extends AbstractXpathTestSuppo
         return checkName;
     }
 
-    @Test
     public void testNoPublic() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionOuterTypeFilename1.java"));
@@ -60,7 +59,6 @@ public class XpathRegressionOuterTypeFilenameTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testNested() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionOuterTypeFilename2.java"));

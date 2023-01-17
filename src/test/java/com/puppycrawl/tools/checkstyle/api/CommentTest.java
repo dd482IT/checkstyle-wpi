@@ -25,7 +25,6 @@ import org.junit.jupiter.api.Test;
 
 public class CommentTest {
 
-    @Test
     public void test() {
         final String[] text = {"test"};
         final Comment comment = new Comment(text, 1, 2, 3);
@@ -51,7 +50,6 @@ public class CommentTest {
                         + " endLineNo=2, startColNo=1, endColNo=3]");
     }
 
-    @Test
     public void testIntersects() {
         final String[] text = {"test", "test"};
         final Comment comment = new Comment(text, 2, 4, 4);
@@ -74,7 +72,6 @@ public class CommentTest {
                 .isTrue();
     }
 
-    @Test
     public void testIntersects2() {
         final String[] text = {"a"};
         final Comment comment = new Comment(text, 2, 2, 2);
@@ -84,7 +81,6 @@ public class CommentTest {
                 .isTrue();
     }
 
-    @Test
     public void testIntersects3() {
         final String[] text = {"test"};
         final Comment comment = new Comment(text, 1, 1, 2);

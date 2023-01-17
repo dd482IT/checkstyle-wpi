@@ -134,7 +134,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 6.9
  */
-@StatelessCheck
 public class HeaderCheck extends AbstractHeaderCheck {
 
     /**

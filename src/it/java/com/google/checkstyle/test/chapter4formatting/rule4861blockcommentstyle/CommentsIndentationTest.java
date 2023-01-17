@@ -32,7 +32,6 @@ public class CommentsIndentationTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule4861blockcommentstyle";
     }
 
-    @Test
     public void testCommentIsAtTheEndOfBlock() throws Exception {
         final String[] expected = {
             "18:26: " + getCheckMessage(CommentsIndentationCheck.class,
@@ -99,7 +98,6 @@ public class CommentsIndentationTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCommentIsInsideSwitchBlock() throws Exception {
         final String[] expected = {
             "19:13: " + getCheckMessage(CommentsIndentationCheck.class,
@@ -146,7 +144,6 @@ public class CommentsIndentationTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCommentIsInsideEmptyBlock() throws Exception {
         final String[] expected = {
             "9:20: " + getCheckMessage(CommentsIndentationCheck.class,
@@ -169,7 +166,6 @@ public class CommentsIndentationTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testSurroundingCode() throws Exception {
         final String[] expected = {
             "13:15: " + getCheckMessage(CommentsIndentationCheck.class,

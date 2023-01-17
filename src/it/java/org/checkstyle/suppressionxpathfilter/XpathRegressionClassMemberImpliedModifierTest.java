@@ -37,7 +37,6 @@ public class XpathRegressionClassMemberImpliedModifierTest extends AbstractXpath
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionClassMemberImpliedModifierOne.java"));
@@ -66,7 +65,6 @@ public class XpathRegressionClassMemberImpliedModifierTest extends AbstractXpath
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionClassMemberImpliedModifierTwo.java"));

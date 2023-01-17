@@ -90,10 +90,8 @@ public class Checker extends AutomaticBean implements MessageDispatcher, RootMod
     private String basedir;
 
     /** Locale country to report messages . **/
-    @XdocsPropertyType(PropertyType.LOCALE_COUNTRY)
     private String localeCountry = Locale.getDefault().getCountry();
     /** Locale language to report messages . **/
-    @XdocsPropertyType(PropertyType.LOCALE_LANGUAGE)
     private String localeLanguage = Locale.getDefault().getLanguage();
 
     /** The factory for instantiating submodules. */
@@ -124,7 +122,6 @@ public class Checker extends AutomaticBean implements MessageDispatcher, RootMod
     private String charset = StandardCharsets.UTF_8.name();
 
     /** Cache file. **/
-    @XdocsPropertyType(PropertyType.FILE)
     private PropertyCacheFile cacheFile;
 
     /** Controls whether exceptions should halt execution or not. */

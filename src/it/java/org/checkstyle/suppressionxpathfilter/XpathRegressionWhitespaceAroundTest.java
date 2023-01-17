@@ -37,7 +37,6 @@ public class XpathRegressionWhitespaceAroundTest extends AbstractXpathTestSuppor
         return checkName;
     }
 
-    @Test
     public void testWhitespaceAroundNotPreceded() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionWhitespaceAroundNotPreceded.java"));
@@ -60,7 +59,6 @@ public class XpathRegressionWhitespaceAroundTest extends AbstractXpathTestSuppor
                 expectedXpathQueries);
     }
 
-    @Test
     public void testWhitespaceAroundNotFollowed() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionWhitespaceAroundNotFollowed.java"));

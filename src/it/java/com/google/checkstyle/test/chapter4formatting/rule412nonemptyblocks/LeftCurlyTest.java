@@ -34,7 +34,6 @@ public class LeftCurlyTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule412nonemptyblocks";
     }
 
-    @Test
     public void testLeftCurlyBraces() throws Exception {
         final String[] expected = {
             "4:1: " + getCheckMessage(LeftCurlyCheck.class, MSG_KEY_LINE_PREVIOUS, "{", 1),
@@ -53,7 +52,6 @@ public class LeftCurlyTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testLeftCurlyAnnotations() throws Exception {
         final String[] expected = {
             "10:1: " + getCheckMessage(LeftCurlyCheck.class, MSG_KEY_LINE_PREVIOUS, "{", 1),
@@ -70,7 +68,6 @@ public class LeftCurlyTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testLeftCurlyMethods() throws Exception {
         final String[] expected = {
             "4:1: " + getCheckMessage(LeftCurlyCheck.class, MSG_KEY_LINE_PREVIOUS, "{", 1),

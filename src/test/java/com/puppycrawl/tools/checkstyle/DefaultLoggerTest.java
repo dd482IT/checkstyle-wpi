@@ -45,12 +45,10 @@ public class DefaultLoggerTest {
 
     private static final Locale DEFAULT_LOCALE = Locale.getDefault();
 
-    @AfterEach
     public void tearDown() {
         ResourceBundle.clearCache();
     }
 
-    @Test
     public void testCtor() {
         final OutputStream infoStream = new ByteArrayOutputStream();
         final ByteArrayOutputStream errorStream = new ByteArrayOutputStream();
@@ -69,7 +67,6 @@ public class DefaultLoggerTest {
                 .contains("java.lang.IllegalStateException: upsss");
     }
 
-    @Test
     public void testCtorWithTwoParameters() {
         final OutputStream infoStream = new ByteArrayOutputStream();
         final DefaultLogger dl = new DefaultLogger(infoStream, OutputStreamOptions.CLOSE);
@@ -81,7 +78,6 @@ public class DefaultLoggerTest {
                 .contains("java.lang.IllegalStateException: upsss");
     }
 
-    @Test
     public void testCtorWithNullParameter() {
         final OutputStream infoStream = new ByteArrayOutputStream();
         final DefaultLogger dl = new DefaultLogger(infoStream, OutputStreamOptions.CLOSE);
@@ -93,7 +89,6 @@ public class DefaultLoggerTest {
                 .contains("java.lang.IllegalStateException: upsss");
     }
 
-    @Test
     public void testNewCtorWithTwoParameters() {
         final OutputStream infoStream = new ByteArrayOutputStream();
         final DefaultLogger dl = new DefaultLogger(infoStream,
@@ -105,7 +100,6 @@ public class DefaultLoggerTest {
                 .contains("java.lang.IllegalStateException: upsss");
     }
 
-    @Test
     public void testNullInfoStreamOptions() {
         final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         final IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,
@@ -117,7 +111,6 @@ public class DefaultLoggerTest {
                         .isEqualTo("Parameter infoStreamOptions can not be null");
     }
 
-    @Test
     public void testNullErrorStreamOptions() {
         final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         final IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,
@@ -137,7 +130,6 @@ public class DefaultLoggerTest {
                         .isEqualTo("Parameter errorStreamOptions can not be null");
     }
 
-    @Test
     public void testAddError() {
         final OutputStream infoStream = new ByteArrayOutputStream();
         final OutputStream errorStream = new ByteArrayOutputStream();
@@ -163,7 +155,6 @@ public class DefaultLoggerTest {
                 + System.lineSeparator());
     }
 
-    @Test
     public void testAddErrorModuleId() {
         final OutputStream infoStream = new ByteArrayOutputStream();
         final OutputStream errorStream = new ByteArrayOutputStream();
@@ -188,7 +179,6 @@ public class DefaultLoggerTest {
                 + System.lineSeparator());
     }
 
-    @Test
     public void testAddErrorIgnoreSeverityLevel() {
         final OutputStream infoStream = new ByteArrayOutputStream();
         final OutputStream errorStream = new ByteArrayOutputStream();
@@ -207,7 +197,6 @@ public class DefaultLoggerTest {
             .isEmpty();
     }
 
-    @Test
     public void testFinishLocalSetup() {
         final OutputStream infoStream = new ByteArrayOutputStream();
         final DefaultLogger dl = new DefaultLogger(infoStream,
@@ -223,7 +212,6 @@ public class DefaultLoggerTest {
     /**
      * Verifies that the language specified with the system property {@code user.language} exists.
      */
-    @Test
     public void testLanguageIsValid() {
         final String language = DEFAULT_LOCALE.getLanguage();
         assumeFalse(language.isEmpty(), "Locale not set");
@@ -235,7 +223,6 @@ public class DefaultLoggerTest {
     /**
      * Verifies that the country specified with the system property {@code user.country} exists.
      */
-    @Test
     public void testCountryIsValid() {
         final String country = DEFAULT_LOCALE.getCountry();
         assumeFalse(country.isEmpty(), "Locale not set");
@@ -244,7 +231,6 @@ public class DefaultLoggerTest {
                 .contains(country);
     }
 
-    @Test
     public void testNewCtor() throws Exception {
         final ResourceBundle bundle = ResourceBundle.getBundle(
                 Definitions.CHECKSTYLE_BUNDLE, Locale.ROOT);
@@ -288,7 +274,6 @@ public class DefaultLoggerTest {
                 .contains("java.lang.IllegalStateException: upsss");
     }
 
-    @Test
     public void testStreamsNotClosedByLogger() throws IOException {
         try (MockByteArrayOutputStream infoStream = new MockByteArrayOutputStream();
              MockByteArrayOutputStream errorStream = new MockByteArrayOutputStream()) {

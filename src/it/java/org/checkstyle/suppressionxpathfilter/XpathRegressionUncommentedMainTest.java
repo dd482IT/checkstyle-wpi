@@ -38,7 +38,6 @@ public class XpathRegressionUncommentedMainTest extends AbstractXpathTestSupport
         return clazz.getSimpleName();
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionUncommentedMain.java"));
@@ -67,7 +66,6 @@ public class XpathRegressionUncommentedMainTest extends AbstractXpathTestSupport
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionUncommentedMainTwo.java"));

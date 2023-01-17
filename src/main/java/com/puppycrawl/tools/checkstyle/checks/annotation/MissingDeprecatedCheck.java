@@ -168,7 +168,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 5.0
  */
-@StatelessCheck
 public final class MissingDeprecatedCheck extends AbstractJavadocCheck {
 
     /**

@@ -238,7 +238,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 3.2
  */
-@FileStatefulCheck
 public class CyclomaticComplexityCheck
     extends AbstractCheck {
 

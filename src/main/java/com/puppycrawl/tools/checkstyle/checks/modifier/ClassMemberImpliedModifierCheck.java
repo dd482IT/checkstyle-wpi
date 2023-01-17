@@ -125,7 +125,6 @@ import com.puppycrawl.tools.checkstyle.utils.ScopeUtil;
  *
  * @since 8.16
  */
-@StatelessCheck
 public class ClassMemberImpliedModifierCheck
     extends AbstractCheck {
 

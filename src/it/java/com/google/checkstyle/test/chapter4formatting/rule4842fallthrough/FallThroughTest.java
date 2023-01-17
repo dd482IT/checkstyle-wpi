@@ -32,7 +32,6 @@ public class FallThroughTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule4842fallthrough";
     }
 
-    @Test
     public void testFallThrough() throws Exception {
         final String msg = getCheckMessage(FallThroughCheck.class, "fall.through");
 

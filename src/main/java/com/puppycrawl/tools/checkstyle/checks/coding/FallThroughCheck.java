@@ -200,7 +200,6 @@ import com.puppycrawl.tools.checkstyle.utils.CodePointUtil;
  *
  * @since 3.4
  */
-@StatelessCheck
 public class FallThroughCheck extends AbstractCheck {
 
     /**

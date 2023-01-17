@@ -34,7 +34,6 @@ public class LambdaParameterNameCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/naming/lambdaparametername";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final int[] expected = {
             TokenTypes.LAMBDA,
@@ -47,7 +46,6 @@ public class LambdaParameterNameCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testAcceptableTokens() {
         final int[] expected = {
             TokenTypes.LAMBDA,
@@ -60,7 +58,6 @@ public class LambdaParameterNameCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testParametersInLambda() throws Exception {
 
         final String pattern = "^(id)|([a-z][a-z0-9][a-zA-Z0-9]+)$";
@@ -76,7 +73,6 @@ public class LambdaParameterNameCheckTest extends AbstractModuleTestSupport {
                 getPath("InputLambdaParameterName.java"), expected);
     }
 
-    @Test
     public void testLambdaParameterNameSwitchExpression() throws Exception {
 
         final String pattern = "^[a-z][a-zA-Z0-9]*$";

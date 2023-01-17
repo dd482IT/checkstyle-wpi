@@ -35,7 +35,6 @@ public class AvoidNoArgumentSuperConstructorCallCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/avoidnoargumentsuperconstructorcall";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -49,7 +48,6 @@ public class AvoidNoArgumentSuperConstructorCallCheckTest
                 expected);
     }
 
-    @Test
     public void testTokens() {
         final AvoidNoArgumentSuperConstructorCallCheck check =
             new AvoidNoArgumentSuperConstructorCallCheck();

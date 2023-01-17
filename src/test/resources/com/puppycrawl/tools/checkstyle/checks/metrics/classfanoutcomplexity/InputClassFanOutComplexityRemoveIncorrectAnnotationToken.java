@@ -80,8 +80,6 @@ import junit.framework.AssertionFailedError;
  * @author Ben Yu
  * @since 14.0
  */
-@MyAnnotation
-@GwtIncompatible
 public final class InputClassFanOutComplexityRemoveIncorrectAnnotationToken { // ok
     private static final Ordering<Invokable<?, ?>> BY_METHOD_NAME =
             new Ordering<Invokable<?, ?>>() {
@@ -140,7 +138,6 @@ public final class InputClassFanOutComplexityRemoveIncorrectAnnotationToken { //
                 == createInstance(factory, args).hashCode();
     }
 
-    @Nullable
     private static Object generateDummyArg(Parameter param, FreshValueGenerator generator)
             throws ParameterNotInstantiableException {
         if (isNullable(param)) {
@@ -211,7 +208,7 @@ public final class InputClassFanOutComplexityRemoveIncorrectAnnotationToken { //
         return instance;
     }
 
-    private static <T> @Nullable T invoke(Invokable<?, ? extends T> factory, List<?> args)
+    private static <T> T invoke(Invokable<?, ? extends T> factory, List<?> args)
             throws InvocationTargetException, IllegalAccessException {
         T returnValue = factory.invoke(null, args.toArray());
         if (returnValue == null) {
@@ -446,7 +443,7 @@ public final class InputClassFanOutComplexityRemoveIncorrectAnnotationToken { //
      * constructor
      * or factory method to be constructed.
      */
-    <T> @Nullable T instantiate(Class<T> cls)
+    <T> T instantiate(Class<T> cls)
             throws ParameterNotInstantiableException, IllegalAccessException,
             InvocationTargetException,
             FactoryMethodReturnsNullException {
@@ -500,7 +497,7 @@ public final class InputClassFanOutComplexityRemoveIncorrectAnnotationToken { //
      *                                           accessible.
      * @throws InvocationTargetException         if a static method threw exception.
      */
-    private <T> @Nullable T instantiate(Invokable<?, ? extends T> factory)
+    private <T> T instantiate(Invokable<?, ? extends T> factory)
             throws ParameterNotInstantiableException, InvocationTargetException,
             IllegalAccessException {
         return invoke(factory, getDummyArguments(factory));
@@ -645,7 +642,6 @@ public final class InputClassFanOutComplexityRemoveIncorrectAnnotationToken { //
      * Thrown if the test tries to invoke a constructor or static factory method but failed because
      * the dummy value of a constructor or method parameter is unknown.
      */
-    @VisibleForTesting
     static class ParameterNotInstantiableException extends Exception {
         public ParameterNotInstantiableException(Parameter parameter) {
             super(
@@ -661,7 +657,6 @@ public final class InputClassFanOutComplexityRemoveIncorrectAnnotationToken { //
      * parameter in order to test {@link Object#equals} and {@link Object#hashCode} of the declaring
      * class.
      */
-    @VisibleForTesting
     static class ParameterHasNoDistinctValueException extends Exception {
         ParameterHasNoDistinctValueException(Parameter parameter) {
             super(
@@ -676,7 +671,6 @@ public final class InputClassFanOutComplexityRemoveIncorrectAnnotationToken { //
      * Thrown if the test tries to invoke a static factory method to test instance methods but the
      * factory returned null.
      */
-    @VisibleForTesting
     static class FactoryMethodReturnsNullException extends Exception {
         public FactoryMethodReturnsNullException(Invokable<?, ?> factory) {
             super(factory + " returns null and cannot be used to test instance methods.");

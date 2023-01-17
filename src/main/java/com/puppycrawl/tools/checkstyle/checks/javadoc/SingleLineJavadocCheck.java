@@ -241,7 +241,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 6.0
  */
-@StatelessCheck
 public class SingleLineJavadocCheck extends AbstractJavadocCheck {
 
     /**

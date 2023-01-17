@@ -68,7 +68,6 @@ import com.puppycrawl.tools.checkstyle.utils.JavadocUtil;
  *
  * @since 8.23
  */
-@StatelessCheck
 public class InvalidJavadocPositionCheck extends AbstractCheck {
 
     /**

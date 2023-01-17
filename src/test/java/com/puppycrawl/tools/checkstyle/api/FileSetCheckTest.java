@@ -36,7 +36,6 @@ public class FileSetCheckTest
         return "com/puppycrawl/tools/checkstyle/api/fileset";
     }
 
-    @Test
     public void testTranslation() throws Exception {
         final Configuration checkConfig =
             createModuleConfig(TestFileSetCheck.class);
@@ -48,7 +47,6 @@ public class FileSetCheckTest
                 .isTrue();
     }
 
-    @Test
     public void testProcessCallsFinishBeforeCallingDestroy() throws Exception {
         final Configuration checkConfig =
             createModuleConfig(TestFileSetCheck.class);

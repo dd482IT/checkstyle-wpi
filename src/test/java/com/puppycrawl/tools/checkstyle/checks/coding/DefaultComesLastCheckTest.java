@@ -35,7 +35,6 @@ public class DefaultComesLastCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/defaultcomeslast";
     }
 
-    @Test
     public void testSkipIfLastAndSharedWithCase() throws Exception {
         final String[] expected = {
             "23:13: " + getCheckMessage(MSG_KEY_SKIP_IF_LAST_AND_SHARED_WITH_CASE),
@@ -53,7 +52,6 @@ public class DefaultComesLastCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "31:9: " + getCheckMessage(MSG_KEY),
@@ -76,7 +74,6 @@ public class DefaultComesLastCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testDefaultMethodsInJava8()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -85,7 +82,6 @@ public class DefaultComesLastCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testDefaultComesLastSwitchExpressions() throws Exception {
         final String[] expected = {
             "16:13: " + getCheckMessage(MSG_KEY),
@@ -97,7 +93,6 @@ public class DefaultComesLastCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testDefaultComesLastSwitchExpressionsSkipIfLast() throws Exception {
 
         final String[] expected = {
@@ -109,7 +104,6 @@ public class DefaultComesLastCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final DefaultComesLastCheck check = new DefaultComesLastCheck();
         assertWithMessage("Acceptable tokens should not be null")

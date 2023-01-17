@@ -87,7 +87,6 @@ public class InputMissingJavadocMethodSmallMethods extends Some
 
     }
 
-    @MyAnnotation
     String foo10()
     {
         return "Fooooooooooooooo"

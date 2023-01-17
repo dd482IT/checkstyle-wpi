@@ -182,7 +182,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 4.2
  */
-@StatelessCheck
 public class WriteTagCheck
     extends AbstractCheck {
 

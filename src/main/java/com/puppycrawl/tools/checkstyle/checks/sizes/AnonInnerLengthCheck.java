@@ -70,7 +70,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 3.2
  */
-@StatelessCheck
 public class AnonInnerLengthCheck extends AbstractCheck {
 
     /**

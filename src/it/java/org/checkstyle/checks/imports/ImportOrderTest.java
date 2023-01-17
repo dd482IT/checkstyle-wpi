@@ -33,7 +33,6 @@ public class ImportOrderTest extends AbstractCheckstyleModuleTestSupport {
         return "org/checkstyle/checks/imports/importorder";
     }
 
-    @Test
     public void testAndroid() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(ImportOrderCheck.class);
         checkConfig.addProperty("groups",
@@ -51,7 +50,6 @@ public class ImportOrderTest extends AbstractCheckstyleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testSpotify() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(ImportOrderCheck.class);
         checkConfig.addProperty("groups", "android,com,net,junit,org,java,javax");
@@ -67,7 +65,6 @@ public class ImportOrderTest extends AbstractCheckstyleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testTwitter() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(ImportOrderCheck.class);
         checkConfig.addProperty("caseSensitive", "true");

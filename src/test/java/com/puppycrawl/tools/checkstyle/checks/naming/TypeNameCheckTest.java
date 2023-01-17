@@ -34,7 +34,6 @@ public class TypeNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/typename";
     }
 
-    @Test
     public void testSpecified()
             throws Exception {
         final String[] expected = {
@@ -45,7 +44,6 @@ public class TypeNameCheckTest
                 getPath("InputTypeName.java"), expected);
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -62,7 +60,6 @@ public class TypeNameCheckTest
                 getPath("InputTypeName2.java"), expected);
     }
 
-    @Test
     public void testClassSpecific()
             throws Exception {
         final String[] expected = {
@@ -73,7 +70,6 @@ public class TypeNameCheckTest
                 getPath("InputTypeName3.java"), expected);
     }
 
-    @Test
     public void testInterfaceSpecific()
             throws Exception {
         final String[] expected = {
@@ -84,7 +80,6 @@ public class TypeNameCheckTest
                 getPath("InputTypeName4.java"), expected);
     }
 
-    @Test
     public void testEnumSpecific()
             throws Exception {
         final String[] expected = {
@@ -95,7 +90,6 @@ public class TypeNameCheckTest
                 getPath("InputTypeName5.java"), expected);
     }
 
-    @Test
     public void testAnnotationSpecific()
             throws Exception {
         final String[] expected = {
@@ -106,7 +100,6 @@ public class TypeNameCheckTest
                 getPath("InputTypeName6.java"), expected);
     }
 
-    @Test
     public void testTypeNameRecords() throws Exception {
 
         final String[] expected = {

@@ -30,7 +30,6 @@ import com.puppycrawl.tools.checkstyle.api.CheckstyleException;
 
 public class DefaultConfigurationTest {
 
-    @Test
     public void testGetPropertyNames() {
         final DefaultConfiguration config = new DefaultConfiguration("MyConfig");
         config.addProperty("property", "value");
@@ -41,7 +40,6 @@ public class DefaultConfigurationTest {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testAddPropertyAndGetProperty() throws CheckstyleException {
         final DefaultConfiguration config = new DefaultConfiguration("MyConfig");
         config.addProperty("property", "first");
@@ -59,7 +57,6 @@ public class DefaultConfigurationTest {
      * we keep this method until https://github.com/checkstyle/checkstyle/issues/11722
      */
     @Deprecated(since = "10.2")
-    @Test
     public void testDeprecatedAttributeMethods() throws CheckstyleException {
         final DefaultConfiguration config = new DefaultConfiguration("MyConfig");
         config.addAttribute("attribute", "first");
@@ -77,7 +74,6 @@ public class DefaultConfigurationTest {
             .isEqualTo("first,second");
     }
 
-    @Test
     public void testGetName() {
         final DefaultConfiguration config = new DefaultConfiguration("MyConfig");
         assertWithMessage("Invalid configuration name")
@@ -85,7 +81,6 @@ public class DefaultConfigurationTest {
             .isEqualTo("MyConfig");
     }
 
-    @Test
     public void testRemoveChild() {
         final DefaultConfiguration config = new DefaultConfiguration("MyConfig");
         final DefaultConfiguration configChild = new DefaultConfiguration("childConfig");
@@ -102,7 +97,6 @@ public class DefaultConfigurationTest {
             .isEqualTo(0);
     }
 
-    @Test
     public void testAddMessageAndGetMessages() {
         final DefaultConfiguration config = new DefaultConfiguration("MyConfig");
         config.addMessage("key", "value");
@@ -113,7 +107,6 @@ public class DefaultConfigurationTest {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testExceptionForNonExistentProperty() {
         final String name = "MyConfig";
         final DefaultConfiguration config = new DefaultConfiguration(name);
@@ -129,7 +122,6 @@ public class DefaultConfigurationTest {
         }
     }
 
-    @Test
     public void testDefaultMultiThreadConfiguration() {
         final String name = "MyConfig";
         final DefaultConfiguration config = new DefaultConfiguration(name);
@@ -140,7 +132,6 @@ public class DefaultConfigurationTest {
             .isEqualTo(singleThreadMode);
     }
 
-    @Test
     public void testMultiThreadConfiguration() {
         final String name = "MyConfig";
         final ThreadModeSettings multiThreadMode =

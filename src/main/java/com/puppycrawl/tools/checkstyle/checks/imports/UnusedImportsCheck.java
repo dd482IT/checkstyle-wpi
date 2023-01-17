@@ -123,7 +123,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 3.0
  */
-@FileStatefulCheck
 public class UnusedImportsCheck extends AbstractCheck {
 
     /**

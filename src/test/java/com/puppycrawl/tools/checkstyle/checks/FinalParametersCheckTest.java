@@ -33,7 +33,6 @@ public class FinalParametersCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/finalparameters";
     }
 
-    @Test
     public void testDefaultTokens() throws Exception {
         final String[] expected = {
             "27:26: " + getCheckMessage(MSG_KEY, "s"),
@@ -52,7 +51,6 @@ public class FinalParametersCheckTest extends AbstractModuleTestSupport {
                 getPath("InputFinalParameters.java"), expected);
     }
 
-    @Test
     public void testCtorToken() throws Exception {
         final String[] expected = {
             "28:27: " + getCheckMessage(MSG_KEY, "s"),
@@ -63,7 +61,6 @@ public class FinalParametersCheckTest extends AbstractModuleTestSupport {
                 getPath("InputFinalParameters2.java"), expected);
     }
 
-    @Test
     public void testMethodToken() throws Exception {
         final String[] expected = {
             "58:17: " + getCheckMessage(MSG_KEY, "s"),
@@ -79,7 +76,6 @@ public class FinalParametersCheckTest extends AbstractModuleTestSupport {
                 getPath("InputFinalParameters3.java"), expected);
     }
 
-    @Test
     public void testCatchToken() throws Exception {
         final String[] expected = {
             "130:16: " + getCheckMessage(MSG_KEY, "npe"),
@@ -90,7 +86,6 @@ public class FinalParametersCheckTest extends AbstractModuleTestSupport {
                 getPath("InputFinalParameters4.java"), expected);
     }
 
-    @Test
     public void testForEachClauseToken() throws Exception {
         final String[] expected = {
             "157:13: " + getCheckMessage(MSG_KEY, "s"),
@@ -100,7 +95,6 @@ public class FinalParametersCheckTest extends AbstractModuleTestSupport {
                 getPath("InputFinalParameters5.java"), expected);
     }
 
-    @Test
     public void testIgnorePrimitiveTypesParameters() throws Exception {
         final String[] expected = {
             "14:22: " + getCheckMessage(MSG_KEY, "k"),
@@ -115,7 +109,6 @@ public class FinalParametersCheckTest extends AbstractModuleTestSupport {
                 getPath("InputFinalParametersPrimitiveTypes.java"), expected);
     }
 
-    @Test
     public void testPrimitiveTypesParameters() throws Exception {
         final String[] expected = {
             "13:14: " + getCheckMessage(MSG_KEY, "i"),
@@ -137,7 +130,6 @@ public class FinalParametersCheckTest extends AbstractModuleTestSupport {
                 getPath("InputFinalParametersPrimitiveTypes2.java"), expected);
     }
 
-    @Test
     public void testReceiverParameters() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(

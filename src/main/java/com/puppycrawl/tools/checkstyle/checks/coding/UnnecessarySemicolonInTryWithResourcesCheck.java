@@ -95,7 +95,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 8.22
  */
-@StatelessCheck
 public final class UnnecessarySemicolonInTryWithResourcesCheck extends AbstractCheck {
 
     /**

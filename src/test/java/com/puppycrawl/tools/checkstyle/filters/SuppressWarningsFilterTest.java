@@ -82,14 +82,12 @@ public class SuppressWarningsFilterTest
         return "com/puppycrawl/tools/checkstyle/filters/suppresswarningsfilter";
     }
 
-    @Test
     public void testNone() throws Exception {
         final String[] suppressed = CommonUtil.EMPTY_STRING_ARRAY;
         verifySuppressedWithParser(
             getPath("InputSuppressWarningsFilterWithoutFilter.java"), suppressed);
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] suppressed = {
             "56:17: "
@@ -113,7 +111,6 @@ public class SuppressWarningsFilterTest
         verifySuppressedWithParser(getPath("InputSuppressWarningsFilter.java"), suppressed);
     }
 
-    @Test
     public void testSuppressById() throws Exception {
         final String[] suppressedViolationMessages = {
             "49:17: "

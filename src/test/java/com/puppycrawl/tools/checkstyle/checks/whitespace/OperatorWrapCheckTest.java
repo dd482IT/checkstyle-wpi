@@ -37,7 +37,6 @@ public class OperatorWrapCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/operatorwrap";
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -51,7 +50,6 @@ public class OperatorWrapCheckTest
                 getPath("InputOperatorWrap1.java"), expected);
     }
 
-    @Test
     public void testOpWrapEol()
             throws Exception {
         final String[] expected = {
@@ -63,7 +61,6 @@ public class OperatorWrapCheckTest
                 getPath("InputOperatorWrap2.java"), expected);
     }
 
-    @Test
     public void testNonDefOpsDefault()
             throws Exception {
         final String[] expected = {
@@ -73,7 +70,6 @@ public class OperatorWrapCheckTest
                 getPath("InputOperatorWrap3.java"), expected);
     }
 
-    @Test
     public void testNonDefOpsWrapEol()
             throws Exception {
         final String[] expected = {
@@ -84,7 +80,6 @@ public class OperatorWrapCheckTest
                 getPath("InputOperatorWrap4.java"), expected);
     }
 
-    @Test
     public void testAssignEol()
             throws Exception {
         final String[] expected = {
@@ -94,7 +89,6 @@ public class OperatorWrapCheckTest
                 getPath("InputOperatorWrap5.java"), expected);
     }
 
-    @Test
     public void testEol() throws Exception {
         final String[] expected = {
             "21:17: " + getCheckMessage(MSG_LINE_PREVIOUS, "="),
@@ -111,7 +105,6 @@ public class OperatorWrapCheckTest
                 getPath("InputOperatorWrapEol.java"), expected);
     }
 
-    @Test
     public void testNl() throws Exception {
         final String[] expected = {
             "20:16: " + getCheckMessage(MSG_LINE_NEW, "="),
@@ -127,7 +120,6 @@ public class OperatorWrapCheckTest
                 getPath("InputOperatorWrapNl.java"), expected);
     }
 
-    @Test
     public void testArraysAssign() throws Exception {
         final String[] expected = {
             "18:22: " + getCheckMessage(MSG_LINE_NEW, "="),
@@ -138,7 +130,6 @@ public class OperatorWrapCheckTest
                 getPath("InputOperatorWrapArrayAssign.java"), expected);
     }
 
-    @Test
     public void testGuardedPattern() throws Exception {
         final String[] expected = {
             "52:30: " + getCheckMessage(MSG_LINE_NEW, "&&"),
@@ -156,14 +147,12 @@ public class OperatorWrapCheckTest
                 getNonCompilablePath("InputOperatorWrapGuardedPatterns.java"), expected);
     }
 
-    @Test
     public void testTryWithResources() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputOperatorWrapTryWithResources.java"), expected);
     }
 
-    @Test
     public void testInvalidOption() throws Exception {
 
         try {
@@ -183,7 +172,6 @@ public class OperatorWrapCheckTest
         }
     }
 
-    @Test
     public void testTrimOptionProperty() throws Exception {
         final String[] expected = {
             "18:21: " + getCheckMessage(MSG_LINE_PREVIOUS, ":"),

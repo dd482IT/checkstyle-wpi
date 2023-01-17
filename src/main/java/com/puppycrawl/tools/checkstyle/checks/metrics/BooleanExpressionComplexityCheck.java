@@ -157,7 +157,6 @@ import com.puppycrawl.tools.checkstyle.utils.CheckUtil;
  *
  * @since 3.4
  */
-@FileStatefulCheck
 public final class BooleanExpressionComplexityCheck extends AbstractCheck {
 
     /**

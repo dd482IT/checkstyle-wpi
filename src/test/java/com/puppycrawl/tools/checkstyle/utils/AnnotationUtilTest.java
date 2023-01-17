@@ -32,7 +32,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 
 public class AnnotationUtilTest {
 
-    @Test
     public void testIsProperUtilsClass() {
         try {
             isUtilsClassHasPrivateConstructor(AnnotationUtil.class);
@@ -47,7 +46,6 @@ public class AnnotationUtilTest {
         }
     }
 
-    @Test
     public void testContainsAnnotationNull() {
         try {
             AnnotationUtil.containsAnnotation(null);
@@ -60,7 +58,6 @@ public class AnnotationUtilTest {
         }
     }
 
-    @Test
     public void testContainsAnnotationNull2() {
         try {
             AnnotationUtil.containsAnnotation(null, "");
@@ -73,7 +70,6 @@ public class AnnotationUtilTest {
         }
     }
 
-    @Test
     public void testContainsAnnotationFalse() {
         final DetailAstImpl ast = new DetailAstImpl();
         ast.setType(1);
@@ -82,7 +78,6 @@ public class AnnotationUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testContainsAnnotationFalse2() {
         final DetailAstImpl ast = new DetailAstImpl();
         ast.setType(1);
@@ -94,7 +89,6 @@ public class AnnotationUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testContainsAnnotationTrue() {
         final DetailAstImpl ast = new DetailAstImpl();
         ast.setType(1);
@@ -109,7 +103,6 @@ public class AnnotationUtilTest {
                 .isTrue();
     }
 
-    @Test
     public void testAnnotationHolderNull() {
         try {
             AnnotationUtil.getAnnotationHolder(null);
@@ -122,7 +115,6 @@ public class AnnotationUtilTest {
         }
     }
 
-    @Test
     public void testAnnotationNull() {
         try {
             AnnotationUtil.getAnnotation(null, null);
@@ -135,7 +127,6 @@ public class AnnotationUtilTest {
         }
     }
 
-    @Test
     public void testAnnotationNull2() {
         try {
             AnnotationUtil.getAnnotation(new DetailAstImpl(), null);
@@ -148,7 +139,6 @@ public class AnnotationUtilTest {
         }
     }
 
-    @Test
     public void testAnnotationEmpty() {
         try {
             AnnotationUtil.getAnnotation(new DetailAstImpl(), "");
@@ -161,7 +151,6 @@ public class AnnotationUtilTest {
         }
     }
 
-    @Test
     public void testContainsAnnotationWithNull() {
         try {
             AnnotationUtil.getAnnotation(null, "");
@@ -174,7 +163,6 @@ public class AnnotationUtilTest {
         }
     }
 
-    @Test
     public void testContainsAnnotationListWithNullAst() {
         try {
             AnnotationUtil.containsAnnotation(null, Set.of("Override"));
@@ -187,7 +175,6 @@ public class AnnotationUtilTest {
         }
     }
 
-    @Test
     public void testContainsAnnotationListWithNullList() {
         final DetailAST ast = new DetailAstImpl();
         final Set<String> annotations = null;
@@ -202,7 +189,6 @@ public class AnnotationUtilTest {
         }
     }
 
-    @Test
     public void testContainsAnnotationListWithEmptyList() {
         final DetailAST ast = new DetailAstImpl();
         final Set<String> annotations = Set.of();
@@ -212,7 +198,6 @@ public class AnnotationUtilTest {
             .isFalse();
     }
 
-    @Test
     public void testContainsAnnotationListWithNoAnnotationNode() {
         final DetailAstImpl ast = new DetailAstImpl();
         final DetailAstImpl modifiersAst = new DetailAstImpl();
@@ -225,7 +210,6 @@ public class AnnotationUtilTest {
             .isFalse();
     }
 
-    @Test
     public void testContainsAnnotationListWithNoMatchingAnnotation() {
         final DetailAstImpl ast = new DetailAstImpl();
         final DetailAstImpl modifiersAst = create(
@@ -248,7 +232,6 @@ public class AnnotationUtilTest {
             .isFalse();
     }
 
-    @Test
     public void testContainsAnnotation() {
         final DetailAstImpl astForTest = new DetailAstImpl();
         astForTest.setType(TokenTypes.PACKAGE_DEF);
@@ -273,7 +256,6 @@ public class AnnotationUtilTest {
                 .isTrue();
     }
 
-    @Test
     public void testContainsAnnotationWithStringFalse() {
         final DetailAstImpl astForTest = new DetailAstImpl();
         astForTest.setType(TokenTypes.PACKAGE_DEF);
@@ -298,7 +280,6 @@ public class AnnotationUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testContainsAnnotationWithComment() {
         final DetailAstImpl astForTest = new DetailAstImpl();
         astForTest.setType(TokenTypes.PACKAGE_DEF);

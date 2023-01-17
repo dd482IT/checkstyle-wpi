@@ -36,7 +36,6 @@ public class StaticVariableNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/staticvariablename";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final StaticVariableNameCheck checkObj = new StaticVariableNameCheck();
         final int[] expected = {TokenTypes.VARIABLE_DEF};
@@ -45,7 +44,6 @@ public class StaticVariableNameCheckTest
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testSpecified()
             throws Exception {
 
@@ -58,7 +56,6 @@ public class StaticVariableNameCheckTest
                 getPath("InputStaticVariableName1.java"), expected);
     }
 
-    @Test
     public void testAccessTuning()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -66,7 +63,6 @@ public class StaticVariableNameCheckTest
                 getPath("InputStaticVariableName2.java"), expected);
     }
 
-    @Test
     public void testInterfaceOrAnnotationBlock()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -74,7 +70,6 @@ public class StaticVariableNameCheckTest
                 getPath("InputStaticVariableName.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final StaticVariableNameCheck staticVariableNameCheckObj = new StaticVariableNameCheck();
         final int[] actual = staticVariableNameCheckObj.getAcceptableTokens();

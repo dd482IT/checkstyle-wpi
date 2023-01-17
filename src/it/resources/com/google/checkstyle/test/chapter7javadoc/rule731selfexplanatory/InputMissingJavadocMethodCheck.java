@@ -74,7 +74,6 @@ public class InputMissingJavadocMethodCheck extends OverrideClass
 
     }
 
-    @MyAnnotation
     String foo91()
     {
         return "Fooooooooooooooo"

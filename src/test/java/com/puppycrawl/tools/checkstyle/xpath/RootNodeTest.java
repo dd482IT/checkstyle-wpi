@@ -46,14 +46,12 @@ public class RootNodeTest extends AbstractPathTestSupport {
         return "com/puppycrawl/tools/checkstyle/xpath/xpathmapper";
     }
 
-    @BeforeEach
     public void init() throws Exception {
         final File file = new File(getPath("InputXpathMapperAst.java"));
         final DetailAST rootAst = JavaParser.parseFile(file, JavaParser.Options.WITHOUT_COMMENTS);
         rootNode = new RootNode(rootAst);
     }
 
-    @Test
     public void testCompareOrder() {
         try {
             rootNode.compareOrder(null);
@@ -66,7 +64,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testXpath() throws Exception {
         final String xpath = "/";
         final List<NodeInfo> nodes = getXpathItems(xpath, rootNode);
@@ -82,42 +79,36 @@ public class RootNodeTest extends AbstractPathTestSupport {
             .isEqualTo(firstNode);
     }
 
-    @Test
     public void testGetDepth() {
         assertWithMessage("Root node depth should be 0")
                 .that(rootNode.getDepth())
                 .isEqualTo(0);
     }
 
-    @Test
     public void testGetTokenType() {
         assertWithMessage("Invalid token type")
             .that(rootNode.getTokenType())
             .isEqualTo(TokenTypes.COMPILATION_UNIT);
     }
 
-    @Test
     public void testGetLineNumber() {
         assertWithMessage("Invalid line number")
             .that(rootNode.getLineNumber())
             .isEqualTo(1);
     }
 
-    @Test
     public void testGetColumnNumber() {
         assertWithMessage("Invalid column number")
             .that(rootNode.getColumnNumber())
             .isEqualTo(0);
     }
 
-    @Test
     public void testGetLocalPart() {
         assertWithMessage("Invalid local part")
             .that(rootNode.getLocalPart())
             .isEqualTo("ROOT");
     }
 
-    @Test
     public void testIterate() {
         try (AxisIterator following = rootNode.iterateAxis(AxisInfo.FOLLOWING)) {
             assertWithMessage("Result iterator does not match expected")
@@ -151,7 +142,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testRootWithNullDetailAst() {
         final RootNode emptyRootNode = new RootNode(null);
         assertWithMessage("Empty node should not have children")
@@ -170,7 +160,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetStringValue() {
         try {
             rootNode.getStringValue();
@@ -183,7 +172,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetAttributeValue() {
         try {
             rootNode.getAttributeValue("", "");
@@ -196,7 +184,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetDeclaredNamespaces() {
         try {
             rootNode.getDeclaredNamespaces(null);
@@ -209,7 +196,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testIsId() {
         try {
             rootNode.isId();
@@ -222,7 +208,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testIsIdref() {
         try {
             rootNode.isIdref();
@@ -235,7 +220,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testIsNilled() {
         try {
             rootNode.isNilled();
@@ -248,7 +232,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testIsStreamed() {
         try {
             rootNode.isStreamed();
@@ -261,7 +244,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetConfiguration() {
         try {
             rootNode.getConfiguration();
@@ -274,7 +256,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testSetSystemId() {
         try {
             rootNode.setSystemId("1");
@@ -287,7 +268,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetSystemId() {
         try {
             rootNode.getSystemId();
@@ -300,7 +280,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetPublicId() {
         try {
             rootNode.getPublicId();
@@ -313,7 +292,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testBaseUri() {
         try {
             rootNode.getBaseURI();
@@ -326,7 +304,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testSaveLocation() {
         try {
             rootNode.saveLocation();
@@ -339,7 +316,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetStringValueCs() {
         try {
             rootNode.getUnicodeStringValue();
@@ -352,7 +328,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testFingerprint() {
         try {
             rootNode.getFingerprint();
@@ -365,7 +340,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetDisplayName() {
         try {
             rootNode.getDisplayName();
@@ -378,7 +352,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetPrefix() {
         try {
             rootNode.getPrefix();
@@ -391,7 +364,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetSchemaType() {
         try {
             rootNode.getSchemaType();
@@ -404,7 +376,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testAtomize() {
         try {
             rootNode.atomize();
@@ -417,7 +388,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGenerateId() {
         try {
             rootNode.generateId(null);
@@ -430,7 +400,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testCopy() {
         try {
             rootNode.copy(null, -1, null);
@@ -443,7 +412,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetAllNamespaces() {
         try {
             rootNode.getAllNamespaces();
@@ -456,7 +424,6 @@ public class RootNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testSameNodeInfo() {
         assertWithMessage("Should return true, because object is being compared to itself")
                 .that(rootNode.isSameNodeInfo(rootNode))

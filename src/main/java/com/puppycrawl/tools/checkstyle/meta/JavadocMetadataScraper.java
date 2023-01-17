@@ -48,7 +48,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
 /**
  * Class for scraping module metadata from the corresponding class' class-level javadoc.
  */
-@FileStatefulCheck
 public class JavadocMetadataScraper extends AbstractJavadocCheck {
 
     /**

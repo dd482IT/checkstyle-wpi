@@ -81,7 +81,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 3.4
  */
-@StatelessCheck
 public class MultipleVariableDeclarationsCheck extends AbstractCheck {
 
     /**

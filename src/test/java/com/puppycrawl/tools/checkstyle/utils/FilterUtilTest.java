@@ -29,17 +29,14 @@ import org.junit.jupiter.api.io.TempDir;
 
 public class FilterUtilTest {
 
-    @TempDir
     public File temporaryFolder;
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(isUtilsClassHasPrivateConstructor(FilterUtil.class))
                 .isTrue();
     }
 
-    @Test
     public void testExistingFile() throws Exception {
         final File file = File.createTempFile("junit", null, temporaryFolder);
         assertWithMessage("Suppression file exists")
@@ -47,7 +44,6 @@ public class FilterUtilTest {
                 .isTrue();
     }
 
-    @Test
     public void testNonExistentFile() {
         assertWithMessage("Suppression file does not exist")
                 .that(FilterUtil.isFileExists("non-existent.xml"))

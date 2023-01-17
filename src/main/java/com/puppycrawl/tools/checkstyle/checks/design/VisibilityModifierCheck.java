@@ -404,7 +404,6 @@ import com.puppycrawl.tools.checkstyle.utils.ScopeUtil;
  *
  * @since 3.0
  */
-@FileStatefulCheck
 public class VisibilityModifierCheck
     extends AbstractCheck {
 

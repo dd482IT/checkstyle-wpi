@@ -43,7 +43,6 @@ public class EqualsHashCodeCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/equalshashcode";
     }
 
-    @Test
     public void testSemantic() throws Exception {
         final String[] expected = {
             "96:13: " + getCheckMessage(MSG_KEY_HASHCODE),
@@ -52,7 +51,6 @@ public class EqualsHashCodeCheckTest
                 getPath("InputEqualsHashCodeSemantic.java"), expected);
     }
 
-    @Test
     public void testNoEquals() throws Exception {
         final String[] expected = {
             "10:5: " + getCheckMessage(MSG_KEY_EQUALS),
@@ -61,14 +59,12 @@ public class EqualsHashCodeCheckTest
                 getPath("InputEqualsHashCodeNoEquals.java"), expected);
     }
 
-    @Test
     public void testBooleanMethods() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputEqualsHashCode.java"), expected);
     }
 
-    @Test
     public void testMultipleInputs() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(EqualsHashCodeCheck.class);
@@ -99,7 +95,6 @@ public class EqualsHashCodeCheckTest
         ));
     }
 
-    @Test
     public void testEqualsParameter() throws Exception {
         final String[] expected = {
             "16:9: " + getCheckMessage(MSG_KEY_EQUALS),
@@ -116,7 +111,6 @@ public class EqualsHashCodeCheckTest
                 getPath("InputEqualsHashCodeEqualsParameter.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final EqualsHashCodeCheck check = new EqualsHashCodeCheck();
         assertWithMessage("Acceptable tokens should not be null")

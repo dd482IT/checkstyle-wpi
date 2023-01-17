@@ -42,7 +42,6 @@ public class ParenPadCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/parenpad";
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -60,7 +59,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadWhitespace.java"), expected);
     }
 
-    @Test
     public void testSpace()
             throws Exception {
         final String[] expected = {
@@ -104,7 +102,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadWhitespace2.java"), expected);
     }
 
-    @Test
     public void testDefaultForIterator()
             throws Exception {
         final String[] expected = {
@@ -120,7 +117,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadForWhitespace.java"), expected);
     }
 
-    @Test
     public void testSpaceEmptyForIterator()
             throws Exception {
         final String[] expected = {
@@ -138,7 +134,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadForWhitespace2.java"), expected);
     }
 
-    @Test
     public void test1322879() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -146,14 +141,12 @@ public class ParenPadCheckTest
                expected);
     }
 
-    @Test
     public void testTrimOptionProperty() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputParenPadToCheckTrimFunctionInOptionProperty.java"), expected);
     }
 
-    @Test
     public void testNospaceWithComplexInput() throws Exception {
         final String[] expected = {
             "55:26: " + getCheckMessage(MSG_WS_FOLLOWED, "("),
@@ -282,7 +275,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadLeftRightAndNoSpace1.java"), expected);
     }
 
-    @Test
     public void testConfigureTokens() throws Exception {
         final String[] expected = {
             "98:39: " + getCheckMessage(MSG_WS_PRECEDED, ")"),
@@ -316,7 +308,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadLeftRightAndNoSpace2.java"), expected);
     }
 
-    @Test
     public void testInvalidOption() throws Exception {
 
         try {
@@ -336,7 +327,6 @@ public class ParenPadCheckTest
         }
     }
 
-    @Test
     public void testLambdaAssignment() throws Exception {
         final String[] expected = {
             "20:41: " + getCheckMessage(MSG_WS_FOLLOWED, "("),
@@ -356,7 +346,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadLambda.java"), expected);
     }
 
-    @Test
     public void testLambdaAssignmentWithSpace() throws Exception {
         final String[] expected = {
             "20:41: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "("),
@@ -374,7 +363,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadLambdaWithSpace.java"), expected);
     }
 
-    @Test
     public void testLambdaCheckDisabled() throws Exception {
         final String[] expected = {
             "27:61: " + getCheckMessage(MSG_WS_FOLLOWED, "("),
@@ -386,7 +374,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadWithDisabledLambda.java"), expected);
     }
 
-    @Test
     public void testLambdaCheckDisabledWithSpace() throws Exception {
         final String[] expected = {
             "30:20: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "("),
@@ -396,7 +383,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadWithSpaceAndDisabledLambda.java"), expected);
     }
 
-    @Test
     public void testLambdaCheckOnly() throws Exception {
         final String[] expected = {
             "17:41: " + getCheckMessage(MSG_WS_FOLLOWED, "("),
@@ -412,7 +398,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadLambdaOnly.java"), expected);
     }
 
-    @Test
     public void testLambdaCheckOnlyWithSpace() throws Exception {
         final String[] expected = {
             "17:41: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "("),
@@ -428,7 +413,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadLambdaOnlyWithSpace.java"), expected);
     }
 
-    @Test
     public void testLambdaCheckOnlyWithSpace1() throws Exception {
         final String[] expected = {
             "16:2: " + getCheckMessage(MSG_WS_NOT_PRECEDED, ")"),
@@ -437,7 +421,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadStartOfTheLine.java"), expected);
     }
 
-    @Test
     public void testTryWithResources() throws Exception {
         final String[] expected = {
             "20:37: " + getCheckMessage(MSG_WS_PRECEDED, ")"),
@@ -448,7 +431,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadTryWithResources.java"), expected);
     }
 
-    @Test
     public void testTryWithResourcesAndSuppression() throws Exception {
         final String[] expectedFiltered = CommonUtil.EMPTY_STRING_ARRAY;
         final String[] expectedUnfiltered = {
@@ -459,7 +441,6 @@ public class ParenPadCheckTest
                 expectedFiltered);
     }
 
-    @Test
     public void testNoStackoverflowError()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -467,7 +448,6 @@ public class ParenPadCheckTest
                 expected);
     }
 
-    @Test
     public void testParenPadCheckRecords() throws Exception {
 
         final String[] expected = {
@@ -489,7 +469,6 @@ public class ParenPadCheckTest
                 getNonCompilablePath("InputParenPadCheckRecords.java"), expected);
     }
 
-    @Test
     public void testParenPadCheckRecordsWithSpace() throws Exception {
 
         final String[] expected = {
@@ -510,7 +489,6 @@ public class ParenPadCheckTest
                 getNonCompilablePath("InputParenPadCheckRecordsSpace.java"), expected);
     }
 
-    @Test
     public void testParenPadCheckEmoji() throws Exception {
 
         final String[] expected = {
@@ -525,7 +503,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadCheckEmoji.java"), expected);
     }
 
-    @Test
     public void testParenPadForSynchronized() throws Exception {
 
         final String[] expected = {
@@ -535,7 +512,6 @@ public class ParenPadCheckTest
                 getPath("InputParenPadForSynchronized.java"), expected);
     }
 
-    @Test
     public void testParenPadForEnum() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -552,7 +528,6 @@ public class ParenPadCheckTest
      * So we have to use reflection to be sure all
      * acceptable tokens pass that check.
      */
-    @Test
     public void testIsAcceptableToken() throws Exception {
         final ParenPadCheck check = new ParenPadCheck();
         final DetailAstImpl ast = new DetailAstImpl();

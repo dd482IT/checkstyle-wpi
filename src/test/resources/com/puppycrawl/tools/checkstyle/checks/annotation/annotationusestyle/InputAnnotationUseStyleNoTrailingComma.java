@@ -33,15 +33,15 @@ public class InputAnnotationUseStyleNoTrailingComma
       };
   }
 
-  @Test2(value={"foo"}, more={"bar"}) // 2 violations
+  // 2 violations
 
-  @Pooches2(tokens={},other={}) // 2 violations
+  // 2 violations
   enum P {
 
-      @Pooches2(tokens={Pooches2.class},other={1}) // 2 violations
+      // 2 violations
       L, // annotation in enum
 
-      @Test2(value={}, more={"unchecked"}) // 2 violations
+      // 2 violations
       Y;
   }
 

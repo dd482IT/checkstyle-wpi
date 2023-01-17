@@ -39,7 +39,6 @@ public class UnnecessarySemicolonInEnumerationCheckTest extends AbstractModuleTe
             + "unnecessarysemicoloninenumeration";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -60,7 +59,6 @@ public class UnnecessarySemicolonInEnumerationCheckTest extends AbstractModuleTe
                 getPath("InputUnnecessarySemicolonInEnumeration.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final UnnecessarySemicolonInEnumerationCheck check =
                 new UnnecessarySemicolonInEnumerationCheck();

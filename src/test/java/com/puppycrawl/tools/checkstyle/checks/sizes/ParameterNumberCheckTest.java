@@ -36,7 +36,6 @@ public class ParameterNumberCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/sizes/parameternumber";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final ParameterNumberCheck checkObj = new ParameterNumberCheck();
         assertWithMessage("ParameterNumberCheck#getRequiredTokens should return empty array "
@@ -45,7 +44,6 @@ public class ParameterNumberCheckTest
             .isEqualTo(CommonUtil.EMPTY_INT_ARRAY);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final ParameterNumberCheck paramNumberCheckObj =
             new ParameterNumberCheck();
@@ -60,7 +58,6 @@ public class ParameterNumberCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -70,7 +67,6 @@ public class ParameterNumberCheckTest
                 getPath("InputParameterNumberSimple.java"), expected);
     }
 
-    @Test
     public void testNum()
             throws Exception {
         final String[] expected = {
@@ -81,7 +77,6 @@ public class ParameterNumberCheckTest
                 getPath("InputParameterNumberSimple2.java"), expected);
     }
 
-    @Test
     public void testMaxParam()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -89,7 +84,6 @@ public class ParameterNumberCheckTest
                 getPath("InputParameterNumberSimple3.java"), expected);
     }
 
-    @Test
     public void shouldLogActualParameterNumber()
             throws Exception {
         final String[] expected = {
@@ -99,7 +93,6 @@ public class ParameterNumberCheckTest
                 getPath("InputParameterNumberSimple4.java"), expected);
     }
 
-    @Test
     public void testIgnoreOverriddenMethods()
             throws Exception {
         final String[] expected = {
@@ -110,7 +103,6 @@ public class ParameterNumberCheckTest
                 getPath("InputParameterNumber.java"), expected);
     }
 
-    @Test
     public void testIgnoreOverriddenMethodsFalse()
             throws Exception {
         final String[] expected = {

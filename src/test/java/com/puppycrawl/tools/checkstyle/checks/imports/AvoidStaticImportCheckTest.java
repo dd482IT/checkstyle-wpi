@@ -35,7 +35,6 @@ public class AvoidStaticImportCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/imports/avoidstaticimport";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final AvoidStaticImportCheck checkObj = new AvoidStaticImportCheck();
         final int[] expected = {TokenTypes.STATIC_IMPORT};
@@ -44,7 +43,6 @@ public class AvoidStaticImportCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefaultOperation()
             throws Exception {
         final String[] expected = {
@@ -66,7 +64,6 @@ public class AvoidStaticImportCheckTest
                 getPath("InputAvoidStaticImportDefault.java"), expected);
     }
 
-    @Test
     public void testStarExcludes()
             throws Exception {
         // allow the "java.io.File.*" AND "sun.net.ftpclient.FtpClient.*" star imports
@@ -85,7 +82,6 @@ public class AvoidStaticImportCheckTest
                 getPath("InputAvoidStaticImportDefault2.java"), expected);
     }
 
-    @Test
     public void testMemberExcludes()
             throws Exception {
         // allow the java.io.File.listRoots and java.lang.Math.E member imports
@@ -105,7 +101,6 @@ public class AvoidStaticImportCheckTest
                 getPath("InputAvoidStaticImportDefault3.java"), expected);
     }
 
-    @Test
     public void testBogusMemberExcludes()
             throws Exception {
         // should NOT mask anything
@@ -127,7 +122,6 @@ public class AvoidStaticImportCheckTest
                 getPath("InputAvoidStaticImportDefault4.java"), expected);
     }
 
-    @Test
     public void testInnerClassMemberExcludesStar()
             throws Exception {
         // should mask com.puppycrawl.tools.checkstyle.imports.avoidstaticimport.
@@ -147,7 +141,6 @@ public class AvoidStaticImportCheckTest
                 getPath("InputAvoidStaticImportDefault5.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final AvoidStaticImportCheck testCheckObject =
                 new AvoidStaticImportCheck();

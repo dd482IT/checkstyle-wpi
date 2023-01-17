@@ -72,7 +72,7 @@ public class InputNoWhitespaceAfterNewTypeStructure {
                         [] ; // violation
     }
 
-    void varargLong(@I String @L [] @K [] @J ... vararg2) { } // ok
+    void varargLong(String[][] ... vararg2) { } // ok
     @SuppressWarnings("unused")
     void withUpperBound(List<? extends int[][]> list) {}
 
@@ -239,7 +239,7 @@ public class InputNoWhitespaceAfterNewTypeStructure {
         }
     }
 
-    private @Nullable int array2 @Nullable [] @Nullable [];
+    private int array2[][];
 }
 
 @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})

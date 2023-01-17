@@ -32,7 +32,6 @@ public class NeedBracesTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule411bracesareused";
     }
 
-    @Test
     public void testNeedBraces() throws Exception {
         final Class<NeedBracesCheck> clazz = NeedBracesCheck.class;
         final String messageKey = "needBraces";

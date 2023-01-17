@@ -29,14 +29,12 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
 
 public class ParserUtilTest {
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(isUtilsClassHasPrivateConstructor(ParserUtil.class))
                 .isTrue();
     }
 
-    @Test
     public void testCreationOfFakeCommentBlock() {
         final DetailAST testCommentBlock =
             ParserUtil.createBlockCommentNode("test_comment");

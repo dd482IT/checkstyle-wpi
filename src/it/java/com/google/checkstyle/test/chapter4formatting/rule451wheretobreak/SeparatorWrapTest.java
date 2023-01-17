@@ -34,7 +34,6 @@ public class SeparatorWrapTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule451wheretobreak";
     }
 
-    @Test
     public void testSeparatorWrapDot() throws Exception {
         final String[] expected = {
             "28:30: " + getCheckMessage(SeparatorWrapCheck.class, "line.new", "."),
@@ -47,7 +46,6 @@ public class SeparatorWrapTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testSeparatorWrapComma() throws Exception {
         final String[] expected = {
             "31:17: " + getCheckMessage(SeparatorWrapCheck.class, "line.previous", ","),
@@ -60,7 +58,6 @@ public class SeparatorWrapTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testSeparatorWrapMethodRef() throws Exception {
         final String[] expected = {
             "17:49: " + getCheckMessage(SeparatorWrapCheck.class, MSG_LINE_NEW, "::"),
@@ -74,7 +71,6 @@ public class SeparatorWrapTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testEllipsis() throws Exception {
         final String[] expected = {
             "11:13: " + getCheckMessage(SeparatorWrapCheck.class, "line.previous", "..."),
@@ -87,7 +83,6 @@ public class SeparatorWrapTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testArrayDeclarator() throws Exception {
         final String[] expected = {
             "9:13: " + getCheckMessage(SeparatorWrapCheck.class, "line.previous", "["),

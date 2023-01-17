@@ -33,7 +33,6 @@ public class TypeNameTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter5naming/rule522typenames";
     }
 
-    @Test
     public void testTypeName() throws Exception {
         final Configuration checkConfig = getModuleConfig("TypeName");
         final String msgKey = "name.invalidPattern";

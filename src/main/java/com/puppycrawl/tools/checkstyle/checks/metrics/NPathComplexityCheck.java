@@ -233,7 +233,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  * @since 3.4
  */
 // -@cs[AbbreviationAsWordInName] Can't change check name
-@FileStatefulCheck
 public final class NPathComplexityCheck extends AbstractCheck {
 
     /**

@@ -249,7 +249,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  * @since 3.4
  */
 // -@cs[ClassDataAbstractionCoupling] This check requires to work with and identify many frames.
-@FileStatefulCheck
 public class RequireThisCheck extends AbstractCheck {
 
     /**

@@ -133,7 +133,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 3.2
  */
-@StatelessCheck
 public final class AbstractClassNameCheck extends AbstractCheck {
 
     /**

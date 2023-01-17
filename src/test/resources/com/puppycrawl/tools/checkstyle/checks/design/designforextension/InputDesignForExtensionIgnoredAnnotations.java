@@ -128,25 +128,21 @@ public class InputDesignForExtensionIgnoredAnnotations {
     public void foo16() { }
 
     @Deprecated
-    @InputDesignForExtensionsLocalAnnotations.ClassRule
     public void foo17() { return; }
 
     @Deprecated
-    @InputDesignForExtensionsLocalAnnotations.ClassRule
     /** */
     public void foo18() { return; }
 
     @Deprecated
     /** */
-    @InputDesignForExtensionsLocalAnnotations.ClassRule
     public void foo19() { return; }
 
     /** */
     @Deprecated
-    @InputDesignForExtensionsLocalAnnotations.ClassRule
     public void foo20() { return; }
 
-    @InputDesignForExtensionsLocalAnnotations.ClassRule // violation
+    // violation
     public void foo21() { return; }
 
     private int age;
@@ -158,15 +154,15 @@ public class InputDesignForExtensionIgnoredAnnotations {
 
     public @interface Inject { }
 
-    public @MyAnnotation void foo22() {
+    public void foo22() {
         foo1();
     }
 
-    @MyAnnotation public void foo23() {
+    public void foo23() {
         foo1();
     }
 
-    public void foo24(@MyAnnotation int a) { // violation
+    public void foo24(int a) { // violation
         foo1();
     }
 

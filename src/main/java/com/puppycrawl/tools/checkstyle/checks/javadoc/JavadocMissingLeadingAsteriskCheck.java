@@ -116,7 +116,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 8.38
  */
-@StatelessCheck
 public class JavadocMissingLeadingAsteriskCheck extends AbstractJavadocCheck {
 
     /**

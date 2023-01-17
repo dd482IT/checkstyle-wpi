@@ -88,7 +88,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 3.0
  */
-@StatelessCheck
 public class ModifierOrderCheck
     extends AbstractCheck {
 

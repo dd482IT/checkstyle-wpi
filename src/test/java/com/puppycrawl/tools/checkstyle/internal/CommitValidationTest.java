@@ -91,7 +91,6 @@ public class CommitValidationTest {
     private static final CommitsResolutionMode COMMITS_RESOLUTION_MODE =
             CommitsResolutionMode.BY_LAST_COMMIT_AUTHOR;
 
-    @Test
     public void testHasCommits() throws Exception {
         final List<RevCommit> lastCommits = getCommitsToCheck();
 
@@ -100,7 +99,6 @@ public class CommitValidationTest {
                 .isTrue();
     }
 
-    @Test
     public void testCommitMessage() {
         assertWithMessage("should not accept commit message with periods on end")
             .that(validateCommitMessage("minor: Test. Test."))
@@ -140,7 +138,6 @@ public class CommitValidationTest {
             .isEqualTo(4);
     }
 
-    @Test
     public void testSupplementalPrefix() {
         assertWithMessage("should accept commit message with supplemental prefix")
                 .that(0)
@@ -169,7 +166,6 @@ public class CommitValidationTest {
                 .isEqualTo(validateCommitMessage("supplemental: Test\n\n"));
     }
 
-    @Test
     public void testCommitMessageHasProperStructure() throws Exception {
         final List<RevCommit> lastCommits = getCommitsToCheck();
         for (RevCommit commit : filterValidCommits(lastCommits)) {

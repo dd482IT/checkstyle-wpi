@@ -37,7 +37,6 @@ public class ParameterNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/parametername";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final ParameterNameCheck checkObj = new ParameterNameCheck();
         final int[] expected = {TokenTypes.PARAMETER_DEF};
@@ -46,7 +45,6 @@ public class ParameterNameCheckTest
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testCatch()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -54,7 +52,6 @@ public class ParameterNameCheckTest
                 getPath("InputParameterNameCatchOnly.java"), expected);
     }
 
-    @Test
     public void testSpecified()
             throws Exception {
 
@@ -69,7 +66,6 @@ public class ParameterNameCheckTest
                 getPath("InputParameterNameOne.java"), expected);
     }
 
-    @Test
     public void testWhitespaceInAccessModifierProperty() throws Exception {
         final String pattern = "^h$";
         final String[] expected = {
@@ -80,7 +76,6 @@ public class ParameterNameCheckTest
                 getPath("InputParameterNameWhitespaceInAccessModifierProperty.java"), expected);
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -88,7 +83,6 @@ public class ParameterNameCheckTest
                 getPath("InputParameterName.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final ParameterNameCheck parameterNameCheckObj = new ParameterNameCheck();
         final int[] actual = parameterNameCheckObj.getAcceptableTokens();
@@ -100,7 +94,6 @@ public class ParameterNameCheckTest
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testSkipMethodsWithOverrideAnnotationTrue()
             throws Exception {
 
@@ -119,7 +112,6 @@ public class ParameterNameCheckTest
                 getPath("InputParameterNameOverrideAnnotation.java"), expected);
     }
 
-    @Test
     public void testSkipMethodsWithOverrideAnnotationFalse()
             throws Exception {
 
@@ -139,7 +131,6 @@ public class ParameterNameCheckTest
                 getPath("InputParameterNameOverrideAnnotationOne.java"), expected);
     }
 
-    @Test
     public void testPublicAccessModifier()
             throws Exception {
 
@@ -157,7 +148,6 @@ public class ParameterNameCheckTest
                 getPath("InputParameterNameAccessModifier.java"), expected);
     }
 
-    @Test
     public void testIsOverriddenNoNullPointerException()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -165,28 +155,24 @@ public class ParameterNameCheckTest
                 getPath("InputParameterNameOverrideAnnotationNoNPE.java"), expected);
     }
 
-    @Test
     public void testReceiverParameter() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputParameterNameReceiver.java"), expected);
     }
 
-    @Test
     public void testLambdaParameterNoViolationAtAll() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputParameterNameLambda.java"), expected);
     }
 
-    @Test
     public void testWhitespaceInConfig() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputParameterNameWhitespaceInConfig.java"), expected);
     }
 
-    @Test
     public void testSetAccessModifiers() throws Exception {
         final AccessModifierOption[] input = {
             AccessModifierOption.PACKAGE,

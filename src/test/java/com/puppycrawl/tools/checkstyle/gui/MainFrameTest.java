@@ -61,18 +61,15 @@ public class MainFrameTest extends AbstractGuiTestSupport {
         return "com/puppycrawl/tools/checkstyle/gui/mainframe";
     }
 
-    @BeforeEach
     public void prepare() {
         mainFrame = new MainFrame();
     }
 
-    @AfterEach
     public void tearDown() {
         Arrays.stream(mainFrame.getOwnedWindows())
                 .forEach(Window::dispose);
     }
 
-    @Test
     public void testOpenFile() throws IOException {
         mainFrame.openFile(new File(getPath(TEST_FILE_NAME)));
         assertWithMessage("Unexpected frame title")
@@ -86,7 +83,6 @@ public class MainFrameTest extends AbstractGuiTestSupport {
      *
      * @throws IOException if I/O exception occurs while forming the path.
      */
-    @Test
     public void testOpenNonExistentFile() throws IOException {
         final File file = new File(getPath(NON_EXISTENT_FILE_NAME));
         try (MockedStatic<JOptionPane> optionPane = mockStatic(JOptionPane.class)) {
@@ -102,7 +98,6 @@ public class MainFrameTest extends AbstractGuiTestSupport {
                 .isEqualTo(file);
     }
 
-    @Test
     public void testChangeMode() {
         final JComboBox<MainFrameModel.ParseMode> modesCombobox =
                 findComponentByName(mainFrame, "modesCombobox");
@@ -120,7 +115,6 @@ public class MainFrameTest extends AbstractGuiTestSupport {
      *
      * @throws IOException if I/O exception occurs while forming the path.
      */
-    @Test
     public void testOpenFileButton() throws IOException {
         final JButton openFileButton = findComponentByName(mainFrame, "openFileButton");
         final File testFile = new File(getPath(TEST_FILE_NAME));
@@ -140,7 +134,6 @@ public class MainFrameTest extends AbstractGuiTestSupport {
      * Test for the {@link FileFilter} passed to {@code JFileChooser} to gain 100% coverage.
      * {@code JFileChooser} is mocked to obtain an instance of {@code JavaFileFilter} class.
      */
-    @Test
     public void testFileFilter() {
         final JButton openFileButton = findComponentByName(mainFrame, "openFileButton");
         try (MockedConstruction<JFileChooser> mocked = mockConstruction(
@@ -161,7 +154,6 @@ public class MainFrameTest extends AbstractGuiTestSupport {
         }
     }
 
-    @Test
     public void testExpandButton() {
         final JButton expandButton = findComponentByName(mainFrame, "expandButton");
         final JTextArea xpathTextArea = findComponentByName(mainFrame, "xpathTextArea");
@@ -175,7 +167,6 @@ public class MainFrameTest extends AbstractGuiTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testFindNodeButton() throws IOException {
         mainFrame.openFile(new File(getPath(TEST_FILE_NAME)));
         final JButton findNodeButton = findComponentByName(mainFrame, "findNodeButton");

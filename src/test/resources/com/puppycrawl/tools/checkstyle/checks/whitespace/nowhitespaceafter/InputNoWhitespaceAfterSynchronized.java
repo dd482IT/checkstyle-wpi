@@ -39,11 +39,11 @@ public class InputNoWhitespaceAfterSynchronized<T> {
         return null;
     }
 
-    @SyncAnno synchronized T m7() { // ok
+    synchronized T m7() { // ok
         return null;
     }
 
-    @SyncAnno private synchronized T m8() { // ok
+    private synchronized T m8() { // ok
         return null;
     }
 

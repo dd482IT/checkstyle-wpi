@@ -15,13 +15,11 @@ package com.puppycrawl.tools.checkstyle.checks.javadoc.missingjavadoctype;
 public class InputMissingJavadocTypeQualifiedAnnotation5 {
     public @interface SomeAnnotation { }
 
-    @SomeAnnotation // ok
+    // ok
     public interface A { }
 
-    @InputMissingJavadocTypeQualifiedAnnotation5.SomeAnnotation // ok
+    // ok
     public interface B { }
 
-     @com.puppycrawl.tools.checkstyle.checks.javadoc.missingjavadoctype // ok
-         .InputMissingJavadocTypeQualifiedAnnotation5.SomeAnnotation
     public interface C { }
 }

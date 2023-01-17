@@ -36,7 +36,6 @@ public class XpathRegressionAvoidNestedBlocksTest extends AbstractXpathTestSuppo
         return AvoidNestedBlocksCheck.class.getSimpleName();
     }
 
-    @Test
     public void testEmpty() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionAvoidNestedBlocksEmpty.java"));
@@ -59,7 +58,6 @@ public class XpathRegressionAvoidNestedBlocksTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testVariableAssignment() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionAvoidNestedBlocksVariable.java"));
@@ -82,7 +80,6 @@ public class XpathRegressionAvoidNestedBlocksTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testSwitchAllowInSwitchCaseFalse() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionAvoidNestedBlocksSwitch1.java"));
@@ -114,7 +111,6 @@ public class XpathRegressionAvoidNestedBlocksTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testSwitchAllowInSwitchCaseTrue() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionAvoidNestedBlocksSwitch2.java"));

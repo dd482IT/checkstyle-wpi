@@ -211,7 +211,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 6.9
  */
-@StatelessCheck
 public class RegexpHeaderCheck extends AbstractHeaderCheck {
 
     /**

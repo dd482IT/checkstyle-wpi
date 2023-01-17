@@ -42,7 +42,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/api/abstractfileset";
     }
 
-    @Test
     public void testTabWidth() {
         final DummyFileSetCheck check = new DummyFileSetCheck();
         check.setTabWidth(12345);
@@ -51,7 +50,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(12345);
     }
 
-    @Test
     public void testFileContents() {
         final FileContents contents = new FileContents(
                 new FileText(new File("inputAbstractFileSetCheck.tmp"), Collections.emptyList()));
@@ -62,7 +60,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
                 .isSameInstanceAs(contents);
     }
 
-    @Test
     public void testProcessSequential() throws Exception {
         final DummyFileSetCheck check = new DummyFileSetCheck();
         check.configure(new DefaultConfiguration("filesetcheck"));
@@ -91,7 +88,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testNotProcessed() throws Exception {
         final ExceptionFileSetCheck check = new ExceptionFileSetCheck();
         check.setFileExtensions("java");
@@ -106,7 +102,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
                 .isEmpty();
     }
 
-    @Test
     public void testProcessException() throws Exception {
         final ExceptionFileSetCheck check = new ExceptionFileSetCheck();
         check.configure(new DefaultConfiguration("filesetcheck"));
@@ -154,7 +149,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
                 .hasSize(1);
     }
 
-    @Test
     public void testGetFileExtension() {
         final DummyFileSetCheck check = new DummyFileSetCheck();
         check.setFileExtensions("tmp", ".java");
@@ -168,7 +162,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
     /**
      * This javadoc exists only to suppress IntelliJ IDEA inspection.
      */
-    @Test
     public void testSetExtensionThrowsExceptionWhenTheyAreNull() {
         final DummyFileSetCheck check = new DummyFileSetCheck();
         try {
@@ -183,7 +176,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testLineColumnLog() throws Exception {
         final ViolationFileSetCheck check = new ViolationFileSetCheck();
         check.configure(new DefaultConfiguration("filesetcheck"));
@@ -205,7 +197,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(6);
     }
 
-    @Test
     public void testGetMessageDispatcher() {
         final DummyFileSetCheck check = new DummyFileSetCheck();
         final Checker checker = new Checker();
@@ -216,7 +207,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
                 .isSameInstanceAs(checker);
     }
 
-    @Test
     public void testCheck() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(ViolationFileSetCheck.class);
 
@@ -226,7 +216,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, getPath("InputAbstractFileSetLineColumn.txt"), expected);
     }
 
-    @Test
     public void testMultiFileFireErrors() throws Exception {
         final MultiFileViolationFileSetCheck check = new MultiFileViolationFileSetCheck();
         check.configure(new DefaultConfiguration("filesetcheck"));
@@ -268,7 +257,6 @@ public class AbstractFileSetCheckTest extends AbstractModuleTestSupport {
      * Inspection is valid, a pure unit test is required as this condition can't be recreated in
      * a test with checks and input file as none of the checks try to modify the fileExtensions.
      */
-    @Test
     public void testCopiedArrayIsReturned() {
         final DummyFileSetCheck check = new DummyFileSetCheck();
         check.setFileExtensions(".tmp");

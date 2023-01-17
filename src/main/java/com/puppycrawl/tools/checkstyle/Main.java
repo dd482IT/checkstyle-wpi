@@ -621,11 +621,6 @@ public final class Main {
      * @noinspectionreason LocalCanBeFinal - usage of picocli requires
      *      suppression of above inspections
      */
-    @Command(name = "checkstyle", description = "Checkstyle verifies that the specified "
-            + "source code files adhere to the specified rules. By default, violations are "
-            + "reported to standard out in plain format. Checkstyle requires a configuration "
-            + "XML file that configures the checks to apply.",
-            mixinStandardHelpOptions = true)
     private static class CliOptions {
 
         /** Width of CLI help option. */
@@ -657,7 +652,6 @@ public final class Main {
         private static final int TREE_WALKER_THREADS_NUMBER = DEFAULT_THREAD_COUNT;
 
         /** List of file to validate. */
-        @Parameters(arity = "1..*", description = "One or more source files to verify")
         private List<File> files;
 
         /** Config file location. */

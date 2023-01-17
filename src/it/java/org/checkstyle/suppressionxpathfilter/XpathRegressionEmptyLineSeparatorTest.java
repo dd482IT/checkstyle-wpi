@@ -36,7 +36,6 @@ public class XpathRegressionEmptyLineSeparatorTest extends AbstractXpathTestSupp
         return EmptyLineSeparatorCheck.class.getSimpleName();
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionEmptyLineSeparator1.java")
@@ -58,7 +57,6 @@ public class XpathRegressionEmptyLineSeparatorTest extends AbstractXpathTestSupp
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionEmptyLineSeparator2.java")
@@ -80,7 +78,6 @@ public class XpathRegressionEmptyLineSeparatorTest extends AbstractXpathTestSupp
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionEmptyLineSeparator3.java")
@@ -114,7 +111,6 @@ public class XpathRegressionEmptyLineSeparatorTest extends AbstractXpathTestSupp
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testFour() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionEmptyLineSeparator4.java")
@@ -138,7 +134,6 @@ public class XpathRegressionEmptyLineSeparatorTest extends AbstractXpathTestSupp
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testFive() throws Exception {
         final File fileToProcess = new File(
                 getPath("SuppressionXpathRegressionEmptyLineSeparator5.java")

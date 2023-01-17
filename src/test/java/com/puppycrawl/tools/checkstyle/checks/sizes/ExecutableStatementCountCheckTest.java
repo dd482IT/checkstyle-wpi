@@ -42,7 +42,6 @@ public class ExecutableStatementCountCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/sizes/executablestatementcount";
     }
 
-    @Test
     @SuppressWarnings("unchecked")
     public void testStatefulFieldsClearedOnBeginTree() {
         final DetailAstImpl ast = new DetailAstImpl();
@@ -54,7 +53,6 @@ public class ExecutableStatementCountCheckTest
                 .isTrue();
     }
 
-    @Test
     public void testMaxZero() throws Exception {
 
         final String[] expected = {
@@ -75,7 +73,6 @@ public class ExecutableStatementCountCheckTest
                 getPath("InputExecutableStatementCountMaxZero.java"), expected);
     }
 
-    @Test
     public void testMethodDef() throws Exception {
 
         final String[] expected = {
@@ -91,7 +88,6 @@ public class ExecutableStatementCountCheckTest
                 getPath("InputExecutableStatementCountMethodDef.java"), expected);
     }
 
-    @Test
     public void testCtorDef() throws Exception {
 
         final String[] expected = {
@@ -103,7 +99,6 @@ public class ExecutableStatementCountCheckTest
                 getPath("InputExecutableStatementCountCtorDef.java"), expected);
     }
 
-    @Test
     public void testStaticInit() throws Exception {
 
         final String[] expected = {
@@ -114,7 +109,6 @@ public class ExecutableStatementCountCheckTest
                 getPath("InputExecutableStatementCountStaticInit.java"), expected);
     }
 
-    @Test
     public void testInstanceInit() throws Exception {
 
         final String[] expected = {
@@ -125,7 +119,6 @@ public class ExecutableStatementCountCheckTest
                 getPath("InputExecutableStatementCountInstanceInit.java"), expected);
     }
 
-    @Test
     public void testVisitTokenWithWrongTokenType() {
         final ExecutableStatementCountCheck checkObj =
             new ExecutableStatementCountCheck();
@@ -143,7 +136,6 @@ public class ExecutableStatementCountCheckTest
         }
     }
 
-    @Test
     public void testLeaveTokenWithWrongTokenType() {
         final ExecutableStatementCountCheck checkObj =
             new ExecutableStatementCountCheck();
@@ -161,7 +153,6 @@ public class ExecutableStatementCountCheckTest
         }
     }
 
-    @Test
     public void testDefaultConfiguration() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -169,7 +160,6 @@ public class ExecutableStatementCountCheckTest
                 getPath("InputExecutableStatementCountDefaultConfig.java"), expected);
     }
 
-    @Test
     public void testExecutableStatementCountRecords() throws Exception {
 
         final int max = 1;
@@ -188,7 +178,6 @@ public class ExecutableStatementCountCheckTest
                 expected);
     }
 
-    @Test
     public void testExecutableStatementCountLambdas() throws Exception {
 
         final int max = 1;

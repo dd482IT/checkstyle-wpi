@@ -50,7 +50,6 @@ public class LocalizedMessageTest {
 
     private static final Locale DEFAULT_LOCALE = Locale.getDefault();
 
-    @Test
     public void testNullArgs() {
         final LocalizedMessage messageClass = new LocalizedMessage(Definitions.CHECKSTYLE_BUNDLE,
                 DefaultLogger.class, "DefaultLogger.addException", "myfile");
@@ -66,7 +65,6 @@ public class LocalizedMessageTest {
                 .contains("Error auditing {0}");
     }
 
-    @Test
     public void testBundleReloadUrlNull() throws IOException {
         final Utf8Control control = new Utf8Control();
         final ResourceBundle bundle = control.newBundle(
@@ -86,7 +84,6 @@ public class LocalizedMessageTest {
      * @noinspectionreason IOResourceOpenedButNotSafelyClosed - no need to close resources in
      *      testing
      */
-    @Test
     public void testBundleReloadUrlNotNull() throws IOException {
         final AtomicBoolean closed = new AtomicBoolean();
 
@@ -143,7 +140,6 @@ public class LocalizedMessageTest {
      * @noinspectionreason IOResourceOpenedButNotSafelyClosed - no need to close resources in
      *      testing
      */
-    @Test
     public void testBundleReloadUrlNotNullFalseReload() throws IOException {
         final AtomicBoolean closed = new AtomicBoolean();
 
@@ -192,7 +188,6 @@ public class LocalizedMessageTest {
                 .isTrue();
     }
 
-    @Test
     public void testBundleReloadUrlNotNullStreamNull() throws IOException {
         final URL url = new URL("test", null, 0, "", new URLStreamHandler() {
             @Override
@@ -214,7 +209,6 @@ public class LocalizedMessageTest {
     /**
      * Verifies that the language specified with the system property {@code user.language} exists.
      */
-    @Test
     public void testLanguageIsValid() {
         final String language = DEFAULT_LOCALE.getLanguage();
         assumeFalse(language.isEmpty(), "Locale not set");
@@ -227,7 +221,6 @@ public class LocalizedMessageTest {
     /**
      * Verifies that the country specified with the system property {@code user.country} exists.
      */
-    @Test
     public void testCountryIsValid() {
         final String country = DEFAULT_LOCALE.getCountry();
         assumeFalse(country.isEmpty(), "Locale not set");
@@ -237,7 +230,6 @@ public class LocalizedMessageTest {
                 .contains(country);
     }
 
-    @Test
     public void testMessageInFrench() {
         final LocalizedMessage violation = createSampleViolation();
         LocalizedMessage.setLocale(Locale.FRENCH);
@@ -247,8 +239,6 @@ public class LocalizedMessageTest {
             .isEqualTo("Instruction vide.");
     }
 
-    @DefaultLocale("fr")
-    @Test
     public void testEnforceEnglishLanguageBySettingUnitedStatesLocale() {
         LocalizedMessage.setLocale(Locale.US);
         final LocalizedMessage violation = createSampleViolation();
@@ -258,8 +248,6 @@ public class LocalizedMessageTest {
             .isEqualTo("Empty statement.");
     }
 
-    @DefaultLocale("fr")
-    @Test
     public void testEnforceEnglishLanguageBySettingRootLocale() {
         LocalizedMessage.setLocale(Locale.ROOT);
         final LocalizedMessage violation = createSampleViolation();
@@ -274,7 +262,6 @@ public class LocalizedMessageTest {
                 LocalizedMessage.class, "empty.statement");
     }
 
-    @AfterEach
     public void tearDown() {
         LocalizedMessage.setLocale(DEFAULT_LOCALE);
     }

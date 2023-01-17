@@ -30,15 +30,15 @@ public class InputAnnotationUseStyleNoTrailingCommaNever
       };
   }
 
-  @Test5(value={"foo"}, more={"bar"}) // ok
+  // ok
 
-  @Pooches5(tokens={},other={}) // ok
+  // ok
   enum P {
 
-      @Pooches5(tokens={Pooches5.class},other={1}) // ok
+      // ok
       L, // annotation in enum
 
-      @Test5(value={}, more={"unchecked"}) // ok
+      // ok
       Y;
   }
 

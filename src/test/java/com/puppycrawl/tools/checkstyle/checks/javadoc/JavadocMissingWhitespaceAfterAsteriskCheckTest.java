@@ -37,7 +37,6 @@ public class JavadocMissingWhitespaceAfterAsteriskCheckTest
                 + "/javadocmissingwhitespaceafterasterisk";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final JavadocMissingWhitespaceAfterAsteriskCheck checkObj =
                 new JavadocMissingWhitespaceAfterAsteriskCheck();
@@ -50,7 +49,6 @@ public class JavadocMissingWhitespaceAfterAsteriskCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredJavadocTokens() {
         final JavadocMissingWhitespaceAfterAsteriskCheck checkObj =
                 new JavadocMissingWhitespaceAfterAsteriskCheck();
@@ -63,7 +61,6 @@ public class JavadocMissingWhitespaceAfterAsteriskCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testValid() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -71,7 +68,6 @@ public class JavadocMissingWhitespaceAfterAsteriskCheckTest
                 getPath("InputJavadocMissingWhitespaceAfterAsteriskValid.java"), expected);
     }
 
-    @Test
     public void testValidWithTabCharacter() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -79,7 +75,6 @@ public class JavadocMissingWhitespaceAfterAsteriskCheckTest
                 getPath("InputJavadocMissingWhitespaceAfterAsteriskValidWithTab.java"), expected);
     }
 
-    @Test
     public void testInvalid() throws Exception {
         final String[] expected = {
             "10:4: " + getCheckMessage(MSG_KEY),

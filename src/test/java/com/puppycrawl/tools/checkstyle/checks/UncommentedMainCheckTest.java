@@ -38,7 +38,6 @@ public class UncommentedMainCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/uncommentedmain";
     }
 
-    @Test
     public void testDefaults()
             throws Exception {
         final String[] expected = {
@@ -51,7 +50,6 @@ public class UncommentedMainCheckTest
                 getPath("InputUncommentedMain.java"), expected);
     }
 
-    @Test
     public void testExcludedClasses()
             throws Exception {
         final String[] expected = {
@@ -63,7 +61,6 @@ public class UncommentedMainCheckTest
                 getPath("InputUncommentedMain6.java"), expected);
     }
 
-    @Test
     public void testTokens() {
         final UncommentedMainCheck check = new UncommentedMainCheck();
         assertWithMessage("Required tokens should not be null")
@@ -80,14 +77,12 @@ public class UncommentedMainCheckTest
             .isEqualTo(check.getDefaultTokens());
     }
 
-    @Test
     public void testDeepDepth() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputUncommentedMain2.java"), expected);
     }
 
-    @Test
     public void testVisitPackage() throws Exception {
         final String[] expected = {
             "21:5: " + getCheckMessage(MSG_KEY),
@@ -96,21 +91,18 @@ public class UncommentedMainCheckTest
                 getPath("InputUncommentedMain5.java"), expected);
     }
 
-    @Test
     public void testWrongName() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputUncommentedMain3.java"), expected);
     }
 
-    @Test
     public void testWrongArrayType() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputUncommentedMain4.java"), expected);
     }
 
-    @Test
     public void testIllegalStateException() {
         final UncommentedMainCheck check = new UncommentedMainCheck();
         final DetailAstImpl ast = new DetailAstImpl();
@@ -126,7 +118,6 @@ public class UncommentedMainCheckTest
         }
     }
 
-    @Test
     public void testRecords()
             throws Exception {
 

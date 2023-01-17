@@ -43,14 +43,12 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/regexp/regexponfilename";
     }
 
-    @Test
     public void testDefaultConfigurationOnValidInput() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         verify(checkConfig, getPath("InputRegexpOnFilenameSemantic.java"),
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testDefaultProperties() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         final String path = getPath("InputRegexpOnFilename Space.properties");
@@ -60,7 +58,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, path, expected);
     }
 
-    @Test
     public void testMatchFileMatches() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "true");
@@ -72,7 +69,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, path, expected);
     }
 
-    @Test
     public void testMatchFileNotMatches() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "true");
@@ -81,7 +77,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testNotMatchFileMatches() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "false");
@@ -93,7 +88,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, path, expected);
     }
 
-    @Test
     public void testNotMatchFileNotMatches() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "false");
@@ -102,7 +96,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testMatchFolderMatches() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "true");
@@ -114,7 +107,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, path, expected);
     }
 
-    @Test
     public void testMatchFolderNotMatches() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "true");
@@ -123,7 +115,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testNotMatchFolderMatches() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "false");
@@ -135,7 +126,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, path, expected);
     }
 
-    @Test
     public void testNotMatchFolderNotMatches() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "false");
@@ -144,7 +134,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testMatchFolderAndFileMatches() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "true");
@@ -157,7 +146,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, path, expected);
     }
 
-    @Test
     public void testMatchFolderAndFileNotMatchesBoth() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "true");
@@ -167,7 +155,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testMatchFolderAndFileNotMatchesFile() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "true");
@@ -177,7 +164,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testMatchFolderAndFileNotMatchesFolder() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "true");
@@ -187,7 +173,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testNotMatchFolderAndFileMatches() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "false");
@@ -200,7 +185,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
         verify(checkConfig, path, expected);
     }
 
-    @Test
     public void testNotMatchFolderAndFileNotMatchesFolder() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "false");
@@ -210,7 +194,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testNotMatchFolderAndFileNotMatchesFile() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("match", "false");
@@ -220,7 +203,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testIgnoreExtension() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("fileNamePattern", ".*\\.java");
@@ -229,7 +211,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testIgnoreExtensionNoExtension() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         checkConfig.addProperty("fileNamePattern", "\\.");
@@ -238,7 +219,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                 CommonUtil.EMPTY_STRING_ARRAY);
     }
 
-    @Test
     public void testException() throws Exception {
         // escape character needed for testing IOException from File.getCanonicalPath on all OSes
         final File file = new File(getPath("") + "\u0000" + File.separatorChar + "Test");
@@ -253,7 +233,6 @@ public class RegexpOnFilenameCheckTest extends AbstractModuleTestSupport {
                         .isEqualTo("unable to create canonical path names for " + file);
     }
 
-    @Test
     public void testWithFileWithoutParent() throws Exception {
         final DefaultConfiguration moduleConfig = createModuleConfig(RegexpOnFilenameCheck.class);
         final String path = getPath("package-info.java");

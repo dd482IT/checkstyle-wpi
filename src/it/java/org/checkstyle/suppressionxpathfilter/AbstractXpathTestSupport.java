@@ -55,7 +55,6 @@ public abstract class AbstractXpathTestSupport extends AbstractCheckstyleModuleT
     /**
      * The temporary folder to hold intermediate files.
      */
-    @TempDir
     public Path temporaryFolder;
 
     /**

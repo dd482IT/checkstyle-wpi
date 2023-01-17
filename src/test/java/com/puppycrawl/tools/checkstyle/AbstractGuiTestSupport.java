@@ -35,7 +35,6 @@ public abstract class AbstractGuiTestSupport extends AbstractPathTestSupport {
     /**
      * Validates the graphics environment.
      */
-    @BeforeEach
     public void validateGraphicsEnvironment() {
         final boolean isHeadless = GraphicsEnvironment.isHeadless();
         assumeFalse(isHeadless, "This test is incompatible with headless environment");

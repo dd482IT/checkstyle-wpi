@@ -16,7 +16,7 @@ tokens = (default)NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG
 package com.puppycrawl.tools.checkstyle.checks.coding.magicnumber;
 
 public class InputMagicNumberIgnoreFieldDeclarationRecords {
-    @anno(6) // violation
+    // violation
     public record MyRecord() {
         private static int myInt = 7; // ok
 

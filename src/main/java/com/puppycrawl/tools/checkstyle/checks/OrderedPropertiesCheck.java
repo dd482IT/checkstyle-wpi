@@ -96,7 +96,6 @@ import com.puppycrawl.tools.checkstyle.api.FileText;
  *
  * @since 8.22
  */
-@StatelessCheck
 public class OrderedPropertiesCheck extends AbstractFileSetCheck {
 
     /**

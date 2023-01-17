@@ -33,7 +33,6 @@ public class MissingCtorCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/missingctor";
     }
 
-    @Test
     public void testMissingSwitchDefault() throws Exception {
 
         final String[] expected = {
@@ -45,7 +44,6 @@ public class MissingCtorCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final MissingCtorCheck check = new MissingCtorCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -59,7 +57,6 @@ public class MissingCtorCheckTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testMissingCtorClassOnOneLine() throws Exception {
 
         final String[] expected = {

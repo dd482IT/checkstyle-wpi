@@ -141,7 +141,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 5.0
  */
-@StatelessCheck
 public class SuppressWarningsCheck extends AbstractCheck {
 
     /**

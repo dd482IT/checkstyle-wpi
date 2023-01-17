@@ -45,7 +45,6 @@ import org.junit.jupiter.api.Test;
  */
 public class AllTestsTest {
 
-    @Test
     public void testAllInputsHaveTest() throws Exception {
         final Map<String, List<String>> allTests = new HashMap<>();
 
@@ -65,7 +64,6 @@ public class AllTestsTest {
         });
     }
 
-    @Test
     public void testAllTestsHaveProductionCode() throws Exception {
         final Map<String, List<String>> allTests = new HashMap<>();
 

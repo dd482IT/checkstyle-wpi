@@ -125,7 +125,6 @@ public class XdocsJavaDocsTest extends AbstractModuleTestSupport {
         return "com.puppycrawl.tools.checkstyle.internal";
     }
 
-    @BeforeEach
     public void setUp() throws Exception {
         final DefaultConfiguration checkConfig = new DefaultConfiguration(
                 JavaDocCapture.class.getName());
@@ -139,7 +138,6 @@ public class XdocsJavaDocsTest extends AbstractModuleTestSupport {
      * @noinspectionreason JUnitTestMethodWithNoAssertions - asserts in callstack,
      *      but not in this method
      */
-    @Test
     public void testAllCheckSectionJavaDocs() throws Exception {
         final ModuleFactory moduleFactory = TestUtil.getPackageObjectFactory();
 

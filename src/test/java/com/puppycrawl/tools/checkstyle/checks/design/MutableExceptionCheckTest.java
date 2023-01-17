@@ -43,7 +43,6 @@ public class MutableExceptionCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/design/mutableexception";
     }
 
-    @Test
     public void testClassExtendsGenericClass() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -53,7 +52,6 @@ public class MutableExceptionCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -66,7 +64,6 @@ public class MutableExceptionCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMutableException.java"), expected);
     }
 
-    @Test
     public void testMultipleInputs() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(MutableExceptionCheck.class);
         final String filePath1 = getPath("InputMutableException2.java");
@@ -86,7 +83,6 @@ public class MutableExceptionCheckTest extends AbstractModuleTestSupport {
                 ImmutableMap.of(filePath1, expected1, filePath2, expected2));
     }
 
-    @Test
     public void testFormat() throws Exception {
         final String[] expected = {
             "42:13: " + getCheckMessage(MSG_KEY, "errorCode"),
@@ -96,7 +92,6 @@ public class MutableExceptionCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMutableException3.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final MutableExceptionCheck obj = new MutableExceptionCheck();
         final int[] expected = {TokenTypes.CLASS_DEF, TokenTypes.VARIABLE_DEF};
@@ -105,7 +100,6 @@ public class MutableExceptionCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final MutableExceptionCheck obj = new MutableExceptionCheck();
         final int[] expected = {TokenTypes.CLASS_DEF, TokenTypes.VARIABLE_DEF};
@@ -114,7 +108,6 @@ public class MutableExceptionCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testWrongTokenType() {
         final MutableExceptionCheck obj = new MutableExceptionCheck();
         final DetailAstImpl ast = new DetailAstImpl();

@@ -36,7 +36,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/annotation/annotationlocation";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final AnnotationLocationCheck checkObj = new AnnotationLocationCheck();
         assertWithMessage(
@@ -45,7 +44,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                         .isEqualTo(CommonUtil.EMPTY_INT_ARRAY);
     }
 
-    @Test
     public void testCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -53,7 +51,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationLocationCorrect.java"), expected);
     }
 
-    @Test
     public void testIncorrect() throws Exception {
         final String[] expected = {
             "15:11: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION_ALONE, "MyAnn"),
@@ -85,7 +82,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationLocationIncorrect.java"), expected);
     }
 
-    @Test
     public void testIncorrectAllTokens() throws Exception {
         final String[] expected = {
             "15:11: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION_ALONE, "MyAnn3"),
@@ -117,7 +113,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationLocationIncorrect3.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final AnnotationLocationCheck constantNameCheckObj = new AnnotationLocationCheck();
         final int[] actual = constantNameCheckObj.getAcceptableTokens();
@@ -140,14 +135,12 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testWithoutAnnotations() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputAnnotationLocationEmpty.java"), expected);
     }
 
-    @Test
     public void testWithParameters() throws Exception {
         final String[] expected = {
             "25:9: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION, "MyAnnotation_12", 8, 4),
@@ -168,7 +161,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationLocationIncorrect2.java"), expected);
     }
 
-    @Test
     public void testWithMultipleAnnotations() throws Exception {
         final String[] expected = {
             "14:1: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION_ALONE, "MyAnnotation11"),
@@ -180,14 +172,12 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testAllTokens() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputAnnotationLocationWithoutAnnotations.java"), expected);
     }
 
-    @Test
     public void testAnnotation() throws Exception {
         final String[] expected = {
             "18:3: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION, "AnnotationAnnotation", 2, 0),
@@ -199,7 +189,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationLocationAnnotation.java"), expected);
     }
 
-    @Test
     public void testClass() throws Exception {
         final String[] expected = {
             "18:3: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION, "ClassAnnotation", 2, 0),
@@ -213,7 +202,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationLocationClass.java"), expected);
     }
 
-    @Test
     public void testEnum() throws Exception {
         final String[] expected = {
             "18:3: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION, "EnumAnnotation", 2, 0),
@@ -225,7 +213,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationLocationEnum.java"), expected);
     }
 
-    @Test
     public void testInterface() throws Exception {
         final String[] expected = {
             "18:3: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION, "InterfaceAnnotation", 2, 0),
@@ -237,7 +224,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationLocationInterface.java"), expected);
     }
 
-    @Test
     public void testPackage() throws Exception {
         final String[] expected = {
             "12:3: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION, "PackageAnnotation", 2, 0),
@@ -247,21 +233,18 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("inputs/package-info.java"), expected);
     }
 
-    @Test
     public void testAnnotationInForEachLoopParameterAndVariableDef() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputAnnotationLocationDeprecatedAndCustom.java"), expected);
     }
 
-    @Test
     public void testAnnotationMultiple() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputAnnotationLocationMultiple.java"), expected);
     }
 
-    @Test
     public void testAnnotationParameterized() throws Exception {
         final String[] expected = {
             "18:5: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION_ALONE, "Annotation"),
@@ -276,7 +259,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationLocationParameterized.java"), expected);
     }
 
-    @Test
     public void testAnnotationSingleParameterless() throws Exception {
         final String[] expected = {
             "23:17: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION_ALONE, "Annotation"),
@@ -291,7 +273,6 @@ public class AnnotationLocationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationLocationSingleParameterless.java"), expected);
     }
 
-    @Test
     public void testAnnotationLocationRecordsAndCompactCtors() throws Exception {
         final String[] expected = {
             "20:5: " + getCheckMessage(MSG_KEY_ANNOTATION_LOCATION_ALONE, "SuppressWarnings"),

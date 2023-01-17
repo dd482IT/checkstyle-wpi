@@ -36,7 +36,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/annotation/missingdeprecated";
     }
 
-    @Test
     public void testGetDefaultJavadocTokens() {
         final MissingDeprecatedCheck missingDeprecatedCheck =
                 new MissingDeprecatedCheck();
@@ -49,7 +48,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredJavadocTokens() {
         final MissingDeprecatedCheck checkObj = new MissingDeprecatedCheck();
         final int[] expected = {
@@ -63,7 +61,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests that members that are only deprecated via javadoc are flagged.
      */
-    @Test
     public void testBadDeprecatedAnnotation() throws Exception {
 
         final String[] expected = {
@@ -85,7 +82,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests that members that are only deprecated via the annotation are flagged.
      */
-    @Test
     public void testBadDeprecatedJavadoc() throws Exception {
 
         final String[] expected = {
@@ -103,7 +99,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests various special deprecation conditions such as duplicate or empty tags.
      */
-    @Test
     public void testSpecialCaseDeprecated() throws Exception {
 
         final String[] expected = {
@@ -126,7 +121,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
     /**
      * Tests that good forms of deprecation are not flagged.
      */
-    @Test
     public void testGoodDeprecated() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -135,7 +129,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMissingDeprecatedGood.java"), expected);
     }
 
-    @Test
     public void testTwoInJavadocWithoutAnnotation() throws Exception {
 
         final String[] expected = {
@@ -147,7 +140,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMissingDeprecatedClass.java"), expected);
     }
 
-    @Test
     public void testEmptyJavadocLine() throws Exception {
 
         final String[] expected = {
@@ -158,7 +150,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMissingDeprecatedMethod.java"), expected);
     }
 
-    @Test
     public void testPackageInfo() throws Exception {
 
         final String[] expected = {
@@ -169,7 +160,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
                 getPath("package-info.java"), expected);
     }
 
-    @Test
     public void testDepPackageInfoBelowComment() throws Exception {
 
         final String[] expected = {
@@ -180,7 +170,6 @@ public class MissingDeprecatedCheckTest extends AbstractModuleTestSupport {
                 getPath("InputMissingDeprecatedAbovePackage.java"), expected);
     }
 
-    @Test
     public void testPackageInfoBelowComment() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

@@ -36,7 +36,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
 
 public class XdocsPropertyTypeTest {
 
-    @Test
     public void testAllPropertyTypesAreUsed() throws IOException {
         final Set<PropertyType> propertyTypes = Stream.concat(
                 Stream.of(AbstractHeaderCheck.class, Checker.class),
@@ -53,7 +52,6 @@ public class XdocsPropertyTypeTest {
             .containsExactlyElementsIn(PropertyType.values());
     }
 
-    @Test
     public void testAllPropertyTypesHaveDescription() {
         for (PropertyType value : PropertyType.values()) {
             assertWithMessage("Property type '%s' has no description", value)

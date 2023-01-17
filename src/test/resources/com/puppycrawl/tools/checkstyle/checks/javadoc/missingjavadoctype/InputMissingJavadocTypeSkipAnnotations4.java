@@ -10,15 +10,15 @@ tokens = (default)INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF, RECORD_DEF
 
 package com.puppycrawl.tools.checkstyle.checks.javadoc.missingjavadoctype;
 
-@ThisIsOk4 // violation
+// violation
 class InputMissingJavadocTypeSkipAnnotations4 { // ok
 }
 
-@com.puppycrawl.tools.checkstyle.checks.javadoc.missingjavadoctype.ThisIsOk4 // violation
+// violation
 class InputJavadocTypeSkipAnnotationsFQN4 { // ok
 }
 
-@Generated4(value = "some code generator") // violation
+// violation
 class InputJavadocTypeAllowedAnnotationByDefault4 { // ok
 }
 

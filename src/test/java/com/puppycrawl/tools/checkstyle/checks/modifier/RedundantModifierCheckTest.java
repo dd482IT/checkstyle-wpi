@@ -38,7 +38,6 @@ public class RedundantModifierCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/modifier/redundantmodifier";
     }
 
-    @Test
     public void testClassesInsideOfInterfaces() throws Exception {
         final String[] expected = {
             "19:5: " + getCheckMessage(MSG_KEY, "static"),
@@ -51,7 +50,6 @@ public class RedundantModifierCheckTest
             expected);
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "57:12: " + getCheckMessage(MSG_KEY, "static"),
@@ -73,7 +71,6 @@ public class RedundantModifierCheckTest
                 getPath("InputRedundantModifierIt.java"), expected);
     }
 
-    @Test
     public void testStaticMethodInInterface()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -82,7 +79,6 @@ public class RedundantModifierCheckTest
             expected);
     }
 
-    @Test
     public void testFinalInInterface()
             throws Exception {
         final String[] expected = {
@@ -92,7 +88,6 @@ public class RedundantModifierCheckTest
                 getPath("InputRedundantModifierFinalInInterface.java"), expected);
     }
 
-    @Test
     public void testEnumConstructorIsImplicitlyPrivate() throws Exception {
         final String[] expected = {
             "14:5: " + getCheckMessage(MSG_KEY, "private"),
@@ -101,7 +96,6 @@ public class RedundantModifierCheckTest
                 getPath("InputRedundantModifierConstructorModifier.java"), expected);
     }
 
-    @Test
     public void testInnerTypeInInterfaceIsImplicitlyStatic() throws Exception {
         final String[] expected = {
             "12:5: " + getCheckMessage(MSG_KEY, "static"),
@@ -112,7 +106,6 @@ public class RedundantModifierCheckTest
             expected);
     }
 
-    @Test
     public void testNotPublicClassConstructorHasNotPublicModifier() throws Exception {
 
         final String[] expected = {
@@ -123,7 +116,6 @@ public class RedundantModifierCheckTest
             expected);
     }
 
-    @Test
     public void testNestedClassConsInPublicInterfaceHasValidPublicModifier() throws Exception {
 
         final String[] expected = {
@@ -139,7 +131,6 @@ public class RedundantModifierCheckTest
             expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final RedundantModifierCheck redundantModifierCheckObj = new RedundantModifierCheck();
         final int[] actual = redundantModifierCheckObj.getAcceptableTokens();
@@ -160,7 +151,6 @@ public class RedundantModifierCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testWrongTokenType() {
         final RedundantModifierCheck obj = new RedundantModifierCheck();
         final DetailAstImpl ast = new DetailAstImpl();
@@ -175,7 +165,6 @@ public class RedundantModifierCheckTest
                 .isEqualTo("Unexpected token type: " + ast.getType());
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final RedundantModifierCheck redundantModifierCheckObj = new RedundantModifierCheck();
         final int[] actual = redundantModifierCheckObj.getRequiredTokens();
@@ -185,7 +174,6 @@ public class RedundantModifierCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testNestedStaticEnum() throws Exception {
         final String[] expected = {
             "12:5: " + getCheckMessage(MSG_KEY, "static"),
@@ -197,7 +185,6 @@ public class RedundantModifierCheckTest
             expected);
     }
 
-    @Test
     public void testFinalInAnonymousClass()
             throws Exception {
         final String[] expected = {
@@ -208,7 +195,6 @@ public class RedundantModifierCheckTest
             expected);
     }
 
-    @Test
     public void testFinalInTryWithResource() throws Exception {
         final String[] expected = {
             "38:14: " + getCheckMessage(MSG_KEY, "final"),
@@ -220,7 +206,6 @@ public class RedundantModifierCheckTest
             expected);
     }
 
-    @Test
     public void testFinalInAbstractMethods() throws Exception {
         final String[] expected = {
             "12:33: " + getCheckMessage(MSG_KEY, "final"),
@@ -234,7 +219,6 @@ public class RedundantModifierCheckTest
             expected);
     }
 
-    @Test
     public void testEnumMethods() throws Exception {
         final String[] expected = {
             "15:16: " + getCheckMessage(MSG_KEY, "final"),
@@ -244,7 +228,6 @@ public class RedundantModifierCheckTest
                 getPath("InputRedundantModifierFinalInEnumMethods.java"), expected);
     }
 
-    @Test
     public void testEnumStaticMethodsInPublicClass() throws Exception {
         final String[] expected = {
             "20:23: " + getCheckMessage(MSG_KEY, "final"),
@@ -253,7 +236,6 @@ public class RedundantModifierCheckTest
                 getPath("InputRedundantModifierFinalInEnumStaticMethods.java"), expected);
     }
 
-    @Test
     public void testAnnotationOnEnumConstructor() throws Exception {
         final String[] expected = {
             "22:5: " + getCheckMessage(MSG_KEY, "private"),
@@ -263,7 +245,6 @@ public class RedundantModifierCheckTest
                 expected);
     }
 
-    @Test
     public void testPrivateMethodInPrivateClass() throws Exception {
         final String[] expected = {
             "13:17: " + getCheckMessage(MSG_KEY, "final"),
@@ -273,7 +254,6 @@ public class RedundantModifierCheckTest
                 expected);
     }
 
-    @Test
     public void testTryWithResourcesBlock() throws Exception {
         final String[] expected = {
             "18:19: " + getCheckMessage(MSG_KEY, "final"),
@@ -283,7 +263,6 @@ public class RedundantModifierCheckTest
                 expected);
     }
 
-    @Test
     public void testNestedDef() throws Exception {
         final String[] expected = {
             "10:5: " + getCheckMessage(MSG_KEY, "public"),
@@ -314,7 +293,6 @@ public class RedundantModifierCheckTest
                 "InputRedundantModifierNestedDef.java"), expected);
     }
 
-    @Test
     public void testRecords() throws Exception {
         final String[] expected = {
             "12:5: " + getCheckMessage(MSG_KEY, "static"),

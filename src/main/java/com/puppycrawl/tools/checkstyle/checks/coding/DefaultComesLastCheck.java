@@ -134,7 +134,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 3.4
  */
-@StatelessCheck
 public class DefaultComesLastCheck extends AbstractCheck {
 
     /**

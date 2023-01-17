@@ -18,7 +18,7 @@ import java.util.List;
 
 public class InputAnnotations6 {
 
-    abstract class UnmodifiableList<T> implements @Readonly List<@Readonly T> {
+    abstract class UnmodifiableList<T> implements List<T> {
     }
 
     @Target(ElementType.TYPE_USE)

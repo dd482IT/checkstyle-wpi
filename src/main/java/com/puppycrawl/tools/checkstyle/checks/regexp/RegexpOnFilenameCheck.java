@@ -259,7 +259,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 6.15
  */
-@StatelessCheck
 public class RegexpOnFilenameCheck extends AbstractFileSetCheck {
 
     /**

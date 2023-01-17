@@ -30,11 +30,10 @@ public class InputClassFanOutComplexityAnnotations { // violation
 
     private int dayOfWeek = Calendar.MONDAY;
 
-    public void foo1(@TypeAnnotation char a) {}
+    public void foo1(char a) {}
 
-    public void foo2(final char @TypeAnnotation [] a) {}
+    public void foo2(final char[] a) {}
 
-    @MethodAnnotation
     public void foo3() {}
 
     @Override
@@ -42,20 +41,16 @@ public class InputClassFanOutComplexityAnnotations { // violation
         return super.toString();
     }
 
-    @MyAnnotation // violation
+    // violation
     public class InnerClass {
 
-        @MyAnnotation
-        @MethodAnnotation
         public void innerClassMethod() {}
 
     }
 
     public class InnerClass2 { // violation
 
-        @MethodAnnotation
-        @MyAnnotation
-        public String innerClass2Method(@TypeAnnotation String parameter) {
+        public String innerClass2Method(String parameter) {
             return parameter.trim();
         }
 
@@ -63,10 +58,8 @@ public class InputClassFanOutComplexityAnnotations { // violation
 
     public class InnerClass3 { // violation
 
-        @TypeAnnotation
         private final String warningsType = "boxing";
 
-        @MyAnnotation
         @SuppressWarnings(value = warningsType)
         public String innerClass3Method() {
             return new Integer(5).toString();
@@ -82,10 +75,8 @@ class OuterClass { // violation
 
     private static final String value = "4";
 
-    @TwoParametersAnnotation(value = "4", dayOfWeek = 1)
     public static final String EMPTY_STRING = "";
 
-    @TwoParametersAnnotation(value = value, dayOfWeek = Calendar.TUESDAY)
     public static final String TAB = "\t";
 
 }
@@ -96,10 +87,10 @@ class OuterClass { // violation
 @Target(ElementType.METHOD)
 @interface MethodAnnotation {}
 
-@MyAnnotation // violation
+// violation
 class MyClass {}
 
-@MyAnnotation // violation
+// violation
 interface MyInterface {}
 
 @interface MyAnnotation {}

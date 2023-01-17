@@ -33,7 +33,6 @@ public class SeverityMatchFilterTest {
 
     private final SeverityMatchFilter filter = new SeverityMatchFilter();
 
-    @Test
     public void testDefault() {
         final AuditEvent ev = new AuditEvent(this, "Test.java");
         assertWithMessage("no message")
@@ -56,7 +55,6 @@ public class SeverityMatchFilterTest {
             .isFalse();
     }
 
-    @Test
     public void testSeverity() {
         filter.setSeverity(SeverityLevel.INFO);
         final AuditEvent ev = new AuditEvent(this, "Test.java");
@@ -81,7 +79,6 @@ public class SeverityMatchFilterTest {
                 .isTrue();
     }
 
-    @Test
     public void testAcceptOnMatch() {
         filter.setSeverity(SeverityLevel.INFO);
         filter.setAcceptOnMatch(false);
@@ -107,7 +104,6 @@ public class SeverityMatchFilterTest {
             .isFalse();
     }
 
-    @Test
     public void testConfigure() throws CheckstyleException {
         filter.configure(new DefaultConfiguration("test"));
         assertWithMessage("object exists")

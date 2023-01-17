@@ -38,7 +38,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/summaryjavadoc";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final SummaryJavadocCheck checkObj = new SummaryJavadocCheck();
         final int[] expected = {TokenTypes.BLOCK_COMMENT_BEGIN };
@@ -47,7 +46,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -55,7 +53,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocCorrect.java"), expected);
     }
 
-    @Test
     public void testInlineCorrect() throws Exception {
         final String[] expected = {
             "112: " + getCheckMessage(MSG_SUMMARY_FIRST_SENTENCE),
@@ -65,7 +62,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocInlineCorrect.java"), expected);
     }
 
-    @Test
     public void testIncorrect() throws Exception {
         final String[] expected = {
             "24: " + getCheckMessage(MSG_SUMMARY_JAVADOC_MISSING),
@@ -88,7 +84,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocIncorrect.java"), expected);
     }
 
-    @Test
     public void testInlineForbidden() throws Exception {
         final String[] expected = {
             "26: " + getCheckMessage(MSG_SUMMARY_MISSING_PERIOD),
@@ -107,7 +102,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocInlineForbidden.java"), expected);
     }
 
-    @Test
     public void testPeriod() throws Exception {
         final String[] expected = {
             "14: " + getCheckMessage(MSG_SUMMARY_FIRST_SENTENCE),
@@ -119,7 +113,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocPeriod.java"), expected);
     }
 
-    @Test
     public void testNoPeriod() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -127,7 +120,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocNoPeriod.java"), expected);
     }
 
-    @Test
     public void testDefaultConfiguration() throws Exception {
         final String[] expected = {
             "23: " + getCheckMessage(MSG_SUMMARY_JAVADOC_MISSING),
@@ -149,7 +141,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocIncorrect2.java"), expected);
     }
 
-    @Test
     public void testIncorrectUsageOfSummaryTag() throws Exception {
         final String[] expected = {
             "34: " + getCheckMessage(MSG_SUMMARY_MISSING_PERIOD),
@@ -166,7 +157,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
             getPath("InputSummaryJavadocIncorrect3.java"), expected);
     }
 
-    @Test
     public void testInlineDefaultConfiguration() throws Exception {
         final String[] expected = {
             "22: " + getCheckMessage(MSG_SUMMARY_MISSING_PERIOD),
@@ -189,7 +179,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocInlineDefault.java"), expected);
     }
 
-    @Test
     public void testInlineReturn() throws Exception {
         final String[] expected = {
             "74: " + getCheckMessage(MSG_SUMMARY_JAVADOC_MISSING),
@@ -199,7 +188,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocInlineReturn.java"), expected);
     }
 
-    @Test
     public void testInlineReturnForbidden() throws Exception {
         final String[] expected = {
             "14: " + getCheckMessage(MSG_SUMMARY_JAVADOC),
@@ -211,7 +199,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocInlineReturnForbidden.java"), expected);
     }
 
-    @Test
     public void testPeriodAtEnd() throws Exception {
         final String[] expected = {
             "19: " + getCheckMessage(MSG_SUMMARY_JAVADOC_MISSING),
@@ -225,7 +212,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocPeriodAtEnd.java"), expected);
     }
 
-    @Test
     public void testHtmlFormatSummary() throws Exception {
         final String[] expected = {
             "22: " + getCheckMessage(MSG_SUMMARY_MISSING_PERIOD),
@@ -237,7 +223,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("InputSummaryJavadocHtmlFormat.java"), expected);
     }
 
-    @Test
     public void testPackageInfo() throws Exception {
         final String[] expected = {
             "10: " + getCheckMessage(MSG_SUMMARY_JAVADOC_MISSING),
@@ -247,7 +232,6 @@ public class SummaryJavadocCheckTest extends AbstractModuleTestSupport {
                 getPath("package-info.java"), expected);
     }
 
-    @Test
     public void testPackageInfoWithAnnotation() throws Exception {
         final String[] expected = {
             "10: " + getCheckMessage(MSG_SUMMARY_JAVADOC_MISSING),

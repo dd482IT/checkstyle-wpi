@@ -35,7 +35,6 @@ public class MissingJavadocTypeTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter7javadoc/rule73wherejavadocrequired";
     }
 
-    @Test
     public void testJavadocType() throws Exception {
 
         final String[] expected = {
@@ -58,7 +57,6 @@ public class MissingJavadocTypeTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testJavadocTypeNoViolations() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

@@ -36,7 +36,6 @@ public class CyclomaticComplexityCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/metrics/cyclomaticcomplexity";
     }
 
-    @Test
     public void testSwitchBlockAsSingleDecisionPointSetToTrue() throws Exception {
 
         final String[] expected = {
@@ -47,7 +46,6 @@ public class CyclomaticComplexityCheckTest
                 getPath("InputCyclomaticComplexitySwitchBlocks.java"), expected);
     }
 
-    @Test
     public void testSwitchBlockAsSingleDecisionPointSetToFalse() throws Exception {
 
         final String[] expected = {
@@ -58,7 +56,6 @@ public class CyclomaticComplexityCheckTest
                 getPath("InputCyclomaticComplexitySwitchBlocks2.java"), expected);
     }
 
-    @Test
     public void testEqualsMaxComplexity() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -67,7 +64,6 @@ public class CyclomaticComplexityCheckTest
                 getPath("InputCyclomaticComplexitySwitchBlocks3.java"), expected);
     }
 
-    @Test
     public void test() throws Exception {
 
         final String[] expected = {
@@ -87,7 +83,6 @@ public class CyclomaticComplexityCheckTest
                 getPath("InputCyclomaticComplexity.java"), expected);
     }
 
-    @Test
     public void testCyclomaticComplexityRecords() throws Exception {
 
         final int max = 0;
@@ -104,7 +99,6 @@ public class CyclomaticComplexityCheckTest
                 getNonCompilablePath("InputCyclomaticComplexityRecords.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final CyclomaticComplexityCheck cyclomaticComplexityCheckObj =
             new CyclomaticComplexityCheck();
@@ -131,7 +125,6 @@ public class CyclomaticComplexityCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final CyclomaticComplexityCheck cyclomaticComplexityCheckObj =
             new CyclomaticComplexityCheck();
@@ -148,7 +141,6 @@ public class CyclomaticComplexityCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testHighMax() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -156,7 +148,6 @@ public class CyclomaticComplexityCheckTest
                 getPath("InputCyclomaticComplexitySwitchBlocks4.java"), expected);
     }
 
-    @Test
     public void testDefaultMax() throws Exception {
         final String[] expected = {
             "14:5: " + getCheckMessage(MSG_KEY, 12, 10),

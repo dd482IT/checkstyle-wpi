@@ -10,7 +10,7 @@ tokens = (default)CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF, \
 package com.puppycrawl.tools.checkstyle.checks.annotation.annotationonsameline;
 
 public class InputAnnotationOnSameLineRecordsAndCompactCtors {
-    @NonNull1 // violation
+    // violation
     public record MyRecord1() {
     }
 
@@ -32,7 +32,7 @@ public class InputAnnotationOnSameLineRecordsAndCompactCtors {
     @SuppressWarnings("deprecation") // violation
     public record MyRecord5() {
         record MyInnerRecord() {
-                @NonNull1 @SuppressWarnings("Annotation") // violation
+                @SuppressWarnings("Annotation") // violation
             public MyInnerRecord {
             }
         }

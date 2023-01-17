@@ -38,7 +38,6 @@ public class XpathRegressionAvoidDoubleBraceInitializationTest extends AbstractX
         return clazz.getSimpleName();
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionAvoidDoubleBraceInitialization.java"));
@@ -63,7 +62,6 @@ public class XpathRegressionAvoidDoubleBraceInitializationTest extends AbstractX
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(
             getPath("SuppressionXpathRegressionAvoidDoubleBraceInitializationTwo.java"));

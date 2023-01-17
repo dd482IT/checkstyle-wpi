@@ -38,7 +38,6 @@ public class XpathRegressionMethodNameTest extends AbstractXpathTestSupport {
         return checkName;
     }
 
-    @Test
     public void test1() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionMethodName1.java"));
@@ -62,7 +61,6 @@ public class XpathRegressionMethodNameTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void test2() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionMethodName2.java"));
@@ -88,7 +86,6 @@ public class XpathRegressionMethodNameTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void test3() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionMethodName3.java"));

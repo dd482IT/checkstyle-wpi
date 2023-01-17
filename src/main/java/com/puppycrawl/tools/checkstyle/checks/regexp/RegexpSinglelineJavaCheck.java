@@ -208,11 +208,9 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 6.0
  */
-@StatelessCheck
 public class RegexpSinglelineJavaCheck extends AbstractCheck {
 
     /** Specify the format of the regular expression to match. */
-    @XdocsPropertyType(PropertyType.PATTERN)
     private String format = "$.";
     /**
      * Specify the message which is used to notify about violations,

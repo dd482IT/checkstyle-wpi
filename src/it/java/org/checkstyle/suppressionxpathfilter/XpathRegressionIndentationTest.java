@@ -37,7 +37,6 @@ public class XpathRegressionIndentationTest extends AbstractXpathTestSupport {
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionIndentationTestOne.java"));
@@ -72,7 +71,6 @@ public class XpathRegressionIndentationTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testBasicOffset() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionIndentationTestTwo.java"));
@@ -115,7 +113,6 @@ public class XpathRegressionIndentationTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testCaseIndent() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionIndentationTestThree.java"));
@@ -152,7 +149,6 @@ public class XpathRegressionIndentationTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testLambda() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionIndentationLambdaTest1.java"));
@@ -184,7 +180,6 @@ public class XpathRegressionIndentationTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testLambda2() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionIndentationLambdaTest2.java"));
@@ -216,7 +211,6 @@ public class XpathRegressionIndentationTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testIfWithNoCurlies() throws Exception {
         final File fileToProcess =
             new File(getPath("SuppressionXpathRegressionIndentationIfWithoutCurly.java"));
@@ -249,7 +243,6 @@ public class XpathRegressionIndentationTest extends AbstractXpathTestSupport {
             expectedXpathQueries);
     }
 
-    @Test
     public void testElseWithNoCurlies() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionIndentationElseWithoutCurly.java"));

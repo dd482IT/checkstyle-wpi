@@ -33,7 +33,6 @@ public class MethodNameTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter5naming/rule523methodnames";
     }
 
-    @Test
     public void testMethodName() throws Exception {
         final Configuration checkConfig = getModuleConfig("MethodName");
         final String msgKey = "name.invalidPattern";

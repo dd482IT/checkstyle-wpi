@@ -35,12 +35,12 @@ class InputFinalParameters3
     }
 
     /** final param constructor with annotation */
-    InputFinalParameters3(final @MyAnnotation33 Class<Object> i)
+    InputFinalParameters3(final Class<Object> i)
     {
     }
 
     /** non-final param constructor with annotation*/
-    InputFinalParameters3(@MyAnnotation33 Boolean i)
+    InputFinalParameters3(Boolean i)
     {
     }
 
@@ -65,13 +65,13 @@ class InputFinalParameters3
     }
 
     /** final param method with annotation **/
-    void method(@MyAnnotation33 final Object s)
+    void method(final Object s)
     {
 
     }
 
     /** non-final param method with annotation **/
-    void method(@MyAnnotation33 Class<Object> s) // violation
+    void method(Class<Object> s) // violation
     {
 
     }
@@ -95,7 +95,7 @@ class InputFinalParameters3
                 public void actionPerformed(ActionEvent e) // violation
                 {
                 }
-                void somethingElse(@MyAnnotation33 ActionEvent e) // violation
+                void somethingElse(ActionEvent e) // violation
                 {
                 }
             };
@@ -105,7 +105,7 @@ class InputFinalParameters3
                 public void actionPerformed(final ActionEvent e)
                 {
                 }
-                void somethingElse(@MyAnnotation33 final ActionEvent e)
+                void somethingElse(final ActionEvent e)
                 {
                 }
             };
@@ -130,13 +130,13 @@ class InputFinalParameters3
         catch (NullPointerException npe) {
             npe.getMessage();
         }
-        catch (@MyAnnotation33 final ClassCastException e) {
+        catch (final ClassCastException e) {
             e.getMessage();
         }
         catch (RuntimeException e) {
             e.getMessage();
         }
-        catch (@MyAnnotation33 NoClassDefFoundError e) {
+        catch (NoClassDefFoundError e) {
             e.getMessage();
         }
     }
@@ -162,11 +162,11 @@ class Foo3
         {
 
         }
-        for(@MyAnnotation33 String s : someExpression())
+        for(String s : someExpression())
         {
 
         }
-        for(@MyAnnotation33 final String s : someExpression())
+        for(final String s : someExpression())
         {
 
         }

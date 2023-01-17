@@ -35,7 +35,6 @@ public class CatchParameterNameCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/naming/catchparametername";
     }
 
-    @Test
     public void testTokens() {
         final CatchParameterNameCheck catchParameterNameCheck = new CatchParameterNameCheck();
         final int[] expected = {TokenTypes.PARAMETER_DEF};
@@ -48,7 +47,6 @@ public class CatchParameterNameCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefaultConfigurationOnCorrectFile() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -56,7 +54,6 @@ public class CatchParameterNameCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCatchParameterNameSimple.java"), expected);
     }
 
-    @Test
     public void testDefaultConfigurationOnFileWithViolations() throws Exception {
         final String defaultFormat = "^(e|t|ex|[a-z][a-z][a-zA-Z]+)$";
 
@@ -75,7 +72,6 @@ public class CatchParameterNameCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCatchParameterName.java"), expected);
     }
 
-    @Test
     public void testCustomFormatFromJavadoc() throws Exception {
 
         final String[] expected = {
@@ -87,7 +83,6 @@ public class CatchParameterNameCheckTest extends AbstractModuleTestSupport {
                 getPath("InputCatchParameterName2.java"), expected);
     }
 
-    @Test
     public void testCustomFormatWithNoAnchors() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

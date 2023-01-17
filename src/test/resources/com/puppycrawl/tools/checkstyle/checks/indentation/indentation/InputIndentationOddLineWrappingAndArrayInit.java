@@ -21,10 +21,7 @@ public class InputIndentationOddLineWrappingAndArrayInit { //indent:0 exp:0
         interface Info { //indent:8 exp:8
             String A = "a"; //indent:12 exp:12
         } //indent:8 exp:8
-        @MyInterface.SomeAnnotation(values = { //indent:8 exp:8
-                MyInterface.Info.A, //indent:16 exp:11,17,47,54 warn
-        } //indent:8 exp:8
-        ) //indent:8 exp:8
+ //indent:8 exp:8
         void works(); //indent:8 exp:8
     } //indent:4 exp:4
 } //indent:0 exp:0

@@ -98,7 +98,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 3.2
  */
-@FileStatefulCheck
 public final class ParameterAssignmentCheck extends AbstractCheck {
 
     /**

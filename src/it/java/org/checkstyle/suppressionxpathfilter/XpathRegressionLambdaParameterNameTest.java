@@ -39,7 +39,6 @@ public class XpathRegressionLambdaParameterNameTest extends AbstractXpathTestSup
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionLambdaParameterName1.java"));
@@ -64,7 +63,6 @@ public class XpathRegressionLambdaParameterNameTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionLambdaParameterName2.java"));

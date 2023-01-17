@@ -24,27 +24,27 @@ strictfp final class InputMethodLengthModifier // ok
     }
 
     /** Single annotation without other modifiers */
-    @MyAnnotation2 void someMethod()
+    void someMethod()
     {
     }
 
     /** Illegal order of annotation - must come first */
-    private @MyAnnotation2 void someMethod2()
+    private void someMethod2()
     {
     }
 
     /** Annotation in middle of other modifiers otherwise in correct order */
-    private @MyAnnotation2 strictfp void someMethod3()
+    private strictfp void someMethod3()
     {
     }
 
     /** Correct order */
-    @MyAnnotation2 private strictfp void someMethod4()
+    private strictfp void someMethod4()
     {
     }
 
     /** Annotation in middle of other modifiers otherwise in correct order */
-    @MyAnnotation2 private static @MyAnnotation4 strictfp void someMethod5()
+    private static strictfp void someMethod5()
     {
     }
 

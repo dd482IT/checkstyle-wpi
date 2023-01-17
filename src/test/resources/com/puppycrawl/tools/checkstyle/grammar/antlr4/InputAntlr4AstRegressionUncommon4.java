@@ -43,12 +43,12 @@ public class InputAntlr4AstRegressionUncommon4 {
     CelebrationLunch<Integer, Long, Double>
             .Section<Number, Number, Number> section = inner.new Section<>();
 
-    @NonNull String p1 = "hello";
+    String p1 = "hello";
     void method() {
         try {
             System.out.println();
         }
-        catch (@NonNull IOError | ArithmeticException e) {
+        catch (IOError | ArithmeticException e) {
 
         }
     }

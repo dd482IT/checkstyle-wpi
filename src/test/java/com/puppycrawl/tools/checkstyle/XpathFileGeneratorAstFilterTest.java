@@ -39,7 +39,6 @@ import com.puppycrawl.tools.checkstyle.internal.utils.TestUtil;
 
 public class XpathFileGeneratorAstFilterTest {
 
-    @Test
     public void testAcceptNoToken() {
         final Violation violation = new Violation(0, 0, 0, null, null, null, null,
                 null, XpathFileGeneratorAstFilterTest.class, null);
@@ -58,7 +57,6 @@ public class XpathFileGeneratorAstFilterTest {
             .isNull();
     }
 
-    @Test
     public void test() throws Exception {
         final Violation violation = new Violation(3, 47, TokenTypes.LCURLY,
                 "messages.properties", null, null, SeverityLevel.ERROR, null, LeftCurlyCheck.class,
@@ -81,7 +79,6 @@ public class XpathFileGeneratorAstFilterTest {
                     + "[@text='InputXpathFileGeneratorAstFilter']]/OBJBLOCK/LCURLY");
     }
 
-    @Test
     public void testNoXpathQuery() throws Exception {
         final Violation violation = new Violation(10, 10, TokenTypes.LCURLY,
                 "messages.properties", null, null, SeverityLevel.ERROR, null, LeftCurlyCheck.class,
@@ -103,7 +100,6 @@ public class XpathFileGeneratorAstFilterTest {
             .isNull();
     }
 
-    @Test
     public void testTabWidth() throws Exception {
         final Violation violation = new Violation(6, 7, TokenTypes.LITERAL_RETURN,
                 "messages.properties", null, null, SeverityLevel.ERROR, null,
@@ -135,7 +131,6 @@ public class XpathFileGeneratorAstFilterTest {
      *
      * @throws Exception when code tested throws exception
      */
-    @Test
     @SuppressWarnings("unchecked")
     public void testClearState() throws Exception {
         final Violation violation = new Violation(3, 47, TokenTypes.LCURLY,

@@ -31,7 +31,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  * Abstract class for checking that names conform to a specified format.
  *
  */
-@StatelessCheck
 public abstract class AbstractNameCheck
     extends AbstractCheck {
 

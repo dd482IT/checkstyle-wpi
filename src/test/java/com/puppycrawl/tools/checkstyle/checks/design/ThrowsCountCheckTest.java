@@ -36,7 +36,6 @@ public class ThrowsCountCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/design/throwscount";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -50,7 +49,6 @@ public class ThrowsCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputThrowsCount.java"), expected);
     }
 
-    @Test
     public void testMax() throws Exception {
 
         final String[] expected = {
@@ -61,7 +59,6 @@ public class ThrowsCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputThrowsCount2.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final ThrowsCountCheck obj = new ThrowsCountCheck();
         final int[] expected = {TokenTypes.LITERAL_THROWS};
@@ -70,7 +67,6 @@ public class ThrowsCountCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final ThrowsCountCheck obj = new ThrowsCountCheck();
         final int[] expected = {TokenTypes.LITERAL_THROWS};
@@ -79,7 +75,6 @@ public class ThrowsCountCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testWrongTokenType() {
         final ThrowsCountCheck obj = new ThrowsCountCheck();
         final DetailAstImpl ast = new DetailAstImpl();
@@ -95,7 +90,6 @@ public class ThrowsCountCheckTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testNotIgnorePrivateMethod() throws Exception {
         final String[] expected = {
             "25:20: " + getCheckMessage(MSG_KEY, 5, 4),
@@ -108,7 +102,6 @@ public class ThrowsCountCheckTest extends AbstractModuleTestSupport {
                 getPath("InputThrowsCount3.java"), expected);
     }
 
-    @Test
     public void testMethodWithAnnotation() throws Exception {
         final String[] expected = {
             "26:26: " + getCheckMessage(MSG_KEY, 5, 4),

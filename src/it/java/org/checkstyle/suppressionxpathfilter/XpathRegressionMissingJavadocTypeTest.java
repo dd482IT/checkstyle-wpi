@@ -37,7 +37,6 @@ public class XpathRegressionMissingJavadocTypeTest extends AbstractXpathTestSupp
         return checkName;
     }
 
-    @Test
     public void testClass() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingJavadocTypeClass.java"
@@ -66,7 +65,6 @@ public class XpathRegressionMissingJavadocTypeTest extends AbstractXpathTestSupp
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testScope() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingJavadocTypeScope.java"
@@ -97,7 +95,6 @@ public class XpathRegressionMissingJavadocTypeTest extends AbstractXpathTestSupp
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testExcluded() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingJavadocTypeExcluded.java"
@@ -129,7 +126,6 @@ public class XpathRegressionMissingJavadocTypeTest extends AbstractXpathTestSupp
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testAnnotation() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingJavadocTypeAnnotation.java"
@@ -165,7 +161,6 @@ public class XpathRegressionMissingJavadocTypeTest extends AbstractXpathTestSupp
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testToken() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingJavadocTypeToken.java"

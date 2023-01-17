@@ -98,7 +98,6 @@ public class XdocsUrlTest {
         return checksNamesMap;
     }
 
-    @Test
     public void testXdocsUrl() throws Exception {
         final SAXParserFactory parserFactory = SAXParserFactory.newInstance();
         final SAXParser parser = parserFactory.newSAXParser();

@@ -19,7 +19,7 @@ package com.puppycrawl.tools.checkstyle.checks.indentation.indentation; //indent
     int version(); //indent:4 exp:4
 } //indent:0 exp:0
 
-@MyAnnotation3(name = "ABC", version = 1) //indent:0 exp:0
+//indent:0 exp:0
 public class InputIndentation15Extensions //indent:0 exp:0
 { //indent:0 exp:0
 

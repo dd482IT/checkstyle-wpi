@@ -5,16 +5,12 @@ import java.util.List;
 
 public class InputSuppressWarningsHolder7 {
 
-    @TestSwAnnotation(@SuppressWarnings("unchecked"))
     private List<String> testSwAnnotation;
 
-    @TestSwAnnotationVal(value = @SuppressWarnings("unchecked"))
     private List<String> testSwAnnotationVal;
 
-    @TestSwAnnotationVal(value = {@SuppressWarnings("unchecked")})
     private List<String> list1;
 
-    @TestSwAnnotationVal({@SuppressWarnings("unchecked"), @SuppressWarnings("unchecked")})
     private List<String> list2;
 }
 

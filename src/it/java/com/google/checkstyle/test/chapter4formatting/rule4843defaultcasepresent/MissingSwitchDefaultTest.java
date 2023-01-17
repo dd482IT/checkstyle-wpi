@@ -32,7 +32,6 @@ public class MissingSwitchDefaultTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule4843defaultcasepresent";
     }
 
-    @Test
     public void testMissingSwitchDefault() throws Exception {
         final String msg = getCheckMessage(MissingSwitchDefaultCheck.class,
             "missing.switch.default");

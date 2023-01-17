@@ -249,7 +249,6 @@ import com.puppycrawl.tools.checkstyle.api.DetailAST;
  * @noinspectionreason ThisEscapedInObjectConstruction - class is instantiated in handlers
  * @since 3.1
  */
-@FileStatefulCheck
 public class IndentationCheck extends AbstractCheck {
 
     /*  -- Implementation --

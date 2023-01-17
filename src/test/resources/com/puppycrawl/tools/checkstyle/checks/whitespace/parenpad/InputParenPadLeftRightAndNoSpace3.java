@@ -125,7 +125,6 @@ public class InputParenPadLeftRightAndNoSpace3 // ok
                         ( ( 3 < 4 )? false : true ) :
                         ( ( 1 == 1 ) ? false : true) ) ).toString();
     }
-    @MyAnnotation3
     public boolean bar(boolean a) {
         assert ( true );
         return true;

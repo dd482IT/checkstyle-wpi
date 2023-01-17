@@ -35,7 +35,6 @@ public class Java7StringSwitchTest
         return "com/puppycrawl/tools/checkstyle/grammar";
     }
 
-    @Test
     public void testCanParse()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

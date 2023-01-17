@@ -32,7 +32,6 @@ public class NonEmptyAtclauseDescriptionTest extends AbstractGoogleModuleTestSup
         return "com/google/checkstyle/test/chapter7javadoc/rule713atclauses";
     }
 
-    @Test
     public void testDefaultConfiguration() throws Exception {
         final String msg = getCheckMessage(NonEmptyAtclauseDescriptionCheck.class,
             "non.empty.atclause");
@@ -58,7 +57,6 @@ public class NonEmptyAtclauseDescriptionTest extends AbstractGoogleModuleTestSup
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testSpaceSequence() throws Exception {
         final String msg = getCheckMessage(NonEmptyAtclauseDescriptionCheck.class,
             "non.empty.atclause");

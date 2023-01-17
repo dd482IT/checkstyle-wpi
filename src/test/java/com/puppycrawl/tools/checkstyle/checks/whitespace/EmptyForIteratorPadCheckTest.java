@@ -38,7 +38,6 @@ public class EmptyForIteratorPadCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/emptyforiteratorpad";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final EmptyForIteratorPadCheck checkObj = new EmptyForIteratorPadCheck();
         final int[] expected = {TokenTypes.FOR_ITERATOR};
@@ -47,7 +46,6 @@ public class EmptyForIteratorPadCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "30:32: " + getCheckMessage(MSG_WS_FOLLOWED, ";"),
@@ -58,7 +56,6 @@ public class EmptyForIteratorPadCheckTest
                 getPath("InputEmptyForIteratorPad.java"), expected);
     }
 
-    @Test
     public void testSpaceOption() throws Exception {
         final String[] expected = {
             "26:31: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ";"),
@@ -67,7 +64,6 @@ public class EmptyForIteratorPadCheckTest
                 getPath("InputEmptyForIteratorPad1.java"), expected);
     }
 
-    @Test
     public void testWithEmoji() throws Exception {
         final String[] expected = {
             "24:40: " + getCheckMessage(MSG_WS_FOLLOWED, ";"),
@@ -77,7 +73,6 @@ public class EmptyForIteratorPadCheckTest
 
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final EmptyForIteratorPadCheck emptyForIteratorPadCheckObj = new EmptyForIteratorPadCheck();
         final int[] actual = emptyForIteratorPadCheckObj.getAcceptableTokens();
@@ -89,7 +84,6 @@ public class EmptyForIteratorPadCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testInvalidOption() throws Exception {
         try {
             final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -107,7 +101,6 @@ public class EmptyForIteratorPadCheckTest
         }
     }
 
-    @Test
     public void testTrimOptionProperty() throws Exception {
         final String[] expected = {
             "20:31: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ";"),
@@ -118,7 +111,6 @@ public class EmptyForIteratorPadCheckTest
 
     }
 
-    @Test
     public void testUppercaseOptionProperty() throws Exception {
         final String[] expected = {
             "20:31: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ";"),

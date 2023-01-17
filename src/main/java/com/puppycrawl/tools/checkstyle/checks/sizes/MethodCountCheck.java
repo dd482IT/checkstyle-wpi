@@ -167,7 +167,6 @@ import com.puppycrawl.tools.checkstyle.utils.ScopeUtil;
  *
  * @since 5.3
  */
-@FileStatefulCheck
 public final class MethodCountCheck extends AbstractCheck {
 
     /**

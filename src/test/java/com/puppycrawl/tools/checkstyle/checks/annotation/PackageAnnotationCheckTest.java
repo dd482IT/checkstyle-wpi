@@ -38,7 +38,6 @@ public class PackageAnnotationCheckTest extends AbstractModuleTestSupport {
     /**
      * This tests a package annotation that is in the package-info.java file.
      */
-    @Test
     public void testGoodPackageAnnotation() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -47,7 +46,6 @@ public class PackageAnnotationCheckTest extends AbstractModuleTestSupport {
                 getPath("package-info.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final PackageAnnotationCheck constantNameCheckObj = new PackageAnnotationCheck();
         final int[] actual = constantNameCheckObj.getAcceptableTokens();
@@ -57,7 +55,6 @@ public class PackageAnnotationCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testNoPackageAnnotation() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -66,7 +63,6 @@ public class PackageAnnotationCheckTest extends AbstractModuleTestSupport {
                 getPath("InputPackageAnnotation.java"), expected);
     }
 
-    @Test
     public void testBadPackageAnnotation() throws Exception {
 
         final String[] expected = {

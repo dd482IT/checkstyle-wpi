@@ -116,7 +116,6 @@ import com.puppycrawl.tools.checkstyle.utils.ScopeUtil;
  *
  * @since 8.24
  */
-@StatelessCheck
 public final class UnnecessarySemicolonAfterTypeMemberDeclarationCheck extends AbstractCheck {
 
     /**

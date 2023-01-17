@@ -44,7 +44,6 @@ public class RedundantImportCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/imports/redundantimport";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final RedundantImportCheck checkObj = new RedundantImportCheck();
         final int[] expected = {
@@ -57,7 +56,6 @@ public class RedundantImportCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testStateIsClearedOnBeginTree1()
             throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(RedundantImportCheck.class);
@@ -75,7 +73,6 @@ public class RedundantImportCheckTest
             inputWithoutWarnings, expectedSecondInput));
     }
 
-    @Test
     public void testWithChecker()
             throws Exception {
         final String[] expected = {
@@ -93,7 +90,6 @@ public class RedundantImportCheckTest
                 getPath("InputRedundantImportWithChecker.java"), expected);
     }
 
-    @Test
     public void testUnnamedPackage()
             throws Exception {
         final String[] expected = {
@@ -105,7 +101,6 @@ public class RedundantImportCheckTest
             expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final RedundantImportCheck testCheckObject =
                 new RedundantImportCheck();

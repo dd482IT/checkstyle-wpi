@@ -85,7 +85,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 8.22
  */
-@StatelessCheck
 public final class UnnecessarySemicolonInEnumerationCheck extends AbstractCheck {
 
     /**

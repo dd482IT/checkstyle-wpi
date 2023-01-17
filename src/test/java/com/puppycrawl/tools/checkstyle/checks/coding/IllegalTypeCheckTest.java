@@ -39,7 +39,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/illegaltype";
     }
 
-    @Test
     public void testValidateAbstractClassNamesSetToTrue() throws Exception {
         final String[] expected = {
             "27:38: " + getCheckMessage(MSG_KEY, "AbstractClass"),
@@ -52,7 +51,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestAbstractClassNamesTrue.java"), expected);
     }
 
-    @Test
     public void testValidateAbstractClassNamesSetToFalse() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -60,7 +58,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestAbstractClassNamesFalse.java"), expected);
     }
 
-    @Test
     public void testDefaults() throws Exception {
         final String[] expected = {
             "34:13: " + getCheckMessage(MSG_KEY, "java.util.TreeSet"),
@@ -73,7 +70,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestDefaults.java"), expected);
     }
 
-    @Test
     public void testDefaultsEmptyStringMemberModifiers() throws Exception {
 
         final String[] expected = {
@@ -87,7 +83,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeEmptyStringMemberModifiers.java"), expected);
     }
 
-    @Test
     public void testIgnoreMethodNames() throws Exception {
         final String[] expected = {
             "23:13: " + getCheckMessage(MSG_KEY, "AbstractClass"),
@@ -104,7 +99,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestIgnoreMethodNames.java"), expected);
     }
 
-    @Test
     public void testFormat() throws Exception {
 
         final String[] expected = {
@@ -118,7 +112,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestFormat.java"), expected);
     }
 
-    @Test
     public void testLegalAbstractClassNames() throws Exception {
 
         final String[] expected = {
@@ -135,7 +128,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestLegalAbstractClassNames.java"), expected);
     }
 
-    @Test
     public void testSameFileNameFalsePositive() throws Exception {
         final String[] expected = {
             "28:5: " + getCheckMessage(MSG_KEY, "SubCal"),
@@ -146,7 +138,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeSameFileNameFalsePositive.java"), expected);
     }
 
-    @Test
     public void testSameFileNameGeneral() throws Exception {
         final String[] expected = {
             "25:5: " + getCheckMessage(MSG_KEY, "InputIllegalTypeGregCal"),
@@ -162,7 +153,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestSameFileNameGeneral.java"), expected);
     }
 
-    @Test
     public void testArrayTypes() throws Exception {
         final String[] expected = {
             "20:12: " + getCheckMessage(MSG_KEY, "Boolean[]"),
@@ -176,7 +166,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeArrays.java"), expected);
     }
 
-    @Test
     public void testPlainAndArrayTypes() throws Exception {
         final String[] expected = {
             "20:12: " + getCheckMessage(MSG_KEY, "Boolean"),
@@ -189,7 +178,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestPlainAndArraysTypes.java"), expected);
     }
 
-    @Test
     public void testGenerics() throws Exception {
         final String[] expected = {
             "28:16: " + getCheckMessage(MSG_KEY, "Boolean"),
@@ -214,7 +202,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestGenerics.java"), expected);
     }
 
-    @Test
     public void testExtendsImplements() throws Exception {
         final String[] expected = {
             "24:17: " + getCheckMessage(MSG_KEY, "Hashtable"),
@@ -231,7 +218,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestExtendsImplements.java"), expected);
     }
 
-    @Test
     public void testStarImports() throws Exception {
 
         final String[] expected = {
@@ -242,7 +228,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestStarImports.java"), expected);
     }
 
-    @Test
     public void testStaticImports() throws Exception {
 
         final String[] expected = {
@@ -254,7 +239,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestStaticImports.java"), expected);
     }
 
-    @Test
     public void testMemberModifiers() throws Exception {
         final String[] expected = {
             "22:13: " + getCheckMessage(MSG_KEY, "AbstractClass"),
@@ -270,7 +254,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 getPath("InputIllegalTypeTestMemberModifiers.java"), expected);
     }
 
-    @Test
     public void testPackageClassName() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -279,7 +262,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testClearDataBetweenFiles() throws Exception {
         final DefaultConfiguration checkConfig = createModuleConfig(IllegalTypeCheck.class);
         final String violationFile = getPath("InputIllegalTypeTestClearDataBetweenFiles.java");
@@ -295,7 +277,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
         }, violationFile, expected);
     }
 
-    @Test
     public void testIllegalTypeEnhancedInstanceof() throws Exception {
         final String[] expected = {
             "28:9: " + getCheckMessage(MSG_KEY, "LinkedHashMap"),
@@ -310,7 +291,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testIllegalTypeRecordsAndCompactCtors() throws Exception {
         final String[] expected = {
             "27:14: " + getCheckMessage(MSG_KEY, "LinkedHashMap"),
@@ -327,7 +307,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testIllegalTypeNewArrayStructure() throws Exception {
 
         final String[] expected = {
@@ -339,7 +318,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testRecordComponentsDefault() throws Exception {
         final String[] expected = {
             "45:9: " + getCheckMessage(MSG_KEY, "HashSet"),
@@ -352,7 +330,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testRecordComponentsFinal() throws Exception {
         final String[] expected = {
             "45:9: " + getCheckMessage(MSG_KEY, "HashSet"),
@@ -365,7 +342,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testRecordComponentsPrivateFinal() throws Exception {
         final String[] expected = {
             "45:9: " + getCheckMessage(MSG_KEY, "HashSet"),
@@ -378,7 +354,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testRecordComponentsPublicProtectedStatic() throws Exception {
         final String[] expected = {
             "45:9: " + getCheckMessage(MSG_KEY, "HashSet")};
@@ -389,7 +364,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testTrailingWhitespaceInConfig() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -397,7 +371,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final IllegalTypeCheck check = new IllegalTypeCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -411,7 +384,6 @@ public class IllegalTypeCheckTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testImproperToken() {
         final IllegalTypeCheck check = new IllegalTypeCheck();
 

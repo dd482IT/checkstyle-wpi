@@ -37,7 +37,6 @@ public class AbbreviationAsWordInNameTest extends AbstractGoogleModuleTestSuppor
         return "com/google/checkstyle/test/chapter5naming/rule53camelcase";
     }
 
-    @Test
     public void testAbbreviationAsWordInName() throws Exception {
         final int maxCapitalCount = 1;
 

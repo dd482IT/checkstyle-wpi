@@ -33,26 +33,22 @@ public class AttributeNodeTest {
 
     private static AttributeNode attributeNode;
 
-    @BeforeEach
     public void init() {
         attributeNode = new AttributeNode("name", "value");
     }
 
-    @Test
     public void testGetNamespaceUri() {
         assertWithMessage("Attribute node should have default namespace URI")
             .that(attributeNode.getNamespaceUri())
             .isEqualTo(NamespaceUri.NULL);
     }
 
-    @Test
     public void testGetUri() {
         assertWithMessage("Attribute node should have blank URI")
             .that(attributeNode.getURI())
             .isEqualTo("");
     }
 
-    @Test
     public void testCompareOrder() {
         try {
             attributeNode.compareOrder(null);
@@ -65,7 +61,6 @@ public class AttributeNodeTest {
         }
     }
 
-    @Test
     public void testGetDepth() {
         final UnsupportedOperationException exception =
             assertThrows(UnsupportedOperationException.class, attributeNode::getDepth);
@@ -75,14 +70,12 @@ public class AttributeNodeTest {
                 .isEqualTo("Operation is not supported");
     }
 
-    @Test
     public void testHasChildNodes() {
         assertWithMessage("Attribute node shouldn't have children")
             .that(attributeNode.hasChildNodes())
             .isFalse();
     }
 
-    @Test
     public void testGetAttributeValue() {
         try {
             attributeNode.getAttributeValue("", "");
@@ -95,7 +88,6 @@ public class AttributeNodeTest {
         }
     }
 
-    @Test
     public void testGetChildren() {
         final UnsupportedOperationException exception =
             assertThrows(UnsupportedOperationException.class, attributeNode::getChildren);
@@ -105,7 +97,6 @@ public class AttributeNodeTest {
             .isEqualTo("Operation is not supported");
     }
 
-    @Test
     public void testGetParent() {
         try {
             attributeNode.getParent();
@@ -118,7 +109,6 @@ public class AttributeNodeTest {
         }
     }
 
-    @Test
     public void testGetRoot() {
         try {
             attributeNode.getRoot();
@@ -131,14 +121,12 @@ public class AttributeNodeTest {
         }
     }
 
-    @Test
     public void testGetStringValue() {
         assertWithMessage("Invalid string value")
             .that(attributeNode.getStringValue())
             .isEqualTo("value");
     }
 
-    @Test
     public void testIterate() {
         try (AxisIterator ignored = attributeNode.iterateAxis(AxisInfo.SELF)) {
             assertWithMessage("Exception is excepted").fail();
@@ -150,7 +138,6 @@ public class AttributeNodeTest {
         }
     }
 
-    @Test
     public void testGetLineNumber() {
         try {
             attributeNode.getLineNumber();
@@ -163,7 +150,6 @@ public class AttributeNodeTest {
         }
     }
 
-    @Test
     public void testGetColumnNumber() {
         try {
             attributeNode.getColumnNumber();
@@ -176,7 +162,6 @@ public class AttributeNodeTest {
         }
     }
 
-    @Test
     public void testGetTokenType() {
         try {
             attributeNode.getTokenType();
@@ -189,7 +174,6 @@ public class AttributeNodeTest {
         }
     }
 
-    @Test
     public void testGetUnderlyingNode() {
         try {
             attributeNode.getUnderlyingNode();
@@ -202,7 +186,6 @@ public class AttributeNodeTest {
         }
     }
 
-    @Test
     public void testGetAllNamespaces() {
         try {
             attributeNode.getAllNamespaces();

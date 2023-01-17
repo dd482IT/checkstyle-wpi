@@ -13,13 +13,11 @@ package com.puppycrawl.tools.checkstyle.checks.javadoc.missingjavadoctype;
 public class InputMissingJavadocTypeQualifiedAnnotation3 {
     public @interface SomeAnnotation { }
 
-    @SomeAnnotation // violation 'Missing a Javadoc comment.'
+    // violation 'Missing a Javadoc comment.'
     public interface A { }
 
-    @InputMissingJavadocTypeQualifiedAnnotation3.SomeAnnotation // ok
+    // ok
     public interface B { }
 
-    @com.puppycrawl.tools.checkstyle.checks.javadoc // violation 'Missing a Javadoc comment.'
-        .missingjavadoctype.InputMissingJavadocTypeQualifiedAnnotation3.SomeAnnotation
     public interface C { }
 }

@@ -52,7 +52,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/xpath/xpathquerygenerator";
     }
 
-    @BeforeEach
     public void init() throws Exception {
         final File file = new File(getPath("InputXpathQueryGenerator.java"));
         fileText = new FileText(file,
@@ -60,7 +59,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
         rootAst = JavaParser.parseFile(file, JavaParser.Options.WITH_COMMENTS);
     }
 
-    @Test
     public void testClassDef() {
         final int lineNumber = 12;
         final int columnNumber = 1;
@@ -77,7 +75,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testMethodDef() {
         final int lineNumber = 45;
         final int columnNumber = 5;
@@ -96,7 +93,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testVariableDef() {
         final int lineNumber = 53;
         final int columnNumber = 13;
@@ -125,7 +121,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testLcurly() {
         final int lineNumber = 37;
         final int columnNumber = 20;
@@ -140,7 +135,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testRcurly() {
         final int lineNumber = 25;
         final int columnNumber = 5;
@@ -155,7 +149,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testExpr() {
         final int lineNumber = 17;
         final int columnNumber = 50;
@@ -172,7 +165,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testLparen() {
         final int lineNumber = 45;
         final int columnNumber = 31;
@@ -187,7 +179,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testEmpty() {
         final int lineNumber = 300;
         final int columnNumber = 300;
@@ -199,7 +190,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEmpty();
     }
 
-    @Test
     public void testPackage() {
         final int lineNumber = 2;
         final int columnNumber = 1;
@@ -214,7 +204,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testImport() {
         final int lineNumber = 5;
         final int columnNumber = 1;
@@ -228,7 +217,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testMethodParams() {
         final int lineNumber = 72;
         final int columnNumber = 30;
@@ -259,7 +247,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testSwitch() {
         final int lineNumber = 37;
         final int columnNumber = 9;
@@ -274,7 +261,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testSwitchCase() {
         final int lineNumber = 38;
         final int columnNumber = 13;
@@ -293,7 +279,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testVariableStringLiteral() {
         final int lineNumber = 47;
         final int columnNumber = 26;
@@ -314,7 +299,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testComma() {
         final int lineNumber = 66;
         final int columnNumber = 36;
@@ -330,7 +314,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testLiteralVoid() {
         final int lineNumber = 65;
         final int columnNumber = 12;
@@ -347,7 +330,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testFirstImport() {
         final int lineNumber = 4;
         final int columnNumber = 1;
@@ -361,7 +343,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testLastImport() {
         final int lineNumber = 8;
         final int columnNumber = 1;
@@ -375,7 +356,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testImportByText() {
         final int lineNumber = 4;
         final int columnNumber = 8;
@@ -389,7 +369,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testIdent() {
         final int lineNumber = 12;
         final int columnNumber = 14;
@@ -403,7 +382,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testTabWidthBeforeMethodDef() throws Exception {
         final File testFile = new File(getPath(
                 "InputXpathQueryGeneratorTabWidth.java"));
@@ -432,7 +410,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testTabWidthAfterVoidLiteral() throws Exception {
         final File testFile = new File(getPath(
                 "InputXpathQueryGeneratorTabWidth.java"));
@@ -458,7 +435,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testTabWidthBeforeSlist() throws Exception {
         final File testFile = new File(getPath("InputXpathQueryGeneratorTabWidth.java"));
         final FileText testFileText = new FileText(testFile,
@@ -480,7 +456,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testTabWidthEndOfLine() throws Exception {
         final File testFile = new File(getPath("InputXpathQueryGeneratorTabWidth.java"));
         final FileText testFileText = new FileText(testFile,
@@ -501,7 +476,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testClassDefWithTokenType() {
         final int lineNumber = 12;
         final int columnNumber = 1;
@@ -515,7 +489,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testConstructorWithTreeWalkerAuditEvent() {
         final Violation violation = new Violation(12, 1, "messages.properties", null,
                 null, null, null, null, null);
@@ -534,7 +507,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testEscapeCharacters() throws Exception {
         final File testFile = new File(getPath("InputXpathQueryGeneratorEscapeCharacters.java"));
         final FileText testFileText = new FileText(testFile,
@@ -584,7 +556,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
             .isEqualTo(expectedTestTwo);
     }
 
-    @Test
     public void testTextBlocks() throws Exception {
         final File testFile = new File(getNonCompilablePath(
                 "InputXpathQueryGeneratorTextBlock.java"));
@@ -611,7 +582,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
                 .isEqualTo(actual);
     }
 
-    @Test
     public void testTextBlocksWithNewLine() throws Exception {
         final File testFile = new File(getNonCompilablePath(
                 "InputXpathQueryGeneratorTextBlockNewLine.java"));
@@ -638,7 +608,6 @@ public class XpathQueryGeneratorTest extends AbstractModuleTestSupport {
                 .isEqualTo(actual);
     }
 
-    @Test
     public void testTextBlocksWithNewCrlf() throws Exception {
         final File testFile = new File(getNonCompilablePath(
                 "InputXpathQueryGeneratorTextBlockCrlf.java"));

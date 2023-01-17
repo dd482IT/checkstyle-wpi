@@ -50,14 +50,12 @@ public class ElementNodeTest extends AbstractPathTestSupport {
         return "com/puppycrawl/tools/checkstyle/xpath/xpathmapper";
     }
 
-    @BeforeEach
     public void init() throws Exception {
         final File file = new File(getPath("InputXpathMapperAst.java"));
         final DetailAST rootAst = JavaParser.parseFile(file, JavaParser.Options.WITHOUT_COMMENTS);
         rootNode = new RootNode(rootAst);
     }
 
-    @Test
     public void testParentChildOrdering() {
         final DetailAstImpl detailAST = new DetailAstImpl();
         detailAST.setType(TokenTypes.VARIABLE_DEF);
@@ -76,7 +74,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
             .isEqualTo(1);
     }
 
-    @Test
     public void testSiblingsOrdering() {
         final DetailAstImpl detailAst1 = new DetailAstImpl();
         detailAst1.setType(TokenTypes.VARIABLE_DEF);
@@ -100,7 +97,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
             .isEqualTo(1);
     }
 
-    @Test
     public void testCompareOrderWrongInstance() throws Exception {
         final String xpath = "//OBJBLOCK";
         final List<NodeInfo> nodes = getXpathItems(xpath, rootNode);
@@ -110,7 +106,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
             .isEqualTo(0);
     }
 
-    @Test
     public void testGetParent() throws Exception {
         final String xpath = "//OBJBLOCK";
         final List<NodeInfo> nodes = getXpathItems(xpath, rootNode);
@@ -123,7 +118,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
             .isEqualTo(TokenTypes.CLASS_DEF);
     }
 
-    @Test
     public void testRootOfElementNode() throws Exception {
         final String xpath = "//OBJBLOCK";
         final List<NodeInfo> nodes = getXpathItems(xpath, rootNode);
@@ -139,7 +133,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testGetNodeByValueNumInt() throws Exception {
         final String xPath = "//NUM_INT[@text = 123]";
         final List<NodeInfo> nodes = getXpathItems(xPath, rootNode);
@@ -152,7 +145,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
             .isEqualTo(TokenTypes.NUM_INT);
     }
 
-    @Test
     public void testGetNodeByValueStringLiteral() throws Exception {
         final String xPath = "//STRING_LITERAL[@text = 'HelloWorld']";
         final List<NodeInfo> nodes = getXpathItems(xPath, rootNode);
@@ -165,7 +157,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
             .isEqualTo(TokenTypes.STRING_LITERAL);
     }
 
-    @Test
     public void testGetNodeByValueWithSameTokenText() throws Exception {
         final String xPath = "//MODIFIERS[@text = 'MODIFIERS']";
         final List<NodeInfo> nodes = getXpathItems(xPath, rootNode);
@@ -174,7 +165,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
             .hasSize(0);
     }
 
-    @Test
     public void testGetAttributeValue() {
         final DetailAstImpl detailAST = new DetailAstImpl();
         detailAST.setType(TokenTypes.IDENT);
@@ -187,7 +177,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
             .isEqualTo("HelloWorld");
     }
 
-    @Test
     public void testGetAttributeCached() {
         final DetailAstImpl detailAST = new DetailAstImpl();
         detailAST.setType(TokenTypes.IDENT);
@@ -202,7 +191,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testGetAttributeValueNoAttribute() {
         final DetailAstImpl detailAST = new DetailAstImpl();
         detailAST.setType(TokenTypes.CLASS_DEF);
@@ -215,7 +203,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
             .isNull();
     }
 
-    @Test
     public void testGetAttributeValueWrongAttribute() {
         final DetailAstImpl detailAST = new DetailAstImpl();
         detailAST.setType(TokenTypes.IDENT);
@@ -228,7 +215,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
             .isNull();
     }
 
-    @Test
     public void testIterateAxisEmptyChildren() {
         final DetailAstImpl detailAST = new DetailAstImpl();
         detailAST.setType(TokenTypes.METHOD_DEF);
@@ -245,7 +231,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testIterateAxisWithChildren() {
         final DetailAstImpl detailAST = new DetailAstImpl();
         detailAST.setType(TokenTypes.METHOD_DEF);
@@ -265,7 +250,6 @@ public class ElementNodeTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testIterateAxisWithNoSiblings() {
         final DetailAstImpl detailAST = new DetailAstImpl();
         detailAST.setType(TokenTypes.VARIABLE_DEF);

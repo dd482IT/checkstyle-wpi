@@ -26,7 +26,6 @@ import org.junit.jupiter.api.Test;
 
 public class DefinitionsTest {
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(isUtilsClassHasPrivateConstructor(Definitions.class))

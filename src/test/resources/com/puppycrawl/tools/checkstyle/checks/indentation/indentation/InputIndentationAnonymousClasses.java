@@ -14,7 +14,7 @@ package com.puppycrawl.tools.checkstyle.checks.indentation.indentation; //indent
  *                                                                            //indent:1 exp:1
  *                                                                            //indent:1 exp:1
  */                                                                           //indent:1 exp:1
-@MyAnnotation1 //indent:0 exp:0
+//indent:0 exp:0
 public class //indent:0 exp:0
     InputIndentationAnonymousClasses { //indent:4 exp:4
   public InputIndentationAnonymousClasses(String longStr, String secondLongStr) { //indent:2 exp:2

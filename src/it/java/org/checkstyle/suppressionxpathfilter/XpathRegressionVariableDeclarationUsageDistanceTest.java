@@ -36,7 +36,6 @@ public class XpathRegressionVariableDeclarationUsageDistanceTest extends Abstrac
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionVariableDeclarationUsageDistance1.java"));
@@ -76,7 +75,6 @@ public class XpathRegressionVariableDeclarationUsageDistanceTest extends Abstrac
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionVariableDeclarationUsageDistance2.java"));

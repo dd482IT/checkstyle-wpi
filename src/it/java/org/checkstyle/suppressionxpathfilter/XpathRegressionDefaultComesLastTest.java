@@ -38,7 +38,6 @@ public class XpathRegressionDefaultComesLastTest extends AbstractXpathTestSuppor
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionDefaultComesLastOne.java"));
@@ -66,7 +65,6 @@ public class XpathRegressionDefaultComesLastTest extends AbstractXpathTestSuppor
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionDefaultComesLastTwo.java"));

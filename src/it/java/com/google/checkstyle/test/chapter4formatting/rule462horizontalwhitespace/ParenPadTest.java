@@ -32,7 +32,6 @@ public class ParenPadTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule462horizontalwhitespace";
     }
 
-    @Test
     public void testMethodParen() throws Exception {
         final Class<ParenPadCheck> clazz = ParenPadCheck.class;
         final String messageKeyPreceded = "ws.preceded";

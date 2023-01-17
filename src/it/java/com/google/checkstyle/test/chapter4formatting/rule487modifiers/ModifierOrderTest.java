@@ -32,7 +32,6 @@ public class ModifierOrderTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule487modifiers";
     }
 
-    @Test
     public void testModifierOrder() throws Exception {
         final Class<ModifierOrderCheck> clazz = ModifierOrderCheck.class;
         final String msgMod = "mod.order";

@@ -33,7 +33,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
         return "com/puppycrawl/tools/checkstyle/checks/naming/abbreviationaswordinname";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final int expectedCapitalCount = 4;
 
@@ -52,7 +51,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameType.java"), expected);
     }
 
-    @Test
     public void testTypeNamesForThreePermittedCapitalLetters() throws Exception {
         final int expectedCapitalCount = 4;
 
@@ -67,7 +65,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameType2.java"), expected);
     }
 
-    @Test
     public void testTypeNamesForFourPermittedCapitalLetters() throws Exception {
         final int expectedCapitalCount = 5;
 
@@ -79,7 +76,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameType3.java"), expected);
     }
 
-    @Test
     public void testTypeNamesForFivePermittedCapitalLetters() throws Exception {
         final int expectedCapitalCount = 6;
         final String[] expected = {
@@ -91,7 +87,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameType4.java"), expected);
     }
 
-    @Test
     public void testTypeAndVariablesAndMethodNames() throws Exception {
         final int expectedCapitalCount = 6;
 
@@ -107,7 +102,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameType5.java"), expected);
     }
 
-    @Test
     public void testTypeAndVariablesAndMethodNamesWithNoIgnores() throws Exception {
         final int expectedCapitalCount = 6;
 
@@ -128,7 +122,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameNoIgnore.java"), expected);
     }
 
-    @Test
     public void testTypeAndVariablesAndMethodNamesWithIgnores() throws Exception {
         final int expectedCapitalCount = 6;
 
@@ -145,7 +138,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameIgnore.java"), expected);
     }
 
-    @Test
     public void testTypeAndVariablesAndMethodNamesWithIgnoresFinal() throws Exception {
         final int expectedCapitalCount = 5;
 
@@ -165,7 +157,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 "InputAbbreviationAsWordInNameIgnoreFinal.java"), expected);
     }
 
-    @Test
     public void testTypeAndVariablesAndMethodNamesWithIgnoresStatic() throws Exception {
         final int expectedCapitalCount = 5;
 
@@ -185,7 +176,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 "InputAbbreviationAsWordInNameIgnoreStatic.java"), expected);
     }
 
-    @Test
     public void testTypeAndVariablesAndMethodNamesWithIgnoresStaticFinal() throws Exception {
         final int expectedCapitalCount = 5;
 
@@ -207,7 +197,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 "InputAbbreviationAsWordInNameIgnoreStaticFinal.java"), expected);
     }
 
-    @Test
     public void testTypeAndVariablesAndMethodNamesWithIgnoresNonStaticFinal() throws Exception {
         final int expectedCapitalCount = 5;
 
@@ -246,7 +235,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 "InputAbbreviationAsWordInNameIgnoreNonStaticFinal.java"), expected);
     }
 
-    @Test
     public void testTypeAndVariablesAndMethodNamesWithIgnoresFinalKeepStaticFinal()
             throws Exception {
         final int expectedCapitalCount = 5;
@@ -277,7 +265,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 expected);
     }
 
-    @Test
     public void testTypeAndVariablesAndMethodNamesWithIgnoresStaticKeepStaticFinal()
             throws Exception {
         final int expectedCapitalCount = 5;
@@ -308,7 +295,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 expected);
     }
 
-    @Test
     public void testTypeNamesForThreePermittedCapitalLettersWithOverriddenMethod()
             throws Exception {
         final int expectedCapitalCount = 4;
@@ -321,7 +307,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameOverridableMethod.java"), expected);
     }
 
-    @Test
     public void testOverriddenMethod()
             throws Exception {
         final int expectedCapitalCount = 4;
@@ -337,7 +322,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameOverridableMethod2.java"), expected);
     }
 
-    @Test
     public void testTypeNamesForZeroPermittedCapitalLetter() throws Exception {
         final int expectedCapitalCount = 1;
         final String[] expected = {
@@ -374,7 +358,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameType6.java"), expected);
     }
 
-    @Test
     public void testNullPointerException() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -384,7 +367,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 expected);
     }
 
-    @Test
     public void testAbbreviationAsWordInNameCheckEnhancedInstanceof()
             throws Exception {
 
@@ -403,7 +385,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 expected);
     }
 
-    @Test
     public void testAbbreviationAsWordInNameCheckEnhancedInstanceofAllowXmlLength1()
             throws Exception {
 
@@ -424,7 +405,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 expected);
     }
 
-    @Test
     public void testAbbreviationAsWordInNameCheckRecords()
             throws Exception {
 
@@ -458,7 +438,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
         return getCheckMessage(MSG_KEY, typeName, expectedCapitalCount);
     }
 
-    @Test
     public void testReceiver() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -467,7 +446,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 expected);
     }
 
-    @Test
     public void testInputAbbreviationAsWordInNameTypeSnakeStyle() throws Exception {
         final String[] expected = {
             "13:20: " + getWarningMessage("FLAG_IS_FIRST_RUN", 4),
@@ -485,7 +463,6 @@ public class AbbreviationAsWordInNameCheckTest extends AbstractModuleTestSupport
                 getPath("InputAbbreviationAsWordInNameTypeSnakeStyle.java"), expected);
     }
 
-    @Test
     public void testAnnotation() throws Exception {
         final String[] expected = {
             "16:12: " + getWarningMessage("readMETHOD", 4),

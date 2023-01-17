@@ -25,7 +25,6 @@ import org.junit.jupiter.api.Test;
 
 public class PkgImportRuleTest {
 
-    @Test
     public void testPkgImportRule() {
         final PkgImportRule rule = new PkgImportRule(true, false, "pkg", false, false);
         assertWithMessage("Rule must not be null")
@@ -51,7 +50,6 @@ public class PkgImportRuleTest {
             .isEqualTo(AccessResult.UNKNOWN);
     }
 
-    @Test
     public void testPkgImportRuleExactMatch() {
         final PkgImportRule rule = new PkgImportRule(true, false, "pkg", true, false);
         assertWithMessage("Rule must not be null")
@@ -74,7 +72,6 @@ public class PkgImportRuleTest {
             .isEqualTo(AccessResult.UNKNOWN);
     }
 
-    @Test
     public void testPkgImportRuleRegexpSimple() {
         final PkgImportRule rule = new PkgImportRule(true, false, "pkg", false, true);
         assertWithMessage("Rule must not be null")
@@ -100,7 +97,6 @@ public class PkgImportRuleTest {
             .isEqualTo(AccessResult.UNKNOWN);
     }
 
-    @Test
     public void testPkgImportRuleExactMatchRegexpSimple() {
         final PkgImportRule rule = new PkgImportRule(true, false, "pkg", true, true);
         assertWithMessage("Rule must not be null")
@@ -123,7 +119,6 @@ public class PkgImportRuleTest {
             .isEqualTo(AccessResult.UNKNOWN);
     }
 
-    @Test
     public void testPkgImportRuleRegexp() {
         final PkgImportRule rule = new PkgImportRule(true, false, "(pkg|hallo)", false, true);
         assertWithMessage("Rule must not be null")
@@ -161,7 +156,6 @@ public class PkgImportRuleTest {
             .isEqualTo(AccessResult.UNKNOWN);
     }
 
-    @Test
     public void testPkgImportRuleNoRegexp() {
         final PkgImportRule rule = new PkgImportRule(true, false, "(pkg|hallo)", false, false);
         assertWithMessage("Rule must not be null")
@@ -196,7 +190,6 @@ public class PkgImportRuleTest {
             .isEqualTo(AccessResult.ALLOWED);
     }
 
-    @Test
     public void testPkgImportRuleExactMatchRegexp() {
         final PkgImportRule rule = new PkgImportRule(true, false, "(pkg|hallo)", true, true);
         assertWithMessage("Rule must not be null")

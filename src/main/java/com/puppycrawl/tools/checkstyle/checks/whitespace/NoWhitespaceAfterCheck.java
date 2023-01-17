@@ -176,7 +176,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 3.0
  */
-@StatelessCheck
 public class NoWhitespaceAfterCheck extends AbstractCheck {
 
     /**

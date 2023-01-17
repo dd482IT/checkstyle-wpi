@@ -35,7 +35,6 @@ public class AnnotationOnSameLineCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/annotation/annotationonsameline";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final AnnotationOnSameLineCheck check = new AnnotationOnSameLineCheck();
         assertWithMessage(
@@ -44,7 +43,6 @@ public class AnnotationOnSameLineCheckTest extends AbstractModuleTestSupport {
                         .isEqualTo(CommonUtil.EMPTY_INT_ARRAY);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final AnnotationOnSameLineCheck constantNameCheckObj = new AnnotationOnSameLineCheck();
         final int[] actual = constantNameCheckObj.getAcceptableTokens();
@@ -72,7 +70,6 @@ public class AnnotationOnSameLineCheckTest extends AbstractModuleTestSupport {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testCheck() throws Exception {
         final String[] expected = {
             "17:5: " + getCheckMessage(MSG_KEY_ANNOTATION_ON_SAME_LINE, "Annotation"),
@@ -84,7 +81,6 @@ public class AnnotationOnSameLineCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationOnSameLineCheck.java"), expected);
     }
 
-    @Test
     public void testCheckAcceptableTokens() throws Exception {
         final String[] expected = {
             "18:5: " + getCheckMessage(MSG_KEY_ANNOTATION_ON_SAME_LINE, "Annotation3"),
@@ -96,7 +92,6 @@ public class AnnotationOnSameLineCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationOnSameLineCheck3.java"), expected);
     }
 
-    @Test
     public void testCheck2() throws Exception {
         final String[] expected = {
             "19:5: " + getCheckMessage(MSG_KEY_ANNOTATION_ON_SAME_LINE, "Ann"),
@@ -108,7 +103,6 @@ public class AnnotationOnSameLineCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationOnSameLineCheck2.java"), expected);
     }
 
-    @Test
     public void testCheckOnDifferentTokens() throws Exception {
         final String[] expected = {
             "14:1: " + getCheckMessage(MSG_KEY_ANNOTATION_ON_SAME_LINE, "Ann"),
@@ -132,7 +126,6 @@ public class AnnotationOnSameLineCheckTest extends AbstractModuleTestSupport {
                 getPath("InputAnnotationOnSameLineCheckOnDifferentTokens.java"), expected);
     }
 
-    @Test
     public void testAnnotationOnSameLineRecordsAndCompactCtors() throws Exception {
         final String[] expected = {
             "13:5: " + getCheckMessage(MSG_KEY_ANNOTATION_ON_SAME_LINE, "NonNull1"),

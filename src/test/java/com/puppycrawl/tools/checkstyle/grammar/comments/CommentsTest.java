@@ -34,19 +34,16 @@ public class CommentsTest extends AbstractTreeTestSupport {
         return "com/puppycrawl/tools/checkstyle/grammar/comments";
     }
 
-    @Test
     public void testCompareExpectedTreeWithInput1() throws Exception {
         verifyAst(getPath("InputComments1Ast.txt"), getPath("InputComments1.java"),
                 JavaParser.Options.WITH_COMMENTS);
     }
 
-    @Test
     public void testCompareExpectedTreeWithInput2() throws Exception {
         verifyAst(getPath("InputComments2Ast.txt"), getPath("InputComments2.java"),
                 JavaParser.Options.WITH_COMMENTS);
     }
 
-    @Test
     public void testToString() {
         final Comment comment = new Comment(new String[] {"value"}, 1, 2, 3);
         assertWithMessage("Invalid toString result")
@@ -55,7 +52,6 @@ public class CommentsTest extends AbstractTreeTestSupport {
                     + "startColNo=1, endColNo=3]");
     }
 
-    @Test
     public void testGetCommentMeasures() {
         final String[] commentText = {"/**",
             "     * Creates new instance.",
@@ -80,7 +76,6 @@ public class CommentsTest extends AbstractTreeTestSupport {
             .isEqualTo(66);
     }
 
-    @Test
     public void testIntersects() {
         final String[] commentText = {"// compute a single number for start and end",
             "// to simplify conditional logic"};

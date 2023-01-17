@@ -35,7 +35,6 @@ public class InterfaceTypeParameterNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/interfacetypeparametername";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final InterfaceTypeParameterNameCheck interfaceTypeParameterNameCheck =
             new InterfaceTypeParameterNameCheck();
@@ -46,7 +45,6 @@ public class InterfaceTypeParameterNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final InterfaceTypeParameterNameCheck checkObj =
             new InterfaceTypeParameterNameCheck();
@@ -56,7 +54,6 @@ public class InterfaceTypeParameterNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testInterfaceDefault()
             throws Exception {
 
@@ -69,7 +66,6 @@ public class InterfaceTypeParameterNameCheckTest
                 getPath("InputInterfaceTypeParameterName.java"), expected);
     }
 
-    @Test
     public void testInterfaceFooName()
             throws Exception {
 

@@ -34,7 +34,6 @@ public class RecordTypeParameterNameCheckTest extends AbstractModuleTestSupport 
         return "com/puppycrawl/tools/checkstyle/checks/naming/recordtypeparametername";
     }
 
-    @Test
     public void testGetClassRequiredTokens() {
         final RecordTypeParameterNameCheck checkObj =
                 new RecordTypeParameterNameCheck();
@@ -44,7 +43,6 @@ public class RecordTypeParameterNameCheckTest extends AbstractModuleTestSupport 
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testRecordDefault()
             throws Exception {
 
@@ -59,7 +57,6 @@ public class RecordTypeParameterNameCheckTest extends AbstractModuleTestSupport 
                 getNonCompilablePath("InputRecordTypeParameterName.java"), expected);
     }
 
-    @Test
     public void testClassFooName()
             throws Exception {
 
@@ -74,7 +71,6 @@ public class RecordTypeParameterNameCheckTest extends AbstractModuleTestSupport 
                 getNonCompilablePath("InputRecordTypeParameterNameFoo.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final RecordTypeParameterNameCheck typeParameterNameCheckObj =
                 new RecordTypeParameterNameCheck();

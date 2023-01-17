@@ -2,22 +2,17 @@ package com.puppycrawl.tools.checkstyle.checks.indentation.indentation; //indent
 
 import java.util.Date; //indent:0 exp:0
 
-@Entity //indent:0 exp:0
-@SecondaryTable(name = "TV_PROGRAM_EXT", pkJoinColumns = { //indent:0 exp:0
-    @PrimaryKeyJoinColumn(name = "CHANNEL_ID"), //indent:4 exp:4
-    @PrimaryKeyJoinColumn(name = "PRESENTER_NAME") //indent:4 exp:4
-        }) //indent:8 exp:0,4 warn
-@AssociationOverrides( { //indent:0 exp:0
-    @AssociationOverride(name = "id.channel"), //indent:4 exp:4
-    @AssociationOverride(name = "id.presenter")}) //indent:4 exp:4
+//indent:0 exp:0
+ //indent:8 exp:0,4 warn
+ //indent:4 exp:4
 public class InputIndentationAnnotationScopeIndentationCheck { //indent:0 exp:0
-    @EmbeddedId //indent:4 exp:4
+    //indent:4 exp:4
     public String id; //indent:4 exp:4
 
-    @Temporal(TemporalType.TIME) //indent:4 exp:4
+    //indent:4 exp:4
     Date time; //indent:4 exp:4
 
-    @Column(name = "TXT", table = "TV_PROGRAM_EXT") //indent:4 exp:4
+    //indent:4 exp:4
     public String text; //indent:4 exp:4
 
 } //indent:0 exp:0
@@ -43,7 +38,7 @@ public class InputIndentationAnnotationScopeIndentationCheck { //indent:0 exp:0
 } //indent:0 exp:0
 @interface AssociationOverride { //indent:0 exp:0
     String name(); //indent:4 exp:4
-    JoinColumn joinColumns() default @JoinColumn(name = "prese", nullable = false); //indent:4 exp:4
+    JoinColumn joinColumns() default ; //indent:4 exp:4
 } //indent:0 exp:0
 @interface JoinColumn { //indent:0 exp:0
     String name(); //indent:4 exp:4

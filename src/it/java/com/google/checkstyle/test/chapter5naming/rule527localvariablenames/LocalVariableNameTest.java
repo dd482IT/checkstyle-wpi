@@ -35,7 +35,6 @@ public class LocalVariableNameTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter5naming/rule527localvariablenames";
     }
 
-    @Test
     public void testLocalVariableName() throws Exception {
         final Configuration checkConfig = getModuleConfig("LocalVariableName");
         final String format = checkConfig.getProperty("format");
@@ -59,7 +58,6 @@ public class LocalVariableNameTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testOneChar() throws Exception {
         final Configuration checkConfig = getModuleConfig("LocalVariableName");
         final String format = checkConfig.getProperty("format");

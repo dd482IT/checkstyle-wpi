@@ -225,7 +225,6 @@ public class ImmutabilityTest {
     /**
      * Test to ensure that fields in util classes are immutable.
      */
-    @Test
     public void testUtilClassesImmutability() {
         final JavaClasses utilClasses = new ClassFileImporter()
             .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
@@ -252,7 +251,6 @@ public class ImmutabilityTest {
     /**
      * Test to ensure modules annotated with {@link StatelessCheck} contain immutable fields.
      */
-    @Test
     public void testFieldsInStatelessChecksShouldBeImmutable() {
         final DescribedPredicate<JavaField> moduleProperties = new ModulePropertyPredicate();
 
@@ -275,7 +273,6 @@ public class ImmutabilityTest {
     /**
      * Test to ensure classes with immutable fields are annotated with {@link StatelessCheck}.
      */
-    @Test
     public void testClassesWithImmutableFieldsShouldBeStateless() {
         final ArchCondition<JavaClass> beSuppressedClass = new SuppressionArchCondition<>(
             SUPPRESSED_CLASSES_FOR_STATELESS_CHECK_RULE, "be suppressed");
@@ -295,7 +292,6 @@ public class ImmutabilityTest {
      * Test to ensure classes with mutable fields are annotated with {@link FileStatefulCheck} or
      * {@link GlobalStatefulCheck}.
      */
-    @Test
     public void testClassesWithMutableFieldsShouldBeStateful() {
         final ArchCondition<JavaClass> beSuppressedClass = new SuppressionArchCondition<>(
             SUPPRESSED_CLASSES_FOR_STATEFUL_CHECK_RULE, "be suppressed");

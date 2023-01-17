@@ -50,13 +50,11 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/gui/mainframemodel";
     }
 
-    @BeforeEach
     public void prepareTestData() throws IOException {
         model = new MainFrameModel();
         testData = new File(getPath(FILE_NAME_TEST_DATA));
     }
 
-    @Test
     public void testParseModeEnum() {
         for (final ParseMode parseMode : ParseMode.values()) {
             switch (parseMode) {
@@ -81,7 +79,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testOpenFileWithParseModePlainJava() throws Exception {
         // Default parse mode: Plain Java
         model.openFile(testData);
@@ -91,7 +88,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
         verifyCorrectTestDataInFrameModel();
     }
 
-    @Test
     public void testOpenFileWithParseModeJavaWithComments() throws Exception {
         model.setParseMode(ParseMode.JAVA_WITH_COMMENTS);
         model.openFile(testData);
@@ -99,7 +95,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
         verifyCorrectTestDataInFrameModel();
     }
 
-    @Test
     public void testOpenFileWithParseModeJavaWithJavadocAndComments() throws Exception {
         model.setParseMode(ParseMode.JAVA_WITH_JAVADOC_AND_COMMENTS);
         model.openFile(testData);
@@ -107,7 +102,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
         verifyCorrectTestDataInFrameModel();
     }
 
-    @Test
     public void testOpenFileNullParameter() throws Exception {
         model.openFile(testData);
 
@@ -117,7 +111,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
         verifyCorrectTestDataInFrameModel();
     }
 
-    @Test
     public void testOpenFileNullParameter2() throws Exception {
         model.openFile(null);
 
@@ -135,7 +128,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
             .isNull();
     }
 
-    @Test
     public void testOpenFileNonExistentFile() throws IOException {
         final File nonExistentFile = new File(getPath(FILE_NAME_NON_EXISTENT));
 
@@ -155,7 +147,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testOpenFileNonCompilableFile() throws IOException {
         final File nonCompilableFile = new File(getNonCompilablePath(FILE_NAME_NON_COMPILABLE));
 
@@ -209,7 +200,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testShouldAcceptDirectory() {
         final File directory = mock(File.class);
         when(directory.isDirectory()).thenReturn(true);
@@ -218,7 +208,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testShouldAcceptFile() throws IOException {
         final File javaFile = new File(getPath(FILE_NAME_TEST_DATA));
         assertWithMessage("MainFrame should accept java file")
@@ -226,7 +215,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
                 .isTrue();
     }
 
-    @Test
     public void testShouldNotAcceptNonJavaFile() {
         final File nonJavaFile = mock(File.class);
         when(nonJavaFile.isDirectory()).thenReturn(false);
@@ -236,7 +224,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testShouldNotAcceptNonExistentFile() throws IOException {
         final File nonExistentFile = new File(getPath(FILE_NAME_NON_EXISTENT));
         assertWithMessage("MainFrame should not accept non-existent file")
@@ -244,7 +231,6 @@ public class MainFrameModelTest extends AbstractModuleTestSupport {
                 .isFalse();
     }
 
-    @Test
     public void testOpenFileForUnknownParseMode() throws IOException {
         final File javaFile = new File(getPath(FILE_NAME_TEST_DATA));
         final ParseMode mock = mock(ParseMode.class);

@@ -142,7 +142,6 @@ import com.puppycrawl.tools.checkstyle.utils.CheckUtil;
  *
  * @since 3.2
  */
-@FileStatefulCheck
 public class CovariantEqualsCheck extends AbstractCheck {
 
     /**

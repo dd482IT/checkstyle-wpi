@@ -28,9 +28,9 @@ public class InputAntlr4AstRegressionMethodRefs {
     public void main(String[] args) {
         MyFunctionalInterface fi =
                 new InputAntlr4AstRegressionMethodRefs()::<Integer, String, Long> m;
-        LambdaInt li = LambdaImpl::<@TA Object, @TB Object> new;
+        LambdaInt li = LambdaImpl::<Object, Object> new;
         Supplier s = Bar1::<String> m;
-        li = li::<@TA Object, @TB Object> m;
+        li = li::<Object, Object> m;
         s = Bar1::<List<String>> m;
         s = Bar1::<List<List<?>>> m;
     }

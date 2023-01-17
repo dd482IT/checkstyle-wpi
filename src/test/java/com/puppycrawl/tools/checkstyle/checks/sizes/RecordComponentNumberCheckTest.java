@@ -37,7 +37,6 @@ public class RecordComponentNumberCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/sizes/recordcomponentnumber";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final RecordComponentNumberCheck checkObj = new RecordComponentNumberCheck();
         final int[] actual = checkObj.getRequiredTokens();
@@ -51,7 +50,6 @@ public class RecordComponentNumberCheckTest extends AbstractModuleTestSupport {
 
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final RecordComponentNumberCheck checkObj = new RecordComponentNumberCheck();
         final int[] actual = checkObj.getAcceptableTokens();
@@ -64,7 +62,6 @@ public class RecordComponentNumberCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final int max = 8;
@@ -83,7 +80,6 @@ public class RecordComponentNumberCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputRecordComponentNumber.java"), expected);
     }
 
-    @Test
     public void testRecordComponentNumberTopLevel1() throws Exception {
 
         final int max = 8;
@@ -97,7 +93,6 @@ public class RecordComponentNumberCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testRecordComponentNumberTopLevel2() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -107,7 +102,6 @@ public class RecordComponentNumberCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testRecordComponentNumberMax1() throws Exception {
 
         final int max = 1;
@@ -133,7 +127,6 @@ public class RecordComponentNumberCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputRecordComponentNumberMax1.java"), expected);
     }
 
-    @Test
     public void testRecordComponentNumberMax20() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -141,7 +134,6 @@ public class RecordComponentNumberCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputRecordComponentNumberMax20.java"), expected);
     }
 
-    @Test
     public void testRecordComponentNumberPrivateModifier() throws Exception {
 
         final int max = 8;
@@ -164,7 +156,6 @@ public class RecordComponentNumberCheckTest extends AbstractModuleTestSupport {
      *
      * @throws Exception if an error occurs.
      */
-    @Test
     public void testCloneInAccessModifiersProperty() throws Exception {
         final AccessModifierOption[] input = {
             AccessModifierOption.PACKAGE,

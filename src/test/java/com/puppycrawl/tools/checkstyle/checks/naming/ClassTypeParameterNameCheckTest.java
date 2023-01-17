@@ -35,7 +35,6 @@ public class ClassTypeParameterNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/classtypeparametername";
     }
 
-    @Test
     public void testGetClassRequiredTokens() {
         final ClassTypeParameterNameCheck checkObj =
             new ClassTypeParameterNameCheck();
@@ -45,7 +44,6 @@ public class ClassTypeParameterNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testClassDefault()
             throws Exception {
 
@@ -60,7 +58,6 @@ public class ClassTypeParameterNameCheckTest
                 getPath("InputClassTypeParameterName.java"), expected);
     }
 
-    @Test
     public void testClassFooName()
             throws Exception {
 
@@ -74,7 +71,6 @@ public class ClassTypeParameterNameCheckTest
                 getPath("InputClassTypeParameterName1.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final ClassTypeParameterNameCheck typeParameterNameCheckObj =
             new ClassTypeParameterNameCheck();

@@ -106,7 +106,6 @@ import com.puppycrawl.tools.checkstyle.api.FileText;
  *
  * @since 5.7
  */
-@StatelessCheck
 public class UniquePropertiesCheck extends AbstractFileSetCheck {
 
     /**

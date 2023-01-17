@@ -281,7 +281,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 3.1
  */
-@StatelessCheck
 public class MagicNumberCheck extends AbstractCheck {
 
     /**
@@ -294,7 +293,6 @@ public class MagicNumberCheck extends AbstractCheck {
      * Specify tokens that are allowed in the AST path from the
      * number literal to the enclosing constant definition.
      */
-    @XdocsPropertyType(PropertyType.TOKEN_ARRAY)
     private BitSet constantWaiverParentToken = TokenUtil.asBitSet(
         TokenTypes.ASSIGN,
         TokenTypes.ARRAY_INIT,

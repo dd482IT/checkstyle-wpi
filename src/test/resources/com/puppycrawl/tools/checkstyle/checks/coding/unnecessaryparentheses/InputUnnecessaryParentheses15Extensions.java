@@ -19,13 +19,12 @@ package com.puppycrawl.tools.checkstyle.checks.coding.unnecessaryparentheses;
     int version();
 }
 
-@MyAnnotation1(name = "ABC", version = 1)
 public class InputUnnecessaryParentheses15Extensions
 {
 
 }
 
-@MyAnnotation1(name = ("ABC" + "DEF"), version = (1)) // 2 violations
+// 2 violations
 class AnnotationWithUnnecessaryParentheses
 {
 
@@ -54,7 +53,6 @@ interface TestRequireThisEnum
     }
 }
 
-@MyAnnotation1(name = "ABC", version = 1)
 class ExtraParenAfterAnnotation {
     boolean flag = ("abc" == "done"); // violation 'parentheses around assignment right-hand side'
 }

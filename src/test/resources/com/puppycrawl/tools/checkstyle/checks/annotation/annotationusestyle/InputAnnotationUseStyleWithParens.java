@@ -10,14 +10,12 @@ trailingArrayComma = ignore
 package com.puppycrawl.tools.checkstyle.checks.annotation.annotationusestyle;
 
 @Deprecated // violation 'Annotation must have closing parenthesis'
-@SomeArrays(pooches={DOGS.LEO})
 @SuppressWarnings({""})
 public class InputAnnotationUseStyleWithParens
 {
 
 }
 
-@SomeArrays(pooches={DOGS.LEO}, um={}, duh={"bleh"})
 @SuppressWarnings("") //compact_no_array
 @Deprecated()
 class Dep2 {
@@ -25,18 +23,14 @@ class Dep2 {
 }
 
 @Deprecated // violation 'Annotation must have closing parenthesis'
-@SomeArrays(pooches={DOGS.LEO})
 @SuppressWarnings({""})
 enum SON2 {
 
     @Deprecated // violation 'Annotation must have closing parenthesis'
-    @SomeArrays(pooches={DOGS.LEO}, um={""}, duh={"bleh"})
-    @APooch(dog=DOGS.HERBIE)
-    @Another("") //compact_no_array
+    //compact_no_array
     ETHAN
 }
 
-@InputAnnotationUseStyleCustomAnnotation7()
 enum DOGS2 {
 
     @Deprecated()
@@ -45,15 +39,15 @@ enum DOGS2 {
 }
 
 @interface SomeArrays2 {
-    @Another("") //compact
+    //compact
     String[] um() default {};
-    @Another({""}) //compact
+    //compact
     String[] duh() default {};
-    @Another(value={""}) //expanded
+    //expanded
     DOGS[] pooches();
 }
 
-@Another(value={""}) //expanded
+//expanded
 enum E2 {
 
 }
@@ -64,12 +58,10 @@ enum E2 {
 
 @interface Another2 {
     String[] value() default {};
-    @Another({"foo", "bar"}) //compact style
+    //compact style
     String value1() default "";
 }
 
-@SomeArrays(pooches = {})
-@Another({})
 class Closing2 {
     static final String UN_U = "UN_U";
 
@@ -77,18 +69,15 @@ class Closing2 {
     int d;
 }
 
-@AnnotationWithAnnotationValue(@Another) // violation 'Annotation must have closing parenthesis'
+// violation 'Annotation must have closing parenthesis'
 class Example5 {}
 // violation below 'Annotation must have closing parenthesis'
-@AnnotationWithAnnotationValue(value = @Another)
 class Example6 {}
-@AnnotationWithAnnotationValue(@Another())
 class Example7 {}
-@AnnotationWithAnnotationValue(value = @Another())
 class Example8 {}
 
 class Foo2 {
-   Foo2(@Another String par1, @Another int par2) {} // 2 violations
+   Foo2(String par1, int par2) {} // 2 violations
 }
 
 @interface AnnotationWithAnnotationValue2 {

@@ -39,9 +39,9 @@ public class InputMethodReferences7 { // ok
 
     public void main(String[] args) {
         MyFunctionalInterface fi = new InputMethodReferences7()::<Integer, String, Long> m;
-        LambdaInt li = LambdaImpl::<@TA Object, @TB Object> new;
+        LambdaInt li = LambdaImpl::<Object, Object> new;
         Supplier s = Bar::<String> m;
-        li = li::<@TA Object, @TB Object> m;
+        li = li::<Object, Object> m;
         s = Bar::<List<String>> m;
         s = Bar::<List<List<?>>> m;
     }

@@ -35,7 +35,6 @@ public class MissingSwitchDefaultCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/missingswitchdefault";
     }
 
-    @Test
     public void testMissingSwitchDefault() throws Exception {
         final String[] expected = {
             "23:9: " + getCheckMessage(MSG_KEY, "default"),
@@ -48,7 +47,6 @@ public class MissingSwitchDefaultCheckTest
             expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final MissingSwitchDefaultCheck check = new MissingSwitchDefaultCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -62,7 +60,6 @@ public class MissingSwitchDefaultCheckTest
             .isNotNull();
     }
 
-    @Test
     public void testMissingSwitchDefaultSwitchExpressions() throws Exception {
         final String[] expected = {
             "14:9: " + getCheckMessage(MSG_KEY, "default"),
@@ -72,7 +69,6 @@ public class MissingSwitchDefaultCheckTest
             expected);
     }
 
-    @Test
     public void testMissingSwitchDefaultSwitchExpressionsTwo() throws Exception {
         final String[] expected = {
             "14:9: " + getCheckMessage(MSG_KEY, "default"),
@@ -83,7 +79,6 @@ public class MissingSwitchDefaultCheckTest
                 expected);
     }
 
-    @Test
     public void testMissingSwitchDefaultSwitchExpressionsThree() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -91,7 +86,6 @@ public class MissingSwitchDefaultCheckTest
                 expected);
     }
 
-    @Test
     public void testMissingSwitchDefaultCaseLabelElements() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(

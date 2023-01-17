@@ -34,7 +34,6 @@ public class ArrayTrailingCommaCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/arraytrailingcomma";
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -47,7 +46,6 @@ public class ArrayTrailingCommaCheckTest
                 getPath("InputArrayTrailingComma.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final ArrayTrailingCommaCheck check = new ArrayTrailingCommaCheck();
         assertWithMessage("Invalid acceptable tokens")
@@ -61,7 +59,6 @@ public class ArrayTrailingCommaCheckTest
                 .isNotNull();
     }
 
-    @Test
     public void testAlwaysDemandTrailingComma() throws Exception {
         final String[] expected = {
             "15:26: " + getCheckMessage(MSG_KEY),

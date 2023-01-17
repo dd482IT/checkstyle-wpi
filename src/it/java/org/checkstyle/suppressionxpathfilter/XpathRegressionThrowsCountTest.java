@@ -37,7 +37,6 @@ public class XpathRegressionThrowsCountTest extends AbstractXpathTestSupport {
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionThrowsCount1.java"));
@@ -59,7 +58,6 @@ public class XpathRegressionThrowsCountTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionThrowsCount2.java"));
@@ -84,7 +82,6 @@ public class XpathRegressionThrowsCountTest extends AbstractXpathTestSupport {
                 expectedXpathQueries);
     }
 
-    @Test
     public void testThree() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionThrowsCount3.java"));

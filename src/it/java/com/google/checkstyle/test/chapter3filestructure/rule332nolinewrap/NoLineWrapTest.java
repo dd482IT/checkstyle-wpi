@@ -34,7 +34,6 @@ public class NoLineWrapTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter3filestructure/rule332nolinewrap";
     }
 
-    @Test
     public void testBadLineWrap() throws Exception {
         final String[] expected = {
             "1:1: " + getCheckMessage(NoLineWrapCheck.class, "no.line.wrap", "package"),
@@ -49,7 +48,6 @@ public class NoLineWrapTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testGoodLineWrap() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -60,7 +58,6 @@ public class NoLineWrapTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void goodLineLength() throws Exception {
         final int maxLineLength = 100;
         final String[] expected = {

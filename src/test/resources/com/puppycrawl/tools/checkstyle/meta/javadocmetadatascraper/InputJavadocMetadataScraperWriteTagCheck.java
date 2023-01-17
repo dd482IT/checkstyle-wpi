@@ -94,7 +94,6 @@ import com.puppycrawl.tools.checkstyle.api.AbstractCheck;
  *
  * @since 4.2
  */
-@StatelessCheck
 public abstract class InputJavadocMetadataScraperWriteTagCheck extends AbstractCheck {
 
 }

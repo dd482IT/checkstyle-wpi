@@ -39,7 +39,6 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
         return "com/puppycrawl/tools/checkstyle/checks/metrics/classdataabstractioncoupling";
     }
 
-    @Test
     public void testTokens() {
         final ClassDataAbstractionCouplingCheck check = new ClassDataAbstractionCouplingCheck();
         assertWithMessage("Required tokens should not be null")
@@ -56,7 +55,6 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
             .isEqualTo(check.getDefaultTokens());
     }
 
-    @Test
     public void test() throws Exception {
 
         final String[] expected = {
@@ -69,7 +67,6 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
                 getPath("InputClassDataAbstractionCoupling.java"), expected);
     }
 
-    @Test
     public void testExcludedPackageDirectPackages() throws Exception {
         final String[] expected = {
             "30:1: " + getCheckMessage(MSG_KEY, 2, 0, "[AAClass, ABClass]"),
@@ -80,7 +77,6 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
                 expected);
     }
 
-    @Test
     public void testExcludedPackageCommonPackages() throws Exception {
         final String[] expected = {
             "28:1: " + getCheckMessage(MSG_KEY, 2, 0, "[AAClass, ABClass]"),
@@ -92,7 +88,6 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
                 expected);
     }
 
-    @Test
     public void testExcludedPackageWithEndingDot() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(ClassDataAbstractionCouplingCheck.class);
@@ -120,7 +115,6 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
         }
     }
 
-    @Test
     public void testExcludedPackageCommonPackagesAllIgnored() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -128,14 +122,12 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
                 expected);
     }
 
-    @Test
     public void testDefaultConfiguration() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputClassDataAbstractionCoupling2.java"), expected);
     }
 
-    @Test
     public void testWrongToken() {
         final ClassDataAbstractionCouplingCheck classDataAbstractionCouplingCheckObj =
             new ClassDataAbstractionCouplingCheck();
@@ -152,7 +144,6 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
         }
     }
 
-    @Test
     public void testRegularExpression() throws Exception {
 
         final String[] expected = {
@@ -164,7 +155,6 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
                 getPath("InputClassDataAbstractionCoupling3.java"), expected);
     }
 
-    @Test
     public void testEmptyRegularExpression() throws Exception {
 
         final String[] expected = {
@@ -177,7 +167,6 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
                 getPath("InputClassDataAbstractionCoupling4.java"), expected);
     }
 
-    @Test
     public void testClassDataAbstractionCouplingRecords() throws Exception {
 
         final int maxAbstraction = 1;
@@ -194,7 +183,6 @@ public class ClassDataAbstractionCouplingCheckTest extends AbstractModuleTestSup
             expected);
     }
 
-    @Test
     public void testNew() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

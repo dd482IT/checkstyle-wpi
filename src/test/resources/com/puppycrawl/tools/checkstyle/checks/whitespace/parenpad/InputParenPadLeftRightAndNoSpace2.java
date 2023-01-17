@@ -122,7 +122,6 @@ public class InputParenPadLeftRightAndNoSpace2
                         ( ( 3 < 4 )? false : true ) :
                         ( ( 1 == 1 ) ? false : true) ) ).toString(); // violation
     }
-    @MyAnnotation2
     public boolean bar(boolean a) {
         assert ( true );
         return true;

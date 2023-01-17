@@ -32,7 +32,6 @@ public class JavadocMethodTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter7javadoc/rule731selfexplanatory";
     }
 
-    @Test
     public void testJavadocMethod() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

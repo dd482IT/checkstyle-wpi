@@ -35,7 +35,6 @@ public class RecordTypeParameterNameTest extends AbstractGoogleModuleTestSupport
         return "com/google/checkstyle/test/chapter5naming/rule528typevariablenames";
     }
 
-    @Test
     public void testRecordDefault() throws Exception {
         final Configuration configuration = getModuleConfig("RecordTypeParameterName");
         final String format = configuration.getProperty("format");

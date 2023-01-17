@@ -34,7 +34,6 @@ public class StringLiteralEqualityCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/stringliteralequality";
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "17:18: " + getCheckMessage(MSG_KEY, "=="),
@@ -45,7 +44,6 @@ public class StringLiteralEqualityCheckTest
                 getPath("InputStringLiteralEquality.java"), expected);
     }
 
-    @Test
     public void testStringLiteralEqualityTextBlocks() throws Exception {
         final String[] expected = {
             "14:34: " + getCheckMessage(MSG_KEY, "=="),
@@ -58,7 +56,6 @@ public class StringLiteralEqualityCheckTest
             expected);
     }
 
-    @Test
     public void testConcatenatedStringLiterals() throws Exception {
         final String[] expected = {
             "14:15: " + getCheckMessage(MSG_KEY, "=="),
@@ -77,7 +74,6 @@ public class StringLiteralEqualityCheckTest
                 getPath("InputStringLiteralEqualityConcatenatedString.java"), expected);
     }
 
-    @Test
     public void testConcatenatedTextBlocks() throws Exception {
         final String[] expected = {
             "15:15: " + getCheckMessage(MSG_KEY, "=="),
@@ -95,7 +91,6 @@ public class StringLiteralEqualityCheckTest
                 expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final StringLiteralEqualityCheck check = new StringLiteralEqualityCheck();
         assertWithMessage("Acceptable tokens should not be null")

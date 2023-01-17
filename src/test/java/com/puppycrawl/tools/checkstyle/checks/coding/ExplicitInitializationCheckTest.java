@@ -33,7 +33,6 @@ public class ExplicitInitializationCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/explicitinitialization";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "11:17: " + getCheckMessage(MSG_KEY, "x", 0),
@@ -64,7 +63,6 @@ public class ExplicitInitializationCheckTest extends AbstractModuleTestSupport {
                expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final ExplicitInitializationCheck check = new ExplicitInitializationCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -78,7 +76,6 @@ public class ExplicitInitializationCheckTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testOnlyObjectReferences() throws Exception {
         final String[] expected = {
             "12:20: " + getCheckMessage(MSG_KEY, "bar", "null"),

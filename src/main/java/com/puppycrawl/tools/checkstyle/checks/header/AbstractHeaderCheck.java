@@ -59,7 +59,6 @@ public abstract class AbstractHeaderCheck extends AbstractFileSetCheck
     private URI headerFile;
 
     /** Specify the character encoding to use when reading the headerFile. */
-    @XdocsPropertyType(PropertyType.STRING)
     private Charset charset = createCharset(System.getProperty("file.encoding",
         StandardCharsets.UTF_8.name()));
 

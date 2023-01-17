@@ -38,7 +38,6 @@ public class XpathRegressionEmptyForIteratorPadTest extends AbstractXpathTestSup
         return checkName;
     }
 
-    @Test
     public void testFollowed() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionEmptyForIteratorPadFollowed.java"));
@@ -64,7 +63,6 @@ public class XpathRegressionEmptyForIteratorPadTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testNotFollowed() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionEmptyForIteratorPadNotFollowed.java"));

@@ -36,7 +36,6 @@ public class JavadocVariableCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/javadoc/javadocvariable";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final JavadocVariableCheck javadocVariableCheck = new JavadocVariableCheck();
         final int[] actual = javadocVariableCheck.getRequiredTokens();
@@ -48,7 +47,6 @@ public class JavadocVariableCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final JavadocVariableCheck javadocVariableCheck = new JavadocVariableCheck();
 
@@ -63,7 +61,6 @@ public class JavadocVariableCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testDefault()
             throws Exception {
         final String[] expected = {
@@ -76,7 +73,6 @@ public class JavadocVariableCheckTest
                 getPath("InputJavadocVariableTags.java"), expected);
     }
 
-    @Test
     public void testAnother()
             throws Exception {
         final String[] expected = {
@@ -88,7 +84,6 @@ public class JavadocVariableCheckTest
                 getPath("InputJavadocVariableInner.java"), expected);
     }
 
-    @Test
     public void testAnother2()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -96,7 +91,6 @@ public class JavadocVariableCheckTest
                 getPath("InputJavadocVariableInner2.java"), expected);
     }
 
-    @Test
     public void testAnother3()
             throws Exception {
         final String[] expected = {
@@ -112,7 +106,6 @@ public class JavadocVariableCheckTest
                 getPath("InputJavadocVariablePublicOnly.java"), expected);
     }
 
-    @Test
     public void testAnother4()
             throws Exception {
         final String[] expected = {
@@ -122,7 +115,6 @@ public class JavadocVariableCheckTest
                 getPath("InputJavadocVariablePublicOnly2.java"), expected);
     }
 
-    @Test
     public void testScopes() throws Exception {
         final String[] expected = {
             "15:5: " + getCheckMessage(MSG_JAVADOC_MISSING),
@@ -168,7 +160,6 @@ public class JavadocVariableCheckTest
                expected);
     }
 
-    @Test
     public void testScopes2() throws Exception {
         final String[] expected = {
             "15:5: " + getCheckMessage(MSG_JAVADOC_MISSING),
@@ -181,7 +172,6 @@ public class JavadocVariableCheckTest
                expected);
     }
 
-    @Test
     public void testExcludeScope() throws Exception {
         final String[] expected = {
             "17:5: " + getCheckMessage(MSG_JAVADOC_MISSING),
@@ -223,7 +213,6 @@ public class JavadocVariableCheckTest
                expected);
     }
 
-    @Test
     public void testIgnoredVariableNames()
             throws Exception {
         final String[] expected = {
@@ -269,7 +258,6 @@ public class JavadocVariableCheckTest
                 expected);
     }
 
-    @Test
     public void testDoNotIgnoreAnythingWhenIgnoreNamePatternIsEmpty()
             throws Exception {
         final String[] expected = {
@@ -316,7 +304,6 @@ public class JavadocVariableCheckTest
                 expected);
     }
 
-    @Test
     public void testLambdaLocalVariablesDoNotNeedJavadoc() throws Exception {
         final String[] expected = {
             "16:5: " + getCheckMessage(MSG_JAVADOC_MISSING),
@@ -326,7 +313,6 @@ public class JavadocVariableCheckTest
                 expected);
     }
 
-    @Test
     public void testInterfaceMemberScopeIsPublic() throws Exception {
         final String[] expected = {
             "18:5: " + getCheckMessage(MSG_JAVADOC_MISSING),

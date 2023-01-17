@@ -460,7 +460,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 3.0
  */
-@StatelessCheck
 public class WhitespaceAroundCheck extends AbstractCheck {
 
     /**

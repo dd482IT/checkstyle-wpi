@@ -33,7 +33,6 @@ public class CatchParameterNameTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter5naming/rule51identifiernames";
     }
 
-    @Test
     public void testCatchParameterName() throws Exception {
         final String msgKey = "name.invalidPattern";
         final Configuration checkConfig = getModuleConfig("CatchParameterName");

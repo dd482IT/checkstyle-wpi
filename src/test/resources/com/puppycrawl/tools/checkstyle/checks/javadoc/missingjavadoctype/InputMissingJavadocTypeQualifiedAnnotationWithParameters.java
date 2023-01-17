@@ -17,40 +17,23 @@ public class InputMissingJavadocTypeQualifiedAnnotationWithParameters {
         boolean isOk() default false;
     }
 
-    @SomeAnnotation("value") // ok
+    // ok
     public interface A { }
 
-    @SomeAnnotation(value = "value", quantity = 5, isOk = true) // ok
+    // ok
     public interface B { }
 
-    @SomeAnnotation( // ok
-        value = "value",
-        isOk = true
-    )
     public interface C { }
 
     // violation below 'Missing a Javadoc comment.'
-    @InputMissingJavadocTypeQualifiedAnnotationWithParameters.SomeAnnotation("value")
     public interface D { }
 
     // violation below 'Missing a Javadoc comment.'
-    @InputMissingJavadocTypeQualifiedAnnotationWithParameters
-        .SomeAnnotation(value = "value", isOk = false)
     public interface E { }
 
     // violation below 'Missing a Javadoc comment.'
-    @InputMissingJavadocTypeQualifiedAnnotationWithParameters.SomeAnnotation(
-        value = "value",
-        quantity = 2,
-        isOk = false
-    )
     public interface F { }
 
     // violation below 'Missing a Javadoc comment.'
-    @InputMissingJavadocTypeQualifiedAnnotationWithParameters
-        .SomeAnnotation(
-        value = "value",
-        isOk = false
-    )
     public interface G { }
 }

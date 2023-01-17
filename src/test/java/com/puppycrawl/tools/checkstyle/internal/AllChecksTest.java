@@ -264,7 +264,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/internal/allchecks";
     }
 
-    @Test
     public void testAllModulesWithDefaultConfiguration() throws Exception {
         final String inputFilePath = getPath("InputAllChecksDefaultConfig.java");
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -285,7 +284,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testDefaultTokensAreSubsetOfAcceptableTokens() throws Exception {
         for (Class<?> check : CheckUtil.getCheckstyleChecks()) {
             if (AbstractCheck.class.isAssignableFrom(check)) {
@@ -302,7 +300,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testRequiredTokensAreSubsetOfAcceptableTokens() throws Exception {
         for (Class<?> check : CheckUtil.getCheckstyleChecks()) {
             if (AbstractCheck.class.isAssignableFrom(check)) {
@@ -319,7 +316,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testRequiredTokensAreSubsetOfDefaultTokens() throws Exception {
         for (Class<?> check : CheckUtil.getCheckstyleChecks()) {
             if (AbstractCheck.class.isAssignableFrom(check)) {
@@ -336,7 +332,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testAllModulesHaveMultiThreadAnnotation() throws Exception {
         for (Class<?> module : CheckUtil.getCheckstyleModules()) {
             if (ModuleReflectionUtil.isRootModule(module)
@@ -355,7 +350,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testAllModulesAreReferencedInConfigFile() throws Exception {
         final Set<String> modulesReferencedInConfig = CheckUtil.getConfigCheckStyleModules();
         final Set<String> moduleNames = CheckUtil.getSimpleNames(CheckUtil.getCheckstyleModules());
@@ -369,7 +363,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
             });
     }
 
-    @Test
     public void testAllCheckTokensAreReferencedInCheckstyleConfigFile() throws Exception {
         final Configuration configuration = ConfigurationUtil
                 .loadConfiguration("config/checkstyle_checks.xml");
@@ -378,7 +371,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
                 CHECKSTYLE_TOKENS_IN_CONFIG_TO_IGNORE, false);
     }
 
-    @Test
     public void testAllCheckTokensAreReferencedInGoogleConfigFile() throws Exception {
         final Configuration configuration = ConfigurationUtil
                 .loadConfiguration("src/main/resources/google_checks.xml");
@@ -479,7 +471,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testAllCheckstyleModulesHaveXdocDocumentation() throws Exception {
         final Set<String> checkstyleModulesNames = CheckUtil.getSimpleNames(CheckUtil
                 .getCheckstyleModules());
@@ -500,7 +491,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
             });
     }
 
-    @Test
     public void testAllCheckstyleModulesInCheckstyleConfig() throws Exception {
         final Set<String> configChecks = CheckUtil.getConfigCheckStyleModules();
         final Set<String> moduleNames = CheckUtil.getSimpleNames(CheckUtil.getCheckstyleModules());
@@ -512,7 +502,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testAllCheckstyleChecksHaveMessage() throws Exception {
         for (Class<?> module : CheckUtil.getCheckstyleChecks()) {
             final String name = module.getSimpleName();
@@ -533,7 +522,6 @@ public class AllChecksTest extends AbstractModuleTestSupport {
         }
     }
 
-    @Test
     public void testAllCheckstyleMessages() throws Exception {
         final Map<String, List<String>> usedMessages = new TreeMap<>();
 

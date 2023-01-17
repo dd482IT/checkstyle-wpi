@@ -34,7 +34,6 @@ public class OneStatementPerLineCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/onestatementperline";
     }
 
-    @Test
     public void testMultiCaseClass() throws Exception {
         final String[] expected = {
             "13:59: " + getCheckMessage(MSG_KEY),
@@ -51,7 +50,6 @@ public class OneStatementPerLineCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final OneStatementPerLineCheck check = new OneStatementPerLineCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -65,7 +63,6 @@ public class OneStatementPerLineCheckTest extends AbstractModuleTestSupport {
             .isNotNull();
     }
 
-    @Test
     public void testWithMultilineStatements() throws Exception {
         final String[] expected = {
             "49:21: " + getCheckMessage(MSG_KEY),
@@ -83,7 +80,6 @@ public class OneStatementPerLineCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void oneStatementNonCompilableInputTest() throws Exception {
         final String[] expected = {
             "39:4: " + getCheckMessage(MSG_KEY),
@@ -98,7 +94,6 @@ public class OneStatementPerLineCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputOneStatementPerLine.java"), expected);
     }
 
-    @Test
     public void testResourceReferenceVariableIgnored() throws Exception {
         final String[] expected = {
             "32:42: " + getCheckMessage(MSG_KEY),
@@ -112,7 +107,6 @@ public class OneStatementPerLineCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testResourcesIgnored() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(

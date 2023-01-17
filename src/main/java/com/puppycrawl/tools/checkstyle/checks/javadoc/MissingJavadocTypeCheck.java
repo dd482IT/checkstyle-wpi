@@ -181,7 +181,6 @@ import com.puppycrawl.tools.checkstyle.utils.ScopeUtil;
  *
  * @since 8.20
  */
-@StatelessCheck
 public class MissingJavadocTypeCheck extends AbstractCheck {
 
     /**

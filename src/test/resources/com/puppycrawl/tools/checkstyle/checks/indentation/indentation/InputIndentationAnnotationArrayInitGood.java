@@ -18,9 +18,7 @@ package com.puppycrawl.tools.checkstyle.checks.indentation.indentation; //indent
 public class InputIndentationAnnotationArrayInitGood { //indent:0 exp:0
     interface MyInterface { //indent:4 exp:4
         @interface SomeAnnotation { String[] values(); } //indent:8 exp:8
-        @SomeAnnotation(values = { //indent:8 exp:8
-            "Hello"//indent:12 exp:12
-        }) //indent:8 exp:8
+ //indent:8 exp:8
         void works(); //indent:8 exp:8
     } //indent:4 exp:4
 } //indent:0 exp:0

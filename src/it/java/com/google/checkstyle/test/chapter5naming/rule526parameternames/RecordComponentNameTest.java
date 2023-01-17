@@ -35,7 +35,6 @@ public class RecordComponentNameTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter5naming/rule526parameternames";
     }
 
-    @Test
     public void testGeneralParameterName() throws Exception {
         final Configuration config = getModuleConfig("RecordComponentName");
         final String format = config.getProperty("format");

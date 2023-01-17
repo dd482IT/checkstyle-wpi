@@ -159,7 +159,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 5.8
  */
-@StatelessCheck
 public class SeparatorWrapCheck
     extends AbstractCheck {
 

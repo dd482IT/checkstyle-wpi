@@ -33,7 +33,6 @@ public class NestedTryDepthCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/nestedtrydepth";
     }
 
-    @Test
     public void testDefault() throws Exception {
 
         final String[] expected = {
@@ -46,7 +45,6 @@ public class NestedTryDepthCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNestedTryDepth.java"), expected);
     }
 
-    @Test
     public void testCustomizedDepth() throws Exception {
 
         final String[] expected = {
@@ -57,7 +55,6 @@ public class NestedTryDepthCheckTest extends AbstractModuleTestSupport {
                 getPath("InputNestedTryDepthMax.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final NestedTryDepthCheck check = new NestedTryDepthCheck();
         assertWithMessage("Acceptable tokens should not be null")

@@ -143,7 +143,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 3.2
  */
-@StatelessCheck
 public class IllegalTokenTextCheck
     extends AbstractCheck {
 

@@ -36,7 +36,6 @@ public class LocalFinalVariableNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/localfinalvariablename";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final LocalFinalVariableNameCheck checkObj =
             new LocalFinalVariableNameCheck();
@@ -46,7 +45,6 @@ public class LocalFinalVariableNameCheckTest
             .isEqualTo(CommonUtil.EMPTY_INT_ARRAY);
     }
 
-    @Test
     public void testDefault()
             throws Exception {
 
@@ -59,7 +57,6 @@ public class LocalFinalVariableNameCheckTest
                 getPath("InputLocalFinalVariableName.java"), expected);
     }
 
-    @Test
     public void testSet()
             throws Exception {
 
@@ -72,7 +69,6 @@ public class LocalFinalVariableNameCheckTest
                 getPath("InputLocalFinalVariableName1.java"), expected);
     }
 
-    @Test
     public void testInnerClass()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -80,7 +76,6 @@ public class LocalFinalVariableNameCheckTest
                 getPath("InputLocalFinalVariableNameInnerClass.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final LocalFinalVariableNameCheck localFinalVariableNameCheckObj =
             new LocalFinalVariableNameCheck();
@@ -95,7 +90,6 @@ public class LocalFinalVariableNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testTryWithResources() throws Exception {
 
         final String pattern = "[A-Z]+";
@@ -111,7 +105,6 @@ public class LocalFinalVariableNameCheckTest
                 getPath("InputLocalFinalVariableNameTryResources.java"), expected);
     }
 
-    @Test
     public void testTryWithResourcesJava9() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

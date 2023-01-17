@@ -224,7 +224,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 6.4
  */
-@StatelessCheck
 public class EmptyCatchBlockCheck extends AbstractCheck {
 
     /**

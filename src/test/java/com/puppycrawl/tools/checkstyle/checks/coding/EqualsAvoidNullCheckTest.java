@@ -34,7 +34,6 @@ public class EqualsAvoidNullCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/coding/equalsavoidnull";
     }
 
-    @Test
     public void testEqualsWithDefault() throws Exception {
 
         final String[] expected = {
@@ -98,7 +97,6 @@ public class EqualsAvoidNullCheckTest extends AbstractModuleTestSupport {
                 getPath("InputEqualsAvoidNull.java"), expected);
     }
 
-    @Test
     public void testEqualsWithoutEqualsIgnoreCase() throws Exception {
 
         final String[] expected = {
@@ -150,7 +148,6 @@ public class EqualsAvoidNullCheckTest extends AbstractModuleTestSupport {
                 getPath("InputEqualsAvoidNullIgnoreCase.java"), expected);
     }
 
-    @Test
     public void testEqualsOnTheSameLine() throws Exception {
 
         final String[] expected = {
@@ -161,7 +158,6 @@ public class EqualsAvoidNullCheckTest extends AbstractModuleTestSupport {
                 getPath("InputEqualsAvoidNullOnTheSameLine.java"), expected);
     }
 
-    @Test
     public void testEqualsNested() throws Exception {
 
         final String[] expected = {
@@ -178,7 +174,6 @@ public class EqualsAvoidNullCheckTest extends AbstractModuleTestSupport {
                 getPath("InputEqualsAvoidNullNested.java"), expected);
     }
 
-    @Test
     public void testEqualsSuperClass() throws Exception {
 
         final String[] expected = {
@@ -188,7 +183,6 @@ public class EqualsAvoidNullCheckTest extends AbstractModuleTestSupport {
                 getPath("InputEqualsAvoidNullSuperClass.java"), expected);
     }
 
-    @Test
     public void testInputEqualsAvoidNullEnhancedInstanceof() throws Exception {
 
         final String[] expected = {
@@ -204,7 +198,6 @@ public class EqualsAvoidNullCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testMisc() throws Exception {
 
         final String[] expected = {
@@ -214,7 +207,6 @@ public class EqualsAvoidNullCheckTest extends AbstractModuleTestSupport {
                 getPath("InputEqualsAvoidNullMisc.java"), expected);
     }
 
-    @Test
     public void testRecordsAndCompactCtors() throws Exception {
 
         final String[] expected = {
@@ -229,7 +221,6 @@ public class EqualsAvoidNullCheckTest extends AbstractModuleTestSupport {
                 expected);
     }
 
-    @Test
     public void testEqualsAvoidNullTextBlocks() throws Exception {
 
         final String[] expected = {
@@ -244,7 +235,6 @@ public class EqualsAvoidNullCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final EqualsAvoidNullCheck check = new EqualsAvoidNullCheck();
         assertWithMessage("Acceptable tokens should not be null")

@@ -37,7 +37,6 @@ public class IllegalTokenCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/illegaltoken";
     }
 
-    @Test
     public void testCheckWithDefaultSettings()
             throws Exception {
         final String[] expected = {
@@ -48,7 +47,6 @@ public class IllegalTokenCheckTest
                 getPath("InputIllegalTokens.java"), expected);
     }
 
-    @Test
     public void testPreviouslyIllegalTokens()
             throws Exception {
         final String[] expected = {
@@ -60,7 +58,6 @@ public class IllegalTokenCheckTest
                 getPath("InputIllegalTokens2.java"), expected);
     }
 
-    @Test
     public void testNative() throws Exception {
         final String[] expected = {
             "27:12: " + getCheckMessage(MSG_KEY, "native"),
@@ -69,7 +66,6 @@ public class IllegalTokenCheckTest
                 getPath("InputIllegalTokens3.java"), expected);
     }
 
-    @Test
     public void testCommentContentToken()
             throws Exception {
 
@@ -99,7 +95,6 @@ public class IllegalTokenCheckTest
         verifyWithInlineConfigParser(path, expected);
     }
 
-    @Test
     public void testBlockCommentBeginToken()
             throws Exception {
 
@@ -111,7 +106,6 @@ public class IllegalTokenCheckTest
                 getPath("InputIllegalTokens5.java"), expected);
     }
 
-    @Test
     public void testBlockCommentEndToken()
             throws Exception {
 
@@ -123,7 +117,6 @@ public class IllegalTokenCheckTest
                 getPath("InputIllegalTokens6.java"), expected);
     }
 
-    @Test
     public void testSingleLineCommentToken()
             throws Exception {
 

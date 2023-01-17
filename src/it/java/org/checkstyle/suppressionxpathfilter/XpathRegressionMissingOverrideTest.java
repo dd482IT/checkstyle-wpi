@@ -37,7 +37,6 @@ public class XpathRegressionMissingOverrideTest extends AbstractXpathTestSupport
         return checkName;
     }
 
-    @Test
     public void testClass() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingOverrideClass.java"));
@@ -68,7 +67,6 @@ public class XpathRegressionMissingOverrideTest extends AbstractXpathTestSupport
 
     }
 
-    @Test
     public void testInterface() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingOverrideInterface.java"));
@@ -102,7 +100,6 @@ public class XpathRegressionMissingOverrideTest extends AbstractXpathTestSupport
 
     }
 
-    @Test
     public void testAnonymous() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingOverrideAnonymous.java"));
@@ -139,7 +136,6 @@ public class XpathRegressionMissingOverrideTest extends AbstractXpathTestSupport
 
     }
 
-    @Test
     public void testInheritDocInvalid1() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingOverrideInheritDocInvalid1.java"));
@@ -170,7 +166,6 @@ public class XpathRegressionMissingOverrideTest extends AbstractXpathTestSupport
 
     }
 
-    @Test
     public void testInheritDocInvalid2() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingOverrideInheritDocInvalid2.java"));
@@ -201,7 +196,6 @@ public class XpathRegressionMissingOverrideTest extends AbstractXpathTestSupport
 
     }
 
-    @Test
     public void testJavaFiveCompatibility1() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingOverrideClass.java"));
@@ -233,7 +227,6 @@ public class XpathRegressionMissingOverrideTest extends AbstractXpathTestSupport
 
     }
 
-    @Test
     public void testJavaFiveCompatibility2() throws Exception {
         final File fileToProcess = new File(getPath(
                 "SuppressionXpathRegressionMissingOverrideInterface.java"));

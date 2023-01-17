@@ -8,7 +8,6 @@ AbbreviationAsWordInName
 package com.puppycrawl.tools.checkstyle.checks.naming.abbreviationaswordinname;
 
 public interface InputAbbreviationAsWordInNameAnnotation extends BaseClass {
-    @Annotation1
     @Override
     String readMETHOD();
 }

@@ -114,7 +114,6 @@ import com.puppycrawl.tools.checkstyle.utils.CommonUtil;
  *
  * @since 5.0
  */
-@FileStatefulCheck
 public class GenericWhitespaceCheck extends AbstractCheck {
 
     /**

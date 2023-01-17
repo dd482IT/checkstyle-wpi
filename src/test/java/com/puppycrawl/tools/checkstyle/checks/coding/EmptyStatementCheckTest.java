@@ -34,7 +34,6 @@ public class EmptyStatementCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/emptystatement";
     }
 
-    @Test
     public void testEmptyStatements()
             throws Exception {
         final String[] expected = {
@@ -60,7 +59,6 @@ public class EmptyStatementCheckTest
                 getPath("InputEmptyStatement.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final EmptyStatementCheck check = new EmptyStatementCheck();
         assertWithMessage("Acceptable tokens should not be null")

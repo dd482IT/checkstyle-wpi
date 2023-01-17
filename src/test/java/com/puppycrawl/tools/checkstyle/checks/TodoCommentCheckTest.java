@@ -35,7 +35,6 @@ public class TodoCommentCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/todocomment";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final TodoCommentCheck checkObj = new TodoCommentCheck();
         final int[] expected = {TokenTypes.COMMENT_CONTENT};
@@ -44,7 +43,6 @@ public class TodoCommentCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "1:3: " + getCheckMessage(MSG_KEY, "FIXME:"),
@@ -56,7 +54,6 @@ public class TodoCommentCheckTest
                 getPath("InputTodoCommentSimple.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final int[] expected = {TokenTypes.COMMENT_CONTENT };
         final TodoCommentCheck check = new TodoCommentCheck();

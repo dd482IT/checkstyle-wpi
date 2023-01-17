@@ -131,7 +131,6 @@ public class SuppressWithNearbyCommentFilterTest
         return "com/puppycrawl/tools/checkstyle/filters/suppresswithnearbycommentfilter";
     }
 
-    @Test
     public void testNone() throws Exception {
         final String[] suppressed = CommonUtil.EMPTY_STRING_ARRAY;
         final String[] expected = {
@@ -216,7 +215,6 @@ public class SuppressWithNearbyCommentFilterTest
             suppressed);
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] suppressed = {
             "46:17: "
@@ -245,7 +243,6 @@ public class SuppressWithNearbyCommentFilterTest
             getPath("InputSuppressWithNearbyCommentFilter.java"), suppressed);
     }
 
-    @Test
     public void testCheckC() throws Exception {
         final String[] suppressed = {
             "46:17: "
@@ -259,7 +256,6 @@ public class SuppressWithNearbyCommentFilterTest
             getPath("InputSuppressWithNearbyCommentFilterCheckC.java"), suppressed);
     }
 
-    @Test
     public void testCheckCpp() throws Exception {
         final String[] suppressed = {
             "49:17: "
@@ -282,7 +278,6 @@ public class SuppressWithNearbyCommentFilterTest
             getPath("InputSuppressWithNearbyCommentFilterCheckCpp.java"), suppressed);
     }
 
-    @Test
     public void testUsingVariableMessage() throws Exception {
         final String[] suppressed = {
             "102:23: "
@@ -296,7 +291,6 @@ public class SuppressWithNearbyCommentFilterTest
             getPath("InputSuppressWithNearbyCommentFilterUsingVariableMessage.java"), suppressed);
     }
 
-    @Test
     public void testUsingNonMatchingVariableMessage() throws Exception {
         final String[] suppressed = CommonUtil.EMPTY_STRING_ARRAY;
         verifySuppressedWithParser(
@@ -304,7 +298,6 @@ public class SuppressWithNearbyCommentFilterTest
             suppressed);
     }
 
-    @Test
     public void testUsingVariableCheckOnNextLine() throws Exception {
         final String[] suppressed = {
             "61:17: "
@@ -316,7 +309,6 @@ public class SuppressWithNearbyCommentFilterTest
             suppressed);
     }
 
-    @Test
     public void testUsingVariableCheckOnPreviousLine() throws Exception {
         final String[] suppressed = {
             "65:17: "
@@ -328,7 +320,6 @@ public class SuppressWithNearbyCommentFilterTest
             suppressed);
     }
 
-    @Test
     public void testVariableCheckOnVariableNumberOfLines() throws Exception {
         final String[] suppressed = {
             "74:30: "
@@ -350,7 +341,6 @@ public class SuppressWithNearbyCommentFilterTest
             suppressed);
     }
 
-    @Test
     public void testEqualsAndHashCodeOfTagClass() {
         final SuppressWithNearbyCommentFilter filter = new SuppressWithNearbyCommentFilter();
         final Object tag =
@@ -375,7 +365,6 @@ public class SuppressWithNearbyCommentFilterTest
                                            removeSuppressed(messages, suppressed));
     }
 
-    @Test
     public void testInvalidInfluenceFormat() throws Exception {
         final DefaultConfiguration treeWalkerConfig =
             createModuleConfig(TreeWalker.class);
@@ -402,7 +391,6 @@ public class SuppressWithNearbyCommentFilterTest
         }
     }
 
-    @Test
     public void testInfluenceFormat() throws Exception {
         final String[] suppressed = {
             "46:17: "
@@ -435,7 +423,6 @@ public class SuppressWithNearbyCommentFilterTest
             suppressed);
     }
 
-    @Test
     public void testInvalidCheckFormat() throws Exception {
         final DefaultConfiguration treeWalkerConfig =
             createModuleConfig(TreeWalker.class);
@@ -461,7 +448,6 @@ public class SuppressWithNearbyCommentFilterTest
         }
     }
 
-    @Test
     public void testAcceptNullViolation() {
         final SuppressWithNearbyCommentFilter filter = new SuppressWithNearbyCommentFilter();
         final FileContents contents = new FileContents(new FileText(new File("filename"),
@@ -474,7 +460,6 @@ public class SuppressWithNearbyCommentFilterTest
                 .isTrue();
     }
 
-    @Test
     public void testAcceptNullFileContents() {
         final SuppressWithNearbyCommentFilter filter = new SuppressWithNearbyCommentFilter();
         final FileContents contents = null;
@@ -485,7 +470,6 @@ public class SuppressWithNearbyCommentFilterTest
                 .isTrue();
     }
 
-    @Test
     public void testToStringOfTagClass() {
         final SuppressWithNearbyCommentFilter filter = new SuppressWithNearbyCommentFilter();
         final Object tag =
@@ -496,7 +480,6 @@ public class SuppressWithNearbyCommentFilterTest
                     + "tagCheckRegexp=.*, tagMessageRegexp=null, tagIdRegexp=null]");
     }
 
-    @Test
     public void testToStringOfTagClassWithId() {
         final SuppressWithNearbyCommentFilter filter = new SuppressWithNearbyCommentFilter();
         filter.setIdFormat(".*");
@@ -508,7 +491,6 @@ public class SuppressWithNearbyCommentFilterTest
                     + "tagCheckRegexp=.*, tagMessageRegexp=null, tagIdRegexp=.*]");
     }
 
-    @Test
     public void testUsingTagMessageRegexp() throws Exception {
         final String[] suppressed = CommonUtil.EMPTY_STRING_ARRAY;
         verifySuppressedWithParser(
@@ -516,7 +498,6 @@ public class SuppressWithNearbyCommentFilterTest
             suppressed);
     }
 
-    @Test
     public void testSuppressByCheck() throws Exception {
         final String[] suppressedViolationMessages = {
             "41:17: "
@@ -557,7 +538,6 @@ public class SuppressWithNearbyCommentFilterTest
                                    expectedViolationMessages, suppressedViolationMessages);
     }
 
-    @Test
     public void testSuppressById() throws Exception {
         final String[] suppressedViolationMessages = {
             "41:17: "
@@ -598,7 +578,6 @@ public class SuppressWithNearbyCommentFilterTest
                                    expectedViolationMessages, suppressedViolationMessages);
     }
 
-    @Test
     public void testSuppressByCheckAndId() throws Exception {
         final String[] suppressedViolationMessages = {
             "41:17: "
@@ -640,7 +619,6 @@ public class SuppressWithNearbyCommentFilterTest
                                    expectedViolationMessages, suppressedViolationMessages);
     }
 
-    @Test
     public void testSuppressByCheckAndNonMatchingId() throws Exception {
         final String[] suppressedViolationMessages = CommonUtil.EMPTY_STRING_ARRAY;
         final String[] expectedViolationMessages = {
@@ -672,7 +650,6 @@ public class SuppressWithNearbyCommentFilterTest
             expectedViolationMessages, suppressedViolationMessages);
     }
 
-    @Test
     public void tesSuppressByIdAndMessage() throws Exception {
         final String[] suppressedViolationMessages = {
             "55:17: "
@@ -708,7 +685,6 @@ public class SuppressWithNearbyCommentFilterTest
             expectedViolationMessages, suppressedViolationMessages);
     }
 
-    @Test
     public void tesSuppressByCheckAndMessage() throws Exception {
         final String[] suppressedViolationMessages = {
             "55:17: "
@@ -744,7 +720,6 @@ public class SuppressWithNearbyCommentFilterTest
             expectedViolationMessages, suppressedViolationMessages);
     }
 
-    @Test
     public void testTagsAreClearedEachRun() {
         final SuppressWithNearbyCommentFilter suppressionCommentFilter =
                 new SuppressWithNearbyCommentFilter();

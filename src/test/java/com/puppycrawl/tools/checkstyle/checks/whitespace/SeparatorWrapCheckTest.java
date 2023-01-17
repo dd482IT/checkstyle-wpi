@@ -38,7 +38,6 @@ public class SeparatorWrapCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/separatorwrap";
     }
 
-    @Test
     public void testDot()
             throws Exception {
         final String[] expected = {
@@ -48,7 +47,6 @@ public class SeparatorWrapCheckTest
                 getPath("InputSeparatorWrapForTestDot.java"), expected);
     }
 
-    @Test
     public void testComma() throws Exception {
         final String[] expected = {
             "47:17: " + getCheckMessage(MSG_LINE_PREVIOUS, ","),
@@ -57,7 +55,6 @@ public class SeparatorWrapCheckTest
                 getPath("InputSeparatorWrapForTestComma.java"), expected);
     }
 
-    @Test
     public void testMethodRef() throws Exception {
         final String[] expected = {
             "25:56: " + getCheckMessage(MSG_LINE_NEW, "::"),
@@ -66,7 +63,6 @@ public class SeparatorWrapCheckTest
                 getPath("InputSeparatorWrapForTestMethodRef.java"), expected);
     }
 
-    @Test
     public void testGetDefaultTokens() {
         final SeparatorWrapCheck separatorWrapCheckObj = new SeparatorWrapCheck();
         final int[] actual = separatorWrapCheckObj.getDefaultTokens();
@@ -79,7 +75,6 @@ public class SeparatorWrapCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testInvalidOption() throws Exception {
 
         try {
@@ -99,7 +94,6 @@ public class SeparatorWrapCheckTest
         }
     }
 
-    @Test
     public void testEllipsis() throws Exception {
         final String[] expected = {
             "19:13: " + getCheckMessage(MSG_LINE_PREVIOUS, "..."),
@@ -108,7 +102,6 @@ public class SeparatorWrapCheckTest
                 getPath("InputSeparatorWrapForEllipsis.java"), expected);
     }
 
-    @Test
     public void testArrayDeclarator() throws Exception {
         final String[] expected = {
             "17:13: " + getCheckMessage(MSG_LINE_PREVIOUS, "["),
@@ -117,7 +110,6 @@ public class SeparatorWrapCheckTest
                 getPath("InputSeparatorWrapForArrayDeclarator.java"), expected);
     }
 
-    @Test
     public void testWithEmoji() throws Exception {
         final String[] expected = {
             "13:39: " + getCheckMessage(MSG_LINE_NEW, '['),
@@ -131,7 +123,6 @@ public class SeparatorWrapCheckTest
             getPath("InputSeparatorWrapWithEmoji.java"), expected);
     }
 
-    @Test
     public void testTrimOptionProperty() throws Exception {
         final String[] expected = {
             "18:44: " + getCheckMessage(MSG_LINE_NEW, "::"),
@@ -140,7 +131,6 @@ public class SeparatorWrapCheckTest
                 getPath("InputSeparatorWrapSetOptionTrim.java"), expected);
     }
 
-    @Test
     public void testCommaOnNewLine() throws Exception {
         final String[] expected = {
             "16:10: " + getCheckMessage(MSG_LINE_NEW, ","),

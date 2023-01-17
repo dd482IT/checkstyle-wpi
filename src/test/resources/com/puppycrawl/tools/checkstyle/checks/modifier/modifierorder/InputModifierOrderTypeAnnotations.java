@@ -19,26 +19,26 @@ import java.util.Map;
 public class InputModifierOrderTypeAnnotations extends MyClass {
 
     // Simple type definitions with type annotations
-    private @TypeAnnotation String hello = "Hello, World!";
-    private @TypeAnnotation final String jdk = "JDK8";
-    @TypeAnnotation private String projectName = "Checkstyle";
+    private String hello = "Hello, World!";
+    private final String jdk = "JDK8";
+    private String projectName = "Checkstyle";
 
     // We can use type Annotations with generic type arguments
-    private Map.@TypeAnnotation Entry entry;
+    private Map.Entry entry;
     // Type annotations can also be applied to nested types
-    private List<@TypeAnnotation String> strings;
+    private List<String> strings;
 
     // Constructors with type annotations
     {
-        new @TypeAnnotation Object();
+        new Object();
     }
 
     static {
-        new @TypeAnnotation Object();
+        new Object();
     }
 
     public void foo1() {
-        new @TypeAnnotation Object();
+        new Object();
     }
 
     // Type annotations work with nested (non static) class constructors too
@@ -49,33 +49,33 @@ public class InputModifierOrderTypeAnnotations extends MyClass {
 
     // Type casts
     public void foo3() {
-        String myString = (@TypeAnnotation String) new Object();
+        String myString = (String) new Object();
 
     }
 
     // Type annotations with method arguments
-    private void foo4(final @TypeAnnotation String parameterName) { }
+    private void foo4(final String parameterName) { }
 
     // Inheritance
-    class MySerializableClass<T> implements @TypeAnnotation Serializable {  }
+    class MySerializableClass<T> implements Serializable {  }
 
     // Nested type annotations
-    Map<@TypeAnnotation String, @TypeAnnotation List<@TypeAnnotation String>> documents;
+    Map<String, List<String>> documents;
 
     // Apply type annotations to intersection types
-    public <E extends @TypeAnnotation Comparator<E> & @TypeAnnotation Comparable> void foo5() {  }
+    public <E extends Comparator<E> & Comparable> void foo5() {  }
 
     // Including parameter bounds and wildcard bounds
-    class Folder<F extends @TypeAnnotation File> { }
-    Collection<? super @TypeAnnotation File> c;
-    List<@TypeAnnotation ? extends Comparable<T>> unchangeable;
+    class Folder<F extends File> { }
+    Collection<? super File> c;
+    List<? extends Comparable<T>> unchangeable;
 
     // Throwing exceptions
-    void foo6() throws @TypeAnnotation IOException { }
+    void foo6() throws IOException { }
 
     // Type annotations in instanceof statements
     public void foo7() {
-        boolean isNonNull = "string" instanceof @TypeAnnotation String;
+        boolean isNonNull = "string" instanceof String;
 
     }
 
@@ -85,14 +85,14 @@ public class InputModifierOrderTypeAnnotations extends MyClass {
 
     // Type annotation on method return type
     @Override
-    public @TypeAnnotation String toString() { return ""; }
+    public String toString() { return ""; }
 
     @Override
-    @TypeAnnotation public int hashCode() { return 1; }
+    public int hashCode() { return 1; }
 
-    public @TypeAnnotation int foo8() { return 1; }
+    public int foo8() { return 1; }
 
-    public @TypeAnnotation boolean equals(Object obj) { return super.equals(obj); }
+    public boolean equals(Object obj) { return super.equals(obj); }
 
 //    @TypeAnnotation void foo9() { } <-- Compiletime error:
                                         // void type cannot be annotated with type annotation
@@ -106,19 +106,19 @@ public class InputModifierOrderTypeAnnotations extends MyClass {
 class MyClass {
 
     // It is annotation on method, but not on type!
-    @MethodAnnotation void foo10() {}
-    private @MethodAnnotation void foo11() {} // violation
+    void foo10() {}
+    private void foo11() {} // violation
 
-    public @TypeAnnotation MyClass() {}
-    @ConstructorAnnotation public MyClass(String name) {}
+    public MyClass() {}
+    public MyClass(String name) {}
 }
 
 enum MyEnum {
-    @TypeAnnotation A;
+    A;
 }
 
 interface IInterfacable {
-    default @TypeAnnotation String foo() {
+    default String foo() {
         return null;
     }
 }

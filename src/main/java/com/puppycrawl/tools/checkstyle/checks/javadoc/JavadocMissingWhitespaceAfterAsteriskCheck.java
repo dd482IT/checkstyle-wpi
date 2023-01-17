@@ -92,7 +92,6 @@ import com.puppycrawl.tools.checkstyle.utils.JavadocUtil;
  *
  * @since 8.32
  */
-@StatelessCheck
 public class JavadocMissingWhitespaceAfterAsteriskCheck extends AbstractJavadocCheck {
 
     /**

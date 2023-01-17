@@ -68,7 +68,6 @@ public class PackageObjectFactoryTest {
     private final PackageObjectFactory factory = new PackageObjectFactory(
             BASE_PACKAGE, Thread.currentThread().getContextClassLoader());
 
-    @Test
     public void testCtorNullLoaderException1() {
         try {
             final Object test = new PackageObjectFactory(new HashSet<>(), null);
@@ -81,7 +80,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testCtorNullLoaderException2() {
         try {
             final Object test = new PackageObjectFactory("test", null);
@@ -94,7 +92,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testCtorNullPackageException1() {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         try {
@@ -108,7 +105,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testCtorNullPackageException2() {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         try {
@@ -122,7 +118,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testCtorNullPackageException3() {
         final ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         try {
@@ -137,7 +132,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testMakeObjectFromName()
             throws CheckstyleException {
         final Checker checker =
@@ -148,7 +142,6 @@ public class PackageObjectFactoryTest {
             .isNotNull();
     }
 
-    @Test
     public void testMakeCheckFromName() {
         final String name = "com.puppycrawl.tools.checkstyle.checks.naming.ConstantName";
         try {
@@ -165,7 +158,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testCreateModuleWithNonExistName() {
         final String[] names = {"NonExistClassOne", "NonExistClassTwo", };
         for (String name : names) {
@@ -187,7 +179,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testCreateObjectFromMap() throws Exception {
         final String moduleName = "Foo";
         final String name = moduleName + CHECK_SUFFIX;
@@ -206,7 +197,6 @@ public class PackageObjectFactoryTest {
             .isEqualTo(fullName);
     }
 
-    @Test
     public void testCreateStandardModuleObjectFromMap() throws Exception {
         final String moduleName = "TreeWalker";
         final String packageName = BASE_PACKAGE + ".packageobjectfactory.bar";
@@ -220,7 +210,6 @@ public class PackageObjectFactoryTest {
             .isEqualTo(fullName);
     }
 
-    @Test
     public void testCreateStandardCheckModuleObjectFromMap() throws Exception {
         final String moduleName = "TypeName";
         final String packageName = BASE_PACKAGE + ".packageobjectfactory.bar";
@@ -235,7 +224,6 @@ public class PackageObjectFactoryTest {
             .isEqualTo(fullName);
     }
 
-    @Test
     public void testCreateObjectFromFullModuleNamesWithAmbiguousException() {
         final String barPackage = BASE_PACKAGE + ".packageobjectfactory.bar";
         final String fooPackage = BASE_PACKAGE + ".packageobjectfactory.foo";
@@ -259,7 +247,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testCreateObjectFromFullModuleNamesWithCantInstantiateException() {
         final String package1 = BASE_PACKAGE + ".wrong1";
         final String package2 = BASE_PACKAGE + ".wrong2";
@@ -287,7 +274,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testCreateObjectFromFullModuleNamesWithExceptionByBruteForce() {
         final String package1 = BASE_PACKAGE + ".wrong1";
         final String package2 = BASE_PACKAGE + ".wrong2";
@@ -316,7 +302,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testCreateObjectByBruteForce() throws Exception {
         final String className = "Checker";
         final Method createModuleByBruteForce = PackageObjectFactory.class.getDeclaredMethod(
@@ -328,7 +313,6 @@ public class PackageObjectFactoryTest {
             .isNotNull();
     }
 
-    @Test
     public void testCreateCheckByBruteForce() throws Exception {
         final String checkName = "AnnotationLocation";
         final Method createModuleByBruteForce = PackageObjectFactory.class.getDeclaredMethod(
@@ -344,7 +328,6 @@ public class PackageObjectFactoryTest {
             .isNotNull();
     }
 
-    @Test
     public void testCreateCheckWithPartialPackageNameByBruteForce() throws Exception {
         final String checkName = "checks.annotation.AnnotationLocation";
         final PackageObjectFactory packageObjectFactory = new PackageObjectFactory(
@@ -357,7 +340,6 @@ public class PackageObjectFactoryTest {
             .isNotNull();
     }
 
-    @Test
     public void testJoinPackageNamesWithClassName() throws Exception {
         final Class<PackageObjectFactory> clazz = PackageObjectFactory.class;
         final Method method =
@@ -372,7 +354,6 @@ public class PackageObjectFactoryTest {
             .isEqualTo("test." + className);
     }
 
-    @Test
     @SuppressWarnings("unchecked")
     public void testNameToFullModuleNameMap() throws Exception {
         final Set<Class<?>> classes = CheckUtil.getCheckstyleModules();
@@ -398,7 +379,6 @@ public class PackageObjectFactoryTest {
                 .isFalse();
     }
 
-    @Test
     public void testConstructorFailure() {
         try {
             factory.createModule(FailConstructorFileSet.class.getName());
@@ -415,7 +395,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testGetShortFromFullModuleNames() {
         final String fullName =
                 "com.puppycrawl.tools.checkstyle.checks.coding.DefaultComesLastCheck";
@@ -425,7 +404,6 @@ public class PackageObjectFactoryTest {
             .isEqualTo("DefaultComesLastCheck");
     }
 
-    @Test
     public void testGetShortFromFullModuleNamesThirdParty() {
         final String fullName =
                 "java.util.stream.Collectors";
@@ -446,7 +424,6 @@ public class PackageObjectFactoryTest {
      *
      * @throws Exception when the code tested throws an exception
      */
-    @Test
     public void testGenerateThirdPartyNameToFullModuleNameWithException() throws Exception {
         final String name = "String";
         final String packageName = "java.lang";
@@ -480,7 +457,6 @@ public class PackageObjectFactoryTest {
         }
     }
 
-    @Test
     public void testCreateObjectWithNameContainingPackageSeparator() throws Exception {
         final ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         final Set<String> packages = Collections.singleton(BASE_PACKAGE);
@@ -493,7 +469,6 @@ public class PackageObjectFactoryTest {
             .isInstanceOf(MockClass.class);
     }
 
-    @Test
     public void testCreateModuleWithTryInAllRegisteredPackages() {
         final ClassLoader classLoader = ClassLoader.getSystemClassLoader();
         final Set<String> packages = Collections.singleton(BASE_PACKAGE);

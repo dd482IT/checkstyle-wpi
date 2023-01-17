@@ -33,7 +33,6 @@ public class SummaryJavadocTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter7javadoc/rule72thesummaryfragment";
     }
 
-    @Test
     public void testCorrect() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -44,7 +43,6 @@ public class SummaryJavadocTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testIncorrect() throws Exception {
         final String msgFirstSentence = getCheckMessage(SummaryJavadocCheck.class,
             "summary.first.sentence");

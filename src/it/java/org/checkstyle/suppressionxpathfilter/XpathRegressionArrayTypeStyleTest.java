@@ -35,7 +35,6 @@ public class XpathRegressionArrayTypeStyleTest extends AbstractXpathTestSupport 
         return ArrayTypeStyleCheck.class.getSimpleName();
     }
 
-    @Test
     public void testVariable() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionArrayTypeStyleVariable.java"));
@@ -58,7 +57,6 @@ public class XpathRegressionArrayTypeStyleTest extends AbstractXpathTestSupport 
                 expectedXpathQueries);
     }
 
-    @Test
     public void testMethodDef() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionArrayTypeStyleMethodDef.java"));

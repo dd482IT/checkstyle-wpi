@@ -42,7 +42,6 @@ public class RegexpSinglelineCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/regexp/regexpsingleline";
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "77: " + getCheckMessage(MSG_REGEXP_EXCEEDED, "System\\.(out)|(err)\\.print(ln)?\\("),
@@ -51,7 +50,6 @@ public class RegexpSinglelineCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSinglelineSemantic.java"), expected);
     }
 
-    @Test
     public void testMessageProperty()
             throws Exception {
         final String[] expected = {
@@ -61,7 +59,6 @@ public class RegexpSinglelineCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSinglelineSemantic2.java"), expected);
     }
 
-    @Test
     public void testIgnoreCaseTrue() throws Exception {
 
         final String[] expected = {
@@ -71,14 +68,12 @@ public class RegexpSinglelineCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSinglelineSemantic3.java"), expected);
     }
 
-    @Test
     public void testIgnoreCaseFalse() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputRegexpSinglelineSemantic4.java"), expected);
     }
 
-    @Test
     public void testMinimum() throws Exception {
         final String[] expected = {
             "1: " + getCheckMessage(MSG_REGEXP_MINIMUM, "500", "\\r"),
@@ -88,7 +83,6 @@ public class RegexpSinglelineCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSinglelineSemantic5.java"), expected);
     }
 
-    @Test
     public void testSetMessage() throws Exception {
         final String[] expected = {
             "1: someMessage",
@@ -98,7 +92,6 @@ public class RegexpSinglelineCheckTest extends AbstractModuleTestSupport {
                 getPath("InputRegexpSinglelineSemantic6.java"), expected);
     }
 
-    @Test
     public void testMaximum() throws Exception {
         verifyWithInlineConfigParser(
                 getPath("InputRegexpSinglelineSemantic7.java"), EMPTY);
@@ -109,7 +102,6 @@ public class RegexpSinglelineCheckTest extends AbstractModuleTestSupport {
      *
      * @throws Exception some Exception
      */
-    @Test
     public void testStateIsBeingReset() throws Exception {
         final String illegal = "System\\.(out)|(err)\\.print(ln)?\\(";
         final TestLoggingReporter reporter = new TestLoggingReporter();

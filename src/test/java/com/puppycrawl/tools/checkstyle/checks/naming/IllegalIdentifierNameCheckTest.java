@@ -35,7 +35,6 @@ public class IllegalIdentifierNameCheckTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/checks/naming/illegalidentifiername";
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final IllegalIdentifierNameCheck illegalIdentifierNameCheck =
             new IllegalIdentifierNameCheck();
@@ -60,7 +59,6 @@ public class IllegalIdentifierNameCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final IllegalIdentifierNameCheck illegalIdentifierNameCheck =
             new IllegalIdentifierNameCheck();
@@ -71,7 +69,6 @@ public class IllegalIdentifierNameCheckTest extends AbstractModuleTestSupport {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testIllegalIdentifierNameDefault() throws Exception {
 
         final String format = "(?i)^(?!(record|yield|var|permits|sealed|_)$).+$";
@@ -95,7 +92,6 @@ public class IllegalIdentifierNameCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputIllegalIdentifierName.java"), expected);
     }
 
-    @Test
     public void testIllegalIdentifierNameOpenTransitive() throws Exception {
         final String format = "(?i)^(?!(record|yield|var|permits|sealed|open|transitive)$).+$";
 
@@ -119,7 +115,6 @@ public class IllegalIdentifierNameCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputIllegalIdentifierNameOpenTransitive.java"), expected);
     }
 
-    @Test
     public void testIllegalIdentifierNameParameterReceiver() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -129,7 +124,6 @@ public class IllegalIdentifierNameCheckTest extends AbstractModuleTestSupport {
             expected);
     }
 
-    @Test
     public void testIllegalIdentifierNameUnderscore() throws Exception {
         final String format = "(?i)^(?!(record|yield|var|permits|sealed|_)$).+$";
 
@@ -140,7 +134,6 @@ public class IllegalIdentifierNameCheckTest extends AbstractModuleTestSupport {
                 getNonCompilablePath("InputIllegalIdentifierNameUnderscore.java"), expected);
     }
 
-    @Test
     public void testIllegalIdentifierNameLambda() throws Exception {
         final String format = "(?i)^(?!(record|yield|var|permits|sealed|_)$).+$";
 

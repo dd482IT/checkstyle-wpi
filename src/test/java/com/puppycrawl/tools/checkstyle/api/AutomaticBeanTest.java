@@ -37,7 +37,6 @@ import com.puppycrawl.tools.checkstyle.internal.utils.TestUtil;
 
 public class AutomaticBeanTest {
 
-    @Test
     public void testConfigureNoSuchAttribute() {
         final TestBean testBean = new TestBean();
         final DefaultConfiguration conf = new DefaultConfiguration("testConf");
@@ -60,7 +59,6 @@ public class AutomaticBeanTest {
         }
     }
 
-    @Test
     public void testConfigureNoSuchAttribute2() {
         final TestBean testBean = new TestBean();
         final DefaultConfiguration conf = new DefaultConfiguration("testConf");
@@ -83,7 +81,6 @@ public class AutomaticBeanTest {
         }
     }
 
-    @Test
     public void testSetupChildFromBaseClass() throws CheckstyleException {
         final TestBean testBean = new TestBean();
         testBean.configure(new DefaultConfiguration("bean config"));
@@ -104,7 +101,6 @@ public class AutomaticBeanTest {
         }
     }
 
-    @Test
     public void testSetupInvalidChildFromBaseClass() {
         final TestBean testBean = new TestBean();
         final DefaultConfiguration parentConf = new DefaultConfiguration("parentConf");
@@ -126,7 +122,6 @@ public class AutomaticBeanTest {
         }
     }
 
-    @Test
     public void testContextualizeInvocationTargetException() {
         final TestBean testBean = new TestBean();
         final DefaultContext context = new DefaultContext();
@@ -149,7 +144,6 @@ public class AutomaticBeanTest {
         }
     }
 
-    @Test
     public void testContextualizeConversionException() {
         final TestBean testBean = new TestBean();
         final DefaultContext context = new DefaultContext();
@@ -172,7 +166,6 @@ public class AutomaticBeanTest {
         }
     }
 
-    @Test
     public void testTestBean() {
         final TestBean testBean = new TestBean();
         testBean.setVal(0);
@@ -191,7 +184,6 @@ public class AutomaticBeanTest {
         }
     }
 
-    @Test
     public void testRegisterIntegralTypes() throws Exception {
         final ConvertUtilsBeanStub convertUtilsBean = new ConvertUtilsBeanStub();
         TestUtil.invokeStaticMethod(AutomaticBean.class, "registerIntegralTypes", convertUtilsBean);
@@ -200,7 +192,6 @@ public class AutomaticBeanTest {
                 .isEqualTo(81);
     }
 
-    @Test
     public void testBeanConverters() throws Exception {
         final ConverterBean bean = new ConverterBean();
 
@@ -246,7 +237,6 @@ public class AutomaticBeanTest {
                 .inOrder();
     }
 
-    @Test
     public void testBeanConvertersUri2() throws Exception {
         final ConverterBean bean = new ConverterBean();
         final DefaultConfiguration config = new DefaultConfiguration("bean");
@@ -258,7 +248,6 @@ public class AutomaticBeanTest {
                 .isNull();
     }
 
-    @Test
     public void testBeanConvertersUri3() {
         final ConverterBean bean = new ConverterBean();
         final DefaultConfiguration config = new DefaultConfiguration("bean");

@@ -149,7 +149,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 6.0
  */
-@StatelessCheck
 public class AtclauseOrderCheck extends AbstractJavadocCheck {
 
     /**
@@ -173,7 +172,6 @@ public class AtclauseOrderCheck extends AbstractJavadocCheck {
     /**
      * Specify block tags targeted.
      */
-    @XdocsPropertyType(PropertyType.TOKEN_ARRAY)
     private BitSet target = TokenUtil.asBitSet(
         TokenTypes.CLASS_DEF,
         TokenTypes.INTERFACE_DEF,

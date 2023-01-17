@@ -3,7 +3,7 @@ package org.checkstyle.suppressionxpathfilter.annotationlocation;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
-@ClassAnnotation("bar") class SuppressionXpathRegressionAnnotationLocationClass { //warn
+class SuppressionXpathRegressionAnnotationLocationClass { //warn
 
 }
 

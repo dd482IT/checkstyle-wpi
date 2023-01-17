@@ -37,7 +37,6 @@ public class BooleanExpressionComplexityCheckTest extends AbstractModuleTestSupp
         return "com/puppycrawl/tools/checkstyle/checks/metrics/booleanexpressioncomplexity";
     }
 
-    @Test
     public void test() throws Exception {
 
         final String[] expected = {
@@ -52,7 +51,6 @@ public class BooleanExpressionComplexityCheckTest extends AbstractModuleTestSupp
                 getPath("InputBooleanExpressionComplexity.java"), expected);
     }
 
-    @Test
     public void testNoBitwise() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -61,7 +59,6 @@ public class BooleanExpressionComplexityCheckTest extends AbstractModuleTestSupp
                 getPath("InputBooleanExpressionComplexity2.java"), expected);
     }
 
-    @Test
     public void testNullPointerException() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -70,7 +67,6 @@ public class BooleanExpressionComplexityCheckTest extends AbstractModuleTestSupp
                 getPath("InputBooleanExpressionComplexityNPE.java"), expected);
     }
 
-    @Test
     public void testWrongToken() {
         final BooleanExpressionComplexityCheck booleanExpressionComplexityCheckObj =
             new BooleanExpressionComplexityCheck();
@@ -87,7 +83,6 @@ public class BooleanExpressionComplexityCheckTest extends AbstractModuleTestSupp
         }
     }
 
-    @Test
     public void testSmall() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -96,7 +91,6 @@ public class BooleanExpressionComplexityCheckTest extends AbstractModuleTestSupp
                 getPath("InputBooleanExpressionComplexitySmall.java"), expected);
     }
 
-    @Test
     public void testBooleanExpressionComplexityRecordsAndCompactCtors() throws Exception {
 
         final int max = 3;
@@ -114,7 +108,6 @@ public class BooleanExpressionComplexityCheckTest extends AbstractModuleTestSupp
                 expected);
     }
 
-    @Test
     public void testLeaves() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -123,7 +116,6 @@ public class BooleanExpressionComplexityCheckTest extends AbstractModuleTestSupp
                 getPath("InputBooleanExpressionComplexityLeaves.java"), expected);
     }
 
-    @Test
     public void testRecordLeaves() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

@@ -8,13 +8,13 @@ import java.lang.annotation.Target;
 
 public class InputAntlr4AstRegressionAnnotationOnArrays {
 
-    private String array1 @Nullable [];
-    private @Nullable int array2 @Nullable [] @Nullable [];
+    private String array1[];
+    private int array2[][];
 
     private InputAntlr4AstRegressionAnnotationOnArrays() {
     }
 
-    public static <T> T[] checkNotNullContents(T @Nullable [] array) {
+    public static <T> T[] checkNotNullContents(T[] array) {
         if (array == null) {
             throw new NullPointerException();
         }
@@ -22,7 +22,7 @@ public class InputAntlr4AstRegressionAnnotationOnArrays {
         return array;
     }
 
-    public static <T> T[][] checkNotNullContents2(T @Nullable [] @Nullable [] array) {
+    public static <T> T[][] checkNotNullContents2(T[][] array) {
         if (array == null) {
             throw new NullPointerException();
         }
@@ -30,7 +30,7 @@ public class InputAntlr4AstRegressionAnnotationOnArrays {
         return array;
     }
 
-    public static <T> T @Nullable [] checkNotNullContents3(T array @Nullable []) {
+    public static <T> T[] checkNotNullContents3(T array[]) {
         if (array == null) {
             throw new NullPointerException();
         }
@@ -38,15 +38,15 @@ public class InputAntlr4AstRegressionAnnotationOnArrays {
         return array;
     }
 
-    public <T> T checkNotNullContents4(T @Nullable [] array) @Nullable [] {
+    public <T> T checkNotNullContents4(T[] array)[] {
         if (array == null) {
             throw new NullPointerException();
         }
-        String tmp1 @Nullable [];
-        @Nullable Object[] tmp2 = new @Nullable Integer[3];
-        @Nullable int[] tmp3 = new @Nullable int[3];
-        @Nullable Object tmp4 = new @Nullable String @Nullable [3] @Nullable [2];
-        @Nullable Object tmp5 = new @Nullable int @Nullable [3] @Nullable [2];
+        String tmp1[];
+        Object[] tmp2 = new Integer[3];
+        int[] tmp3 = new int[3];
+        Object tmp4 = new String[3][2];
+        Object tmp5 = new int[3][2];
 
         return array;
     }

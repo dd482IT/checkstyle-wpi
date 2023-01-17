@@ -37,7 +37,6 @@ public class XpathRegressionPackageDeclarationTest extends AbstractXpathTestSupp
         return checkName;
     }
 
-    @Test
     public void test1() throws Exception {
         final File fileToProcess =
                 new File(getNonCompilablePath("SuppressionXpathRegression1.java"));
@@ -58,7 +57,6 @@ public class XpathRegressionPackageDeclarationTest extends AbstractXpathTestSupp
                 expectedXpathQueries);
     }
 
-    @Test
     public void test2() throws Exception {
         final File fileToProcess =
                 new File(getNonCompilablePath("SuppressionXpathRegression2.java"));

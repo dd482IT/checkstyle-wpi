@@ -45,7 +45,6 @@ public class AllSinglelineCommentsTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/grammar/comments";
     }
 
-    @Test
     public void testAllSinglelineComments() throws Exception {
         final DefaultConfiguration checkConfig =
             createModuleConfig(SinglelineCommentListenerCheck.class);

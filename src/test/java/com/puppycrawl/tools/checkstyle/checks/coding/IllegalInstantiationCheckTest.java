@@ -44,14 +44,12 @@ public class IllegalInstantiationCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/illegalinstantiation";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
                 getPath("InputIllegalInstantiationSemantic.java"), expected);
     }
 
-    @Test
     public void testClasses() throws Exception {
         final String[] expected = {
             "24:21: " + getCheckMessage(MSG_KEY, "java.lang.Boolean"),
@@ -67,7 +65,6 @@ public class IllegalInstantiationCheckTest
                 getPath("InputIllegalInstantiationSemantic2.java"), expected);
     }
 
-    @Test
     public void testSameClassNameAsJavaLang() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -75,7 +72,6 @@ public class IllegalInstantiationCheckTest
                 expected);
     }
 
-    @Test
     public void testJava8() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -83,7 +79,6 @@ public class IllegalInstantiationCheckTest
                 expected);
     }
 
-    @Test
     public void testNoPackage() throws Exception {
         final String[] expected = {
             "10:20: " + getCheckMessage(MSG_KEY, "java.lang.Boolean"),
@@ -92,7 +87,6 @@ public class IllegalInstantiationCheckTest
                 getPath("InputIllegalInstantiationNoPackage.java"), expected);
     }
 
-    @Test
     public void testJavaLangPackage() throws Exception {
         final String[] expected = {
             "13:19: " + getCheckMessage(MSG_KEY, "java.lang.Boolean"),
@@ -103,7 +97,6 @@ public class IllegalInstantiationCheckTest
                 expected);
     }
 
-    @Test
     public void testWrongPackage() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -111,7 +104,6 @@ public class IllegalInstantiationCheckTest
                 expected);
     }
 
-    @Test
     public void testJavaLangPackage3() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -119,7 +111,6 @@ public class IllegalInstantiationCheckTest
                 expected);
     }
 
-    @Test
     public void testNameSimilarToStandardClass() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
@@ -127,7 +118,6 @@ public class IllegalInstantiationCheckTest
             expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final IllegalInstantiationCheck check = new IllegalInstantiationCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -141,7 +131,6 @@ public class IllegalInstantiationCheckTest
             .isNotNull();
     }
 
-    @Test
     public void testImproperToken() {
         final IllegalInstantiationCheck check = new IllegalInstantiationCheck();
 
@@ -164,7 +153,6 @@ public class IllegalInstantiationCheckTest
      *
      * @throws Exception when code tested throws exception
      */
-    @Test
     @SuppressWarnings("unchecked")
     public void testClearStateClassNames() throws Exception {
         final IllegalInstantiationCheck check = new IllegalInstantiationCheck();
@@ -191,7 +179,6 @@ public class IllegalInstantiationCheckTest
      *
      * @throws Exception when code tested throws exception
      */
-    @Test
     public void testClearStateImports() throws Exception {
         final IllegalInstantiationCheck check = new IllegalInstantiationCheck();
         final DetailAST root = JavaParser.parseFile(new File(
@@ -217,7 +204,6 @@ public class IllegalInstantiationCheckTest
      *
      * @throws Exception when code tested throws exception
      */
-    @Test
     @SuppressWarnings("unchecked")
     public void testClearStateInstantiations() throws Exception {
         final IllegalInstantiationCheck check = new IllegalInstantiationCheck();

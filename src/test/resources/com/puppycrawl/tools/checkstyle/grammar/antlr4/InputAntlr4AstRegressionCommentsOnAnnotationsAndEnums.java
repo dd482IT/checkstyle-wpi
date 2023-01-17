@@ -68,7 +68,6 @@ class ProjectBuildingException{}
  * @since 9.11.5
  * @since 10.5RC1
  */
-@Mojo(name = "")
 public class InputAntlr4AstRegressionCommentsOnAnnotationsAndEnums
         extends ProcessRemoteResourcesMojo
 {
@@ -96,19 +95,15 @@ public class InputAntlr4AstRegressionCommentsOnAnnotationsAndEnums
         FULL
     }
 
-    @Parameter(defaultValue = "NONE", readonly = false)
     protected ProjectData projectsData;
 
-    @Parameter(defaultValue = "${localRepository}", readonly = true)
     private ArtifactRepository localRepositoryThis;
 
-    @Component(role = MavenProjectBuilder.class)
     private MavenProjectBuilder mavenProjectBuilderThis;
 
     /**
      * List of Remote Repositories used by the resolver.
      */
-    @Parameter(defaultValue = "${project.remoteArtifactRepositories}", readonly = true)
     private List<ArtifactRepository> remoteArtifactRepositoriesThis;
 
     private Logger getLog() {

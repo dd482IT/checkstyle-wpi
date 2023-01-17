@@ -6,7 +6,6 @@ InvalidJavadocPosition
 
 /** violation */ // violation
 /** valid */
-@Example
 package com.puppycrawl.tools.checkstyle.checks.javadoc.invalidjavadocposition;
 
 import java.lang.annotation.ElementType;

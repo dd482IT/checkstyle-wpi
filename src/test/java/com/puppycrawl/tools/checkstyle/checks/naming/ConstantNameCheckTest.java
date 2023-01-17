@@ -38,7 +38,6 @@ public class ConstantNameCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/naming/constantname";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final ConstantNameCheck checkObj = new ConstantNameCheck();
         final int[] expected = {TokenTypes.VARIABLE_DEF};
@@ -47,7 +46,6 @@ public class ConstantNameCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testIllegalRegexp()
             throws Exception {
         final DefaultConfiguration checkConfig =
@@ -67,7 +65,6 @@ public class ConstantNameCheckTest
         }
     }
 
-    @Test
     public void testDefault()
             throws Exception {
 
@@ -81,7 +78,6 @@ public class ConstantNameCheckTest
                 getPath("InputConstantNameSimple1.java"), expected);
     }
 
-    @Test
     public void testAccessControlTuning()
             throws Exception {
 
@@ -94,7 +90,6 @@ public class ConstantNameCheckTest
                 getPath("InputConstantNameSimple2.java"), expected);
     }
 
-    @Test
     public void testInterfaceAndAnnotation()
             throws Exception {
 
@@ -108,7 +103,6 @@ public class ConstantNameCheckTest
                 getPath("InputConstantNameInner.java"), expected);
     }
 
-    @Test
     public void testDefault1()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -116,7 +110,6 @@ public class ConstantNameCheckTest
                 getPath("InputConstantName.java"), expected);
     }
 
-    @Test
     public void testIntoInterface() throws Exception {
 
         final String pattern = "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$";
@@ -135,7 +128,6 @@ public class ConstantNameCheckTest
                 getPath("InputConstantNameMemberExtended.java"), expected);
     }
 
-    @Test
     public void testIntoInterfaceExcludePublic() throws Exception {
 
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -143,7 +135,6 @@ public class ConstantNameCheckTest
                 getPath("InputConstantNameInterfaceIgnorePublic.java"), expected);
     }
 
-    @Test
     public void testStaticMethodInInterface()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -151,7 +142,6 @@ public class ConstantNameCheckTest
                 getPath("InputConstantNameStaticModifierInInterface.java"), expected);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final ConstantNameCheck constantNameCheckObj = new ConstantNameCheck();
         final int[] actual = constantNameCheckObj.getAcceptableTokens();

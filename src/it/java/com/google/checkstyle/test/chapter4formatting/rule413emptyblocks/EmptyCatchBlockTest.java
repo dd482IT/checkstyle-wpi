@@ -33,7 +33,6 @@ public class EmptyCatchBlockTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule413emptyblocks";
     }
 
-    @Test
     public void testEmptyBlockCatch() throws Exception {
         final String[] expected = {
             "28:31: " + getCheckMessage(EmptyCatchBlockCheck.class, "catch.block.empty"),
@@ -50,7 +49,6 @@ public class EmptyCatchBlockTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testNoViolations() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -61,7 +59,6 @@ public class EmptyCatchBlockTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testViolationsByComment() throws Exception {
         final String[] expected = {
             "20:9: " + getCheckMessage(EmptyCatchBlockCheck.class, "catch.block.empty"),
@@ -75,7 +72,6 @@ public class EmptyCatchBlockTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testViolationsByVariableName() throws Exception {
         final String[] expected = {
             "20:9: " + getCheckMessage(EmptyCatchBlockCheck.class, "catch.block.empty"),

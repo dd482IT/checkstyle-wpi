@@ -66,7 +66,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 5.0
  */
-@FileStatefulCheck
 public class OuterTypeNumberCheck extends AbstractCheck {
 
     /**

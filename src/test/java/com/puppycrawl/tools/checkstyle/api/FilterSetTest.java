@@ -29,7 +29,6 @@ import com.puppycrawl.tools.checkstyle.filters.SeverityMatchFilter;
 
 public class FilterSetTest {
 
-    @Test
     public void testGetFilters() {
         final FilterSet filterSet = new FilterSet();
         filterSet.addFilter(new SeverityMatchFilter());
@@ -38,7 +37,6 @@ public class FilterSetTest {
                 .hasSize(1);
     }
 
-    @Test
     public void testRemoveFilters() {
         final FilterSet filterSet = new FilterSet();
         final Filter filter = new SeverityMatchFilter();
@@ -49,7 +47,6 @@ public class FilterSetTest {
                 .hasSize(0);
     }
 
-    @Test
     public void testToString() {
         final FilterSet filterSet = new FilterSet();
         filterSet.addFilter(new SeverityMatchFilter());
@@ -58,7 +55,6 @@ public class FilterSetTest {
                 .isNotNull();
     }
 
-    @Test
     public void testClear() {
         final FilterSet filterSet = new FilterSet();
         filterSet.addFilter(new SeverityMatchFilter());
@@ -74,7 +70,6 @@ public class FilterSetTest {
                 .hasSize(0);
     }
 
-    @Test
     public void testAccept() {
         final FilterSet filterSet = new FilterSet();
         filterSet.addFilter(new DummyFilter(true));
@@ -83,7 +78,6 @@ public class FilterSetTest {
                 .isTrue();
     }
 
-    @Test
     public void testNotAccept() {
         final FilterSet filterSet = new FilterSet();
         filterSet.addFilter(new DummyFilter(false));
@@ -92,7 +86,6 @@ public class FilterSetTest {
                 .isFalse();
     }
 
-    @Test
     public void testNotAcceptEvenIfOneAccepts() {
         final FilterSet filterSet = new FilterSet();
         filterSet.addFilter(new DummyFilter(true));

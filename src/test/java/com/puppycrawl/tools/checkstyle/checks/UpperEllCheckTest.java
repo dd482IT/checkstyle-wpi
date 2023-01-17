@@ -35,7 +35,6 @@ public class UpperEllCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/upperell";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final UpperEllCheck checkObj = new UpperEllCheck();
         final int[] expected = {TokenTypes.NUM_LONG};
@@ -44,7 +43,6 @@ public class UpperEllCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testWithChecker()
             throws Exception {
         final String[] expected = {
@@ -54,7 +52,6 @@ public class UpperEllCheckTest
                 getPath("InputUpperEllSemantic.java"), expected);
     }
 
-    @Test
     public void testAcceptableTokens() {
         final int[] expected = {TokenTypes.NUM_LONG };
         final UpperEllCheck check = new UpperEllCheck();

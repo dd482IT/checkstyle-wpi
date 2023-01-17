@@ -77,7 +77,6 @@ import com.puppycrawl.tools.checkstyle.utils.CheckUtil;
  *
  * @since 5.0
  */
-@StatelessCheck
 public class PackageAnnotationCheck extends AbstractCheck {
 
     /**

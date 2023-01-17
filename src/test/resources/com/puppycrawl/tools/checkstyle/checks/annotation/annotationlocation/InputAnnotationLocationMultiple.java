@@ -15,17 +15,17 @@ import java.lang.annotation.Repeatable;
 
 class InputAnnotationLocationMultiple {
 
-    @Annotation void singleParameterless() {} // ok
+    void singleParameterless() {} // ok
 
-    @Annotation @Annotation void multipleParameterless() {}
+    void multipleParameterless() {}
 
-    @Annotation("") void parameterized() {}
+    void parameterized() {}
 
-    @Annotation(value = "") void namedParameterized() {}
+    void namedParameterized() {}
 
-    @Annotation @Annotation("") @Annotation(value = "") void multiple() {}
+    void multiple() {}
 
-    @Annotation("") @Annotation(value = "") void multipleParametrized() {}
+    void multipleParametrized() {}
 
     @Repeatable(Annotations.class)
     @interface Annotation {

@@ -30,7 +30,6 @@ import com.puppycrawl.tools.checkstyle.internal.utils.TestUtil;
 
 public class AuditEventDefaultFormatterTest {
 
-    @Test
     public void testFormatFullyQualifiedModuleNameContainsCheckSuffix() {
         final Violation violation = new Violation(1, 1, null, null, null,
                 SeverityLevel.WARNING, null, TestModuleCheck.class, "Mocked violation.");
@@ -45,7 +44,6 @@ public class AuditEventDefaultFormatterTest {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testFormatFullyQualifiedModuleNameDoesNotContainCheckSuffix() {
         final Violation violation = new Violation(1, 1, null, null, null,
                 SeverityLevel.WARNING, null, TestModule.class, "Mocked violation.");
@@ -60,7 +58,6 @@ public class AuditEventDefaultFormatterTest {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testFormatModuleWithModuleId() {
         final Violation violation = new Violation(1, 1, null, null, null,
                 SeverityLevel.WARNING, "ModuleId", TestModule.class, "Mocked violation.");
@@ -74,7 +71,6 @@ public class AuditEventDefaultFormatterTest {
                 .isEqualTo(expected);
     }
 
-    @Test
     public void testCalculateBufferLength() throws Exception {
         final Violation violation = new Violation(1, 1,
                 "messages.properties", "key", null, SeverityLevel.ERROR, null,

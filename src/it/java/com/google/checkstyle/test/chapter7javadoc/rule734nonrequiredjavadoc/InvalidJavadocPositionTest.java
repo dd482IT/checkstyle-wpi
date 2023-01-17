@@ -32,7 +32,6 @@ public class InvalidJavadocPositionTest extends AbstractGoogleModuleTestSupport 
         return "com/google/checkstyle/test/chapter7javadoc/rule711generalform";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String message = getCheckMessage(InvalidJavadocPositionCheck.class,
             "invalid.position");

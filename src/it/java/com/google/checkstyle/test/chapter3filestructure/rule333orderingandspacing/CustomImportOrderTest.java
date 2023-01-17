@@ -45,7 +45,6 @@ public class CustomImportOrderTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter3filestructure/rule333orderingandspacing";
     }
 
-    @Test
     public void testCustomImport1() throws Exception {
         final String[] expected = {
             "4:1: " + getCheckMessage(clazz, MSG_LEX, "java.awt.Button.ABORT",
@@ -69,7 +68,6 @@ public class CustomImportOrderTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCustomImport2() throws Exception {
         final String[] expected = {
             "4:1: " + getCheckMessage(clazz, MSG_LEX, "java.awt.Button.ABORT",
@@ -98,7 +96,6 @@ public class CustomImportOrderTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCustomImport3() throws Exception {
         final String[] expected = {
             "4:1: " + getCheckMessage(clazz, MSG_LINE_SEPARATOR, "java.awt.Dialog"),
@@ -127,7 +124,6 @@ public class CustomImportOrderTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCustomImport4() throws Exception {
         final String[] expected = {
             "7:1: " + getCheckMessage(clazz, MSG_SEPARATED_IN_GROUP,
@@ -145,7 +141,6 @@ public class CustomImportOrderTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testCustomImport5() throws Exception {
         final String[] expected = {
             "9:1: " + getCheckMessage(clazz, MSG_SEPARATED_IN_GROUP,
@@ -167,7 +162,6 @@ public class CustomImportOrderTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testValid() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -178,7 +172,6 @@ public class CustomImportOrderTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testValid2() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 
@@ -189,7 +182,6 @@ public class CustomImportOrderTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testValidGoogleStyleOrderOfImports() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 

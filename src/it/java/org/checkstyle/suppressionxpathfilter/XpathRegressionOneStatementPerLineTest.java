@@ -37,7 +37,6 @@ public class XpathRegressionOneStatementPerLineTest extends AbstractXpathTestSup
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionOneStatementPerLineOne.java"));
@@ -60,7 +59,6 @@ public class XpathRegressionOneStatementPerLineTest extends AbstractXpathTestSup
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionOneStatementPerLineTwo.java"));

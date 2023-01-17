@@ -35,7 +35,6 @@ public class AvoidStarImportCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/imports/avoidstarimport";
     }
 
-    @Test
     public void testDefaultOperation()
             throws Exception {
         final String[] expected = {
@@ -53,7 +52,6 @@ public class AvoidStarImportCheckTest
                 expected);
     }
 
-    @Test
     public void testExcludes()
             throws Exception {
         // allow the java.io/java.lang,javax.swing.WindowConstants star imports
@@ -67,7 +65,6 @@ public class AvoidStarImportCheckTest
                 expected2);
     }
 
-    @Test
     public void testAllowClassImports() throws Exception {
         // allow all class star imports
         final String[] expected2 = {
@@ -78,7 +75,6 @@ public class AvoidStarImportCheckTest
                 getPath("InputAvoidStarImportAllowClass.java"), expected2);
     }
 
-    @Test
     public void testAllowStaticMemberImports() throws Exception {
         // allow all static star imports
         final String[] expected2 = {
@@ -91,7 +87,6 @@ public class AvoidStarImportCheckTest
                 getPath("InputAvoidStarImportAllowStaticMember.java"), expected2);
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final AvoidStarImportCheck testCheckObject =
                 new AvoidStarImportCheck();
@@ -102,7 +97,6 @@ public class AvoidStarImportCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final AvoidStarImportCheck testCheckObject =
                 new AvoidStarImportCheck();

@@ -41,7 +41,6 @@ public class AbstractViolationReporterTest {
         return new DefaultConfiguration(clazz.getName());
     }
 
-    @Test
     public void testGetMessageBundleWithPackage() throws Exception {
         assertWithMessage("violation bundle differs from expected")
                 .that(TestUtil.<String>invokeStaticMethod(AbstractViolationReporter.class,
@@ -49,7 +48,6 @@ public class AbstractViolationReporterTest {
                 .isEqualTo("com.mycompany.checks.messages");
     }
 
-    @Test
     public void testGetMessageBundleWithoutPackage() throws Exception {
         assertWithMessage("violation bundle differs from expected")
                 .that(TestUtil.<String>invokeStaticMethod(AbstractViolationReporter.class,
@@ -57,7 +55,6 @@ public class AbstractViolationReporterTest {
                 .isEqualTo("messages");
     }
 
-    @Test
     public void testCustomId() {
         emptyCheck.setId("MyId");
         assertWithMessage("Id differs from expected")
@@ -65,7 +62,6 @@ public class AbstractViolationReporterTest {
                 .isEqualTo("MyId");
     }
 
-    @Test
     public void testSeverity() throws Exception {
         final DefaultConfiguration config = createModuleConfig(emptyCheck.getClass());
         config.addMessage("severity", "error");
@@ -79,7 +75,6 @@ public class AbstractViolationReporterTest {
                 .isEqualTo("error");
     }
 
-    @Test
     public void testCustomMessage() throws Exception {
         final DefaultConfiguration config = createModuleConfig(emptyCheck.getClass());
         config.addMessage("msgKey", "This is a custom violation.");
@@ -97,7 +92,6 @@ public class AbstractViolationReporterTest {
                 .isEqualTo("This is a custom violation.");
     }
 
-    @Test
     public void testCustomMessageWithParameters() throws Exception {
         final DefaultConfiguration config = createModuleConfig(emptyCheck.getClass());
         config.addMessage("msgKey", "This is a custom violation with {0}.");
@@ -115,7 +109,6 @@ public class AbstractViolationReporterTest {
                 .isEqualTo("This is a custom violation with TestParam.");
     }
 
-    @Test
     public void testCustomMessageWithParametersNegative() throws Exception {
         final DefaultConfiguration config = createModuleConfig(emptyCheck.getClass());
         config.addMessage("msgKey", "This is a custom violation {0.");

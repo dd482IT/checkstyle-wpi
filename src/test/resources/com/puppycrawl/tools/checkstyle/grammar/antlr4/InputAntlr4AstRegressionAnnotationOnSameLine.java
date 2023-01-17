@@ -13,19 +13,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InputAntlr4AstRegressionAnnotationOnSameLine {
-    @Ann        // ok
+    // ok
     private List<String> names = new ArrayList<>();
 
-    @Ann private List<String> names2 = new ArrayList<>();       // violation
+    private List<String> names2 = new ArrayList<>();       // violation
 
     @SuppressWarnings("deprecation")        // violation
-    @Ann Integer x;
+    Integer x;
 
     @SuppressWarnings("deprecation")        // violation
-    @Ann                                    // violation
+    // violation
     Integer x2;
 
-    @SuppressWarnings("deprecation") @Ann @Ann2 @Ann3 @Ann4 Integer x3;     // ok
+    @SuppressWarnings("deprecation") Integer x3;     // ok
 
 }
 

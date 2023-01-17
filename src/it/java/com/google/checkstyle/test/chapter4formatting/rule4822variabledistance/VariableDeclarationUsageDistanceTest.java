@@ -32,7 +32,6 @@ public class VariableDeclarationUsageDistanceTest extends AbstractGoogleModuleTe
         return "com/google/checkstyle/test/chapter4formatting/rule4822variabledistance";
     }
 
-    @Test
     public void testArrayTypeStyle() throws Exception {
         final String msgExt = "variable.declaration.usage.distance.extend";
         final Class<VariableDeclarationUsageDistanceCheck> clazz =

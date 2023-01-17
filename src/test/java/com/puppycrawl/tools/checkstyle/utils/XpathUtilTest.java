@@ -42,17 +42,14 @@ import com.puppycrawl.tools.checkstyle.xpath.RootNode;
 
 public class XpathUtilTest {
 
-    @TempDir
     public File tempFolder;
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(isUtilsClassHasPrivateConstructor(XpathUtil.class))
                 .isTrue();
     }
 
-    @Test
     public void testSupportsTextAttribute() {
         assertWithMessage("Should return true for supported token types")
                 .that(XpathUtil.supportsTextAttribute(createDetailAST(TokenTypes.IDENT)))
@@ -80,7 +77,6 @@ public class XpathUtilTest {
                 .isFalse();
     }
 
-    @Test
     public void testGetValue() {
         assertWithMessage("Returned value differs from expected")
             .that(getTextAttributeValue(
@@ -97,7 +93,6 @@ public class XpathUtilTest {
             .isNotEqualTo("HELLO WORLD");
     }
 
-    @Test
     public void testPrintXpathNotComment() throws Exception {
         final String fileContent = "class Test { public void method() {int a = 5;}}";
         final File file = File.createTempFile("junit", null, tempFolder);
@@ -117,7 +112,6 @@ public class XpathUtilTest {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testPrintXpathComment() throws Exception {
         final String fileContent = "class Test { /* comment */ }";
         final File file = File.createTempFile("junit", null, tempFolder);
@@ -134,7 +128,6 @@ public class XpathUtilTest {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testPrintXpathTwo() throws Exception {
         final String fileContent = "class Test { public void method() {int a = 5; int b = 5;}}";
         final File file = File.createTempFile("junit", null, tempFolder);
@@ -162,7 +155,6 @@ public class XpathUtilTest {
             .isEqualTo(expected);
     }
 
-    @Test
     public void testInvalidXpath() throws IOException {
         final String fileContent = "class Test { public void method() {int a = 5; int b = 5;}}";
         final File file = File.createTempFile("junit", null, tempFolder);
@@ -183,7 +175,6 @@ public class XpathUtilTest {
         }
     }
 
-    @Test
     public void testCreateChildren() {
         final DetailAstImpl rootAst = new DetailAstImpl();
         final DetailAstImpl elementAst = new DetailAstImpl();

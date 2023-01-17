@@ -41,7 +41,6 @@ public class IllegalTokenTextCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/coding/illegaltokentext";
     }
 
-    @Test
     public void testCaseSensitive()
             throws Exception {
         final String[] expected = {
@@ -51,7 +50,6 @@ public class IllegalTokenTextCheckTest
                 getPath("InputIllegalTokenTextTokens.java"), expected);
     }
 
-    @Test
     public void testCaseInSensitive()
             throws Exception {
         final String[] expected = {
@@ -62,7 +60,6 @@ public class IllegalTokenTextCheckTest
                 getPath("InputIllegalTokenTextTokens2.java"), expected);
     }
 
-    @Test
     public void testCustomMessage()
             throws Exception {
 
@@ -73,7 +70,6 @@ public class IllegalTokenTextCheckTest
                 getPath("InputIllegalTokenTextTokens3.java"), expected);
     }
 
-    @Test
     public void testNullCustomMessage()
             throws Exception {
 
@@ -84,7 +80,6 @@ public class IllegalTokenTextCheckTest
                 getPath("InputIllegalTokenTextTokens4.java"), expected);
     }
 
-    @Test
     public void testIllegalTokenTextTextBlocks() throws Exception {
 
         final String[] expected = {
@@ -98,7 +93,6 @@ public class IllegalTokenTextCheckTest
                 getNonCompilablePath("InputIllegalTokenTextTextBlocks.java"), expected);
     }
 
-    @Test
     public void testIllegalTokenTextTextBlocksQuotes() throws Exception {
 
         final String[] expected = {
@@ -114,7 +108,6 @@ public class IllegalTokenTextCheckTest
                 getNonCompilablePath("InputIllegalTokenTextTextBlocksQuotes.java"), expected);
     }
 
-    @Test
     public void testTokensNotNull() {
         final IllegalTokenTextCheck check = new IllegalTokenTextCheck();
         assertWithMessage("Acceptable tokens should not be null")
@@ -131,7 +124,6 @@ public class IllegalTokenTextCheckTest
                 .isTrue();
     }
 
-    @Test
     public void testCommentToken()
             throws Exception {
 
@@ -143,7 +135,6 @@ public class IllegalTokenTextCheckTest
                 getPath("InputIllegalTokenTextTokens5.java"), expected);
     }
 
-    @Test
     public void testOrderOfProperties() {
         // pure class must be used as configuration doesn't guarantee order of
         // attributes
@@ -159,7 +150,6 @@ public class IllegalTokenTextCheckTest
             .isEqualTo("test");
     }
 
-    @Test
     public void testAcceptableTokensMakeSense() {
         final int expectedTokenTypesTotalNumber = 185;
         assertWithMessage("Total number of TokenTypes has changed, acceptable tokens in"

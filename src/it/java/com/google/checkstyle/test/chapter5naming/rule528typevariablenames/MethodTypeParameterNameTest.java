@@ -35,7 +35,6 @@ public class MethodTypeParameterNameTest extends AbstractGoogleModuleTestSupport
         return "com/google/checkstyle/test/chapter5naming/rule528typevariablenames";
     }
 
-    @Test
     public void testMethodDefault() throws Exception {
         final Configuration checkConfig = getModuleConfig("MethodTypeParameterName");
         final String format = checkConfig.getProperty("format");

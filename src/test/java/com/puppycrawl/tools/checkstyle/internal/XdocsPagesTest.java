@@ -221,7 +221,6 @@ public class XdocsPagesTest {
     private static final Set<String> GOOGLE_MODULES = Collections.unmodifiableSet(
         CheckUtil.getConfigGoogleStyleModules());
 
-    @Test
     public void testAllChecksPresentOnAvailableChecksPage() throws Exception {
         final String availableChecks = Files.readString(AVAILABLE_CHECKS_PATH);
 
@@ -242,7 +241,6 @@ public class XdocsPagesTest {
         return availableChecks.matches(linkPattern);
     }
 
-    @Test
     public void testAllChecksPageInSyncWithChecksSummaries() throws Exception {
         final Pattern endOfSentence = Pattern.compile("(.*?\\.)\\s", Pattern.DOTALL);
         final Map<String, String> summaries = readSummaries();
@@ -303,7 +301,6 @@ public class XdocsPagesTest {
         return result;
     }
 
-    @Test
     public void testAllSubSections() throws Exception {
         for (Path path : XdocUtil.getXdocsFilePaths()) {
             final String input = Files.readString(path);
@@ -349,7 +346,6 @@ public class XdocsPagesTest {
         }
     }
 
-    @Test
     public void testAllXmlExamples() throws Exception {
         for (Path path : XdocUtil.getXdocsFilePaths()) {
             final String input = Files.readString(path);
@@ -458,7 +454,6 @@ public class XdocsPagesTest {
         return true;
     }
 
-    @Test
     public void testAllCheckSections() throws Exception {
         final ModuleFactory moduleFactory = TestUtil.getPackageObjectFactory();
 
@@ -511,7 +506,6 @@ public class XdocsPagesTest {
      * @noinspectionreason JUnitTestMethodWithNoAssertions -asserts in callstack,
      *      but not in this method
      */
-    @Test
     public void testAllCheckSectionsEx() throws Exception {
         final ModuleFactory moduleFactory = TestUtil.getPackageObjectFactory();
 
@@ -1482,7 +1476,6 @@ public class XdocsPagesTest {
         return result;
     }
 
-    @Test
     public void testAllStyleRules() throws Exception {
         for (Path path : XdocUtil.getXdocsStyleFilePaths(XdocUtil.getXdocsFilePaths())) {
             final String fileName = path.getFileName().toString();

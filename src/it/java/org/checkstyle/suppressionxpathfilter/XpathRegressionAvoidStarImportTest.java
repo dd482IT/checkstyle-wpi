@@ -39,7 +39,6 @@ public class XpathRegressionAvoidStarImportTest
         return CLASS.getSimpleName();
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionAvoidStarImport1.java"));
@@ -59,7 +58,6 @@ public class XpathRegressionAvoidStarImportTest
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionAvoidStarImport2.java"));

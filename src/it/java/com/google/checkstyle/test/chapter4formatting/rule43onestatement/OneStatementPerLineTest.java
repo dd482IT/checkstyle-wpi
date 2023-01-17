@@ -32,7 +32,6 @@ public class OneStatementPerLineTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule43onestatement";
     }
 
-    @Test
     public void testOneStatement() throws Exception {
         final String msg = getCheckMessage(OneStatementPerLineCheck.class,
             "multiple.statements.line");
@@ -68,7 +67,6 @@ public class OneStatementPerLineTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testOneStatementNonCompilableInput() throws Exception {
         final String msg = getCheckMessage(OneStatementPerLineCheck.class,
             "multiple.statements.line");

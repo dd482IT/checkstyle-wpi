@@ -34,7 +34,6 @@ public class FileTabCharacterCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/whitespace/filetabcharacter";
     }
 
-    @Test
     public void testDefault() throws Exception {
         final String[] expected = {
             "22:25: " + getCheckMessage(MSG_FILE_CONTAINS_TAB),
@@ -44,7 +43,6 @@ public class FileTabCharacterCheckTest
             expected);
     }
 
-    @Test
     public void testCustomMessage() throws Exception {
         final String msgFileContainsTab =
             "File contains tab characters (this is the first instance) :)";
@@ -56,7 +54,6 @@ public class FileTabCharacterCheckTest
             expected);
     }
 
-    @Test
     public void testVerbose() throws Exception {
         final String[] expected = {
             "22:25: " + getCheckMessage(MSG_CONTAINS_TAB),

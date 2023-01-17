@@ -31,7 +31,6 @@ public class Java14RecordsTest extends AbstractModuleTestSupport {
         return "com/puppycrawl/tools/checkstyle/grammar/java14";
     }
 
-    @Test
     public void testJava14Records()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;

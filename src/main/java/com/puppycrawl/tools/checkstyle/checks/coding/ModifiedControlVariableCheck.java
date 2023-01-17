@@ -136,7 +136,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *
  * @since 3.5
  */
-@FileStatefulCheck
 public final class ModifiedControlVariableCheck extends AbstractCheck {
 
     /**

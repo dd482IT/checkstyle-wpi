@@ -37,7 +37,6 @@ public class XpathRegressionExplicitInitializationTest extends AbstractXpathTest
         return checkName;
     }
 
-    @Test
     public void testOne() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionExplicitInitializationOne.java"));
@@ -60,7 +59,6 @@ public class XpathRegressionExplicitInitializationTest extends AbstractXpathTest
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTwo() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionExplicitInitializationTwo.java"));

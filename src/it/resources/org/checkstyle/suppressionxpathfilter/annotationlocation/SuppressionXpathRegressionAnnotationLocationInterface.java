@@ -4,7 +4,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Repeatable;
 import java.lang.annotation.Target;
 
-@InterfaceAnnotation("bar") interface SuppressionXpathRegressionAnnotationLocationInterface { //warn
+interface SuppressionXpathRegressionAnnotationLocationInterface { //warn
 
 }
 

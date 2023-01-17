@@ -21,27 +21,18 @@ class AnnClass {
 }
 
 public class InputMissingJavadocTypeMultipleQualifiedAnnotation {
-    @Ann1 // ok
-    @Ann2
-    @Ann3
+    // ok
     public interface A { }
 
-    @Ann2 // violation 'Missing a Javadoc comment.'
-    @Ann3
+    // violation 'Missing a Javadoc comment.'
     public interface B { }
 
-    @Ann2 // ok
-    @Ann3
-    @Ann1
+    // ok
     public interface C { }
 
-    @AnnClass.Ann1 // violation 'Missing a Javadoc comment.'
-    @Ann2
-    @Ann3
+    // violation 'Missing a Javadoc comment.'
     public interface D { }
 
-    @AnnClass.Ann2 // ok
-    @Ann2
-    @AnnClass.Ann3
+    // ok
     public interface E { }
 }

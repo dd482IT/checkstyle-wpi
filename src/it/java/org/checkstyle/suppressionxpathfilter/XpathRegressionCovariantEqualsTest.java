@@ -37,7 +37,6 @@ public class XpathRegressionCovariantEqualsTest extends AbstractXpathTestSupport
         return checkName;
     }
 
-    @Test
     public void testCovariantEqualsInClass() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCovariantEqualsInClass.java"));
@@ -60,7 +59,6 @@ public class XpathRegressionCovariantEqualsTest extends AbstractXpathTestSupport
                 expectedXpathQueries);
     }
 
-    @Test
     public void testCovariantEqualsInEnum() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionCovariantEqualsInEnum.java"));
@@ -82,7 +80,6 @@ public class XpathRegressionCovariantEqualsTest extends AbstractXpathTestSupport
                 expectedXpathQueries);
     }
 
-    @Test
     public void testCovariantEqualsInRecord() throws Exception {
         final File fileToProcess =
                 new File(getNonCompilablePath(

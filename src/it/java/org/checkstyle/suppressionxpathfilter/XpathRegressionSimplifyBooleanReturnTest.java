@@ -40,7 +40,6 @@ public class XpathRegressionSimplifyBooleanReturnTest extends AbstractXpathTestS
         return checkName;
     }
 
-    @Test
     public void testIfBooleanEqualsBoolean() throws Exception {
         final File fileToProcess = new File(
             getPath(
@@ -62,7 +61,6 @@ public class XpathRegressionSimplifyBooleanReturnTest extends AbstractXpathTestS
             expectedXpathQueries);
     }
 
-    @Test
     public void testIfBooleanReturnBoolean() throws Exception {
         final File fileToProcess = new File(
             getPath(

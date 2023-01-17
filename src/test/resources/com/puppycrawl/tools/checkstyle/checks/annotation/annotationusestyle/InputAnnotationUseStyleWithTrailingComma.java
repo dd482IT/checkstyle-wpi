@@ -30,13 +30,13 @@ public class InputAnnotationUseStyleWithTrailingComma
         };
     }
 
-    @Test(value={"foo",}, more={"bar",}) // ok
+    // ok
     /**
 
     */
     enum P {
 
-        @Pooches(tokens={Pooches.class,},other={1,}) // ok
+        // ok
         L,
 
         /**

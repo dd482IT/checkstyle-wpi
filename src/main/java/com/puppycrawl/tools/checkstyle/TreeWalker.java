@@ -51,7 +51,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  * checks at each node.
  *
  */
-@FileStatefulCheck
 public final class TreeWalker extends AbstractFileSetCheck implements ExternalResourceHolder {
 
     /** Maps from token name to ordinary checks. */

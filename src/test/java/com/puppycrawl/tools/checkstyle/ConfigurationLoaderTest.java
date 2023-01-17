@@ -76,7 +76,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         return replacePropertiesMethod;
     }
 
-    @Test
     public void testResourceLoadConfiguration() throws Exception {
         final Properties props = new Properties();
         props.setProperty("checkstyle.basedir", "basedir");
@@ -93,7 +92,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         verifyConfigNode(config, "Checker", 3, attributes);
     }
 
-    @Test
     public void testResourceLoadConfigurationWithMultiThreadConfiguration() throws Exception {
         final Properties props = new Properties();
         props.setProperty("checkstyle.basedir", "basedir");
@@ -115,7 +113,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testResourceLoadConfigurationWithSingleThreadConfiguration() throws Exception {
         final Properties props = new Properties();
         props.setProperty("checkstyle.basedir", "basedir");
@@ -135,14 +132,12 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         verifyConfigNode(config, "Checker", 3, attributes);
     }
 
-    @Test
     public void testEmptyConfiguration() throws Exception {
         final DefaultConfiguration config =
             (DefaultConfiguration) loadConfiguration("InputConfigurationLoaderEmpty.xml");
         verifyConfigNode(config, "Checker", 0, new Properties());
     }
 
-    @Test
     public void testEmptyModuleResolver() throws Exception {
         final DefaultConfiguration config =
             (DefaultConfiguration) loadConfiguration(
@@ -150,7 +145,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         verifyConfigNode(config, "Checker", 0, new Properties());
     }
 
-    @Test
     public void testMissingPropertyName() throws Exception {
         try {
             loadConfiguration("InputConfigurationLoaderMissingPropertyName.xml");
@@ -169,7 +163,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testMissingPropertyNameInMethodWithBooleanParameter() throws Exception {
         try {
             final String fName = getPath("InputConfigurationLoaderMissingPropertyName.xml");
@@ -191,7 +184,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testMissingPropertyValue() throws Exception {
         try {
             loadConfiguration("InputConfigurationLoaderMissingPropertyValue.xml");
@@ -210,7 +202,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testMissingConfigName() throws Exception {
         try {
             loadConfiguration("InputConfigurationLoaderMissingConfigName.xml");
@@ -229,7 +220,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testMissingConfigParent() throws Exception {
         try {
             loadConfiguration("InputConfigurationLoaderMissingConfigParent.xml");
@@ -248,7 +238,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testCheckstyleChecks() throws Exception {
         final Properties props = new Properties();
         props.setProperty("checkstyle.basedir", "basedir");
@@ -301,7 +290,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
             atts);
     }
 
-    @Test
     public void testCustomMessages() throws Exception {
         final Properties props = new Properties();
         props.setProperty("checkstyle.basedir", "basedir");
@@ -342,7 +330,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testReplacePropertiesNoReplace() throws Exception {
         final String[] testValues = {"", "a", "$a", "{a",
                                      "{a}", "a}", "$a}", "$", "a$b", };
@@ -356,7 +343,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testReplacePropertiesSyntaxError() throws Exception {
         final Properties props = initProperties();
         try {
@@ -373,7 +359,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testReplacePropertiesMissingProperty() throws Exception {
         final Properties props = initProperties();
         try {
@@ -390,7 +375,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testReplacePropertiesReplace() throws Exception {
         final String[][] testValues = {
             {"${a}", "A"},
@@ -423,7 +407,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         return props;
     }
 
-    @Test
     public void testExternalEntity() throws Exception {
         final Properties props = new Properties();
         props.setProperty("checkstyle.basedir", "basedir");
@@ -441,7 +424,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         verifyConfigNode(config, "Checker", 2, atts);
     }
 
-    @Test
     public void testExternalEntitySubdirectory() throws Exception {
         final Properties props = new Properties();
         props.setProperty("checkstyle.basedir", "basedir");
@@ -459,7 +441,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         verifyConfigNode(config, "Checker", 2, attributes);
     }
 
-    @Test
     public void testExternalEntityFromUri() throws Exception {
         final Properties props = new Properties();
         props.setProperty("checkstyle.basedir", "basedir");
@@ -479,7 +460,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         verifyConfigNode(config, "Checker", 2, atts);
     }
 
-    @Test
     public void testIncorrectTag() throws Exception {
         final Class<?> aClassParent = ConfigurationLoader.class;
         final Constructor<?> ctorParent = aClassParent.getDeclaredConstructor(
@@ -508,7 +488,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testNonExistentPropertyName() throws Exception {
         try {
             loadConfiguration("InputConfigurationLoaderNonexistentProperty.xml");
@@ -533,7 +512,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testConfigWithIgnore() throws Exception {
         final DefaultConfiguration config =
                 (DefaultConfiguration) ConfigurationLoader.loadConfiguration(
@@ -547,7 +525,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
             .isEqualTo(0);
     }
 
-    @Test
     public void testConfigWithIgnoreUsingInputSource() throws Exception {
         final DefaultConfiguration config =
                 (DefaultConfiguration) ConfigurationLoader.loadConfiguration(new InputSource(
@@ -562,7 +539,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
             .isEqualTo(0);
     }
 
-    @Test
     public void testConfigCheckerWithIgnore() throws Exception {
         final DefaultConfiguration config =
                 (DefaultConfiguration) ConfigurationLoader.loadConfiguration(
@@ -575,7 +551,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
             .isEqualTo(0);
     }
 
-    @Test
     public void testLoadConfigurationWrongUrl() {
         try {
             ConfigurationLoader.loadConfiguration(
@@ -591,7 +566,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
         }
     }
 
-    @Test
     public void testLoadConfigurationDeprecated() throws Exception {
         final DefaultConfiguration config =
                 (DefaultConfiguration) ConfigurationLoader.loadConfiguration(
@@ -606,7 +580,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
             .isEqualTo(0);
     }
 
-    @Test
     public void testReplacePropertiesDefault() throws Exception {
         final Properties props = new Properties();
         final String defaultValue = "defaultValue";
@@ -619,7 +592,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
             .isEqualTo(defaultValue);
     }
 
-    @Test
     public void testLoadConfigurationFromClassPath() throws Exception {
         final DefaultConfiguration config =
                 (DefaultConfiguration) ConfigurationLoader.loadConfiguration(
@@ -633,7 +605,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
             .isEqualTo(0);
     }
 
-    @Test
     public void testParsePropertyString() throws Exception {
         final List<String> propertyRefs = new ArrayList<>();
         final List<String> fragments = new ArrayList<>();
@@ -646,7 +617,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
             .hasSize(1);
     }
 
-    @Test
     public void testConstructors() throws Exception {
         final Properties props = new Properties();
         props.setProperty("checkstyle.basedir", "basedir");
@@ -672,7 +642,6 @@ public class ConfigurationLoaderTest extends AbstractPathTestSupport {
             .isEqualTo(1);
     }
 
-    @Test
     public void testConfigWithIgnoreExceptionalAttributes() {
         try (MockedConstruction<DefaultConfiguration> mocked = mockConstruction(
                 DefaultConfiguration.class, (mock, context) -> {

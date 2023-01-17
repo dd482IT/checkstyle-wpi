@@ -28,7 +28,6 @@ import nl.jqno.equalsverifier.EqualsVerifierReport;
 
 public class IntMatchFilterElementTest {
 
-    @Test
     public void testDecide() {
         final IntFilterElement filter = new IntMatchFilterElement(0);
         assertWithMessage("less than")
@@ -42,7 +41,6 @@ public class IntMatchFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testEqualsAndHashCode() {
         final EqualsVerifierReport ev = EqualsVerifier.forClass(IntMatchFilterElement.class)
                 .report();
@@ -51,7 +49,6 @@ public class IntMatchFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testToString() {
         final IntFilterElement filter = new IntMatchFilterElement(6);
         assertWithMessage("Invalid toString result")

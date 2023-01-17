@@ -11,11 +11,7 @@
 
 package com.puppycrawl.tools.checkstyle.checks.indentation.indentation; //indent:0 exp:0
 
-@JsonSubTypes( //indent:0 exp:0
-    { //indent:4 exp:4
-        @Type(value="something") //indent:8 exp:8
-    } //indent:4 exp:4
-) //indent:0 exp:0
+ //indent:0 exp:0
 
 @interface JsonSubTypes { //indent:0 exp:0
     Type[] value() default {}; //indent:4 exp:4

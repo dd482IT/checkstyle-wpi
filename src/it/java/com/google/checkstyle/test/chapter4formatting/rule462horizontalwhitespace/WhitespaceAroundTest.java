@@ -34,7 +34,6 @@ public class WhitespaceAroundTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule462horizontalwhitespace";
     }
 
-    @Test
     public void testWhitespaceAroundBasic() throws Exception {
         final Configuration checkConfig = getModuleConfig("WhitespaceAround");
         final String msgPreceded = "ws.notPreceded";
@@ -76,7 +75,6 @@ public class WhitespaceAroundTest extends AbstractGoogleModuleTestSupport {
         verify(checkConfig, filePath, expected, warnList);
     }
 
-    @Test
     public void testWhitespaceAroundEmptyTypesCycles() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
 

@@ -1,96 +1,73 @@
 package com.google.checkstyle.test.chapter4formatting.rule485annotations;
 
-@MyAnnotation2 @MyAnnotation1 //warn
+//warn
 class InputAnnotationLocation
 {
 
-    @MyAnnotation2 @MyAnnotation1
     public int a;
 
-    @MyAnnotation1 public int b;
+    public int b;
 
-    @MyAnnotation2
-    @MyAnnotation1
     public int c;
 
-    @MyAnnotation1
     public int d;
 
-    @MyAnnotation2
-        @MyAnnotation1 //warn
+        //warn
     public InputAnnotationLocation() {}
 
-    @MyAnnotationWithParam("foo")
-    @MyAnnotation2 void foo1() {}
+    void foo1() {}
 
-    @MyAnnotation1
-       @MyAnnotation2 //warn
+       //warn
     void foo2() {}
 
-    @MyAnnotation1
-        @MyAnnotation2 //warn
-      @MyAnnotation3 //warn
-          @MyAnnotation4 //warn
+        //warn
+      //warn
+          //warn
     class InnerClass
     {
-        @MyAnnotation2 @MyAnnotation1
         public int a;
 
-        @MyAnnotation1 public int b;
+        public int b;
 
-        @MyAnnotation2
-        @MyAnnotation1
         public int c;
 
-        @MyAnnotation1
         public int d;
 
-        @MyAnnotation2
-        @MyAnnotation1 public InnerClass()
+        public InnerClass()
         {
             // OOOO Auto-generated constructor stub
         }
-        @MyAnnotation1
-            @MyAnnotation2 //warn
+            //warn
         void foo1() {}
 
-        @MyAnnotation1
-            @MyAnnotation2 //warn
+            //warn
         void foo2() {}
     }
 
-    @MyAnnotation1
-       @MyAnnotation2
     InnerClass anon = new InnerClass()
     {
-        @MyAnnotation2 @MyAnnotation1 public int a;
+        public int a;
 
-        @MyAnnotation1 public int b;
+        public int b;
 
-        @MyAnnotation2
-        @MyAnnotation1
         public int c;
 
-        @MyAnnotation1
         public int d;
 
-        @MyAnnotation1
-           @MyAnnotation2 void foo1() {} //warn
+           void foo1() {} //warn
 
-        @MyAnnotation1
-          @MyAnnotation2 //warn
+          //warn
         void foo2() {}
 
-        @MyAnnotation1 void foo42() {}
+        void foo42() {}
     };
 
 }
 
-@MyAnnotation1
- @MyAnnotation2 //warn
+ //warn
 class Foo {}
 
-@MyAnnotationWithParam(value = "bar") class Bar {} //warn
+class Bar {} //warn
 
 @interface MyAnnotation1 {}
 

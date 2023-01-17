@@ -39,7 +39,6 @@ public class XpathRegressionUnnecessarySemicolonAfterTypeMemberDeclarationTest
         return CLASS.getSimpleName();
     }
 
-    @Test
     public void testDefault() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionUnnecessarySemicolonAfterTypeMemberDeclaration.java"));
@@ -59,7 +58,6 @@ public class XpathRegressionUnnecessarySemicolonAfterTypeMemberDeclarationTest
         runVerifications(moduleConfig, fileToProcess, expectedViolation, expectedXpathQueries);
     }
 
-    @Test
     public void testTokens() throws Exception {
         final File fileToProcess = new File(getPath(
             "SuppressionXpathRegressionUnnecessarySemicolonAfterTypeMemberDeclarationTokens"

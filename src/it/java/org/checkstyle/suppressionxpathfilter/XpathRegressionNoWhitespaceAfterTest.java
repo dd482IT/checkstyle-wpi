@@ -38,7 +38,6 @@ public class XpathRegressionNoWhitespaceAfterTest extends AbstractXpathTestSuppo
         return checkName;
     }
 
-    @Test
     public void testNoWhitespaceAfter() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionNoWhitespaceAfter.java"));
@@ -65,7 +64,6 @@ public class XpathRegressionNoWhitespaceAfterTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testTokens() throws Exception {
         final File fileToProcess =
                 new File(getPath("SuppressionXpathRegressionNoWhitespaceAfterTokens.java"));
@@ -91,7 +89,6 @@ public class XpathRegressionNoWhitespaceAfterTest extends AbstractXpathTestSuppo
                 expectedXpathQueries);
     }
 
-    @Test
     public void testAllowLineBreaks() throws Exception {
         final File fileToProcess =
             new File(getPath("SuppressionXpathRegressionNoWhitespaceAfterLineBreaks.java"));

@@ -121,7 +121,6 @@ import com.puppycrawl.tools.checkstyle.api.TokenTypes;
  *
  * @since 5.3
  */
-@FileStatefulCheck
 public final class OneStatementPerLineCheck extends AbstractCheck {
 
     /**

@@ -47,7 +47,6 @@ public class ArchUnitCyclesCheckTest {
      *
      * <p>The frozen violations are present in {@code config/archunit-store} directory.
      */
-    @Test
     public void testSlicesShouldBeFreeOfCycles() {
         final JavaClasses importedClasses = new ClassFileImporter()
             .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)

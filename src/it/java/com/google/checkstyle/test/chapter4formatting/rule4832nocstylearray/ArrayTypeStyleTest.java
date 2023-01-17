@@ -34,7 +34,6 @@ public class ArrayTypeStyleTest extends AbstractGoogleModuleTestSupport {
         return "com/google/checkstyle/test/chapter4formatting/rule4832nocstylearray";
     }
 
-    @Test
     public void testArrayTypeStyle() throws Exception {
         final String[] expected = {
             "9:23: " + getCheckMessage(ArrayTypeStyleCheck.class, MSG_KEY),

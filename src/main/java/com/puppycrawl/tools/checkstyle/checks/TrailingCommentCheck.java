@@ -198,7 +198,6 @@ import com.puppycrawl.tools.checkstyle.utils.TokenUtil;
  *      when replaced with Javadoc tag
  * @since 3.4
  */
-@StatelessCheck
 public class TrailingCommentCheck extends AbstractCheck {
 
     /**

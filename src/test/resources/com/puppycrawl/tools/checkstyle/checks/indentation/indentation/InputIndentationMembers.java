@@ -82,8 +82,7 @@ class SecondFieldClassWithVeryVeryVeryLongName { //indent:0 exp:0
 } //indent:0 exp:0
 
 abstract class WithAnnotations { //indent:0 exp:0
-  @GwtIncompatible("Non-UTF-8" //indent:2 exp:2
-       + "Charset") //indent:7 exp:7
+ //indent:7 exp:7
   public static final int FOO_CONSTANT = 111; //indent:2 exp:2
 
   private void foo34() {} //indent:2 exp:2
@@ -91,12 +90,12 @@ abstract class WithAnnotations { //indent:0 exp:0
       comeMapWithLongName = new HashMap //indent:6 exp:6
       <String, String>(); //indent:6 exp:6
 
-  @MyAnnotation //indent:2 exp:2
+  //indent:2 exp:2
   byte[] getBytesInternal() { //indent:2 exp:2
     return new byte[] {}; //indent:4 exp:4
   } //indent:2 exp:2
 
-  @MyAnnotation public abstract <K, V> Map<K, V> rowMap(); //indent:2 exp:2
+  public abstract <K, V> Map<K, V> rowMap(); //indent:2 exp:2
 } //indent:0 exp:0
 
 @interface GwtIncompatible { //indent:0 exp:0
@@ -105,7 +104,7 @@ abstract class WithAnnotations { //indent:0 exp:0
 
 @interface MyAnnotation {} //indent:0 exp:0
 
-@MyAnnotation //indent:0 exp:0
+//indent:0 exp:0
 enum MyEnum{ //indent:0 exp:0
 
 } //indent:0 exp:0

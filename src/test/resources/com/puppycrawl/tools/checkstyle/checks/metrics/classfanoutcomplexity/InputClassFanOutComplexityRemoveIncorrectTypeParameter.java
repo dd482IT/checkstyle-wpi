@@ -27,7 +27,7 @@ import javax.annotation.Nullable;
 
 public class InputClassFanOutComplexityRemoveIncorrectTypeParameter<E> { // ok
   private static <E> Collection<E> typePreservingCollection(
-      Collection<E> collection, @Nullable Object mutex) {
+      Collection<E> collection, Object mutex) {
     if (collection instanceof SortedSet) {
       return sortedSet((SortedSet<E>) collection, mutex);
     }

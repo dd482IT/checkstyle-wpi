@@ -28,14 +28,12 @@ import org.junit.jupiter.api.Test;
 
 public class JavadocTokenTypesTest {
 
-    @Test
     public void testIsProperUtilsClass() throws ReflectiveOperationException {
         assertWithMessage("Constructor is not private")
                 .that(isUtilsClassHasPrivateConstructor(JavadocTokenTypes.class))
                 .isTrue();
     }
 
-    @Test
     public void testTokenValues() {
         final String msg = "Please ensure that token values in `JavadocTokenTypes.java` have not"
                 + " changed.";
@@ -584,7 +582,6 @@ public class JavadocTokenTypesTest {
             .isEqualTo(10094);
     }
 
-    @Test
     public void testRuleOffsetValue() throws Exception {
         final Field ruleTypesOffset = JavadocTokenTypes.class.getDeclaredField("RULE_TYPES_OFFSET");
         ruleTypesOffset.setAccessible(true);

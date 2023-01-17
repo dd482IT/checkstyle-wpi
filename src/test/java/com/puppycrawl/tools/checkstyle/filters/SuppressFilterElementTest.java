@@ -35,12 +35,10 @@ public class SuppressFilterElementTest {
 
     private SuppressFilterElement filter;
 
-    @BeforeEach
     public void setUp() {
         filter = new SuppressFilterElement("Test", "Test", null, null, null, null);
     }
 
-    @Test
     public void testDecideDefault() {
         final AuditEvent ev = new AuditEvent(this, "Test.java");
         assertWithMessage(ev.getFileName())
@@ -48,7 +46,6 @@ public class SuppressFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testDecideViolation() {
         final Violation violation =
             new Violation(1, 0, "", "", null, null, getClass(), null);
@@ -59,7 +56,6 @@ public class SuppressFilterElementTest {
             .isFalse();
     }
 
-    @Test
     public void testDecideByMessage() {
         final Violation violation =
             new Violation(1, 0, "", "", null, null, getClass(), "Test");
@@ -76,7 +72,6 @@ public class SuppressFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testDecideByLine() {
         final Violation violation =
             new Violation(10, 10, "", "", null, null, getClass(), null);
@@ -99,7 +94,6 @@ public class SuppressFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testDecideByColumn() {
         final Violation violation =
             new Violation(10, 10, "", "", null, null, getClass(), null);
@@ -118,7 +112,6 @@ public class SuppressFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testDecideByFileNameAndModuleMatchingFileNameNull() {
         final Violation message =
                 new Violation(10, 10, "", "", null, null, getClass(), null);
@@ -128,7 +121,6 @@ public class SuppressFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testDecideByFileNameAndModuleMatchingMessageNull() {
         final AuditEvent ev = new AuditEvent(this, "ATest.java", null);
         assertWithMessage("Filter should accept valid event")
@@ -136,7 +128,6 @@ public class SuppressFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testDecideByFileNameAndModuleMatchingModuleNull() {
         final Violation violation =
                 new Violation(10, 10, "", "", null, "MyModule", getClass(), null);
@@ -146,7 +137,6 @@ public class SuppressFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testDecideByFileNameAndModuleMatchingModuleEqual() {
         final Violation violation =
                 new Violation(10, 10, "", "", null, "MyModule", getClass(), null);
@@ -159,7 +149,6 @@ public class SuppressFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testDecideByFileNameAndModuleMatchingModuleNotEqual() {
         final Violation message =
                 new Violation(10, 10, "", "", null, "TheirModule", getClass(), null);
@@ -172,7 +161,6 @@ public class SuppressFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testDecideByFileNameAndModuleMatchingRegExpNotMatch() {
         final Violation message =
                 new Violation(10, 10, "", "", null, null, getClass(), null);
@@ -182,7 +170,6 @@ public class SuppressFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testDecideByFileNameAndModuleMatchingRegExpMatch() {
         final Violation message =
                 new Violation(10, 10, "", "", null, null, getClass(), null);
@@ -194,7 +181,6 @@ public class SuppressFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testDecideByFileNameAndModuleMatchingCheckRegExpNotMatch() {
         final Violation message =
                 new Violation(10, 10, "", "", null, null, getClass(), null);
@@ -206,7 +192,6 @@ public class SuppressFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testDecideByFileNameAndModuleMatchingCheckRegExpMatch() {
         final Violation message =
                 new Violation(10, 10, "", "", null, null, getClass(), null);
@@ -219,7 +204,6 @@ public class SuppressFilterElementTest {
                 .isFalse();
     }
 
-    @Test
     public void testDecideByFileNameAndSourceNameCheckRegExpNotMatch() {
         final Violation message =
                 new Violation(10, 10, "", "", null, null, getClass(), null);
@@ -233,7 +217,6 @@ public class SuppressFilterElementTest {
                 .isTrue();
     }
 
-    @Test
     public void testEquals() {
         // filterBased is used instead of filter field only to satisfy IntelliJ IDEA Inspection
         // Inspection "Arguments to assertEquals() in wrong order "
@@ -282,7 +265,6 @@ public class SuppressFilterElementTest {
             .isEqualTo(filterBased2);
     }
 
-    @Test
     public void testEqualsAndHashCode() {
         final EqualsVerifierReport ev = EqualsVerifier.forClass(SuppressFilterElement.class)
                 .usingGetClass()

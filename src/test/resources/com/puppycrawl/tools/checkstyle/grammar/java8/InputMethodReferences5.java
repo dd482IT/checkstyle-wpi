@@ -22,9 +22,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({ METHOD, FIELD })
 @Retention(RUNTIME)
 public @interface InputMethodReferences5 { // ok
-    JoinFormula formula() default @JoinFormula(value = "", referencedColumnName = "");
+    JoinFormula formula() default ;
 
-    JoinColumn column() default @JoinColumn();
+    JoinColumn column() default ;
 }
 
 @interface JoinFormula {

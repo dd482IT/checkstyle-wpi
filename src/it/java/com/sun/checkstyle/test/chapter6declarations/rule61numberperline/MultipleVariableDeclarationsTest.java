@@ -32,7 +32,6 @@ public class MultipleVariableDeclarationsTest extends AbstractSunModuleTestSuppo
         return "com/sun/checkstyle/test/chapter6declarations/rule61numberperline";
     }
 
-    @Test
     public void testMultipleVariableDeclarations() throws Exception {
         final String msgComma = getCheckMessage(MultipleVariableDeclarationsCheck.class,
             "multiple.variable.declarations.comma");

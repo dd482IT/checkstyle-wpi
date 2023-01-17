@@ -37,7 +37,6 @@ public class ModifierOrderCheckTest
         return "com/puppycrawl/tools/checkstyle/checks/modifier/modifierorder";
     }
 
-    @Test
     public void testGetRequiredTokens() {
         final ModifierOrderCheck checkObj = new ModifierOrderCheck();
         final int[] expected = {TokenTypes.MODIFIERS};
@@ -46,7 +45,6 @@ public class ModifierOrderCheckTest
             .isEqualTo(expected);
     }
 
-    @Test
     public void testIt() throws Exception {
         final String[] expected = {
             "15:10: " + getCheckMessage(MSG_MODIFIER_ORDER, "final"),
@@ -61,7 +59,6 @@ public class ModifierOrderCheckTest
                 getPath("InputModifierOrderIt.java"), expected);
     }
 
-    @Test
     public void testDefaultMethods()
             throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
@@ -69,7 +66,6 @@ public class ModifierOrderCheckTest
                 getPath("InputModifierOrderDefaultMethods.java"), expected);
     }
 
-    @Test
     public void testGetDefaultTokens() {
         final ModifierOrderCheck modifierOrderCheckObj = new ModifierOrderCheck();
         final int[] actual = modifierOrderCheckObj.getDefaultTokens();
@@ -93,7 +89,6 @@ public class ModifierOrderCheckTest
             .isNotNull();
     }
 
-    @Test
     public void testGetAcceptableTokens() {
         final ModifierOrderCheck modifierOrderCheckObj = new ModifierOrderCheck();
         final int[] actual = modifierOrderCheckObj.getAcceptableTokens();
@@ -117,7 +112,6 @@ public class ModifierOrderCheckTest
             .isNotNull();
     }
 
-    @Test
     public void testSkipTypeAnnotations() throws Exception {
         final String[] expected = {
             "110:13: " + getCheckMessage(MSG_ANNOTATION_ORDER, "@MethodAnnotation"),
@@ -127,7 +121,6 @@ public class ModifierOrderCheckTest
             expected);
     }
 
-    @Test
     public void testAnnotationOnAnnotationDeclaration() throws Exception {
         final String[] expected = {
             "9:8: " + getCheckMessage(MSG_ANNOTATION_ORDER, "@InterfaceAnnotation"),
@@ -136,7 +129,6 @@ public class ModifierOrderCheckTest
                 getPath("InputModifierOrderAnnotationDeclaration.java"), expected);
     }
 
-    @Test
     public void testModifierOrderSealedAndNonSealed() throws Exception {
         final String[] expected = {
             "10:8: " + getCheckMessage(MSG_MODIFIER_ORDER, "public"),
@@ -150,7 +142,6 @@ public class ModifierOrderCheckTest
                 getNonCompilablePath("InputModifierOrderSealedAndNonSealed.java"), expected);
     }
 
-    @Test
     public void testModifierOrderSealedAndNonSealedNoViolation() throws Exception {
         final String[] expected = CommonUtil.EMPTY_STRING_ARRAY;
         verifyWithInlineConfigParser(
