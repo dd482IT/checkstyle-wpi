@@ -2399,11 +2399,13 @@
               <!-- Must fork or else JVM arguments are ignored. -->
               <fork>true</fork>
               <failOnError>false</failOnError>
+              <!--
               <meminitial>1024m</meminitial>
-              <maxmem>4048m</maxmem>
+              <maxmem>4048m</maxmem>-->
               <compilerArguments>
+              <!--
                 <Xmaxerrs>10000</Xmaxerrs>
-                <Xmaxwarns>10000</Xmaxwarns>
+                <Xmaxwarns>10000</Xmaxwarns> -->
               </compilerArguments>
               <annotationProcessorPaths>
                 <path>
@@ -2413,13 +2415,18 @@
                 </path>
               </annotationProcessorPaths>
               <annotationProcessors>
+              <!--
                 <annotationProcessor>org.checkerframework.checker.nullness.NullnessChecker</annotationProcessor>
                 <annotationProcessor>org.checkerframework.checker.optional.OptionalChecker</annotationProcessor>
                 <annotationProcessor>org.checkerframework.checker.interning.InterningChecker</annotationProcessor>
+                -->
+                <annotationProcessor>org.checkerframework.common.util.count.AnnotationStatistics</annotationProcessor>
               </annotationProcessors>
               <compilerArgs combine.children="append">
                 <!-- -Awarns turns type-checking errors into warnings. -->
                 <arg>-Awarns</arg>
+                <arg>-Aannotations</arg> 
+                <arg>-Anolocations</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
@@ -2458,11 +2465,13 @@
               <!-- Must fork or else JVM arguments are ignored. -->
               <fork>true</fork>
               <failOnError>false</failOnError>
+              <!--
               <meminitial>1024m</meminitial>
-              <maxmem>4048m</maxmem>
+              <maxmem>4048m</maxmem>-->
               <compilerArguments>
+              <!--
                 <Xmaxerrs>10000</Xmaxerrs>
-                <Xmaxwarns>10000</Xmaxwarns>
+                <Xmaxwarns>10000</Xmaxwarns> -->
               </compilerArguments>
               <annotationProcessorPaths>
                 <path>
@@ -2472,9 +2481,11 @@
                 </path>
               </annotationProcessorPaths>
               <annotationProcessors>
+              <!--
                 <annotationProcessor>org.checkerframework.checker.calledmethods.CalledMethodsChecker</annotationProcessor>
                 <annotationProcessor>org.checkerframework.checker.resourceleak.ResourceLeakChecker</annotationProcessor>
-                <annotationProcessor>org.checkerframework.checker.fenum.FenumChecker</annotationProcessor>
+                <annotationProcessor>org.checkerframework.checker.fenum.FenumChecker</annotationProcessor> -->
+                <annotationProcessor>org.checkerframework.common.util.count.AnnotationStatistics</annotationProcessor>
               </annotationProcessors>
               <compilerArgs combine.children="append">
                 <!-- -Awarns turns type-checking errors into warnings. -->
@@ -2488,6 +2499,8 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Aannotations</arg>
+                <arg>-Anolocations</arg> 
               </compilerArgs>
             </configuration>
           </plugin>
@@ -2546,6 +2559,8 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Aannotations</arg>
+                <arg>-Anolocations</arg> 
               </compilerArgs>
             </configuration>
           </plugin>
@@ -2777,6 +2792,7 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing.JavacProcessingEnvironment</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
