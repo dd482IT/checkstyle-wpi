@@ -234,7 +234,7 @@
     <forbiddenapis.version>3.4</forbiddenapis.version>
     <json-schema-validator.version>1.2.0</json-schema-validator.version>
     <error-prone.version>2.15.0</error-prone.version>
-    <checkerframework.version>3.29.1-SNAPSHOT</checkerframework.version>
+    <checkerframework.version>3.30.1-SNAPSHOT</checkerframework.version>
   </properties>
 
   <dependencies>
@@ -2413,9 +2413,12 @@
                 </path>
               </annotationProcessorPaths>
               <annotationProcessors>
+              <!--
+              
                 <annotationProcessor>org.checkerframework.checker.nullness.NullnessChecker</annotationProcessor>
                 <annotationProcessor>org.checkerframework.checker.optional.OptionalChecker</annotationProcessor>
-                <annotationProcessor>org.checkerframework.checker.interning.InterningChecker</annotationProcessor>
+                <annotationProcessor>org.checkerframework.checker.interning.InterningChecker</annotationProcessor>-->
+                <annotationProcessor>org.checkerframework.common.util.count.AnnotationStatistics</annotationProcessor>
               </annotationProcessors>
               <compilerArgs combine.children="append">
                 <!-- -Awarns turns type-checking errors into warnings. -->
@@ -2429,7 +2432,10 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Aannotations</arg>
+                <arg>-Anolocations</arg>
               </compilerArgs>
+              <showWarnings>true</showWarnings>
             </configuration>
           </plugin>
         </plugins>
