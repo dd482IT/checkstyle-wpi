@@ -2426,9 +2426,12 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
-                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.ßompiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Ainfer=ajava</arg>
+                <arg>-Awarns</arg> 
+                <arg>-Aajava=/tmp/WPITEMPDIR-checkstyle</arg> 
               </compilerArgs>
             </configuration>
           </plugin>
@@ -2488,6 +2491,9 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Ainfer=ajava</arg>
+                <arg>-Awarns</arg> 
+                <arg>-Aajava=/tmp/WPITEMPDIR-checkstyle</arg> 
               </compilerArgs>
             </configuration>
           </plugin>
@@ -2546,6 +2552,9 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Ainfer=ajava</arg>
+                <arg>-Awarns</arg> 
+                <arg>-Aajava=/tmp/WPITEMPDIR-checkstyle</arg> 
               </compilerArgs>
             </configuration>
           </plugin>
@@ -2603,6 +2612,9 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Ainfer=ajava</arg>
+                <arg>-Awarns</arg> 
+                <arg>-Aajava=/tmp/WPITEMPDIR-checkstyle</arg> 
               </compilerArgs>
             </configuration>
           </plugin>
@@ -2661,6 +2673,9 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Ainfer=ajava</arg>
+                <arg>-Awarns</arg> 
+                <arg>-Aajava=/tmp/WPITEMPDIR-checkstyle</arg> 
               </compilerArgs>
             </configuration>
           </plugin>
@@ -2721,6 +2736,9 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Ainfer=ajava</arg>
+                <arg>-Awarns</arg> 
+                <arg>-Aajava=/tmp/WPITEMPDIR-checkstyle</arg> 
               </compilerArgs>
             </configuration>
           </plugin>
@@ -2780,6 +2798,9 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Ainfer=ajava</arg>
+                <arg>-Awarns</arg> 
+                <arg>-Aajava=/tmp/WPITEMPDIR-checkstyle</arg> 
               </compilerArgs>
             </configuration>
           </plugin>
@@ -2839,6 +2860,9 @@
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Ainfer=ajava</arg>
+                <arg>-Awarns</arg> 
+                <arg>-Aajava=/tmp/WPITEMPDIR-checkstyle</arg> 
               </compilerArgs>
             </configuration>
           </plugin>
