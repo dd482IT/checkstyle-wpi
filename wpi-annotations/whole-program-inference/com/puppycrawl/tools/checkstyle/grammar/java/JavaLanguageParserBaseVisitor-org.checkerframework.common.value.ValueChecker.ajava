@@ -1,0 +1,2006 @@
+// Generated from java-escape by ANTLR 4.11.1
+package com.puppycrawl.tools.checkstyle.grammar.java;
+
+import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
+
+/**
+ * This class provides an empty implementation of {@link JavaLanguageParserVisitor},
+ * which can be extended to create a visitor which only needs to handle a subset
+ * of the available methods.
+ *
+ * @param <T> The return type of the visit operation. Use {@link Void} for
+ * operations with no return type.
+ */
+@org.checkerframework.framework.qual.AnnotatedFor("org.checkerframework.common.value.ValueChecker")
+public class JavaLanguageParserBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements JavaLanguageParserVisitor<T> {
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCompilationUnit( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CompilationUnitContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitPackageDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. PackageDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitImportDec( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ImportDecContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSingleSemiImport( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SingleSemiImportContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypes( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypesContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitModifier( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ModifierContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitVariableModifier( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. VariableModifierContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitRecordDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. RecordDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitRecordComponentsList( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. RecordComponentsListContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitRecordComponents( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. RecordComponentsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitRecordComponent( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. RecordComponentContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLastRecordComponent( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LastRecordComponentContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitRecordBody( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. RecordBodyContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitRecordBodyDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. RecordBodyDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCompactConstructorDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CompactConstructorDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassExtends( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassExtendsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitImplementsClause( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ImplementsClauseContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeParameters( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeParametersContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeParameter( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeParameterContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeUpperBounds( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeUpperBoundsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeBound( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeBoundContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeBoundType( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeBoundTypeContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitEnumDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. EnumDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitEnumBody( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. EnumBodyContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitEnumConstants( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. EnumConstantsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitEnumConstant( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. EnumConstantContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitEnumBodyDeclarations( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. EnumBodyDeclarationsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitInterfaceDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. InterfaceDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitInterfaceExtends( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. InterfaceExtendsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassBody( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassBodyContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitInterfaceBody( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. InterfaceBodyContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitEmptyClass( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. EmptyClassContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassBlock( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassBlockContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassDef( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassDefContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitMemberDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. MemberDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitMethodDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. MethodDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitMethodBody( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. MethodBodyContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitThrowsList( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ThrowsListContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitConstructorDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ConstructorDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitFieldDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. FieldDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitInterfaceBodyDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. InterfaceBodyDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitInterfaceMemberDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. InterfaceMemberDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitInterfaceMethodDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. InterfaceMethodDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitVariableDeclarators( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. VariableDeclaratorsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitVariableDeclarator( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. VariableDeclaratorContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitVariableDeclaratorId( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. VariableDeclaratorIdContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitVariableInitializer( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. VariableInitializerContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitArrayInitializer( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ArrayInitializerContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassOrInterfaceType( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassOrInterfaceTypeContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassOrInterfaceTypeExtended( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassOrInterfaceTypeExtendedContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSimpleTypeArgument( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SimpleTypeArgumentContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitWildCardTypeArgument( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. WildCardTypeArgumentContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitQualifiedNameList( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. QualifiedNameListContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitFormalParameters( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. FormalParametersContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitFormalParameterList( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. FormalParameterListContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitFormalParameter( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. FormalParameterContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLastFormalParameter( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LastFormalParameterContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitQualifiedName( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. QualifiedNameContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitQualifiedNameExtended( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. QualifiedNameExtendedContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLiteral( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LiteralContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitIntegerLiteral( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. IntegerLiteralContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitFloatLiteral( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. FloatLiteralContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTextBlockLiteral( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TextBlockLiteralContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitAnnotations( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. AnnotationsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitAnnotation( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. AnnotationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitElementValuePairs( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ElementValuePairsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitElementValuePair( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ElementValuePairContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitElementValue( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ElementValueContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitElementValueArrayInitializer( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ElementValueArrayInitializerContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitAnnotationTypeDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. AnnotationTypeDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitAnnotationTypeBody( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. AnnotationTypeBodyContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitAnnotationTypeElementDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. AnnotationTypeElementDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitAnnotationField( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. AnnotationFieldContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitAnnotationType( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. AnnotationTypeContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitAnnotationMethodRest( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. AnnotationMethodRestContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitAnnotationConstantRest( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. AnnotationConstantRestContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitDefaultValue( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. DefaultValueContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitConstructorBlock( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ConstructorBlockContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitExplicitCtorCall( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ExplicitCtorCallContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitPrimaryCtorCall( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. PrimaryCtorCallContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitBlock( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. BlockContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLocalVar( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LocalVarContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. StatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLocalType( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LocalTypeContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLocalVariableDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LocalVariableDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLocalTypeDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LocalTypeDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitBlockStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. BlockStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitAssertExp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. AssertExpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitIfStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. IfStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitForStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ForStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitWhileStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. WhileStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitDoStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. DoStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTryStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TryStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTryWithResourceStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TryWithResourceStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitYieldStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. YieldStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSwitchStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SwitchStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSyncStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SyncStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitReturnStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ReturnStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitThrowStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ThrowStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitBreakStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. BreakStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitContinueStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ContinueStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitEmptyStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. EmptyStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitExpStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ExpStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLabelStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LabelStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSwitchExpressionOrStatement( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SwitchExpressionOrStatementContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSwitchRules( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SwitchRulesContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSwitchBlocks( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SwitchBlocksContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSwitchLabeledRule( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SwitchLabeledRuleContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSwitchLabeledExpression( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SwitchLabeledExpressionContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSwitchLabeledBlock( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SwitchLabeledBlockContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSwitchLabeledThrow( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SwitchLabeledThrowContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitElseStat( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ElseStatContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCatchClause( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CatchClauseContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCatchParameter( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CatchParameterContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCatchType( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CatchTypeContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitFinallyBlock( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. FinallyBlockContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitResourceSpecification( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ResourceSpecificationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitResources( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ResourcesContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitResource( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ResourceContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitResourceDeclaration( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ResourceDeclarationContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitVariableAccess( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. VariableAccessContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitFieldAccessNoIdent( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. FieldAccessNoIdentContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSwitchBlockStatementGroup( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SwitchBlockStatementGroupContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCaseLabel( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CaseLabelContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitDefaultLabel( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. DefaultLabelContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCaseConstants( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CaseConstantsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCaseConstant( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CaseConstantContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitEnhancedFor( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. EnhancedForContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitForFor( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ForForContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitForInit( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ForInitContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitEnhancedForControl( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. EnhancedForControlContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitParExpression( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ParExpressionContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitExpressionList( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ExpressionListContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitExpression( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ExpressionContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitRefOp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. RefOpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSuperExp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SuperExpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitInstanceOfExp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. InstanceOfExpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitBitShift( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. BitShiftContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitNewExp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. NewExpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitPrefix( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. PrefixContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCastExp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CastExpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitIndexOp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. IndexOpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitInvOp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. InvOpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitInitExp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. InitExpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSimpleMethodCall( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SimpleMethodCallContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLambdaExp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LambdaExpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitThisExp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ThisExpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitPrimaryExp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. PrimaryExpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitPostfix( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. PostfixContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitMethodRef( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. MethodRefContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTernaryOp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TernaryOpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitBinOp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. BinOpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitMethodCall( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. MethodCallContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeCastParameters( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeCastParametersContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLambdaExpression( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LambdaExpressionContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSingleLambdaParam( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SingleLambdaParamContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitFormalLambdaParam( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. FormalLambdaParamContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitMultiLambdaParam( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. MultiLambdaParamContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitMultiLambdaParams( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. MultiLambdaParamsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLambdaBody( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LambdaBodyContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSwitchPrimary( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SwitchPrimaryContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitParenPrimary( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ParenPrimaryContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTokenPrimary( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TokenPrimaryContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitLiteralPrimary( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. LiteralPrimaryContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassRefPrimary( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassRefPrimaryContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitPrimitivePrimary( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. PrimitivePrimaryContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassType( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassTypeContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCreator( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CreatorContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCreatedNameObject( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CreatedNameObjectContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCreatedNamePrimitive( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CreatedNamePrimitiveContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitCreatedNameExtended( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. CreatedNameExtendedContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitInnerCreator( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. InnerCreatorContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitArrayCreatorRest( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ArrayCreatorRestContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitBracketsWithExp( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. BracketsWithExpContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassCreatorRest( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassCreatorRestContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitDiamond( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. DiamondContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeArgs( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeArgsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitNonWildcardDiamond( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. NonWildcardDiamondContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitNonWildcardTypeArgs( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. NonWildcardTypeArgsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitNonWildcardTypeArguments( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. NonWildcardTypeArgumentsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeArgumentsTypeList( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeArgumentsTypeListContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeList( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeListContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeType( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeTypeContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitClassOrInterfaceOrPrimitiveType( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ClassOrInterfaceOrPrimitiveTypeContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitArrayDeclarator( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ArrayDeclaratorContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitPrimitiveType( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. PrimitiveTypeContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypeArguments( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypeArgumentsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSuperSuffixSimple( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SuperSuffixSimpleContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitSuperSuffixDot( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. SuperSuffixDotContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitArguments( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ArgumentsContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitPattern( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. PatternContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitGuardedPattern( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. GuardedPatternContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitPatternVariableDef( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. PatternVariableDefContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitParenPattern( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. ParenPatternContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitTypePattern( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. TypePatternContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitPermittedSubclassesAndInterfaces( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. PermittedSubclassesAndInterfacesContext ctx) {
+        return visitChildren(ctx);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    public T visitId( JavaLanguageParserBaseVisitor<T> this, JavaLanguageParser. IdContext ctx) {
+        return visitChildren(ctx);
+    }
+}

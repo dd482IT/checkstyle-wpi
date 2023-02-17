@@ -1,0 +1,103 @@
+///////////////////////////////////////////////////////////////////////////////////////////////
+// checkstyle: Checks Java source code and other text files for adherence to a set of rules.
+// Copyright (C) 2001-2023 the original author or authors.
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+//
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+///////////////////////////////////////////////////////////////////////////////////////////////
+package com.puppycrawl.tools.checkstyle;
+
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
+import com.puppycrawl.tools.checkstyle.api.AuditEvent;
+import com.puppycrawl.tools.checkstyle.api.AuditListener;
+import com.puppycrawl.tools.checkstyle.api.AutomaticBean;
+import com.puppycrawl.tools.checkstyle.api.SeverityLevel;
+
+/**
+ * Simple logger for metadata generator util.
+ */
+@org.checkerframework.framework.qual.AnnotatedFor("org.checkerframework.common.value.ValueChecker")
+public class MetadataGeneratorLogger extends AutomaticBean implements AuditListener {
+
+    /**
+     * Where to write error messages.
+     */
+    private final  PrintWriter errorWriter;
+
+    /**
+     * Formatter for the log message.
+     */
+    private final  AuditEventFormatter formatter;
+
+    /**
+     * Close output stream in audit finished.
+     */
+    private final   boolean closeErrorWriter;
+
+    /**
+     * Creates a new MetadataGeneratorLogger instance.
+     *
+     * @param outputStream where to log audit events
+     * @param outputStreamOptions if {@code CLOSE} error should be closed in auditFinished()
+     */
+    public MetadataGeneratorLogger( OutputStream outputStream, @org.checkerframework.common.value.qual.StringVal({ "NONE" }) OutputStreamOptions outputStreamOptions) {
+        final Writer errorStreamWriter = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8);
+        errorWriter = new PrintWriter(errorStreamWriter);
+        formatter = new AuditEventDefaultFormatter();
+        closeErrorWriter = outputStreamOptions == OutputStreamOptions.CLOSE;
+    }
+
+    public void auditStarted( MetadataGeneratorLogger this,  AuditEvent event) {
+        errorWriter.flush();
+    }
+
+    public void auditFinished( MetadataGeneratorLogger this,  AuditEvent event) {
+        errorWriter.flush();
+        if (closeErrorWriter) {
+            errorWriter.close();
+        }
+    }
+
+    @org.checkerframework.dataflow.qual.Pure
+    public void fileStarted( MetadataGeneratorLogger this,  AuditEvent event) {
+        // No code by default.
+    }
+
+    public void fileFinished( MetadataGeneratorLogger this,  AuditEvent event) {
+        errorWriter.flush();
+    }
+
+    public void addError( MetadataGeneratorLogger this,  AuditEvent event) {
+        final SeverityLevel severityLevel = event.getSeverityLevel();
+        if (severityLevel != SeverityLevel.IGNORE) {
+            final String errorMessage = formatter.format(event);
+            errorWriter.println(errorMessage);
+        }
+    }
+
+    public void addException( MetadataGeneratorLogger this,  AuditEvent event,  Throwable throwable) {
+        synchronized (errorWriter) {
+            throwable.printStackTrace(errorWriter);
+        }
+    }
+
+    @org.checkerframework.dataflow.qual.Pure
+    protected void finishLocalSetup( MetadataGeneratorLogger this) {
+        // No code by default.
+    }
+}

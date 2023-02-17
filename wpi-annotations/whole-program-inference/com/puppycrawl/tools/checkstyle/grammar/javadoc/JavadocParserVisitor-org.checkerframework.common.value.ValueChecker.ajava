@@ -1,0 +1,775 @@
+// Generated from java-escape by ANTLR 4.11.1
+package com.puppycrawl.tools.checkstyle.grammar.javadoc;
+
+import org.antlr.v4.runtime.tree.ParseTreeVisitor;
+
+/**
+ * This interface defines a complete generic visitor for a parse tree produced
+ * by {@link JavadocParser}.
+ *
+ * @param <T> The return type of the visit operation. Use {@link Void} for
+ * operations with no return type.
+ */
+@org.checkerframework.framework.qual.AnnotatedFor("org.checkerframework.common.value.ValueChecker")
+public interface JavadocParserVisitor<T> extends ParseTreeVisitor<T> {
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#javadoc}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitJavadoc(JavadocParser.JavadocContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#htmlElement}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHtmlElement(JavadocParser.HtmlElementContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#htmlElementStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHtmlElementStart(JavadocParser.HtmlElementStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#htmlElementEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHtmlElementEnd(JavadocParser.HtmlElementEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#attribute}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitAttribute(JavadocParser.AttributeContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#htmlTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHtmlTag(JavadocParser.HtmlTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#pTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitPTagStart(JavadocParser.PTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#pTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitPTagEnd(JavadocParser.PTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#paragraph}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitParagraph(JavadocParser.ParagraphContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#liTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitLiTagStart(JavadocParser.LiTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#liTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitLiTagEnd(JavadocParser.LiTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#li}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitLi(JavadocParser.LiContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#trTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTrTagStart(JavadocParser.TrTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#trTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTrTagEnd(JavadocParser.TrTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#tr}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTr(JavadocParser.TrContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#tdTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTdTagStart(JavadocParser.TdTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#tdTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTdTagEnd(JavadocParser.TdTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#td}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTd(JavadocParser.TdContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#thTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitThTagStart(JavadocParser.ThTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#thTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitThTagEnd(JavadocParser.ThTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#th}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTh(JavadocParser.ThContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#bodyTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitBodyTagStart(JavadocParser.BodyTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#bodyTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitBodyTagEnd(JavadocParser.BodyTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#body}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitBody(JavadocParser.BodyContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#colgroupTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitColgroupTagStart(JavadocParser.ColgroupTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#colgroupTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitColgroupTagEnd(JavadocParser.ColgroupTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#colgroup}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitColgroup(JavadocParser.ColgroupContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#ddTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitDdTagStart(JavadocParser.DdTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#ddTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitDdTagEnd(JavadocParser.DdTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#dd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitDd(JavadocParser.DdContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#dtTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitDtTagStart(JavadocParser.DtTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#dtTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitDtTagEnd(JavadocParser.DtTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#dt}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitDt(JavadocParser.DtContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#headTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHeadTagStart(JavadocParser.HeadTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#headTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHeadTagEnd(JavadocParser.HeadTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#head}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHead(JavadocParser.HeadContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#htmlTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHtmlTagStart(JavadocParser.HtmlTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#htmlTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHtmlTagEnd(JavadocParser.HtmlTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#html}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHtml(JavadocParser.HtmlContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#optionTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitOptionTagStart(JavadocParser.OptionTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#optionTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitOptionTagEnd(JavadocParser.OptionTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#option}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitOption(JavadocParser.OptionContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#tbodyTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTbodyTagStart(JavadocParser.TbodyTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#tbodyTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTbodyTagEnd(JavadocParser.TbodyTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#tbody}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTbody(JavadocParser.TbodyContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#tfootTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTfootTagStart(JavadocParser.TfootTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#tfootTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTfootTagEnd(JavadocParser.TfootTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#tfoot}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTfoot(JavadocParser.TfootContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#theadTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTheadTagStart(JavadocParser.TheadTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#theadTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTheadTagEnd(JavadocParser.TheadTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#thead}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitThead(JavadocParser.TheadContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#singletonElement}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitSingletonElement(JavadocParser.SingletonElementContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#emptyTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitEmptyTag(JavadocParser.EmptyTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#areaTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitAreaTag(JavadocParser.AreaTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#baseTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitBaseTag(JavadocParser.BaseTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#basefontTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitBasefontTag(JavadocParser.BasefontTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#brTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitBrTag(JavadocParser.BrTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#colTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitColTag(JavadocParser.ColTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#frameTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitFrameTag(JavadocParser.FrameTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#hrTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHrTag(JavadocParser.HrTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#imgTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitImgTag(JavadocParser.ImgTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#inputTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitInputTag(JavadocParser.InputTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#isindexTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitIsindexTag(JavadocParser.IsindexTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#linkTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitLinkTag(JavadocParser.LinkTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#metaTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitMetaTag(JavadocParser.MetaTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#paramTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitParamTag(JavadocParser.ParamTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#wrongSingletonTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitWrongSingletonTag(JavadocParser.WrongSingletonTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#singletonTagName}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitSingletonTagName(JavadocParser.SingletonTagNameContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#description}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitDescription(JavadocParser.DescriptionContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#reference}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitReference(JavadocParser.ReferenceContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#parameters}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitParameters(JavadocParser.ParametersContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#javadocTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitJavadocTag(JavadocParser.JavadocTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#javadocInlineTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitJavadocInlineTag(JavadocParser.JavadocInlineTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#htmlComment}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitHtmlComment(JavadocParser.HtmlCommentContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#text}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitText(JavadocParser.TextContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#embedTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitEmbedTag(JavadocParser.EmbedTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#keygenTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitKeygenTag(JavadocParser.KeygenTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#sourceTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitSourceTag(JavadocParser.SourceTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#trackTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitTrackTag(JavadocParser.TrackTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#wbrTag}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitWbrTag(JavadocParser.WbrTagContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#optgroupTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitOptgroupTagStart(JavadocParser.OptgroupTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#optgroupTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitOptgroupTagEnd(JavadocParser.OptgroupTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#optgroup}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitOptgroup(JavadocParser.OptgroupContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rbTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRbTagStart(JavadocParser.RbTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rbTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRbTagEnd(JavadocParser.RbTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rb}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRb(JavadocParser.RbContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rtTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRtTagStart(JavadocParser.RtTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rtTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRtTagEnd(JavadocParser.RtTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rt}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRt(JavadocParser.RtContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rtcTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRtcTagStart(JavadocParser.RtcTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rtcTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRtcTagEnd(JavadocParser.RtcTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rtc}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRtc(JavadocParser.RtcContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rpTagStart}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRpTagStart(JavadocParser.RpTagStartContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rpTagEnd}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRpTagEnd(JavadocParser.RpTagEndContext ctx);
+
+    /**
+     * Visit a parse tree produced by {@link JavadocParser#rp}.
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    T visitRp(JavadocParser.RpContext ctx);
+}

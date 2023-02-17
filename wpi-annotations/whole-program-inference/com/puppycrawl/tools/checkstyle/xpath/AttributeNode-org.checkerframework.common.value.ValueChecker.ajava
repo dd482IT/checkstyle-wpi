@@ -1,0 +1,230 @@
+///////////////////////////////////////////////////////////////////////////////////////////////
+// checkstyle: Checks Java source code and other text files for adherence to a set of rules.
+// Copyright (C) 2001-2023 the original author or authors.
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+//
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+///////////////////////////////////////////////////////////////////////////////////////////////
+package com.puppycrawl.tools.checkstyle.xpath;
+
+import java.util.List;
+import net.sf.saxon.om.NamespaceUri;
+import net.sf.saxon.om.NodeInfo;
+import net.sf.saxon.tree.iter.AxisIterator;
+import net.sf.saxon.type.Type;
+
+/**
+ * Represents attribute of the element.
+ */
+@org.checkerframework.framework.qual.AnnotatedFor("org.checkerframework.common.value.ValueChecker")
+public class AttributeNode extends AbstractNode {
+
+    /**
+     * The name of the attribute.
+     */
+    private final @org.checkerframework.common.value.qual.StringVal({ "text" }) String name;
+
+    /**
+     * The value of the attribute.
+     */
+    private final  String value;
+
+    /**
+     * Creates a new {@code AttributeNode} instance.
+     *
+     * @param name name of the attribute
+     * @param value value of the attribute
+     */
+    public AttributeNode(@org.checkerframework.common.value.qual.StringVal({ "text" }) String name,  String value) {
+        super(null);
+        this.name = name;
+        this.value = value;
+    }
+
+    /**
+     * Compares current object with specified for order.
+     * Throws {@code UnsupportedOperationException} because functionality not required here.
+     *
+     * @param nodeInfo another {@code NodeInfo} object
+     * @return number representing order of current object to specified one
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    public int compareOrder( AttributeNode this,  NodeInfo nodeInfo) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Returns attribute value. Throws {@code UnsupportedOperationException} because attribute node
+     * has no attributes.
+     *
+     * @param namespace namespace
+     * @param localPart actual name of the attribute
+     * @return attribute value
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    public String getAttributeValue( AttributeNode this,  NamespaceUri namespace,  String localPart) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Returns local part.
+     *
+     * @return local part
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    public @org.checkerframework.common.value.qual.StringVal({ "text" }) String getLocalPart( AttributeNode this) {
+        return name;
+    }
+
+    /**
+     * Returns type of the node.
+     *
+     * @return node kind
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    public  @org.checkerframework.common.value.qual.IntVal({ 2L }) int getNodeKind( AttributeNode this) {
+        return Type.ATTRIBUTE;
+    }
+
+    /**
+     * Returns parent.  Never called for attribute node, throws
+     * {@code UnsupportedOperationException}.
+     * has no attributes.
+     *
+     * @return parent
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    public NodeInfo getParent( AttributeNode this) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Returns root. Never called for attribute node, throws
+     * {@code UnsupportedOperationException}.
+     *
+     * @return root
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    public NodeInfo getRoot( AttributeNode this) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Returns string value.
+     *
+     * @return string value
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    public  String getStringValue( AttributeNode this) {
+        return value;
+    }
+
+    /**
+     * Determines axis iteration algorithm. Attribute node can not be iterated, throws
+     * {@code UnsupportedOperationException}.
+     *
+     * @param axisNumber element from {@code AxisInfo}
+     * @return {@code AxisIterator} object
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    public AxisIterator iterateAxis( AttributeNode this,   int axisNumber) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Returns line number. Attribute node has no line number, throws
+     * {@code UnsupportedOperationException}.
+     *
+     * @return line number
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    public int getLineNumber( AttributeNode this) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Returns column number. Attribute node has no column number, throws
+     * {@code UnsupportedOperationException}.
+     *
+     * @return column number
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    public int getColumnNumber( AttributeNode this) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Getter method for token type. Attribute node has no token type, throws
+     * {@code UnsupportedOperationException}.
+     *
+     * @return token type
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    public int getTokenType( AttributeNode this) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Returns underlying node. Attribute node has no underlying node, throws
+     * {@code UnsupportedOperationException}.
+     *
+     * @return underlying node
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    public Object getUnderlyingNode( AttributeNode this) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Getter method for node depth. This method is not applicable to attribute nodes,
+     * throws unsupported exception.
+     *
+     * @return never
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    public int getDepth( AttributeNode this) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Creates nodes for children. Attribute node has no children, so
+     * this method throws unsupported exception.
+     *
+     * @return never
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    protected List<AbstractNode> createChildren( AttributeNode this) {
+        throw throwUnsupportedOperationException();
+    }
+
+    /**
+     * Determine whether the node has any children.
+     *
+     * @return always {@code false}
+     */
+    @org.checkerframework.dataflow.qual.Pure
+    public  @org.checkerframework.common.value.qual.BoolVal({ false }) boolean hasChildNodes( AttributeNode this) {
+        return false;
+    }
+
+    /**
+     * Returns UnsupportedOperationException exception.
+     *
+     * @return UnsupportedOperationException exception
+     */
+    @org.checkerframework.dataflow.qual.SideEffectFree
+    private static  UnsupportedOperationException throwUnsupportedOperationException() {
+        return new UnsupportedOperationException("Operation is not supported");
+    }
+}
