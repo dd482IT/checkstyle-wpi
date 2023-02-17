@@ -7,7 +7,7 @@
 
 
 # The compile and clean commands for the project's build system.
-BUILD_CMD="mvn compile -Pchecker-nullness-optional-interning,checker-lock-tainting,checker-index,checker-formatter,checker-signature-gui-units-init,checker-regex-property-key-compiler-message,checker-purity-value-returns,"
+BUILD_CMD="mvn compile -Pchecker-nullness-optional-interning,checker-lock-tainting,checker-index,checker-formatter,checker-signature-gui-units-init,checker-regex-property-key-compiler-message,checker-purity-value-returns"
 CLEAN_CMD="mvn clean"
 ${BUILD_CMD} # Compile the program so that WPIOUTDIR is created.
 
